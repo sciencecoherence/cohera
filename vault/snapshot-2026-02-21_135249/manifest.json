@@ -1,0 +1,144 @@
+{
+  "snapshot": "snapshot-2026-02-21_135249",
+  "generated_at": "2026-02-21T18:52:49.984330+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 299,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.924544+00:00"
+    },
+    {
+      "path": "integrations/hostinger-mail/.env.example",
+      "size": 308,
+      "mtime": 1771694777,
+      "mtime_iso": "2026-02-21T17:26:17.093340+00:00"
+    },
+    {
+      "path": "integrations/hostinger-mail/README.md",
+      "size": 1958,
+      "mtime": 1771694773,
+      "mtime_iso": "2026-02-21T17:26:13.822706+00:00"
+    },
+    {
+      "path": "integrations/hostinger-mail/poller.py",
+      "size": 6756,
+      "mtime": 1771695838,
+      "mtime_iso": "2026-02-21T17:43:58.116593+00:00"
+    },
+    {
+      "path": "integrations/hostinger-mail/reply_drafts.py",
+      "size": 1430,
+      "mtime": 1771694820,
+      "mtime_iso": "2026-02-21T17:27:00.166703+00:00"
+    },
+    {
+      "path": "integrations/hostinger-mail/rules.json",
+      "size": 607,
+      "mtime": 1771694783,
+      "mtime_iso": "2026-02-21T17:26:23.294439+00:00"
+    },
+    {
+      "path": "repo/COHERA_RULES.md",
+      "size": 1937,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.858297+00:00"
+    },
+    {
+      "path": "repo/SITE_SPEC.md",
+      "size": 1030,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.875992+00:00"
+    },
+    {
+      "path": "repo/site/about/index.html",
+      "size": 1348,
+      "mtime": 1771698308,
+      "mtime_iso": "2026-02-21T18:25:08.321779+00:00"
+    },
+    {
+      "path": "repo/site/assets/style.css",
+      "size": 1553,
+      "mtime": 1771698308,
+      "mtime_iso": "2026-02-21T18:25:08.282799+00:00"
+    },
+    {
+      "path": "repo/site/glossary/index.html",
+      "size": 1237,
+      "mtime": 1771698308,
+      "mtime_iso": "2026-02-21T18:25:08.317781+00:00"
+    },
+    {
+      "path": "repo/site/index.html",
+      "size": 2196,
+      "mtime": 1771698308,
+      "mtime_iso": "2026-02-21T18:25:08.292794+00:00"
+    },
+    {
+      "path": "repo/site/research/digests/index.json",
+      "size": 219,
+      "mtime": 1771698308,
+      "mtime_iso": "2026-02-21T18:25:08.303788+00:00"
+    },
+    {
+      "path": "repo/site/research/digests/welcome-digest.html",
+      "size": 1750,
+      "mtime": 1771698308,
+      "mtime_iso": "2026-02-21T18:25:08.309785+00:00"
+    },
+    {
+      "path": "repo/site/research/index.html",
+      "size": 2011,
+      "mtime": 1771698308,
+      "mtime_iso": "2026-02-21T18:25:08.297791+00:00"
+    },
+    {
+      "path": "repo/site/test.txt",
+      "size": 37,
+      "mtime": 1771696725,
+      "mtime_iso": "2026-02-21T17:58:45.428792+00:00"
+    },
+    {
+      "path": "workspace/AGENTS.md",
+      "size": 7869,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.624694+00:00"
+    },
+    {
+      "path": "workspace/BOOTSTRAP.md",
+      "size": 1470,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.737760+00:00"
+    },
+    {
+      "path": "workspace/HEARTBEAT.md",
+      "size": 168,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.719555+00:00"
+    },
+    {
+      "path": "workspace/IDENTITY.md",
+      "size": 608,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.681769+00:00"
+    },
+    {
+      "path": "workspace/SOUL.md",
+      "size": 1673,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.645734+00:00"
+    },
+    {
+      "path": "workspace/TOOLS.md",
+      "size": 860,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.702369+00:00"
+    },
+    {
+      "path": "workspace/USER.md",
+      "size": 544,
+      "mtime": 1771699969,
+      "mtime_iso": "2026-02-21T18:52:49.663820+00:00"
+    }
+  ]
+}
