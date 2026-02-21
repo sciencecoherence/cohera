@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research Hub · Cohera Lab</title>
+  <link rel="stylesheet" href="/cohera/assets/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <strong>Cohera Lab</strong>
+      <nav class="nav-links">
+        <a href="/cohera/index.html">Home</a>
+        <a href="/cohera/research/index.html">Research</a>
+        <a href="/cohera/glossary/index.html">Glossary</a>
+        <a href="/cohera/about/index.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Research Hub</h1>
+      <p class="small">Latest digests are listed below from <code class="inline">/research/digests/index.json</code>.</p>
+    </section>
+
+    <section id="digests" class="card">
+      <h3>Latest Digests</h3>
+      <div id="digest-list" class="small">Loading digests…</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Research in progress · cite-first policy enabled.</div>
+  </footer>
+
+  <script>
+    async function loadDigests() {
+      const list = document.getElementById('digest-list');
+      try {
+        const res = await fetch('/cohera/research/digests/index.json', { cache: 'no-store' });
+        const items = await res.json();
+        if (!Array.isArray(items) || items.length === 0) {
+          list.innerHTML = 'No digests yet.';
+          return;
+        }
+        list.innerHTML = '<ul class="clean">' + items.map(item => {
+          const safeTitle = item.title || item.slug;
+          const safeDate = item.date || '';
+          const href = '/cohera/research/digests/' + item.slug + '.html';
+          return `<li><a href="${href}">${safeTitle}</a> <span class="small">(${safeDate})</span></li>`;
+        }).join('') + '</ul>';
+      } catch (e) {
+        list.textContent = 'Could not load digest index.';
+      }
+    }
+    loadDigests();
+  </script>
+</body>
+</html>
