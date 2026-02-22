@@ -6,7 +6,7 @@ from risk import RiskConfig, position_size_usd, guards_ok
 from strategies import generate_signal
 from executor import save_pending
 
-BASE = Path('/home/xavier/cohera-trading/bot')
+BASE = Path(__file__).resolve().parent
 CFG_PATH = BASE / 'config.json'
 STATE_PATH = BASE / 'state' / 'performance.json'
 

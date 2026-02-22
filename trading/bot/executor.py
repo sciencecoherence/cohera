@@ -2,7 +2,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-STATE = Path('/home/xavier/cohera-trading/bot/state')
+BASE = Path(__file__).resolve().parent
+STATE = BASE / 'state'
 STATE.mkdir(parents=True, exist_ok=True)
 
 

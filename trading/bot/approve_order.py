@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from executor import execute_paper
 
-BASE = Path('/home/xavier/cohera-trading/bot')
+BASE = Path(__file__).resolve().parent
 cfg_path = BASE / 'config.json'
 pending_path = BASE / 'state' / 'pending_order.json'
 
