@@ -22,6 +22,11 @@ def main():
     cfg = load_json(CFG_PATH, {})
     perf = load_json(STATE_PATH, {"day_pnl_pct": 0.0, "week_pnl_pct": 0.0})
 
+    kill = BASE / 'state' / 'kill_switch.json'
+    if kill.exists():
+        print('NO_TRADE: Kill switch active')
+        return
+
     rcfg = RiskConfig(
         equity=cfg['account_equity_usd'],
         risk_per_trade=cfg['risk_per_trade'],

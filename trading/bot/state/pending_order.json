@@ -1,0 +1,12 @@
+{
+  "symbol": "BTCUSDT",
+  "side": "SHORT",
+  "setup": "Breakdown retest bias",
+  "entry": 67866.38,
+  "stop": 68698.7,
+  "tp1": 66201.74,
+  "rr": 2.0,
+  "confidence": "medium",
+  "size_usd": 815.39,
+  "mode": "semi_auto"
+}
