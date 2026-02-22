@@ -1,2 +1,7 @@
 trading/bot/__pycache__/
 trading/bot/*.pyc
+
+# trading bot local runtime
+trading/bot/config.json
+trading/bot/state/*.json
+trading/bot/state/*.jsonl
