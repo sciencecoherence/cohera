@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Signal Archive · Cohera Trading</title>
+<link rel="stylesheet" href="/cohera/trading/assets/style.css" />
+</head><body>
+<header><div class="container nav"><strong>Cohera Trading</strong><nav class="nav-links"><a href="/cohera/trading/index.html">Home</a><a href="/cohera/trading/btc-playbook-v1.html">Playbook</a><a href="/cohera/trading/journal/index.html">Journal</a><a href="/cohera/trading/signals/index.html">Signals</a></nav></div></header>
+<main class="container">
+<section class="hero"><h1>Signal Archive</h1><p class="small">All posted setups with invalidation and outcome tracking.</p></section>
+<section class="card"><h3>Latest Signals</h3><div id="signals">Loading…</div></section>
+</main>
+<script>
+async function loadSignals(){
+  const el=document.getElementById('signals');
+  try{
+    const r=await fetch('/cohera/trading/signals/index.json',{cache:'no-store'});
+    const items=await r.json();
+    if(!Array.isArray(items)||!items.length){el.textContent='No signals yet.';return;}
+    el.innerHTML='<ul>'+items.map(s=>`<li><strong>${s.date}</strong> · ${s.side} · ${s.setup} · ${s.status} · <a href="${s.link}">details</a></li>`).join('')+'</ul>';
+  }catch(e){el.textContent='Signal index not available.';}
+}
+loadSignals();
+</script>
+</body></html>
