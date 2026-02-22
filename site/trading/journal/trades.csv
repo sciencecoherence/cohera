@@ -1,1 +1,3 @@
 date_time,pair,setup,bias,entry,stop,tp1,tp2,risk_pct,size,result_r,confidence,rule_break,lesson
+2026-02-22T03:46:13.513556+00:00,BTCUSDT,Breakdown retest bias,n/a,67924.17,68698.7,66436.25,,0.01,450.47,1.92,n/a,,closed 50.0% via tp
+2026-02-22T03:55:36.630033+00:00,BTCUSDT,Breakdown retest bias,n/a,67924.17,68698.7,66436.25,,0.01,450.47,-0.1,n/a,,closed 100.0% via manual
