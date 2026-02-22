@@ -17,6 +17,7 @@ c = json.loads(cfg.read_text(encoding='utf-8'))
 print('STATUS')
 print(f"mode={c.get('mode')}")
 print(f"symbol={c.get('symbol')}")
+print(f"leverage={c.get('leverage',1)}x")
 print(f"kill_switch={'ON' if kill.exists() else 'OFF'}")
 print(f"pending_order={'YES' if pending.exists() else 'NO'}")
 open_pos = base / 'state' / 'open_position.json'

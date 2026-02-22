@@ -24,6 +24,8 @@ def execute_paper(order: dict, slippage_bps: float = 3):
         "stop": order['stop'],
         "tp1": order['tp1'],
         "size_usd": order['size_usd'],
+        "leverage": order.get('leverage', 1),
+        "margin_usd": order.get('margin_usd'),
         "setup": order['setup']
     }
     path = STATE / 'executions.log.jsonl'
@@ -39,6 +41,8 @@ def execute_paper(order: dict, slippage_bps: float = 3):
         "stop": rec["stop"],
         "tp1": rec["tp1"],
         "size_usd": rec["size_usd"],
+        "leverage": rec.get("leverage", 1),
+        "margin_usd": rec.get("margin_usd"),
         "setup": rec["setup"],
     }
     (STATE / 'open_position.json').write_text(json.dumps(open_pos, indent=2), encoding='utf-8')

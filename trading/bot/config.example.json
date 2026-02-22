@@ -6,5 +6,6 @@
   "max_weekly_loss": 0.05,
   "account_equity_usd": 1000,
   "mode": "semi_auto",
-  "paper_slippage_bps": 3
+  "paper_slippage_bps": 3,
+  "leverage": 10
 }

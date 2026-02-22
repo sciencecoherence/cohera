@@ -48,6 +48,9 @@ def main():
         return
 
     size_usd = position_size_usd(cfg['account_equity_usd'], cfg['risk_per_trade'], sig['entry'], sig['stop'])
+    leverage = float(cfg.get('leverage', 1))
+    margin_usd = round(size_usd / leverage, 2) if leverage > 0 else round(size_usd, 2)
+
     order = {
         "symbol": cfg['symbol'],
         "side": sig['side'],
@@ -58,6 +61,8 @@ def main():
         "rr": sig['rr'],
         "confidence": sig['confidence'],
         "size_usd": round(size_usd, 2),
+        "leverage": leverage,
+        "margin_usd": margin_usd,
         "mode": cfg['mode']
     }
 
