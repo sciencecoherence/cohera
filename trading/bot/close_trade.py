@@ -19,7 +19,7 @@ def usage():
         'USAGE:\n'
         '  close_trade.py tp [percent]\n'
         '  close_trade.py sl [percent]\n'
-        '  close_trade.py now [percent]\n'
+        '  close_trade.py close now [percent]\n'
         '  close_trade.py close <price> [percent]\n'
         '  close_trade.py manual <price> [percent]'
     )
@@ -60,16 +60,17 @@ elif cmd == 'sl':
     exit_price = float(pos['stop'])
     percent = parse_percent(args[1] if len(args) > 1 else None)
     reason = 'sl'
-elif cmd == 'now':
-    exit_price = fetch_current_price(symbol)
-    percent = parse_percent(args[1] if len(args) > 1 else None)
-    reason = 'now'
 elif cmd in {'close', 'manual'}:
     if len(args) < 2:
         usage()
-    exit_price = float(args[1])
-    percent = parse_percent(args[2] if len(args) > 2 else None)
-    reason = 'manual'
+    if args[1].lower() == 'now':
+        exit_price = fetch_current_price(symbol)
+        percent = parse_percent(args[2] if len(args) > 2 else None)
+        reason = 'now'
+    else:
+        exit_price = float(args[1])
+        percent = parse_percent(args[2] if len(args) > 2 else None)
+        reason = 'manual'
 else:
     usage()
 
