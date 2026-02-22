@@ -1,8 +1,129 @@
 {
-  "generated_at": "2026-02-22T11:11:01Z",
-  "total_sources": 45,
-  "changes": [],
+  "generated_at": "2026-02-22T13:56:18Z",
+  "total_sources": 53,
+  "changes": [
+    {
+      "path": "chatgpt/pdf/The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf",
+      "change": "new",
+      "mtime": 1771768499,
+      "size": 715402,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/pdf/Quantifying_and_Attributing_Submodel_Uncertainty_in_Stochastic_Simulation_Models_and_Digital_Twins.pdf",
+      "change": "new",
+      "mtime": 1771768499,
+      "size": 617950,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/pdf/How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs.pdf",
+      "change": "new",
+      "mtime": 1771768498,
+      "size": 406684,
+      "thread": "ethos"
+    },
+    {
+      "path": "chatgpt/pdf/Epistemology_of_Generative_AI_The_Geometry_of_Knowing.pdf",
+      "change": "new",
+      "mtime": 1771768497,
+      "size": 674327,
+      "thread": "ethos"
+    },
+    {
+      "path": "chatgpt/pdf/On_the_Concept_of_Violence_A_Comparative_Study_of_Human_and_AI_Judgments.pdf",
+      "change": "new",
+      "mtime": 1771768496,
+      "size": 684822,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/pdf/Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis.pdf",
+      "change": "new",
+      "mtime": 1771768463,
+      "size": 810373,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/pdf/Service_Orchestration_in_the_Computing_Continuum_Structural_Challenges_and_Vision.pdf",
+      "change": "new",
+      "mtime": 1771768454,
+      "size": 2902613,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/pdf/Dissipation_as_a_Resource_Synchronization_Coherence_Recovery_and_Chaos_Control.pdf",
+      "change": "new",
+      "mtime": 1771768444,
+      "size": 6566551,
+      "thread": "cosmos"
+    }
+  ],
   "top_priority": [
+    {
+      "path": "chatgpt/pdf/The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf",
+      "ext": "pdf",
+      "mtime": 1771768499,
+      "size": 715402,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/Quantifying_and_Attributing_Submodel_Uncertainty_in_Stochastic_Simulation_Models_and_Digital_Twins.pdf",
+      "ext": "pdf",
+      "mtime": 1771768499,
+      "size": 617950,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs.pdf",
+      "ext": "pdf",
+      "mtime": 1771768498,
+      "size": 406684,
+      "thread": "ethos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/Epistemology_of_Generative_AI_The_Geometry_of_Knowing.pdf",
+      "ext": "pdf",
+      "mtime": 1771768497,
+      "size": 674327,
+      "thread": "ethos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/On_the_Concept_of_Violence_A_Comparative_Study_of_Human_and_AI_Judgments.pdf",
+      "ext": "pdf",
+      "mtime": 1771768496,
+      "size": 684822,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis.pdf",
+      "ext": "pdf",
+      "mtime": 1771768463,
+      "size": 810373,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/Service_Orchestration_in_the_Computing_Continuum_Structural_Challenges_and_Vision.pdf",
+      "ext": "pdf",
+      "mtime": 1771768454,
+      "size": 2902613,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/Dissipation_as_a_Resource_Synchronization_Coherence_Recovery_and_Chaos_Control.pdf",
+      "ext": "pdf",
+      "mtime": 1771768444,
+      "size": 6566551,
+      "thread": "cosmos",
+      "score": 3
+    },
     {
       "path": "chatgpt/pdf/Hierarchical_Self_Engineering_Chain (1).pdf",
       "ext": "pdf",
@@ -98,71 +219,18 @@
       "size": 15906,
       "thread": "cosmos",
       "score": 2
-    },
-    {
-      "path": "chatgpt/latex/Equations_handbook.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 24446,
-      "thread": "cosmos",
-      "score": 2
-    },
-    {
-      "path": "chatgpt/latex/equilibrium.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 2431,
-      "thread": "cosmos",
-      "score": 2
-    },
-    {
-      "path": "chatgpt/latex/introduction.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 8338,
-      "thread": "cosmos",
-      "score": 2
-    },
-    {
-      "path": "chatgpt/latex/black_holes.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 4698,
-      "thread": "cosmos",
-      "score": 2
-    },
-    {
-      "path": "chatgpt/latex/schrodinger.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 45449,
-      "thread": "cosmos",
-      "score": 2
-    },
-    {
-      "path": "chatgpt/latex/molecular interface.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 3580,
-      "thread": "regenesis",
-      "score": 2
-    },
-    {
-      "path": "chatgpt/latex/entropy.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 11428,
-      "thread": "cosmos",
-      "score": 2
-    },
-    {
-      "path": "chatgpt/latex/FEP.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 18336,
-      "thread": "cosmos",
-      "score": 2
     }
   ],
-  "autodrafts_created": []
+  "autodrafts_created": [
+    {
+      "thread": "cosmos",
+      "slug": "auto-2026-02-22-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p",
+      "source": "chatgpt/pdf/The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf"
+    },
+    {
+      "thread": "ethos",
+      "slug": "auto-2026-02-22-how-should-ai-knowledge-be-governed-epistemic-authority-structur",
+      "source": "chatgpt/pdf/How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs.pdf"
+    }
+  ]
 }
