@@ -22,18 +22,20 @@ def main():
     if not cfg:
         raise SystemExit('Missing bot/config.json')
 
-    min_score = int(cfg.get('min_confluence_score', 4))
-    rr_target = float(cfg.get('rr_target', 2.5))
+    min_score = int(cfg.get('min_confluence_score', 5))
+    rr_target = float(cfg.get('rr_target', 2.8))
+    min_grade = str(cfg.get('min_grade', 'A')).upper()
 
     url = f"https://api.binance.com/api/v3/klines?symbol={cfg['symbol']}&interval={cfg['timeframe']}&limit=250"
     klines = requests.get(url, timeout=10).json()
-    sig = generate_signal(klines, min_score=min_score, rr_target=rr_target)
+    sig = generate_signal(klines, min_score=min_score, rr_target=rr_target, min_grade=min_grade)
 
     if sig.get('status') == 'SETUP':
         print('WHY_REPORT: SETUP_AVAILABLE')
-        print(f"side={sig['side']} setup={sig['setup']} confidence={sig['confidence']}")
+        print(f"side={sig['side']} setup={sig['setup']} confidence={sig['confidence']} grade={sig.get('grade','n/a')}")
         print(f"entry={sig['entry']} stop={sig['stop']} tp1={sig['tp1']} rr={sig['rr']}")
         print(f"score={sig.get('score')}/{min_score} checks={', '.join(sig.get('checks', []))}")
+        print(f"regime={sig.get('regime')} wyckoff={sig.get('wyckoff')}")
         return
 
     m = sig.get('market', {})
