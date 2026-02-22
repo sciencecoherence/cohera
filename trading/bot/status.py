@@ -21,7 +21,9 @@ print(f"leverage={c.get('leverage',1)}x")
 print(f"kill_switch={'ON' if kill.exists() else 'OFF'}")
 print(f"pending_order={'YES' if pending.exists() else 'NO'}")
 open_pos = base / 'state' / 'open_position.json'
+exit_order = base / 'state' / 'exit_order.json'
 print(f"open_position={'YES' if open_pos.exists() else 'NO'}")
+print(f"armed_exit={'YES' if exit_order.exists() else 'NO'}")
 if perf.exists():
     p = json.loads(perf.read_text(encoding='utf-8'))
     print(f"day_pnl_pct={p.get('day_pnl_pct',0)} week_pnl_pct={p.get('week_pnl_pct',0)}")
