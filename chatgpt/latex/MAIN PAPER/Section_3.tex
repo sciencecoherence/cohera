@@ -1,0 +1,614 @@
+\setcounter{section}{2}
+\section*{Mathematical Framework}
+\label{sec:3}
+
+% ============================================
+% Section 3 — Mathematical Architecture of the TCQS
+% Final integrated version with standalone 3.2,
+% added 3.4 Coherence Density Function,
+% enhanced 3.5 Time-Crystalline Update Rule (incl. discrete invariance),
+% new 3.6 Information Flow Tensor, and expanded 3.7 Summary.
+% ============================================
+
+% =====================================================
+%                         Overview
+=====================================================
+\paragraph{The Fundamental Floquet Update Rule}
+
+At the most elementary level, the vacuum is not a static background, but an actively updating information medium. Each ``tick'' of the underlying time-crystal corresponds to a fundamental cycle in which the substrate reads, rewrites, and re-stabilizes its own state. To make this explicit, we describe the substrate by a sequence of discrete states \(\{S_n\}\), one for each fundamental cycle \(n\), and we assume that the entire history of the universe is nothing but the repetition of a single, intrinsic update rule applied recursively.
+
+\medskip
+
+Let $S_n$ denote the state of the substrate at the $n$-th fundamental cycle. 
+Its evolution is governed by an intrinsic, self-referential update rule
+\begin{equation}
+    S_{n+1} = \mathcal{U}(S_n),
+\end{equation}
+where $\mathcal{U}$ is the Substrate's Floquet-like update operator generating the discrete time-as-memory progression, it is the time-crystalline update functional encoding, the substrate’s  periodic self-generation. Coherence thus defines being; deviations from this 
+intrinsic rhythm define apparent change.
+
+
+\subsection*{Overview}
+Section~3 establishes the \textit{formal backbone} of the Time-Crystal Quantum Substrate (TCQS).
+Where Section~2 laid down the conceptual premises, this section constructs the \textit{mathematical framework}: a self-referential Hamiltonian lattice evolving through a time-crystalline law, embedded in a coherence geometry with
+thermodynamic and gauge-like structure, a distributed network of coherence nodes whose internal dynamics are governed by context-dependent operators acting over a time-crystalline manifold. Each node embodies a localized quantum informational state, yet inseparable from the global state of the substrate. This interdependence gives rise to a hierarchy of mathematical structures:
+\vspace{1em}
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{p{0.23\linewidth} p{0.72\linewidth}}
+\hline
+\textbf{Structural Level} & \textbf{Conceptual Role} \\
+\hline
+Operational & Local and global Hamiltonians \(H_i,\,H_{\text{tot}}\)  defining contextual energetic landscapes of the substrate. \\
+Topological & A tensor-product state space \(\mathcal{H}_{\text{tot}}=\bigotimes_i \mathcal{H}_i\) encoding the manifold of possible coherence configurations. \\
+Temporal & A Floquet-type temporal update rule representing the discrete rhythmic reconstruction of reality—the ``informational heartbeat'' of the substrate. \\
+Geometric & Informational geometry emerging from overlaps between evolving states, giving rise to curvature in coherence space. \\
+Dynamical & Thermodynamic and gauge analogues quantifying how coherence flows, restores, and synchronizes across the network. \\
+\hline
+\end{tabular}
+\caption{Hierarchy of mathematical and conceptual structures defining the architecture of the Time-Crystal Quantum Substrate (TCQS).}
+\label{tab:tcqs_overview_hierarchy}
+\end{table}
+\vspace{1em}
+
+Together, these constructions form the \textit{Mathematical Architecture of the TCQS}---a unified language that binds Hamiltonian dynamics, quantum geometry, and informational thermodynamics into a single coherent system.  
+This section therefore provides the foundation from which---the \textit{Dynamic Laws of Coherence} (Section~4) and the \textit{Geometric and Gravitational Consequences} (Sections~5--6)---naturally unfold.
+
+
+% =====================================================
+%           3.1 State-Space Structure
+% =====================================================
+
+\subsection{Substrate Structure and State-Space Topology}
+
+Consider a lattice of qudits \( q_i \) with local Hamiltonians \( H_i \) and time-periodic couplings:
+\begin{equation}
+H(t) \;=\; \sum_i H_i \;+\; \sum_{\langle ij\rangle} J_{ij}(t)\,H_{ij}, 
+\qquad J_{ij}(t{+}T)=J_{ij}(t).
+\tag{3.1}
+\end{equation}
+The local Hamiltonian of each site is a contextual projection of the global total \(H_{\text{tot}}\), which encodes the local coherence densities within the global informational manifold. The TCQS substrate therefore forms a periodically driven Hamiltonian network, whose time-crystalline modulation provides the rhythmic basis of the system’s evolution.
+\vspace{0.5em}
+
+Let the total Hilbert space be the tensor product
+\begin{equation}
+\mathcal{H}_{\text{tot}} \;=\; \bigotimes_{i=1}^{N} \mathcal{H}_i,
+\tag{3.2a}
+\end{equation}
+with local states \(|\Psi_i\rangle \in \mathcal{H}_i\) forming the coherence ensemble
+\begin{equation}
+\mathcal{S} \;=\; \{\,|\Psi_i\rangle \mid i{=}1,\dots,N \,\},
+\tag{3.2b}
+\end{equation}
+and total state
+\begin{equation}
+|\Psi_{\text{tot}}\rangle \;=\; \bigotimes_{i=1}^{N} |\Psi_i\rangle.
+\tag{3.2c}
+\end{equation}
+The global Hamiltonian \(H_{\text{tot}}\) acts on \(\mathcal{H}_{\text{tot}}\), while local projections are
+\begin{equation}
+H_i \;=\; \langle \Psi_i | H_{\text{tot}} | \Psi_i \rangle .
+\tag{3.2d}
+\end{equation}
+This defines the \textit{state-space topology}: a coherent tensor lattice whose nodes interact via informational couplings \(J_{ij}(t)\) and global state-dependent feedback.
+
+\subsection{Substrate Structure and State-Space Topology}
+
+The Time–Crystalline Quantum Substrate (TCQS) is modeled as a network of
+interacting qudits \(q_i\), each representing a finite-dimensional quantum
+domain carrying local Hamiltonians \(H_i\).
+The total Hamiltonian of the substrate is defined as
+\begin{equation}
+H_{\text{tot}}
+  = \sum_i H_i
+  + \sum_{i\neq j} J_{ij}(t)\,H_{ij},
+\tag{3.1}
+\end{equation}
+
+where \(J_{ij}(t)\) are time-periodic coupling coefficients
+encoding local interaction strength and temporal modulation.
+The periodicity of \(J_{ij}(t)\) imposes a fundamental discrete time symmetry
+that propagates through all dynamical layers of the substrate.
+
+Local Hamiltonians are defined by contextual projections of the total operator,
+\begin{equation}
+H_i = \langle \Psi_i | H_{\mathrm{tot}} | \Psi_i \rangle ,
+\tag{3.1a}
+\end{equation}
+so that local deviations $\delta H_i = H_i - \langle H \rangle$ encode curvature in the coherence field.
+
+The total state factorizes over local subspaces,
+\begin{equation}
+|\Psi_{\mathrm{tot}}\rangle = \bigotimes_i |\Psi_i\rangle ,
+\tag{3.1b}
+\end{equation}
+and the global Hilbert manifold is the tensor product
+$\mathcal{H}=\bigotimes_i \mathcal{H}_i$.
+
+
+Each local Hamiltonian \(H_i\) acts on a finite Hilbert space
+\(\mathcal{H}_i \simeq \mathbb{C}^d\),
+and the total state-space forms the tensor-product manifold
+\begin{equation}
+\mathcal{H}
+  = \bigotimes_{i=1}^{N} \mathcal{H}_i ,
+\tag{3.1a}
+\end{equation}
+whose topology determines how local coherence patches combine to form the
+global quantum state \(|\Psi\rangle \in \mathcal{H}\).
+Connectivity among subsystems is represented by a directed interaction graph
+\(\mathcal{G} = (\mathcal{V},\mathcal{E})\)
+whose vertices \(\mathcal{V}\) correspond to local domains and whose edges
+\(\mathcal{E}\) represent active couplings \(J_{ij}(t)\).
+The adjacency and periodicity of this graph determine the
+\textit{coherence topology} of the substrate.
+
+The global state of the system is written as
+\begin{equation}
+|\Psi\rangle
+  = \bigotimes_i |\psi_i\rangle ,
+\qquad
+|\psi_i\rangle \in \mathcal{H}_i ,
+\tag{3.1b}
+\end{equation}
+subject to normalization
+\(\langle \Psi | \Psi \rangle = 1\).
+Local deviations
+
+% ---- Projection / coarse-graining from the total Hamiltonian
+\begin{equation}
+H(t)\;=\;\mathcal{P}_t\!\left[\,H_{\text{tot}}\,\right],
+\qquad
+\mathcal{P}_{t+T}=\mathcal{P}_t ,
+\tag{3.1c}
+\end{equation}
+
+\begin{align}
+H_i(t)      &= \mathrm{Tr}_{\bar i}\!\left[\rho_{\bar i}(t)\,H_{\text{tot}}\right], \\
+H_{ij}(t)   &= \mathrm{Tr}_{\overline{ij}}\!\left[\rho_{\overline{ij}}(t)\,H_{\text{tot}}\right],
+\end{align}
+
+
+% =====================================================
+%           3.3 Self-Referential Evolution
+% =====================================================
+
+\subsection{Self-Referential Evolution}
+
+Temporal evolution is governed by a \textit{state-dependent Floquet operator}:
+\begin{equation}
+U_F(|\Psi\rangle)
+  = \exp\!\left[-\,i\,H(|\Psi\rangle)\,\frac{T}{\hbar}\right],
+\qquad
+|\Psi\rangle \;\mapsto\; U_F(|\Psi\rangle)\,|\Psi\rangle .
+\tag{3.3}
+\end{equation}
+Here, \(H(|\Psi\rangle)\) denotes the contextual Hamiltonian determined by the instantaneous global state, so that the operator that governs evolution depends reflexively on the very state it updates.
+This formalizes the TCQS feedback law: the substrate continuously recalculates its own generator at each cycle, ensuring global coherence through self-reference.
+
+\vspace{0.5em}
+For compactness, and to emphasize its equivalence with later dynamical formulations, the same relation can be expressed in shorthand form as
+\begin{equation}
+U_F(|\Psi\rangle)
+  = e^{-\,i\,H(|\Psi\rangle)T},
+\tag{3.3a}
+\end{equation}
+where units are understood such that \(\hbar = 1\).
+This simplified notation is frequently used in subsequent sections to highlight the feedback symmetry rather than dimensional normalization.
+
+The Hamiltonian depends on the instantaneous global state, providing a \emph{self-referential} feedback law that recalculates its own generator each cycle and maintains global coherence so that feedback from the instantaneous state \(|\Psi\rangle\) shapes the Hamiltonian that generates the next update.  
+This defines a \textit{self-referential dynamic}, in which the substrate continuously recalculates its own evolution law, ensuring self-correction and global coherence across cycles of period \(T\).
+
+\noindent
+The feedback operator \(U_F(|\Psi\rangle)\) introduced in Eq.~\eqref{3.3}
+naturally generates a discrete rhythm of reconstruction: 
+each application of \(U_F\) advances the global state by one temporal quantum~\(T\),
+producing the stroboscopic evolution characteristic of a time crystal.
+This periodic self-referential process constitutes the foundation of the
+\textit{Time-Crystalline Update Rule} developed in Section~\ref{sec:TCQS_Floquet},
+where the same operator formalism gives rise to discrete temporal symmetry
+and Noether-like conservation of informational coherence.
+
+
+% =====================================================
+%           3.4 Coherence Density Function
+% =====================================================
+
+\subsection{Coherence Density Function}
+
+We introduce a local \emph{coherence density} field \(\mathcal{C}(x,t)\) associated to a coarse-grained region around \(x\).
+Two equivalent, practically useful definitions are:
+\begin{align}
+\mathcal{C}(x,t) 
+&:= 1 \;-\; \frac{S\!\bigl(\rho_x(t)\bigr)}{\log d_x},
+\quad 
+S(\rho) = -\,\mathrm{Tr}(\rho \ln \rho), 
+\tag{3.4a}\\
+\mathcal{C}(x,t) 
+&:= \mathrm{Tr}\!\bigl[\rho_x^2(t)\bigr]
+\;\;\;\text{(purity; \(=1\) iff locally pure)}.
+\tag{3.4b}
+\end{align}
+Here \(\rho_x(t)\) is the local reduced density operator for a block around \(x\) of on-site dimension \(d_x\).
+Higher \(\mathcal{C}\) indicates higher local coherence (lower mixedness).
+
+The informational line element on projective Hilbert space gives a geometry for coherence change:
+\begin{equation}
+ds^2 \;=\; 1 - \bigl|\langle \Psi(t) \mid \Psi(t{+}dt) \rangle \bigr|^2 ,
+\tag{3.4c}
+\end{equation}
+and the (gauge-covariant) quantum geometric tensor
+\begin{equation}
+C_{\mu\nu} \;=\; 
+\bigl\langle \nabla_\mu \Psi \mid \nabla_\nu \Psi \bigr\rangle 
+- \bigl\langle \nabla_\mu \Psi \mid \Psi \bigr\rangle 
+  \bigl\langle \Psi \mid \nabla_\nu \Psi \bigr\rangle ,
+\qquad 
+\nabla_\mu := \partial_\mu - i A_\mu ,
+\tag{3.4d}
+\end{equation}
+whose real part yields the Fubini–Study metric of coherence space and whose imaginary part yields Berry curvature.
+Coherence gradients couple to this geometry via the constitutive relation
+\begin{equation}
+\partial_\mu \mathcal{C} \;\propto\; C_{\mu\nu}\,u^\nu ,
+\tag{3.4e}
+\end{equation}
+where \(u^\nu\) is the local flow four-velocity defined by the stroboscopic evolution (Section~\ref{sec:TCQS_Floquet} below).
+
+
+% =====================================================
+%           3.5 Time-Crystalline Update Rule 
+% =====================================================
+
+\subsection{Time-Crystalline Update Rule}\label{sec:TCQS_Floquet}
+
+The substrate evolves in discrete, periodic steps governed by the Floquet rhythm:
+\begin{equation}
+|\Psi(t{+}T)\rangle
+  \;=\;
+U_F\!\bigl(|\Psi(t)\rangle\bigr)\,|\Psi(t)\rangle ,
+\qquad
+U_F
+  = \exp\!\left[-\,\frac{i}{\hbar}\,H_{\mathrm{eff}}(|\Psi\rangle)\,T\right].
+\tag{3.5}
+\end{equation}
+
+This compact form expresses the quantized temporal symmetry defining the
+\textit{time-crystalline structure} of the TCQS:
+each cycle of duration \(T\) corresponds to a feedback-dependent reconstruction of the global state, ensuring that coherence is restored by the contextual Hamiltonian \(H(|\Psi\rangle)\).
+The periodic reconstruction of the substrate provides the
+\textit{informational heartbeat} underlying emergent temporality.
+
+\vspace{0.5em}
+When the generator varies within each cycle, the effective propagator generalizes to the time-ordered exponential form
+\begin{equation}
+U_F
+  = \mathcal{T}
+    \exp\!\left[
+      -\,\frac{i}{\hbar}
+      \!\int_{t}^{t+T}
+      H\!\bigl(|\Psi(\tau)\rangle,\tau\bigr)\,d\tau
+    \right],
+\tag{3.5a}
+\end{equation}
+with \(\mathcal{T}\) denoting the time-ordering operator
+and \(H\) possibly explicitly \(T\)-periodic through couplings \(J_{ij}(t)\).
+
+\paragraph{Discrete temporal symmetry and Noether-like invariance.}
+If the stroboscopic action (or effective generator) is invariant under the discrete shift \(t\!\mapsto\!t{+}T\),
+\begin{equation}
+\mathcal{S}_d[\Psi(t)]
+  = \mathcal{S}_d[\Psi(t{+}T)],
+\tag{3.5b}
+\end{equation}
+then a \textit{Floquet charge} is conserved cycle-to-cycle.
+Equivalently, the quasi-energy (expectation of the effective generator \(H_{\mathrm{eff}}\))
+is conserved at stroboscopic times:
+\begin{equation}
+\mathcal{E}_F(t)
+  := \langle \Psi(t) | H_{\mathrm{eff}} | \Psi(t) \rangle,
+\qquad
+\mathcal{E}_F(t{+}T) = \mathcal{E}_F(t).
+\tag{3.5c}
+\end{equation}
+
+Thus, discrete time-translation symmetry implies periodic conservation laws:
+integrals of motion that recur every cycle (up to micromotion), anchoring global synchronization of coherence throughout the substrate.
+
+\subsubsection*{Temporal Synchronization}
+Global temporal order arises when local oscillatory domains
+synchronize through the discrete Floquet rhythm of Eq.~\eqref{3.5}.
+Phase gradients $\nabla_t \phi_i$ between domains correspond to informational frequency shifts, and their relaxation toward uniformity constitutes the time-crystalline synchronization of the substrate.
+
+
+% =====================================================
+%           3.6 Emergent Information Geometry
+% =====================================================
+\subsection{Emergent Information Geometry}
+
+An informational line element on projective Hilbert space is defined as
+\begin{equation}
+ds^2 = 1 - \bigl|\langle \Psi(t) | \Psi(t{+}dt) \rangle \bigr|^2,
+\tag{3.6}
+\end{equation}
+measuring infinitesimal changes in the global state's coherence, whose differential form can be expressed through the quantum geometric tensor,
+thereby defining the informational analogue of spacetime curvature.
+
+we introduce the \textit{coherence tensor}
+\begin{equation}
+C_{\mu\nu} = \langle \partial_\mu \Psi | \partial_\nu \Psi \rangle ,
+\tag{3.6a}
+\end{equation}
+which captures how the wavefunction varies across local informational coordinates.
+To ensure gauge invariance under local phase transformations
+\( |\Psi\rangle \!\to\! e^{i\phi(x)}|\Psi\rangle \),
+we refine this expression using the covariant derivative
+\(\nabla_\mu = \partial_\mu - iA_\mu\):
+\begin{equation}
+C_{\mu\nu}
+ = \langle \nabla_\mu \Psi | \nabla_\nu \Psi \rangle
+ - \langle \nabla_\mu \Psi | \Psi \rangle
+   \langle \Psi | \nabla_\nu \Psi \rangle .
+\tag{3.6b}
+\end{equation}
+The real part of \(C_{\mu\nu}\) defines the Fubini--Study metric,
+\(g^{\mathrm{FS}}_{\mu\nu} = \mathrm{Re}[C_{\mu\nu}]\),
+which constitutes the intrinsic Riemannian structure of the projective Hilbert manifold
+\(\mathcal{P}(\mathcal{H})\).
+This metric quantifies the informational distance between neighboring quantum states and determines the local curvature of coherence space.
+The imaginary part,
+\(\mathrm{Im}[C_{\mu\nu}]\),
+corresponds to the Berry curvature associated with parallel transport of quantum phase, encoding the gauge structure that arises from cyclic evolution of coherent domains.
+
+In the emergent classical limit (see Section~6),
+the Fubini--Study metric reduces to an effective spacetime metric \(g_{\mu\nu}\) governing macroscopic geometry, while the Berry curvature contributes to the effective gauge potentials that mediate phase synchronization.
+Covariant variations \(\nabla_\tau C_{\mu\nu}\) of this tensor will later be shown to generate the emergent gravitational field equations of the TCQS,
+demonstrating how coherence curvature manifests as spacetime curvature
+when informational geometry transitions to the classical regime.
+
+
+\subsubsection*{Gauge of Coherence}
+The phase degree of freedom of each local coherence domain defines a
+$\mathrm{U}(1)$ informational gauge.
+Parallel transport of local phases induces a connection
+$A_\mu = i \langle \Psi | \partial_\mu \Psi \rangle$,
+whose curvature $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
+is the Berry curvature $\mathrm{Im}[C_{\mu\nu}]$introduced in Eq.~\eqref{3.6b}.
+This gauge structure ensures that coherence transport remains covariant under local phase transformations.
+
+% =====================================================
+%   Gauge of Coherence and Temporal Synchronization
+% =====================================================
+
+\subsection{Gauge of Coherence and Temporal Synchronization}
+
+Temporal and spatial coherence are unified under a gauge-like formalism.
+We define a coherence potential \(A_\mu\) such that
+\begin{equation}
+\nabla_\mu \Psi = (\partial_\mu - iA_\mu)\Psi,
+\tag{3.7}
+\end{equation}
+ensuring that phase synchronization across regions of the substrate
+is locally invariant under transformations of the coherence phase,
+\(\Psi \rightarrow e^{i\phi(x)}\Psi\).
+
+The corresponding field strength
+\begin{equation}
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu,
+\tag{3.7a}
+\end{equation}
+quantifies desynchronization between domains---interpreted as the curvature
+of coherence space. In the macroscopic limit, \(F_{\mu\nu}\) manifests as
+gravitational curvature or informational flow potential.
+
+This gauge formalism directly links to the imaginary component of the quantum geometric tensor introduced in Eq.~\eqref{3.6b},
+where \(\mathrm{Im}[C_{\mu\nu}] = F_{\mu\nu}\).
+The gauge potential \(A_\mu = i\langle \Psi | \partial_\mu \Psi \rangle\)
+thus acts as the informational analogue of a connection one-form,
+ensuring that parallel transport of coherence is covariant under local
+phase transformations.
+
+\paragraph{Temporal Synchronization.}
+Temporal coherence across the TCQS arises when the phase evolution of each
+local domain locks to the global Floquet rhythm defined in Eq.~\eqref{3.5}.
+Phase gradients \(\nabla_t \phi_i\) between domains correspond to
+informational frequency shifts, and their relaxation toward uniformity
+constitutes the time-crystalline synchronization of the substrate.
+The covariant condition
+\begin{equation}
+\nabla^{(\Omega)}_{\tau}\Psi \;=\;0 .
+\tag{3.7b}
+\end{equation}
+\begin{equation}
+\nabla_t \Psi = 0,
+\tag{3.7b}
+\end{equation}
+expresses global temporal invariance: coherence phases evolve in synchrony
+with the discrete time-crystal update, maintaining global phase order across
+the lattice of qudits.
+
+Together, the spatial gauge connection \(A_\mu\) and temporal synchronization
+condition \(\nabla_t \Psi = 0\) form a unified coherence law:
+the substrate preserves informational phase order by coupling the curvature of
+coherence space to the periodic reconstruction of temporal structure.
+This equivalence between spatial gauge invariance and temporal periodicity
+establishes the foundation for the emergent gravito-informational field
+dynamics developed in Section~6.
+
+
+\subsection{Gauge of Coherence and Temporal Synchronization}
+
+Temporal and spatial coherence are unified under a gauge-like formalism.
+We define a coherence potential \(A_\mu\) such that
+\begin{equation}
+\nabla_\mu \Psi = (\partial_\mu - iA_\mu)\Psi,
+\tag{3.7}
+\end{equation}
+ensuring that phase synchronization across regions of the substrate
+is locally invariant under transformations of the coherence phase,
+\(\Psi \rightarrow e^{i\phi(x)}\Psi\).
+
+The corresponding field strength
+\begin{equation}
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu,
+\tag{3.7a}
+\end{equation}
+quantifies desynchronization between domains—interpreted as the
+curvature of coherence space.
+In the macroscopic limit, \(F_{\mu\nu}\) manifests as the
+gravitational curvature or informational flow potential.
+
+This gauge formalism directly links to the imaginary component of the
+quantum geometric tensor introduced in Eq.~\eqref{3.6b},
+where \(\mathrm{Im}[C_{\mu\nu}] = F_{\mu\nu}\).
+Temporal synchronization then follows from the covariant condition
+\(\nabla_t \Psi = 0\),
+expressing that global coherence is preserved when local oscillatory
+phases evolve in synchrony with the time-crystalline rhythm of the
+substrate (see Section~3.5).
+
+Hence, gauge invariance of the coherence phase and discrete temporal
+symmetry are two aspects of a single unifying law:
+the informational field preserves its global phase order by coupling
+spatial coherence curvature to periodic temporal reconstruction.
+
+
+% =====================================================
+%           3.7 Informational Free-Energy Gradient
+% =====================================================
+\subsection{Informational Free-Energy Gradient}
+Local evolution of coherence density obeys an informational thermodynamic law:
+The TCQS substrate tends toward minimal informational free energy.
+Defining the global informational free-energy functional
+\begin{equation}
+\mathcal{F}[\rho]
+  = \mathrm{Tr}[\rho H] - T_{\mathrm{info}}\,S(\rho),
+\qquad
+S(\rho) = -\,\mathrm{Tr}(\rho \ln \rho),
+\tag{3.7}
+\end{equation}
+its gradient drives the local relaxation dynamics of the density operator:
+\begin{equation}
+\frac{d\rho}{dt}
+  = -\,\eta\,\nabla_{\rho}\mathcal{F},
+\tag{3.7a}
+\end{equation}
+where $\eta$ is an informational mobility coefficient and
+$T_{\mathrm{info}}$ acts as an effective substrate temperature representing
+decoherence pressure.
+At equilibrium, $\nabla_{\rho}\mathcal{F}=0$,
+implying a balance between internal energy and entropic dispersion.
+
+\paragraph{Local thermodynamic form.}
+For a local coherence domain $i$ with reduced state $\rho_i$,
+the same principle yields the microscopic free-energy gradient law
+\begin{equation}
+\nabla_i F
+  = \frac{\partial}{\partial \rho_i}
+    \!\left[
+      \langle H_i\rangle - T_{\mathrm{info}} S_i
+    \right],
+\qquad
+S_i = -\,k_{\mathrm{B}}\,
+      \mathrm{Tr}(\rho_i \ln \rho_i),
+\tag{3.7b}
+\end{equation}
+where \(\rho_i\) is the local density operator, \(S_i = -k_B \operatorname{Tr}(\rho_i \ln \rho_i)\) the informational entropy, 
+and \(T\) an effective substrate temperature representing decoherence pressure.  
+This \textit{free-energy gradient} drives the re-equilibration of local coherence imbalances, serving as the microscopic origin of curvature and acceleration effects.
+which drives the re-equilibration of local coherence imbalances.
+This \textit{free-energy gradient} represents the microscopic origin of
+curvature and acceleration effects in the substrate,
+linking informational thermodynamics to emergent geometric dynamics.
+
+\paragraph{Geometric interpretation.}
+The gradient $\nabla_{\rho}\mathcal{F}$ defines the vector field of
+coherence flow in information space.
+Its geometric projection along the metric $C_{\mu\nu}$
+yields the informational geodesics of minimal free-energy dissipation.
+These geodesics determine the natural relaxation paths that appear in the
+Dynamic Laws of Coherence (Section~4),
+providing the bridge between informational thermodynamics and the
+time-crystalline dynamics of the TCQS.
+
+
+% =====================================================
+%           3.8 Information Flow Tensor
+% =====================================================
+\subsection{Information Flow Tensor}
+
+Define the \emph{coherence current} (gauge-covariant probability-like flow)
+\begin{equation}
+J^\mu_{\text{coh}} \;:=\; \frac{1}{\hbar}\,\mathrm{Im}\!\left\langle \Psi \,\middle|\, \nabla^\mu \Psi \right\rangle ,
+\qquad 
+\nabla_\mu = \partial_\mu - i A_\mu ,
+\tag{3.6a}
+\end{equation}
+and the \emph{information flow tensor} as the rank-2 object capturing transport and stress of coherence:
+\begin{equation}
+I_{\mu\nu} \;:=\; 
+\mathrm{Re}\!\left\langle \nabla_\mu \Psi \,\middle|\, \nabla_\nu \Psi \right\rangle 
+\;+\; J_\mu^{\text{coh}} J_\nu^{\text{coh}}
+\;-\; g_{\mu\nu}\,\mathcal{L}_{\text{coh}} ,
+\qquad 
+\mathcal{L}_{\text{coh}} := \mathrm{Re}\!\left\langle \nabla_\alpha \Psi \,\middle|\, \nabla^\alpha \Psi \right\rangle - V(\mathcal{C}).
+\tag{3.6b}
+\end{equation}
+Here \(g_{\mu\nu}\) is the coherence-space metric (real part of \(C_{\mu\nu}\)), and \(V(\mathcal{C})\) is an effective potential penalizing decoherence.
+The local \emph{continuity law of coherence} then reads
+\begin{equation}
+\partial_t \mathcal{C} \;+\; \nabla_\mu J^\mu_{\text{coh}} \;=\; \Sigma_{\text{rec}} - \Sigma_{\text{dec}},
+\tag{3.6c}
+\end{equation}
+with \(\Sigma_{\text{rec}},\Sigma_{\text{dec}}\) the (model-dependent) recoherence/decoherence source terms.
+Stroboscopically (every \(T\)), the discrete invariance of \eqref{3.5b} implies a cycle-averaged conservation:
+\begin{equation}
+\bigl\langle \partial_t \mathcal{C} \bigr\rangle_T \;+\; \bigl\langle \nabla_\mu J^\mu_{\text{coh}} \bigr\rangle_T \;=\; 0 ,
+\tag{3.6d}
+\end{equation}
+linking the Noether-like temporal symmetry to global coherence balance.
+
+
+% =====================================================
+%           3.9 Summary and Implications
+% =====================================================
+\subsection{Summary and Implications}
+
+Section~3 formalizes the TCQS as a \textit{time-periodic, self-referential quantum information network} governed by feedback-coupled Hamiltonians.  
+The emergent geometry and thermodynamics of this structure are summarized in Table~\ref{tab:summary3}.
+
+\paragraph{Architecture.}
+The TCQS is a \(T\)-periodically driven, self-referential quantum information lattice:
+(a) a tensor-product state space (Sec.~3.2),
+(b) contextual local/global Hamiltonians (Sec.~3.1--3.3),
+(c) a coherence density field coupled to a quantum geometric tensor (Sec.~3.4),
+(d) a Floquet update with discrete invariance and periodic integrals of motion (Sec.~3.5),
+(e) and an information flow tensor encoding transport and stress of coherence (Sec.~3.6).
+
+\paragraph{Bridge to dynamics (Section 4).}
+Equations~\eqref{3.6a}--\eqref{3.6d} define currents and tensorial objects from which the \emph{Dynamic Laws of Coherence} follow: local evolution,
+global synchronization, and continuity constraints. The cycle-averaged conservation laws derived from discrete time symmetry serve as the Noether-like anchors of the forthcoming equations of motion.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lll}
+\hline
+\textbf{Level} & \textbf{Mathematical Object} & \textbf{Physical Meaning} \\
+\hline
+State space & \(\mathcal{H}_{\text{tot}}=\bigotimes_i \mathcal{H}_i\) & Coherent tensor manifold of the substrate \\
+Local/global & \(H_i,\, H_{\text{tot}},\, H(|\Psi\rangle)\) & Contextual operators \& self-referential generator \\
+Temporal & \(U_F=\mathcal{T}e^{- \frac{i}{\hbar}\int_t^{t+T}H(\cdot)\,d\tau}\) & Time-crystalline stroboscopic update \\
+Geometry & \(C_{\mu\nu}\) (QGT) & Metric/curvature of coherence space \\
+Density & \(\mathcal{C}(x,t)\) & Local coherence (purity/entropy-normalized) \\
+Transport & \(J^\mu_{\text{coh}},\, I_{\mu\nu}\) & Coherence current and information flow tensor \\
+Invariance & \(\mathcal{E}_F=\langle H_{\text{eff}}\rangle\) & Cycle-to-cycle conserved (Floquet) quantity \\
+\hline
+\end{tabular}
+\caption{Core mathematical objects of the TCQS and their physical interpretations.}
+\label{tab:tcqs_section3_summary}
+\end{table}
+
+Together, these relations constitute the mathematical architecture of the TCQS, unifying Hamiltonian dynamics, information geometry, and thermodynamic feedback within a single self-organizing formalism.
+% ---------- end Section 3 ----------

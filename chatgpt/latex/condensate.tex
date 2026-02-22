@@ -1,0 +1,83 @@
+% ScienceCoherence — One-Page Intro (House Style v3)
+\documentclass[12pt]{article}
+
+% Page & typography
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{newpxtext,newpxmath} % same family as our previous one-pagers
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{titling}
+
+% House spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\titlespacing*{\section}{0pt}{0.8em}{0.35em}
+\titlespacing*{\subsection}{0pt}{0.6em}{0.3em}
+\setlist[itemize]{leftmargin=*, itemsep=0.25em, topsep=0.25em}
+
+% Unnumbered section style
+\titleformat{\section}{\large\bfseries\scshape}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
+
+% Macros we reuse across TCQS one-pagers
+\newcommand{\tcqs}{\textsc{TCQS}}
+\newcommand{\cohdens}{\rho_{\!C}}
+\newcommand{\infoF}{F_{\!\text{info}}}
+
+\begin{document}
+\thispagestyle{empty}
+
+% Header: seal left (optional), title right
+\noindent
+\begin{minipage}[c]{0.15\textwidth}
+  % Replace with your file or leave commented
+  % \includegraphics[width=0.9in]{tcqs-seal.pdf}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.8\textwidth}
+  {\Large\bfseries ScienceCoherence}\\[-0.15em]
+  {\large Time–Crystalline Quantum Substrate (\tcqs)}
+\end{minipage}
+
+\vspace{0.4em}
+\hrule
+\vspace{0.6em}
+
+% Epigraph + bridge
+\emph{“Any sufficiently advanced technology is indistinguishable from magic.”} \hfill—Arthur C. Clarke
+
+\textbf{Position.} I think what we call \emph{magic} is simply a level of science we have not yet been capable of explaining—and that is precisely what my work is about. That’s why I’m developing a new way of describing \textbf{information theory for consciousness}. The \tcqs{} framework turns apparent magic into intelligible, testable coherence.
+
+\section*{A Unified Grammar of Coherence}
+\tcqs{} expresses physics, biology, computation, and first-person awareness in one language. Three compact invariants anchor the model (same notation as our other one-pagers):
+\[
+  \cohdens \,=\, \frac{\mathcal I_{\text{kept}}}{T},\qquad
+  \nabla_{\!\text{info}}\infoF \,\to\, 0\;\Rightarrow\; \text{coherence equilibrium},\qquad
+  U(t{+}T) \,=\, e^{-iHT/\hbar}\,U(t).
+\]
+
+\subsection*{Physics — Temporal Order}
+Time-crystal behavior quantifies reliability across cycles (periodic order in time). High \cohdens{} means robust self-memory and self-healing dynamics.
+
+\subsection*{Mathematics — Informational Dynamics}
+Coherence flows down an informational free-energy gradient until equilibrium; discrete re-coherence proceeds via Floquet-type updates, $U(t{+}T)=e^{-iHT/\hbar}U(t)$.
+
+\subsection*{Biology — Living Feedback}
+Life stabilizes structure through temporal feedback against entropy; consciousness functions as the organismic interface to global re-coherence.
+
+\subsection*{Subjective Awareness — Inner Instrument}
+Alignment, flow, and synchronicity correspond to phase-locking between organism and substrate oscillations; first-person evidence is treated as an \emph{internal} measurement channel.
+
+\vspace{0.4em}
+\hrule
+\vspace{0.4em}
+\small
+\textit{Magic is science awaiting comprehension. \tcqs{} is the bridge.}\;\textemdash\;ScienceCoherence
+\normalsize
+
+
+
+\end{document}

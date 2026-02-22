@@ -1,0 +1,789 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{cite}
+
+\title{Schr\"odinger Dynamics as Coherence Flow\\
+on a Time--Crystalline Quantum Substrate}
+
+\author{ }
+\date{ }
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In the usual presentation of quantum mechanics, the Schr\"odinger equation is postulated as a fundamental law for a ``wave function'' $\psi(\mathbf{x},t)$ with a probability interpretation. In the Time--Crystalline Quantum Substrate (TCQS) framework, it is more natural to view $\psi$ as a \emph{coherence amplitude} defined over an underlying time-crystalline, self-updating substrate $\mathcal{S}$. This paper rewrites and reinterprets the standard Schr\"odinger equation entirely in coherence / TCQS vocabulary. First, we review how a Hamiltonian generator arises from the coarse-grained dynamics of $\mathcal{S}$ and how the usual non-relativistic Hamiltonian appears as an effective operator $H_{\mathrm{eff}}$ acting on coherence amplitudes. Second, we show that the Schr\"odinger equation is equivalent to (i) a continuity equation for the coherence density $C(\mathbf{x},t) = \abs{\psi(\mathbf{x},t)}^2$ and (ii) a quantum Hamilton--Jacobi equation with a coherence-dependent quantum potential $Q[C]$. In this language, Schr\"odinger dynamics is not an evolution of an abstract probability cloud, but a local law for the redistribution of coherence and the evolution of a phase field defined on metastable sectors of the TCQS substrate. The usual Born probability interpretation then appears as a normalization of coherence density rather than a separate postulate.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction: From Wave Functions to Coherence Amplitudes}
+
+In standard non-relativistic quantum mechanics, the central dynamical law is the time-dependent Schr\"odinger equation
+\begin{equation}
+    i\hbar \frac{\partial}{\partial t} \psi(\mathbf{x},t)
+    = \hat{H}\,\psi(\mathbf{x},t),
+    \label{eq:TDSE_standard}
+\end{equation}
+with Hamiltonian
+\begin{equation}
+    \hat{H} = -\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{x},t).
+    \label{eq:H_standard}
+\end{equation}
+Here $\psi(\mathbf{x},t)$ is usually called a ``wave function'' and interpreted probabilistically via $\rho = \abs{\psi}^2$.
+
+In the TCQS picture, we replace this language by:
+\begin{itemize}
+    \item an underlying time-crystalline, self-updating substrate $\mathcal{S}$ with a fundamental Floquet-like update rule;
+    \item a \emph{coherence amplitude} field $\psi(\mathbf{x},t)$ defined on an emergent configuration space, representing how much of the substrate's coherence is allocated to each coarse-grained configuration;
+    \item a \emph{coherence density}
+    \begin{equation}
+        C(\mathbf{x},t) := \abs{\psi(\mathbf{x},t)}^2,
+    \end{equation}
+    which measures how strongly the substrate is phase-aligned with configuration $\mathbf{x}$ at time $t$.
+\end{itemize}
+When $C$ is normalized, it coincides with the usual Born probability density, but the primary ontology is coherence in $\mathcal{S}$ rather than abstract probability.
+
+In this paper we:
+\begin{enumerate}
+    \item Relate effective Hamiltonians $H_{\mathrm{eff}}$ to coarse-grained substrate dynamics.
+    \item Rewrite the Schr\"odinger equation as a continuity equation for $C$ plus a quantum Hamilton--Jacobi equation for a phase field $S$.
+    \item Interpret the Laplacian and quantum potential as encoding \emph{coherence gradients} and coherence ``stiffness'' on the substrate, rather than any curvature of spacetime.
+\end{enumerate}
+The mathematical content is the same as in standard quantum theory, but every ingredient is rephrased in TCQS language.
+
+\section{Substrate Dynamics and Effective Hamiltonians}
+
+\subsection{Time--crystalline substrate and emergent degrees of freedom}
+
+In TCQS, the fundamental object is a time-crystalline substrate $\mathcal{S}$ whose microscopic degrees of freedom update via a discrete, periodic map
+\begin{equation}
+    U_{\mathrm{Floquet}} : \mathcal{S} \to \mathcal{S},
+\end{equation}
+with a fundamental time step $\Delta t$. This update rule preserves a minimal coherence density $C_0$ of the vacuum, so that even ``empty space'' is a non-trivial coherent pattern.
+
+The relevant assumptions here are:
+\begin{itemize}
+    \item At suitable scales, the microscopic update can be coarse-grained to an effective linear operator acting on a vector space of \emph{coherence patterns}.
+    \item In metastable regimes, one can define a configuration space (e.g.\ positions of effective particles) such that a complex function $\psi(\mathbf{x})$ encodes the projection of the global coherence pattern onto that configuration.
+\end{itemize}
+In other words, $\psi(\mathbf{x},t)$ is a coarse-grained description of how the global coherence of $\mathcal{S}$ is distributed over emergent configurations $\mathbf{x}$ at update step $t$.
+
+\subsection{From discrete updates to continuous-time generators}
+
+Let $\ket{\Psi(t)}$ denote the abstract coherence state of the substrate at coarse-grained time $t = n\Delta t$. The Floquet update has the form
+\begin{equation}
+    \ket{\Psi(t+\Delta t)}
+    = \hat{U}_{\mathrm{eff}} \ket{\Psi(t)},
+\end{equation}
+with $\hat{U}_{\mathrm{eff}}$ unitary (coherence is preserved). For sufficiently small $\Delta t$ we can write
+\begin{equation}
+    \hat{U}_{\mathrm{eff}} = e^{-\frac{i}{\hbar}\hat{H}_{\mathrm{eff}}\Delta t},
+\end{equation}
+for some effective self-adjoint generator $\hat{H}_{\mathrm{eff}}$.
+
+Taking the continuous-time limit and differentiating,
+\begin{equation}
+    i\hbar \frac{d}{dt}\ket{\Psi(t)}
+    = \hat{H}_{\mathrm{eff}}\ket{\Psi(t)}.
+\end{equation}
+In the position representation, with
+\begin{equation}
+    \psi(\mathbf{x},t) = \braket{\mathbf{x}}{\Psi(t)},
+\end{equation}
+this becomes the standard-looking Schr\"odinger equation
+\begin{equation}
+    i\hbar \frac{\partial}{\partial t}\psi(\mathbf{x},t)
+    = \hat{H}_{\mathrm{eff}}\psi(\mathbf{x},t),
+    \label{eq:TDSE_eff}
+\end{equation}
+but now $\psi$ is explicitly a coherence amplitude and $\hat{H}_{\mathrm{eff}}$ is the coarse-grained generator of substrate dynamics in this metastable sector.
+
+\subsection{Recovering the usual non-relativistic Hamiltonian}
+
+For an effective single-particle sector, locality and Galilean symmetry of the substrate imply that $\hat{H}_{\mathrm{eff}}$ takes the familiar form
+\begin{equation}
+    \hat{H}_{\mathrm{eff}}
+    = -\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{x},t),
+    \label{eq:Heff_standard}
+\end{equation}
+where:
+\begin{itemize}
+    \item $m$ is an effective inertial mass parameter arising from how coherent excitations propagate through $\mathcal{S}$.
+    \item $V(\mathbf{x},t)$ is an effective potential encoding how coherence density interacts with other excitations or background patterns in the substrate.
+\end{itemize}
+Plugging \eqref{eq:Heff_standard} into \eqref{eq:TDSE_eff}, we recover the usual Schr\"odinger equation but with a TCQS interpretation for every symbol.
+
+\section{Coherence Density, Gradients, and Local Conservation}
+
+\subsection{Coherence density and its conservation}
+
+In TCQS language, the primary scalar field is the \emph{coherence density}
+\begin{equation}
+    C(\mathbf{x},t) = \abs{\psi(\mathbf{x},t)}^2,
+\end{equation}
+which measures how much of the substrate's global coherence is allocated to the emergent configuration $\mathbf{x}$ at time $t$.
+
+Equation \eqref{eq:TDSE_eff} implies a local conservation law for $C$. Starting from
+\begin{equation}
+    i\hbar \frac{\partial \psi}{\partial t}
+    = \left(-\frac{\hbar^2}{2m}\nabla^2 + V\right)\psi,
+\end{equation}
+and its complex conjugate
+\begin{equation}
+    -i\hbar \frac{\partial \psi^*}{\partial t}
+    = \left(-\frac{\hbar^2}{2m}\nabla^2 + V\right)\psi^*,
+\end{equation}
+we compute
+\begin{align}
+    \frac{\partial C}{\partial t}
+    &= \frac{\partial}{\partial t}(\psi^*\psi) \nonumber\\
+    &= \left(\frac{\partial \psi^*}{\partial t}\right)\psi
+       + \psi^*\left(\frac{\partial \psi}{\partial t}\right) \nonumber\\
+    &= \frac{1}{i\hbar}\left[
+        -\frac{\hbar^2}{2m}(\nabla^2\psi^*)\psi
+        + \frac{\hbar^2}{2m}\psi^*(\nabla^2\psi)
+    \right].
+\end{align}
+This can be rewritten as
+\begin{equation}
+    \frac{\partial C}{\partial t}
+    + \nabla \cdot \mathbf{J}_C = 0,
+    \label{eq:coherence_continuity}
+\end{equation}
+with the \emph{coherence current}
+\begin{equation}
+    \mathbf{J}_C(\mathbf{x},t)
+    = \frac{\hbar}{m}\,\mathrm{Im}\!\left[\psi^*(\mathbf{x},t)\nabla\psi(\mathbf{x},t)\right].
+    \label{eq:coherence_current}
+\end{equation}
+Equation \eqref{eq:coherence_continuity} states that coherence density is locally conserved: it can only flow between neighboring configurations, never created or destroyed by the effective Schr\"odinger dynamics.
+
+\subsection{Coherence velocity and gradients}
+
+Where $C>0$, we can define a \emph{coherence velocity field}
+\begin{equation}
+    \mathbf{v}_C(\mathbf{x},t)
+    := \frac{\mathbf{J}_C(\mathbf{x},t)}{C(\mathbf{x},t)}.
+\end{equation}
+In regions where the field is smooth, $\mathbf{v}_C$ can be seen as the velocity of coherence flow through configuration space.
+
+In TCQS terms:
+\begin{itemize}
+    \item The Laplacian in $\hat{H}_{\mathrm{eff}}$ encodes how strong \emph{coherence gradients} couple neighboring configurations.
+    \item The divergence $\nabla\cdot \mathbf{J}_C$ tells us how much coherence flows in or out of a small volume of configuration space.
+\end{itemize}
+Thus, the Schr\"odinger equation is equivalent (in modulus) to a law for the redistribution of coherence density, governed by local coherence gradients in $\psi$.
+
+\section{Polar Decomposition: Phase, Quantum Potential, and Coherence Geometry}
+
+\subsection{Coherence amplitude in polar form}
+
+A particularly natural TCQS rewriting uses the polar decomposition
+\begin{equation}
+    \psi(\mathbf{x},t)
+    = \sqrt{C(\mathbf{x},t)}\,
+      e^{\frac{i}{\hbar}S(\mathbf{x},t)},
+    \label{eq:psi_polar}
+\end{equation}
+where:
+\begin{itemize}
+    \item $C(\mathbf{x},t)$ is the coherence density,
+    \item $S(\mathbf{x},t)$ is a real-valued \emph{coherence phase field} or action-like field.
+\end{itemize}
+Inserting \eqref{eq:psi_polar} into the Schr\"odinger equation and separating real and imaginary parts yields two coupled real equations.
+
+\subsection{Continuity equation from the imaginary part}
+
+The imaginary part reproduces the coherence continuity equation \eqref{eq:coherence_continuity}. The coherence current becomes
+\begin{equation}
+    \mathbf{J}_C
+    = \frac{C}{m}\nabla S,
+\end{equation}
+so that the coherence velocity is
+\begin{equation}
+    \mathbf{v}_C
+    = \frac{\nabla S}{m}.
+\end{equation}
+This is the same relation between phase gradient and velocity as in classical Hamilton--Jacobi theory, but now applied to the flow of coherence density on configuration space.
+
+\subsection{Quantum Hamilton--Jacobi equation with coherence potential}
+
+The real part of the Schr\"odinger equation in the polar representation yields a modified Hamilton--Jacobi equation:
+\begin{equation}
+    \frac{\partial S}{\partial t}
+    + \frac{(\nabla S)^2}{2m}
+    + V(\mathbf{x},t)
+    + Q_C(\mathbf{x},t) = 0,
+    \label{eq:QHJ_TCQS}
+\end{equation}
+where the \emph{coherence quantum potential} is
+\begin{equation}
+    Q_C(\mathbf{x},t)
+    = -\frac{\hbar^2}{2m}
+      \frac{\nabla^2 \sqrt{C(\mathbf{x},t)}}{\sqrt{C(\mathbf{x},t)}}.
+    \label{eq:QC_definition}
+\end{equation}
+This is structurally identical to the classical Hamilton--Jacobi equation plus an extra term $Q_C$ that depends purely on the \emph{shape} and gradients of the coherence density $C$.
+
+Key points in TCQS language:
+\begin{itemize}
+    \item In regions where $C$ is nearly uniform (small coherence gradients), $Q_C$ is small and the effective dynamics of $S$ approaches classical Hamilton--Jacobi dynamics.
+    \item Where $C$ has strong structure and sharp coherence gradients, $Q_C$ is large and coherence flows deviate significantly from classical trajectories.
+    \item The pair of equations
+    \begin{equation}
+        \begin{cases}
+            \displaystyle \frac{\partial C}{\partial t}
+            + \nabla \cdot \left( C \frac{\nabla S}{m} \right) = 0,\\[0.4cm]
+            \displaystyle \frac{\partial S}{\partial t}
+            + \frac{(\nabla S)^2}{2m}
+            + V + Q_C = 0,
+        \end{cases}
+        \label{eq:TCQS_pair}
+    \end{equation}
+    is exactly equivalent to the Schr\"odinger equation but explicitly splits dynamics into:
+    \begin{enumerate}
+        \item a \emph{coherence-flow equation} for $C$,
+        \item a \emph{phase / action equation} for $S$ with a coherence-dependent correction $Q_C$.
+    \end{enumerate}
+\end{itemize}
+
+\subsection{Coherence stiffness and informational structure}
+
+The quantity $Q_C$ can be interpreted as a measure of how ``stiff'' the coherence density is with respect to spatial deformations:
+\begin{itemize}
+    \item If $C$ is smooth, $\nabla^2\sqrt{C}$ is small and the coherence distribution resists rapid changes; the dynamics is close to the classical one determined by $V$.
+    \item If $C$ has fine structure (rapid coherence gradients), $Q_C$ is large and the substrate strongly adjusts the phase field $S$ to maintain global coherence.
+\end{itemize}
+In this sense, $Q_C$ captures how the internal coherence geometry of $\mathcal{S}$ feeds back into the effective motion of excitations. It is a functional of $C$ encoding the informational structure of the coherence pattern, rather than any geometric curvature of spacetime.
+
+\section{Imaginary-Time Diffusion and Coherence Gradients}
+
+\subsection{Schr\"odinger as oscillatory diffusion of coherence}
+
+For a free excitation, $V=0$, the Schr\"odinger equation
+\begin{equation}
+    i\hbar \frac{\partial \psi}{\partial t}
+    = -\frac{\hbar^2}{2m}\nabla^2\psi
+\end{equation}
+formally resembles a diffusion equation in imaginary time. If we set $t = -i\tau$ and $D = \hbar/2m$, we obtain
+\begin{equation}
+    \frac{\partial \psi}{\partial \tau}
+    = D\nabla^2\psi,
+\end{equation}
+which is a classical diffusion equation for the complex field $\psi$.
+
+In TCQS language, this suggests:
+\begin{itemize}
+    \item The Laplacian term drives local smoothing of coherence gradients, analogous to diffusion, but with oscillatory phases rather than real dissipation.
+    \item Coherence is redistributed across neighboring configurations in a way that preserves the global norm of $\psi$ (unitarity), leading to interference instead of relaxation.
+\end{itemize}
+Thus, the Schr\"odinger equation can be viewed as a law for \emph{oscillatory diffusion of coherence} on configuration space, constrained by the time-crystalline structure of $\mathcal{S}$.
+
+\subsection{Coherence gradients vs curvature}
+
+In many classical theories, forces are associated with curvature or deformation of geometric structures. In the TCQS rewriting of Schr\"odinger dynamics, the key objects are \emph{coherence gradients}:
+\begin{itemize}
+    \item Gradients of the phase field $\nabla S$ determine the local coherence velocity $\mathbf{v}_C$.
+    \item Gradients and Laplacians of $\sqrt{C}$ enter the coherence potential $Q_C$.
+\end{itemize}
+Everything in the Schr\"odinger sector is expressed in terms of these coherence gradients; there is no need to introduce any curvature of spacetime at this level. The effective ``geometry'' relevant for quantum dynamics is the geometry of coherence density and phase on the emergent configuration space.
+
+\section{Many-Body Coherence Fields}
+
+\subsection{Coherence density in configuration space}
+
+For $N$ effective excitations, the coherence amplitude lives in a configuration space of dimension $3N$:
+\begin{equation}
+    \psi(\mathbf{x}_1,\dots,\mathbf{x}_N,t),
+\end{equation}
+with coherence density
+\begin{equation}
+    C(\mathbf{x}_1,\dots,\mathbf{x}_N,t)
+    = \abs{\psi(\mathbf{x}_1,\dots,\mathbf{x}_N,t)}^2.
+\end{equation}
+The Schr\"odinger equation becomes
+\begin{equation}
+    i\hbar \frac{\partial \psi}{\partial t}
+    = \left[
+        \sum_{k=1}^N \left(
+            -\frac{\hbar^2}{2m_k}\nabla_k^2
+        \right)
+        + V(\mathbf{x}_1,\dots,\mathbf{x}_N,t)
+      \right]\psi.
+\end{equation}
+Polar decomposition and the coherence-continuity / quantum-Hamilton--Jacobi pair generalize directly to this $3N$-dimensional configuration space:
+\begin{equation}
+    \psi = \sqrt{C}\,e^{\frac{i}{\hbar}S},
+\end{equation}
+with a coherence potential $Q_C$ now built from $\nabla_k^2 \sqrt{C}$ in configuration space.
+
+\subsection{Entanglement as shared coherence pattern}
+
+Within TCQS, entanglement corresponds to coherence patterns $C(\mathbf{x}_1,\dots,\mathbf{x}_N,t)$ that are not factorizable into products of single-excitation densities. The global coherence density is a structured pattern in the configuration space of all excitations simultaneously; local measurements correspond to sampling this global coherence according to the Born weighting.
+
+Again, the Schr\"odinger equation governs how this multi-excitation coherence pattern flows and reshapes, driven by coherence gradients and the effective potential $V$.
+
+\section{Classical Limit and Measurement in Coherence Language}
+
+\subsection{Classical trajectories as coherence flows}
+
+When $Q_C$ is negligible (small coherence gradients, large scales, or $\hbar\to 0$), the coherence potential drops out and the phase equation \eqref{eq:QHJ_TCQS} reduces to the classical Hamilton--Jacobi equation. In this regime:
+\begin{itemize}
+    \item Coherence density $C$ forms narrow packets in configuration space.
+    \item The center of coherence flows approximately along classical trajectories, as expressed by Ehrenfest-type relations for expectation values.
+\end{itemize}
+Thus, classical motion is recovered as a special regime where the internal coherence geometry of $\mathcal{S}$ becomes effectively smooth and the quantum corrections from $Q_C$ vanish.
+
+\subsection{Born rule as normalized coherence density}
+
+In the TCQS interpretation, the Born rule
+\begin{equation}
+    P(\text{configuration in region } R)
+    = \int_R C(\mathbf{x},t)\, d^3x
+\end{equation}
+is simply a statement that once we restrict attention to a given effective sector, we normalize the coherence density $C$ to one and read it as a probability measure.
+
+Conceptually:
+\begin{itemize}
+    \item Coherence density $C$ is primary; it quantifies how strongly the substrate is aligned with each configuration.
+    \item Probability is a secondary concept obtained by normalizing $C$ over the set of configurations we consider.
+\end{itemize}
+The Schr\"odinger equation then guarantees that this normalization is preserved in time, because it preserves the total coherence norm $\int C\, d^3x$.
+
+\section{Summary: Schr\"odinger as a Law for Coherence on $\mathcal{S}$}
+
+We have rewritten the standard Schr\"odinger equation in the vocabulary of the Time--Crystalline Quantum Substrate, with the following key identifications:
+\begin{itemize}
+    \item The ``wave function'' $\psi(\mathbf{x},t)$ becomes a \emph{coherence amplitude} defined on an emergent configuration space, arising from a coarse-graining of the global coherence pattern of $\mathcal{S}$.
+    \item The modulus squared $C(\mathbf{x},t) = \abs{\psi(\mathbf{x},t)}^2$ is the \emph{coherence density} assigned to configuration $\mathbf{x}$ at time $t$.
+    \item The Schr\"odinger equation arises from the continuous-time limit of a Floquet-like update rule on $\mathcal{S}$ and is generated by an effective Hamiltonian $H_{\mathrm{eff}}$ that encodes how coherence flows through configuration space.
+    \item In polar form, Schr\"odinger dynamics is exactly equivalent to:
+    \begin{enumerate}
+        \item a continuity equation for coherence density $C$,
+        \item a quantum Hamilton--Jacobi equation for a phase field $S$, with a coherence-dependent potential $Q_C[C]$ built from coherence gradients.
+    \end{enumerate}
+    \item The Laplacian and $Q_C$ encode the way coherence gradients are redistributed; everything is expressed in terms of coherence flows and gradients without invoking curvature of spacetime.
+\end{itemize}
+
+In this TCQS-compatible picture, the Schr\"odinger equation is no longer a mysterious rule for an abstract wave function. It is the unique local, linear, unitary law for how coherence density and phase patterns on a time-crystalline substrate evolve, given an effective Hamiltonian. The usual probabilistic interpretation emerges as a normalization of coherence density, and the quantum-classical transition corresponds to regimes where the coherence potential $Q_C$ becomes negligible and coherence flows follow classical Hamilton--Jacobi dynamics.
+
+\vspace{0.5cm}
+\noindent\textbf{Note.} This paper restricts itself to the non-relativistic sector and to configuration-space coherence flows. Extensions to relativistic fields, gravitational coherence gradients, and full TCQS thermodynamic geometry can be built on top of the same coherence-density and phase-field formalism used here.
+
+
+\begin{abstract}
+In the usual textbook approach, the Schr\"odinger equation is either postulated or loosely motivated from de~Broglie relations, leaving opaque why this particular evolution law governs quantum systems. In the Time-Crystalline Quantum Substrate (TCQS) framework, physical systems are metastable patterns of coherence living on an underlying time-crystalline, self-updating substrate. This paper rewrites and reinterprets the Schr\"odinger equation entirely in that language. First, we recall how classical Hamilton--Jacobi theory appears as the coherence-blind limit of dynamics. Then we show how the standard time-dependent and time-independent Schr\"odinger equations emerge as the local, linear, unitary evolution of complex coherence amplitudes associated with a metastable sector, obtained as a projection of the global substrate Hamiltonian $H_{\text{tot}}$. Finally, using the polar representation of the wave function, we reinterpret the quantum potential as a higher-order coherence-gradient correction and recast Schr\"odinger evolution as a hydrodynamic flow of a coherence density on configuration space. In this picture, the Schr\"odinger equation is not an arbitrary rule but the unique effective description of coherence flows for a given emergent Hamiltonian extracted from the TCQS.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction: From Particles to Coherence Patterns}
+
+In standard nonrelativistic quantum mechanics, the dynamics of a system with Hamiltonian $\hat{H}$ is governed by the time-dependent Schr\"odinger equation
+\begin{equation}
+    i\hbar \frac{\partial}{\partial t} \psi(\mathbf{x},t)
+    = \hat{H}\,\psi(\mathbf{x},t),
+    \label{eq:TDSE}
+\end{equation}
+with, for a single particle in a potential $V(\mathbf{x},t)$,
+\begin{equation}
+    \hat{H} = -\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{x},t).
+    \label{eq:H_standard}
+\end{equation}
+Stationary states satisfy the time-independent Schr\"odinger equation
+\begin{equation}
+    \hat{H}\,\psi(\mathbf{x}) = E\,\psi(\mathbf{x}).
+    \label{eq:TISE}
+\end{equation}
+
+In that usual story, $\psi$ is introduced as a ``wave function'' and \eqref{eq:TDSE} is essentially postulated. From the TCQS point of view, this is incomplete: it hides the deeper structure that actually makes such an equation natural.
+
+\medskip
+
+In the TCQS framework, we assume:
+\begin{itemize}
+    \item A fundamental time-crystalline substrate $\mathcal{S}$ whose microscopic degrees of freedom update via a discrete, Floquet-like rule. The substrate maintains a nonzero \emph{baseline coherence density} $C_{\text{vac}}$.
+    \item Physical ``systems'' are \emph{metastable coherence patterns} on $\mathcal{S}$: localized regions where the coherence density and its gradients organize into relatively stable, low-dimensional dynamics.
+    \item A global Hamiltonian $H_{\text{tot}}$ generates the effective dynamics of $\mathcal{S}$; familiar Hamiltonians $\hat{H}$ arise as projections of $H_{\text{tot}}$ onto particular metastable sectors.
+\end{itemize}
+
+In this language, the wave function $\psi$ is not a mysterious object attached to a point particle; it is a \emph{coarse-grained coherence amplitude} associated with a metastable sector of the substrate. Its modulus squared $\rho = |\psi|^2$ tracks the \emph{relative coherence density profile} of that sector, normalized inside an effective configuration space.
+
+The goal of this paper is to show how the familiar Schr\"odinger equation can be re-read as:
+\begin{enumerate}
+    \item The effective, linear, unitary evolution law for complex coherence amplitudes induced by $H_{\text{tot}}$ when restricted to a metastable sector.
+    \item A coupled system describing (i) the conservation of a coherence density and (ii) the evolution of an action-like phase, with an additional term expressing higher-order \emph{coherence gradients}.
+\end{enumerate}
+
+We proceed in three steps:
+\begin{description}
+    \item[1.] Recall the Hamilton--Jacobi formulation of classical mechanics as the coherence-blind limit.
+    \item[2.] Impose linearity, unitarity, and energy--momentum compatibility on a metastable sector to obtain the Schr\"odinger equation.
+    \item[3.] Rewrite Schr\"odinger dynamics in polar form to make the coherence-gradient structure explicit and connect it to the TCQS vocabulary of coherence density and its gradients.
+\end{description}
+
+\section{Classical Hamilton--Jacobi Dynamics as a Coherence-Blind Limit}
+
+\subsection{Standard Hamiltonian picture}
+
+Consider a single particle of mass $m$ in a potential $V(\mathbf{x},t)$. Classical Newtonian dynamics reads
+\begin{equation}
+    m\ddot{\mathbf{x}}(t) = -\nabla V(\mathbf{x},t).
+\end{equation}
+Hamiltonian mechanics recasts this as a first-order system in phase space $(\mathbf{x},\mathbf{p})$:
+\begin{align}
+    \dot{\mathbf{x}} &= \frac{\partial H}{\partial \mathbf{p}}, \\
+    \dot{\mathbf{p}} &= -\frac{\partial H}{\partial \mathbf{x}},
+\end{align}
+with the classical Hamiltonian
+\begin{equation}
+    H(\mathbf{x},\mathbf{p},t) = \frac{\mathbf{p}^2}{2m} + V(\mathbf{x},t).
+\end{equation}
+In the TCQS picture, this description is \emph{coherence-blind}: it tracks an effective trajectory in a low-dimensional manifold but ignores the underlying coherence structure of the substrate that allows such a trajectory to emerge.
+
+\subsection{Hamilton--Jacobi equation}
+
+Hamilton--Jacobi theory condenses the classical dynamics into a scalar function $S(\mathbf{x},t)$ (Hamilton's principal function) satisfying
+\begin{equation}
+    \frac{\partial S}{\partial t}(\mathbf{x},t)
+    + \frac{\bigl(\nabla S(\mathbf{x},t)\bigr)^2}{2m}
+    + V(\mathbf{x},t) = 0.
+    \label{eq:HJ}
+\end{equation}
+The momentum field is
+\begin{equation}
+    \mathbf{p}(\mathbf{x},t) = \nabla S(\mathbf{x},t).
+\end{equation}
+
+Within TCQS, \eqref{eq:HJ} can be read as the limit where:
+\begin{itemize}
+    \item The underlying coherence density is effectively homogeneous on the scales of interest;
+    \item Higher-order coherence-gradient corrections are negligible;
+    \item The metastable sector behaves like a sharp, classical trajectory.
+\end{itemize}
+Later, we will see that the Schr\"odinger equation reproduces \eqref{eq:HJ} plus an additional term that precisely encodes the influence of coherence gradients.
+
+\section{Quantum Postulates as Constraints on Coherence Flows}
+
+\subsection{Metastable sectors and effective Hilbert spaces}
+
+In TCQS, we assume a fundamental substrate $\mathcal{S}$ with a huge configuration space of microstates. A \emph{metastable sector} is a subset of configurations where:
+\begin{itemize}
+    \item The time-crystalline update rule of $\mathcal{S}$ produces approximately closed, slow dynamics;
+    \item One can define a reduced description in terms of a state vector $\ket{\psi}$ in an effective Hilbert space $\mathcal{H}_{\text{eff}}$;
+    \item The global Hamiltonian $H_{\text{tot}}$ induces an effective Hamiltonian $\hat{H}$ acting on $\mathcal{H}_{\text{eff}}$ via a projection $P_{\text{eff}}$:
+    \begin{equation}
+        \hat{H} = P_{\text{eff}} H_{\text{tot}} P_{\text{eff}}.
+    \end{equation}
+\end{itemize}
+
+The \emph{wave function} in position representation
+\begin{equation}
+    \psi(\mathbf{x},t) = \braket{\mathbf{x}}{\psi(t)}
+\end{equation}
+is thus a coarse-grained amplitude describing how the substrate's coherence in the chosen sector is distributed over an emergent configuration space labeled by $\mathbf{x}$.
+
+\subsection{Coherence amplitudes, linearity, and unitarity}
+
+The minimal structural requirements for dynamics in $\mathcal{H}_{\text{eff}}$ are:
+\begin{enumerate}
+    \item \textbf{Linearity:} Coherence amplitudes add. If $\ket{\psi_1}$ and $\ket{\psi_2}$ are allowed configurations in the same sector, so is $a\ket{\psi_1} + b\ket{\psi_2}$. This reflects the linear structure of the metastable sector of $\mathcal{S}$.
+    \item \textbf{Unitarity:} The total normalized coherence in the sector is conserved. If
+    \begin{equation}
+        \rho(\mathbf{x},t) = |\psi(\mathbf{x},t)|^2,
+    \end{equation}
+    then
+    \begin{equation}
+        \int \rho(\mathbf{x},t)\,d^3x = 1
+    \end{equation}
+    for all $t$. Here $\rho$ is interpreted as a \emph{relative coherence density profile} within that metastable sector, not the absolute coherence density of the whole substrate.
+    \item \textbf{Time-translation structure:} The effective evolution between $t$ and $t+\Delta t$ is given by a one-parameter family of unitary operators
+    \begin{equation}
+        \hat{U}(t) = e^{-\frac{i}{\hbar}\hat{H}t},
+    \end{equation}
+    where $\hat{H}$ is self-adjoint and encodes how $H_{\text{tot}}$ acts within the sector.
+\end{enumerate}
+
+By Stone's theorem, these assumptions force the state to satisfy
+\begin{equation}
+    i\hbar \frac{d}{dt}\ket{\psi(t)} = \hat{H}\ket{\psi(t)}.
+\end{equation}
+In the position basis, this becomes
+\begin{equation}
+    i\hbar \frac{\partial}{\partial t}\psi(\mathbf{x},t)
+    = \hat{H}\,\psi(\mathbf{x},t),
+\end{equation}
+which is precisely the abstract form of the time-dependent Schr\"odinger equation \eqref{eq:TDSE}.
+
+\subsection{Energy--momentum compatibility and emergent dispersion}
+
+For a single emergent particle, the substrate must reproduce the de~Broglie dispersion relation at low energies:
+\begin{equation}
+    E = \frac{\mathbf{p}^2}{2m} + V(\mathbf{x},t).
+\end{equation}
+At the level of coherence amplitudes, we require that free, translationally invariant coherence patterns be representable as plane waves
+\begin{equation}
+    \psi(\mathbf{x},t) \propto e^{i(\mathbf{k}\cdot\mathbf{x} - \omega t)},
+\end{equation}
+with $\mathbf{p} = \hbar \mathbf{k}$ and $E = \hbar\omega$. For such a state to satisfy
+\begin{equation}
+    i\hbar \partial_t \psi = \hat{H}\psi,
+\end{equation}
+and for $\hat{H}$ to be local and rotationally invariant, we are forced into
+\begin{equation}
+    \hat{H}_{\text{free}} = -\frac{\hbar^2}{2m}\nabla^2.
+\end{equation}
+Adding an emergent potential $V(\mathbf{x},t)$ (which in TCQS language is a manifestation of the substrate coherence geometry seen from that sector) gives
+\begin{equation}
+    \hat{H} = -\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{x},t),
+\end{equation}
+and thus the explicit Schr\"odinger equation
+\begin{equation}
+    i\hbar \frac{\partial}{\partial t}\psi(\mathbf{x},t)
+    = \left[-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{x},t)\right]\psi(\mathbf{x},t).
+    \label{eq:TDSE_TCQS}
+\end{equation}
+
+\section{Schr\"odinger Equation as Coherence-Density Dynamics}
+
+\subsection{Relative coherence density and current}
+
+Define
+\begin{equation}
+    \rho(\mathbf{x},t) = |\psi(\mathbf{x},t)|^2.
+\end{equation}
+From \eqref{eq:TDSE_TCQS} and its complex conjugate, one obtains the usual continuity equation
+\begin{equation}
+    \frac{\partial \rho}{\partial t}
+    + \nabla\cdot\mathbf{j} = 0,
+    \label{eq:continuity}
+\end{equation}
+with probability (coherence) current
+\begin{equation}
+    \mathbf{j}(\mathbf{x},t)
+    = \frac{\hbar}{m}\,\mathrm{Im}\bigl[\psi^*(\mathbf{x},t)\nabla\psi(\mathbf{x},t)\bigr].
+    \label{eq:j}
+\end{equation}
+In the TCQS interpretation:
+\begin{itemize}
+    \item $\rho$ is the \emph{relative coherence density profile} of the chosen metastable sector, normalized so that $\int \rho\,d^3x = 1$.
+    \item The substrate itself has a nonzero baseline coherence density $C_{\text{vac}}$; the sector coherence profile is a structured modulation on top of that baseline.
+    \item $\mathbf{j}$ is the induced \emph{coherence flow} in the emergent configuration space: it tells us how the relative coherence weight shifts between configurations.
+\end{itemize}
+Equation \eqref{eq:continuity} is therefore a local conservation law for coherence density within the metastable sector.
+
+We may define a velocity field in configuration space by
+\begin{equation}
+    \mathbf{v}(\mathbf{x},t)
+    = \frac{\mathbf{j}(\mathbf{x},t)}{\rho(\mathbf{x},t)},
+\end{equation}
+wherever $\rho>0$. From \eqref{eq:j}, we will see below that $\mathbf{v}$ can be written as a gradient of an action-like phase.
+
+\subsection{Time-independent equation and metastable eigenpatterns}
+
+When the effective potential $V(\mathbf{x},t)=V(\mathbf{x})$ is independent of time, we can look for separable solutions
+\begin{equation}
+    \psi(\mathbf{x},t)
+    = \phi(\mathbf{x})e^{-\frac{i}{\hbar}Et}.
+\end{equation}
+Inserting into \eqref{eq:TDSE_TCQS} gives
+\begin{equation}
+    E\,\phi(\mathbf{x})
+    = \left[-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{x})\right]\phi(\mathbf{x}),
+\end{equation}
+i.e.\ the time-independent Schr\"odinger equation \eqref{eq:TISE}. In the TCQS picture:
+\begin{itemize}
+    \item Each eigenfunction $\phi_n(\mathbf{x})$ is a stationary \emph{coherence eigenpattern} of the metastable sector under the projected Hamiltonian $\hat{H}$.
+    \item The eigenvalue $E_n$ is the corresponding emergent energy scale associated with how that pattern couples to $H_{\text{tot}}$.
+    \item A general state is a superposition of such coherence eigenpatterns, each accumulating phase $e^{-iE_nt/\hbar}$ in time.
+\end{itemize}
+
+\section{Polar Decomposition: Quantum Hamilton--Jacobi and Coherence Gradients}
+
+\subsection{Polar form of the wave function}
+
+To make coherence gradients explicit, we write the wave function in polar form:
+\begin{equation}
+    \psi(\mathbf{x},t)
+    = \sqrt{\rho(\mathbf{x},t)}\,\exp\!\left[\frac{i}{\hbar}S(\mathbf{x},t)\right],
+    \label{eq:polar}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\rho(\mathbf{x},t)$ is the relative coherence density profile,
+    \item $S(\mathbf{x},t)$ is a real phase field with dimensions of action.
+\end{itemize}
+Insert \eqref{eq:polar} into \eqref{eq:TDSE_TCQS} and separate real and imaginary parts.
+
+\subsection{Continuity equation and coherence velocity}
+
+The imaginary part reproduces the continuity equation \eqref{eq:continuity}, but now the current \eqref{eq:j} becomes
+\begin{equation}
+    \mathbf{j} = \frac{\rho}{m}\nabla S,
+\end{equation}
+so that
+\begin{equation}
+    \mathbf{v}(\mathbf{x},t) = \frac{\nabla S(\mathbf{x},t)}{m}.
+\end{equation}
+This is structurally identical to the classical relation $\mathbf{p} = m\mathbf{v} = \nabla S$ in Hamilton--Jacobi theory, but now:
+\begin{itemize}
+    \item $S$ is not just a classical action; it is the phase field controlling how the complex coherence amplitude oscillates in time and space for the given metastable sector.
+    \item $\mathbf{v}$ is the \emph{coherence flow velocity} in configuration space: it tells how the relative coherence density moves along emergent trajectories.
+\end{itemize}
+
+\subsection{Quantum Hamilton--Jacobi equation with a coherence-gradient term}
+
+The real part of the Schr\"odinger equation in the polar representation yields
+\begin{equation}
+    \frac{\partial S}{\partial t}
+    + \frac{(\nabla S)^2}{2m}
+    + V(\mathbf{x},t)
+    + Q(\mathbf{x},t) = 0,
+    \label{eq:QHJ}
+\end{equation}
+where
+\begin{equation}
+    Q(\mathbf{x},t)
+    = -\frac{\hbar^2}{2m}
+      \frac{\nabla^2 \sqrt{\rho(\mathbf{x},t)}}{\sqrt{\rho(\mathbf{x},t)}}
+    \label{eq:Qpotential}
+\end{equation}
+is the \emph{quantum potential}. Comparing \eqref{eq:QHJ} with the classical Hamilton--Jacobi equation \eqref{eq:HJ}, we see that the only new ingredient is $Q$.
+
+In TCQS language:
+\begin{itemize}
+    \item The first three terms in \eqref{eq:QHJ} reproduce the classical, coherence-blind energy balance.
+    \item The additional term $Q[\rho]$ encodes the effect of \emph{coherence gradients} on the effective dynamics of $S$.
+    \item Specifically, $Q$ depends on second derivatives of $\sqrt{\rho}$; it becomes important where the coherence density profile has strong spatial structure (nodes, interference fringes, sharp localization).
+\end{itemize}
+We can thus view $Q$ as a higher-order \emph{coherence-gradient correction} to the classical Hamilton--Jacobi dynamics. When the coherence profile is smooth on the relevant scales, $Q$ is small and the dynamics approaches the classical limit.
+
+\subsection{Relation to coherence density on the substrate}
+
+The TCQS framework introduces a fundamental coherence scalar $C(p)$ defined on the substrate's microscopic sites $p\in\mathcal{S}$, with baseline $C_{\text{vac}}$ and local deviations corresponding to matter and fields. In the metastable sector considered here, the emergent position label $\mathbf{x}$ can be thought of as indexing effective patches of the substrate, and the relative coherence density $\rho(\mathbf{x},t)$ is related to the underlying $C$ by
+\begin{equation}
+    C(\mathbf{x},t)
+    \approx C_{\text{vac}} + \Delta C(\mathbf{x},t), \qquad
+    \Delta C(\mathbf{x},t) \propto \rho(\mathbf{x},t),
+\end{equation}
+after appropriate normalization and coarse-graining.
+
+The quantum potential $Q[\rho]$ then encodes how \emph{non-uniformities in the emergent coherence profile} feed back into the effective action $S$ that parametrizes the sector's dynamics. This is the TCQS-origin of interference, tunnelling and other quantum phenomena: they are the macroscopic manifestations of coherence-gradient corrections from the substrate.
+
+\section{Many-Body Coherence and Configuration-Space Flows}
+
+\subsection{$N$-particle sectors}
+
+For $N$ emergent particles, the metastable sector is described by a wave function
+\begin{equation}
+    \psi(\mathbf{x}_1,\dots,\mathbf{x}_N,t),
+\end{equation}
+and the Schr\"odinger equation becomes
+\begin{equation}
+    i\hbar \frac{\partial}{\partial t}\psi
+    = \left[
+        \sum_{k=1}^N
+        \left(
+            -\frac{\hbar^2}{2m_k}\nabla_k^2
+        \right)
+        + V(\mathbf{x}_1,\dots,\mathbf{x}_N,t)
+      \right]\psi.
+\end{equation}
+The relative coherence density is
+\begin{equation}
+    \rho(\mathbf{x}_1,\dots,\mathbf{x}_N,t)
+    = |\psi(\mathbf{x}_1,\dots,\mathbf{x}_N,t)|^2,
+\end{equation}
+and the polar decomposition
+\begin{equation}
+    \psi = \sqrt{\rho}\,e^{\frac{i}{\hbar}S}
+\end{equation}
+generalizes immediately:
+\begin{itemize}
+    \item $\rho$ is now a coherence density on a $3N$-dimensional emergent configuration space.
+    \item $S$ defines a $3N$-dimensional velocity field via $\nabla_k S / m_k$.
+    \item The quantum potential $Q[\rho]$ becomes a functional of $\rho$ in this higher-dimensional space, still encoding coherence-gradient corrections.
+\end{itemize}
+
+\subsection{Entanglement as structured coherence on $\mathcal{S}$}
+
+From the TCQS perspective, entanglement is simply the statement that the coherence density on the substrate does not factorize along naive ``particle'' labels. A product state
+\begin{equation}
+    \psi(\mathbf{x}_1,\dots,\mathbf{x}_N) = \prod_k \phi_k(\mathbf{x}_k)
+\end{equation}
+corresponds to a factorized coherence pattern, while an entangled state represents a non-factorized pattern: the coherence density on $\mathcal{S}$ linking the patches associated with different $\mathbf{x}_k$ is structured in a correlated way.
+
+The Schr\"odinger equation, in this setting, is the evolution law for these structured coherence patterns, constrained by the projected Hamiltonian $\hat{H}$ inherited from $H_{\text{tot}}$ and modified by coherence-gradient corrections through $Q$.
+
+\section{Classical Limit, Decoherence, and Emergent Trajectories}
+
+\subsection{Ehrenfest-like limit as smooth-coherence regime}
+
+Ehrenfest's theorem shows that, for standard quantum mechanics, expectation values of position and momentum approximately follow classical equations of motion when wave packets are narrow and potentials vary slowly. In the TCQS version, this corresponds to:
+\begin{itemize}
+    \item Coherence density $\rho$ sharply localized around a region of configuration space;
+    \item Coherence gradients sufficiently weak that $Q$ is negligible over the packet support;
+    \item The substrate update rule preserving the metastable sector over many cycles.
+\end{itemize}
+In that regime, \eqref{eq:QHJ} reduces to the classical Hamilton--Jacobi equation, and the center of the coherence packet follows an emergent trajectory that matches classical motion.
+
+\subsection{Decoherence as leakage of coherence from the sector}
+
+Interaction with additional degrees of freedom (other sectors of the substrate, environment, measurement devices) causes \emph{decoherence}: structured coherence initially confined in a small effective Hilbert space spreads into a larger sector of $\mathcal{S}$. In standard language, off-diagonal terms in a preferred basis are suppressed. From the TCQS point of view:
+\begin{itemize}
+    \item The effective coherence density $\rho$ in the chosen sector becomes more diffuse and less structured.
+    \item The quantum potential $Q[\rho]$ becomes small in most regions, so coherence-gradient corrections no longer significantly modify the classical-like dynamics for coarse-grained observables.
+    \item The emergent picture approaches a classical probabilistic description over an ensemble of trajectories.
+\end{itemize}
+The Schr\"odinger equation still holds at the global level (in a larger Hilbert space), but effective classicality emerges at the level of the reduced sector.
+
+\section{Summary and Outlook in TCQS Language}
+
+We can now summarize the reinterpreted Schr\"odinger equation in TCQS terms:
+
+\begin{itemize}
+    \item The fundamental object is a time-crystalline quantum substrate $\mathcal{S}$ with a global Hamiltonian $H_{\text{tot}}$ and a baseline coherence density $C_{\text{vac}}$.
+    \item A ``quantum system'' is a metastable coherence pattern---a sector of $\mathcal{S}$---whose dynamics can be captured by a state vector $\ket{\psi}$ in an effective Hilbert space $\mathcal{H}_{\text{eff}}$.
+    \item The effective Hamiltonian $\hat{H}$ is a projection of $H_{\text{tot}}$ onto this sector. The Schr\"odinger equation
+    \[
+        i\hbar\frac{\partial}{\partial t}\psi(\mathbf{x},t)
+        = \hat{H}\psi(\mathbf{x},t)
+    \]
+    is simply the linear, unitary evolution law for the sector's coherence amplitudes.
+    \item The modulus $\rho = |\psi|^2$ is a normalized \emph{relative coherence density profile} in emergent configuration space; the continuity equation expresses local conservation of this coherence within the sector.
+    \item Writing $\psi = \sqrt{\rho}\,e^{iS/\hbar}$ yields:
+    \begin{enumerate}
+        \item A continuity equation for $\rho$ (coherence density),
+        \item A modified Hamilton--Jacobi equation for $S$ with a quantum potential $Q[\rho]$ that encodes higher-order coherence-gradient corrections.
+    \end{enumerate}
+    \item In the limit of smooth coherence profiles (weak coherence gradients), $Q \to 0$ and the dynamics reduces to classical Hamilton--Jacobi theory: the coherence-blind limit.
+    \item For strongly structured coherence profiles (interference, nodes, superpositions), $Q$ is large, and coherence-gradient corrections dominate, giving rise to quintessentially quantum phenomena such as tunnelling and interference.
+\end{itemize}
+
+From this viewpoint, the Schr\"odinger equation is not a mysterious postulate, but:
+\begin{quote}
+    the unique, structurally constrained effective law governing how complex coherence amplitudes flow on an emergent configuration space, given a particular projection of the substrate Hamiltonian $H_{\text{tot}}$.
+\end{quote}
+
+In the broader TCQS program, this layer sits between:
+\begin{itemize}
+    \item The deeper description in terms of the time-crystalline update rule of $\mathcal{S}$ and its global coherence geometry (with coherence-density gradients ultimately responsible for emergent gravitational effects and spacetime structure),
+    \item And the macroscopic, decohered regime where classical trajectories, thermodynamic arrows of time, and gravitating matter distributions appear.
+\end{itemize}
+
+Future work, in this language, includes:
+\begin{enumerate}
+    \item Making explicit how the effective potential $V(\mathbf{x},t)$ arises from the substrate coherence geometry (e.g.\ as a low-energy limit of coherence-density gradients).
+    \item Embedding the Schr\"odinger layer into the TCQS thermodynamic geometry, connecting $Q[\rho]$ to coherence-based free-energy functionals.
+    \item Extending this treatment to relativistic sectors and field-theoretic regimes where the underlying time-crystalline update rule and the emergent coherence flows must be treated on equal footing.
+\end{enumerate}
+
+\end{document}
+

@@ -1,0 +1,150 @@
+\documentclass[11pt]{article}
+
+% --- Page & typography (tight) ---
+\usepackage[a4paper,margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black}
+\begin{document}
+\section{Coherence-Bounded Collapse and the TCQS Black-Hole Core}
+
+In classical general relativity, gravitational collapse of a massive star leads to the formation
+of a trapped region whose interior geometry inevitably evolves toward a curvature singularity.
+The Time–Crystalline Quantum Substrate (TCQS) replaces this unphysical divergence with a
+finite, maximally coherent phase of the substrate. Collapse terminates not because gravity
+ceases, but because the coherence-pressure of the substrate prevents further compaction.
+This produces a \emph{coherence-bounded core} of finite radius instead of a singular point.
+
+\subsection{Coherence Pressure vs. Gravitational Pressure}
+
+Let $\mathcal{C}(r)$ denote the coherence density of the substrate.  
+Gravitational collapse is driven inward by an effective interior pressure
+\begin{equation}
+    P_{\mathrm{grav}}(r) \sim \frac{GM^2}{r^4},
+\end{equation}
+while the substrate resists collapse through a coherence-pressure term
+\begin{equation}
+    P_{\mathrm{coh}}(r) = k \, \nabla^2 \mathcal{C}(r),
+\end{equation}
+where $k$ is the TCQS curvature–coherence coupling constant.
+
+Collapse halts when
+\begin{equation}
+    P_{\mathrm{grav}}(r_{\mathrm{core}}) 
+    = 
+    P_{\mathrm{coh}}(r_{\mathrm{core}}).
+\end{equation}
+
+\subsection{Maximal Coherence and Core Boundary}
+
+At the boundary of the core, the substrate reaches its maximum attainable coherence:
+\begin{equation}
+    \mathcal{C}(r_{\mathrm{core}}) = \mathcal{C}_{\mathrm{max}},
+\end{equation}
+and the gradient of coherence vanishes,
+\begin{equation}
+    \nabla \mathcal{C}(r_{\mathrm{core}}) = 0.
+\end{equation}
+
+The Laplacian therefore simplifies to
+\begin{equation}
+    \nabla^2 \mathcal{C}(r_{\mathrm{core}})
+    \simeq
+    \frac{\mathcal{C}_{\mathrm{max}}}{r_{\mathrm{core}}^2}.
+\end{equation}
+
+Balancing gravitational and coherence-pressure at the core boundary yields
+\begin{equation}
+    \frac{GM^2}{r_{\mathrm{core}}^4}
+    =
+    k \frac{\mathcal{C}_{\mathrm{max}}}{r_{\mathrm{core}}^2}.
+\end{equation}
+
+Solving for $r_{\mathrm{core}}$ gives the TCQS core-radius formula:
+\begin{equation}
+    r_{\mathrm{core}}
+    =
+    \left(
+        \frac{GM^2}{k \, \mathcal{C}_{\mathrm{max}}}
+    \right)^{1/2}.
+\end{equation}
+
+This replaces the classical singularity ($r=0$) with a finite, maximally coherent region.
+
+\subsection{Horizon–Core Ratio as a TCQS Invariant}
+
+The Schwarzschild event-horizon radius is
+\begin{equation}
+    r_{\mathrm{h}} = \frac{2GM}{c^2}.
+\end{equation}
+
+Thus the ratio of horizon size to core size becomes
+\begin{equation}
+    \frac{r_{\mathrm{h}}}{r_{\mathrm{core}}}
+    =
+    \frac{2}{c^2}
+    \sqrt{
+        k \, \mathcal{C}_{\mathrm{max}} \, GM
+    }.
+\end{equation}
+
+This dimensionless ratio is a TCQS cosmological invariant:  
+it encodes the depth of the spacetime ``well,'' the coherence-saturation scale,
+and the overall geometric profile of the collapse.
+
+\subsection{Spacetime Flow and the Interior Metric}
+
+Adopting the dynamical ``waterfall'' model of spacetime flow,
+the interior infall velocity of the substrate is modeled by
+\begin{equation}
+    v(r) = c \sqrt{\frac{r_{\mathrm{h}}}{r}},
+\end{equation}
+with the TCQS-imposed cutoff
+\begin{equation}
+    v(r_{\mathrm{core}}) = 0.
+\end{equation}
+
+This yields a modified Painlevé–Gullstrand metric for the non-singular interior:
+\begin{equation}
+    ds^2
+    =
+    -c^2 dt^2
+    +
+    \left( dr + v(r) \, dt \right)^2
+    +
+    r^2 d\Omega^2,
+\end{equation}
+where $v(r)$ remains finite everywhere and vanishes at the coherence-bounded core.
+
+This geometry ensures:
+\begin{itemize}
+    \item no curvature singularity,
+    \item finite maximal density,
+    \item a stable time-crystalline core,
+    \item and complete information preservation within the coherence structure.
+\end{itemize}
+
+\subsection{Information Capacity of the Core}
+
+The finite radius and finite coherence density imply a finite entropy:
+\begin{equation}
+    S_{\mathrm{core}}
+    =
+    \frac{\mathcal{C}_{\mathrm{max}}}{\ell_{\mathrm{P}}^3}
+    \, V_{\mathrm{core}},
+\end{equation}
+with
+\begin{equation}
+    V_{\mathrm{core}}
+    =
+    \frac{4\pi}{3}
+    r_{\mathrm{core}}^3.
+\end{equation}
+
+Thus the TCQS coherence-bounded core provides a natural resolution to the
+information paradox and eliminates the pathological infinities of classical collapse.
+\end{document}

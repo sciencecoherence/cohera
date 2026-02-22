@@ -1,0 +1,197 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{caption}
+
+\geometry{margin=1in}
+
+% -----------------------------------------------------------
+% Unified TCQS–FEP Expression (usable later in paper)
+% -----------------------------------------------------------
+
+% This is the main merged expression:
+%  \mathcal{F}_{TCQS} = \Phi[C(x)] + D_{KL}\big(q(\vartheta|\mu)\Vert p(\vartheta|x)\big)
+%
+% where Phi is substrate coherence potential
+% and the KL term is the FEP contribution.
+
+% -----------------------------------------------------------
+\title{\textbf{Coherence-Driven Active Inference in the Time-Crystalline Quantum Substrate}\\[4pt]
+\large{Unifying the Free-Energy Gradient of TCQS with the Free-Energy Principle of Friston}}
+\author{Julien Steff}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a unified theoretical framework showing that the Time-Crystalline Quantum Substrate (TCQS)—a coherence-driven informational substrate underlying physical reality—naturally generalizes Karl Friston’s Free-Energy Principle (FEP). We show that the \emph{free-energy gradient} of the TCQS corresponds to a coherence-maximizing trajectory of the universe, while the FEP corresponds to the special biological case in which local subsystems (brains, organisms) attempt to minimize informational surprise. We derive a unified mathematical expression combining both principles, present a diagram demonstrating their deep equivalence, and provide three versions of the work: a full research paper, a shorter featured version, and a one-page executive summary.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% =============================================================
+% SECTION I — FULL RESEARCH ARTICLE
+% =============================================================
+
+\section*{SECTION I: Full Research Article}
+
+\section{Introduction}
+The Time-Crystalline Quantum Substrate (TCQS) is a model in which physical reality emerges from a self-referential, coherence-driven informational substrate with intrinsic Floquet periodicity. At its core lies a \emph{coherence gradient} or \emph{free-energy gradient} that determines how waves, particles, atoms, and higher-order structures stabilize through time.
+
+Karl Friston’s Free-Energy Principle (FEP) describes biological systems as entities that \emph{minimize variational free energy} to resist entropy and maintain homeostasis.
+
+This paper demonstrates that these two frameworks are limiting cases of a single deeper formalism.
+
+\section{Background: Friston’s Free-Energy Principle}
+Friston’s formulation defines free energy as an information-theoretic bound on surprise:
+\begin{equation}
+F = D_{KL}\big(q(\vartheta|\mu)\Vert p(\vartheta|s)\big) - \ln p(s),
+\end{equation}
+where $q$ is the recognition density over causes $\vartheta$, and $p(s)$ is sensory evidence.
+
+Key elements:
+\begin{itemize}
+    \item biological systems minimize surprise by minimizing $F$
+    \item they use a generative model to predict sensory inputs
+    \item action changes the world to confirm predictions (active inference)
+\end{itemize}
+
+\section{Background: TCQS Free-Energy Gradient}
+The TCQS defines a coherence scalar:
+\begin{equation}
+C(x) : \text{configuration space} \rightarrow \mathbb{R},
+\end{equation}
+whose gradient drives the dynamics of the substrate:
+\begin{equation}
+\dot{x} = -\nabla_x \Phi[C(x)],
+\end{equation}
+where $\Phi$ is the \emph{coherence potential}.
+
+High coherence corresponds to low entropy, low decoherence, and informational stability.
+
+\section{Unified Expression (Main Result)}
+We now combine:
+- Friston’s variational free energy  
+- TCQS coherence potential  
+
+into a single generating functional:
+\begin{equation}
+\boxed{
+\mathcal{F}_{TCQS} = \Phi[C(x)] 
++ D_{KL}\!\left(q(\vartheta|\mu)\,\Vert\,p(\vartheta|x)\right)
+}
+\end{equation}
+
+Interpretation:
+\begin{itemize}
+    \item $\Phi[C(x)]$ is the substrate-level coherence drive (cosmological scale)
+    \item the KL term is the classical variational free energy (biological scale)
+    \item the sum expresses \emph{active inference embedded in a physical coherence substrate}
+\end{itemize}
+
+\subsection{Diagram: Mapping FEP $\rightarrow$ TCQS}
+\begin{center}
+\begin{tikzpicture}[node distance=2.2cm,>=stealth,thick]
+
+\node (FEP) [rectangle,rounded corners,draw,fill=blue!10,align=center,text width=4cm]
+{\textbf{Friston’s Free-Energy Principle}\\Biological minimization of surprise};
+
+\node (TCQS) [rectangle,rounded corners,draw,fill=green!10,align=center,text width=4cm, right=4cm of FEP]
+{\textbf{TCQS Free-Energy Gradient}\\Cosmic coherence maximization};
+
+\draw[->, thick] (FEP) -- node[above]{\small embedded generative models} (TCQS);
+
+\draw[->, thick] (TCQS) -- node[below]{\small biological subsystems as coherence pockets} (FEP);
+
+\end{tikzpicture}
+\end{center}
+
+\section{Interpretation: The Universe as a Generative Model}
+The TCQS implies:
+\begin{enumerate}
+    \item coherence $\rightarrow$ wave structures  
+    \item wave structures $\rightarrow$ particles  
+    \item particles $\rightarrow$ chemistry  
+    \item chemistry $\rightarrow$ biological active inference  
+\end{enumerate}
+
+Friston’s FEP emerges at stage (4) as a \emph{local implementation} of a universal principle.
+
+\section{Applications}
+\subsection{Physics}
+Gravity appears as a coherence gradient effect.
+
+\subsection{Biology}
+Brains act as local inference engines embedded in the coherence substrate.
+
+\subsection{Consciousness}
+Conscious agents correspond to high-coherence attractors.
+
+\newpage
+
+% =============================================================
+% SECTION II — SHORTER FEATURED VERSION (3–5 PAGES)
+% =============================================================
+
+\section*{SECTION II: Short Featured Research Version}
+
+\subsection*{Overview}
+This shorter version highlights the main conceptual unification.
+
+\subsection*{Key Statement}
+\textbf{The TCQS generalizes Friston’s Free-Energy Principle from biology to cosmology.}
+
+\subsection*{Unified Expression}
+\[
+\mathcal{F}_{TCQS} = \Phi[C(x)] + D_{KL}(q\Vert p)
+\]
+
+\subsection*{Implications}
+\begin{itemize}
+    \item the universe performs active inference  
+    \item biological agents are local inference optimizers  
+    \item coherence replaces surprise as the global computational currency  
+\end{itemize}
+
+\subsection*{Diagram (repeated for emphasis)}
+\begin{center}
+\begin{tikzpicture}[node distance=2cm,>=stealth]
+\node (A) [rectangle, draw, rounded corners, fill=blue!10]{FEP (Biology)};
+\node (B) [rectangle, draw, rounded corners, fill=green!10, right=3cm of A]{TCQS (Cosmology)};
+\draw[<->, thick] (A)--(B);
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+% =============================================================
+% SECTION III — ONE-PAGE EXECUTIVE SUMMARY
+% =============================================================
+
+\section*{SECTION III: One-Page Executive Summary}
+
+\subsection*{Title}
+\textbf{A Unified Free-Energy Framework for Reality:  
+From Biological Surprise Minimization to Cosmic Coherence Dynamics}
+
+\subsection*{Core Idea}
+FEP describes how organisms minimize surprise.  
+TCQS describes how the universe maximizes coherence.
+
+Both are the same principle:
+\[
+\mathcal{F}_{TCQS} = \Phi[C(x)] + D_{KL}(q\Vert p).
+\]
+
+\subsection*{One-Line Summary}
+\textbf{Life is the universe performing active inference on itself through coherence-driven computation.}
+
+\end{document}

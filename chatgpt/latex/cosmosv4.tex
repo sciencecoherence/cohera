@@ -1,0 +1,251 @@
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+
+% ---------- Minimal formatting ----------
+\titleformat{\section}{\large\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.8em}{}
+\setlist[itemize]{leftmargin=1.4em, itemsep=0.2em, topsep=0.3em}
+\setlist[enumerate]{leftmargin=1.6em, itemsep=0.2em, topsep=0.3em}
+
+% ---------- Notation (only the original core) ----------
+\newcommand{\Sub}{S}
+\newcommand{\Htot}{H_{\mathrm{tot}}}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\Om}{\Omega}
+\newcommand{\Del}{\Delta}
+
+% Optional canonical quantities (only used if you already keep them)
+\newcommand{\Coh}{C}
+\newcommand{\Free}{F}
+
+% ---------- Boxes ----------
+\newtcolorbox{principlebox}{
+  colback=black!2,
+  colframe=black!30,
+  boxrule=0.6pt,
+  arc=2mm,
+  left=1.2mm,right=1.2mm,top=1.0mm,bottom=1.0mm
+}
+
+\newtcolorbox{formalbox}{
+  colback=black!1,
+  colframe=black!40,
+  boxrule=0.6pt,
+  arc=2mm,
+  left=1.2mm,right=1.2mm,top=1.0mm,bottom=1.0mm
+}
+
+% ---------- Metadata ----------
+\title{\textbf{A Substrate-First Coherence Framework with a Closed Update Cycle}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\vspace{-1.0em}
+\begin{principlebox}
+\textbf{Primitive set (fixed).} The framework is defined by exactly five primitives:
+\[
+\{\Sub,\;\Htot,\;\Lam,\;\Om,\;\Del\}.
+\]
+No additional ontic spaces or operators are introduced. Any further quantity is either explanatory language or a derived summary.
+\end{principlebox}
+
+\section{Overview}
+
+\subsection{Aim and stance}
+This document presents a coherence-based framework in which the only fundamental state space is the substrate $\Sub$, governed by a single global generator $\Htot$. The appearance of localized classical structure is treated as a stability phenomenon arising from a restriction operator $\Lam$, which determines what is accessible as robust, contextual structure. The effective ``universe-level'' rule $\Om$ is introduced strictly as an induced description of accessible dynamics, not as an additional fundamental layer. Closure is enforced by a recursive integration operator $\Del$, which feeds emergent regularities back into the conditions that stabilize the global organization.
+
+The primary commitment is \emph{closure under update}: reality, in this framework, is not a static ontology but a self-maintaining cycle of transformation that returns the system to a coherent regime after each update. In other words, the theory does not merely describe states; it describes a \emph{closed rule} by which structure persists.
+
+\subsection{Core claims (minimal)}
+\begin{itemize}
+\item \textbf{Substrate primacy:} $\Sub$ is the sole fundamental state/configuration domain.
+\item \textbf{Global organization:} $\Htot$ is the global generator of substrate evolution.
+\item \textbf{Accessibility by restriction:} $\Lam$ is the coherence/projection operator that yields stable, localizable structure.
+\item \textbf{Emergence as induced description:} $\Om$ encodes effective accessible dynamics (histories/relations/regularities) as an induced operator.
+\item \textbf{Recursion as closure:} $\Del$ integrates emergent structure and feeds it back to stabilize the next global step.
+\end{itemize}
+
+\subsection{The closure chain (conceptual skeleton)}
+The framework is organized by a single cycle:
+\[
+\Htot \;\rightarrow\; \Sub \;\rightarrow\; \Lam \;\rightarrow\; \Om \;\rightarrow\; \Del \;\rightarrow\; \Htot.
+\]
+This is not a slogan; it is the blueprint of the update rules system. Each arrow indicates an ordered role:
+global generation, substrate evolution, accessibility restriction, emergent effective evolution, recursive integration, and return to global organization.
+
+\subsection{Philosophical layer (objective, non-subjective)}
+The philosophical content here is not personal interpretation; it is a structural commitment about what counts as fundamental:
+
+\begin{principlebox}
+\textbf{Process-first ontology.} The substrate is not ``stuff'' plus external laws; rather, the lawful structure is encoded in the closed update cycle. Stability and persistence are not assumed; they are produced and maintained by recursion.
+\end{principlebox}
+
+This stance has three consequences:
+\begin{itemize}
+\item \textbf{No observer primitive:} classical appearance is explained as stable accessibility, not as a measurement postulate.
+\item \textbf{No dual ontology:} the emergent ``world'' is not an added realm, but a compressed, effective description induced by $\Lam$ and governed by $\Om$.
+\item \textbf{No infinite regress:} recursion is explicit and closed by $\Del$, preventing ``who selects the selector'' from becoming a hidden axiom.
+\end{itemize}
+
+\section{Architecture}
+
+\subsection{Primitive roles (one definition each)}
+\begin{principlebox}
+\textbf{The substrate $\Sub$.} The sole fundamental domain of states/configurations. All structure, regularity, and appearance occur as patterns in $\Sub$.
+\end{principlebox}
+
+\begin{principlebox}
+\textbf{The global generator $\Htot$.} The global dynamical principle acting on $\Sub$. It is the organizer of substrate evolution and the anchor of global coherence.
+\end{principlebox}
+
+\begin{principlebox}
+\textbf{The coherence/projection operator $\Lam$.} The accessibility rule. It restricts the globally coherent substrate to stable, contextual structure. Locality and classical persistence arise as stability under $\Lam$.
+\end{principlebox}
+
+\begin{principlebox}
+\textbf{The emergent effective operator $\Om$.} The induced rule describing the accessible ``universe-level'' dynamics (regularities, relations, and history-like evolution) inside the stable presentation generated by $\Lam$. $\Om$ is not fundamental; it is the effective description of what is accessible.
+\end{principlebox}
+
+\begin{principlebox}
+\textbf{The recursive integration operator $\Del$.} The closure rule. It integrates emergent regularities and feeds them back into the conditions that stabilize global organization, ensuring that emergence is causally relevant to ongoing persistence.
+\end{principlebox}
+
+\subsection{Architectural constraints (coherence of the theory itself)}
+The framework enforces three architectural constraints that are philosophical in meaning but formal in consequence:
+
+\begin{itemize}
+\item \textbf{Minimality:} the primitive set is fixed; explanatory power must come from composition and closure, not symbol proliferation.
+\item \textbf{Induction:} $\Om$ must be derivable as an induced effective description from the action of $\Htot$ under the restriction imposed by $\Lam$.
+\item \textbf{Closure:} $\Del$ must return the system to a regime describable by the same primitives after each update.
+\end{itemize}
+
+\subsection{The meaning of ``world'' in this architecture}
+A ``world'' is not a separate container; it is a stabilized presentation of $\Sub$ under $\Lam$, endowed with effective dynamics summarized by $\Om$. The ordinary notion of persistence becomes: \emph{patterns that remain stable under repeated application of the closed update rules}.
+
+\section{Mechanism}
+
+\subsection{From global coherence to stable structure}
+The substrate evolves under $\Htot$, but global coherence alone does not guarantee localizable persistence. The operator $\Lam$ functions as the rule that selects (or enforces) those aspects of substrate organization that can appear as stable, contextual structure. Mechanistically, $\Lam$ expresses the principle:
+\begin{quote}
+Stable locality is not assumed; it is the subset of global organization that remains coherent under restriction.
+\end{quote}
+
+This makes ``classicality'' an emergent stability regime: structures appear classical when they are robust under the cycle, not because classicality is written into the substrate as a separate axiom.
+
+\subsection{Emergence as induced effective dynamics}
+The operator $\Om$ is the effective rule governing the accessible description. Its role is conceptual compression: it packages the accessible regularities into a dynamics that is meaningful at the emergent level. In this framework, the emergent level is characterized by:
+\begin{itemize}
+\item \textbf{Regularities:} stable relations among accessible patterns.
+\item \textbf{History-like structure:} consistent update trajectories within the accessible description.
+\item \textbf{Geometry-like organization:} relational structure among stable patterns, arising from coherence constraints rather than assumed background.
+\end{itemize}
+All of this is treated as a description induced by the restriction $\Lam$ acting on the substrate evolution driven by $\Htot$.
+
+\subsection{Recursive integration and the necessity of $\Del$}
+Without recursion, emergence would be a one-way epiphenomenon: the substrate would generate appearances, but appearances would not matter. The operator $\Del$ prevents that by ensuring that emergent regularities feed back into the ongoing stabilization of global organization.
+
+Philosophically (in an objective sense), $\Del$ is the formal expression of the principle that \emph{persistence requires self-consistency across scales}: stable emergent structure is not merely observed; it is integrated into what continues to be possible.
+
+\subsection{The Update Rules System (the engine of closure)}
+A full update is defined as one traversal of the closure chain. The rules are ordered, because order expresses causal role: global organization precedes restriction; restriction precedes effective description; effective description precedes integration; integration restores global organization.
+
+\begin{formalbox}
+\textbf{Update rules (conceptual form).}
+\begin{enumerate}
+\item \textbf{Global evolution:} $\Htot$ drives substrate transformation.
+\item \textbf{Restriction / accessibility:} $\Lam$ yields a stable, contextual presentation of the evolving substrate.
+\item \textbf{Effective evolution:} $\Om$ summarizes the accessible dynamics of that presentation.
+\item \textbf{Recursive integration:} $\Del$ incorporates emergent regularities and feeds them back as stabilizing constraints.
+\item \textbf{Closure:} the resulting condition returns the system to a regime governed again by $\Htot$ within the same primitive set.
+\end{enumerate}
+\end{formalbox}
+
+\subsection{Philosophical depth without subjectivity: what ``closure'' means}
+Closure is not merely a mathematical convenience. It is a metaphysical commitment about intelligibility:
+\begin{itemize}
+\item \textbf{Coherence as a criterion of reality:} what persists is what the cycle can maintain.
+\item \textbf{Recurrence as a criterion of existence:} existence is the repeatability of structured transformation, not the static possession of properties.
+\item \textbf{Identity as invariance under update:} an ``object'' is a pattern whose defining relations remain stable under the update rules.
+\end{itemize}
+These statements are not personal meaning-making; they are explicit translations of the formal requirement that the system remain in a stable regime under repeated updates.
+
+\section{Formalism}
+
+\subsection{Minimal mathematical commitments}
+This section fixes the framework in the simplest formal language consistent with the primitives, without introducing new ontic spaces. The goal is to state the update rules and closure condition in a way that is explicit enough to be unambiguous and flexible enough to support multiple implementations.
+
+\subsection{Substrate evolution under the global generator}
+We treat $\Htot$ as the generator of substrate evolution. One may represent this evolution discretely (cycle index) or continuously (parameterized flow). To keep notation minimal and aligned with the update-cycle spirit, we use a discrete update index $n$ as an iteration counter of full cycles, while not assuming any particular microscopic time model.
+
+Let $\Sub_n$ denote the substrate configuration/state at cycle $n$.
+
+\subsection{Restriction by $\Lam$ and effective evolution by $\Om$}
+The operator $\Lam$ produces the stable, accessible presentation at cycle $n$. The operator $\Om$ governs the effective evolution of that presentation. We deliberately keep this abstract: the formalism requires \emph{compatibility}, not a specific representation.
+
+\begin{formalbox}
+\textbf{Compatibility requirement (induction of $\Om$).}
+The emergent effective evolution must be consistent with substrate evolution under restriction:
+\[
+\Lam\big(\Htot(\Sub_n)\big)\ \ \text{is consistent with}\ \ \Om\big(\Lam(\Sub_n)\big),
+\]
+where ``consistent with'' denotes that both expressions encode the same accessible regularities after restriction.
+\end{formalbox}
+
+This expresses the central idea without adding new spaces or auxiliary operators: $\Om$ is not free; it is induced by $\Htot$ as seen through $\Lam$.
+
+\subsection{Recursive integration by $\Del$ and closure of the cycle}
+The operator $\Del$ integrates emergent regularities and updates the conditions for the next global step. Formally, $\Del$ is the closure mechanism that ensures that after a full update, the next cycle remains describable using the same primitives.
+
+\begin{formalbox}
+\textbf{Closure requirement.}
+One full update cycle maps $(\Sub_n,\Htot)$ to $(\Sub_{n+1},\Htot)$ without introducing additional primitives:
+\[
+(\Sub_{n+1},\Htot)\ \ \text{is obtained from}\ \ (\Sub_n,\Htot)\ \ \text{by the ordered action of}\ \ \Htot,\Lam,\Om,\Del.
+\]
+\end{formalbox}
+
+In words: the theory is closed under its own dynamics. The ``laws'' are not external constraints but the self-consistent update rule that maintains coherence across cycles.
+
+\subsection{Optional stability selector (only if retained in your original framework)}
+If coherence $\Coh$ and informational free-energy $\Free$ are kept as canonical summaries (as in the original drafts), the formal role of these objects is to act as stability selectors under the update rules, not as extra ontology.
+
+A minimal relation is:
+\[
+\Free = E - \kappa \Coh,
+\]
+where $E$ is an energetic summary of substrate organization and $\kappa$ is a coupling constant. The interpretive constraint is strict:
+\begin{itemize}
+\item $\Coh$ measures structural compatibility/internal consistency in $\Sub$ relevant to persistence under the update cycle.
+\item $\Free$ is a stability functional: stable emergent structures correspond to regimes where the update rules reinforce coherence (lower $\Free$).
+\end{itemize}
+No further symbols are required for this role in the present document.
+
+\subsection{What is formally ``real'' in this framework}
+We now state the key definitional point that binds the formalism to the philosophical layer:
+
+\begin{principlebox}
+\textbf{Persistence criterion.}
+A structure is real (in the operational ontological sense of this framework) precisely to the extent that it is stable under repeated application of the closed update rules defined by $\{\Sub,\Htot,\Lam,\Om,\Del\}$.
+\end{principlebox}
+
+This criterion is objective: it does not reference observers or subjective experience. It defines reality in terms of invariance and recurrence under the framework's own closure mechanism.
+
+\vspace{0.8em}
+\hrule
+\vspace{0.6em}
+
+\noindent\textbf{Summary (one paragraph).}
+The framework specifies a minimal primitive set and a closed update cycle. $\Sub$ is the sole state domain, $\Htot$ the global generator, $\Lam$ the accessibility/coherence restriction yielding stable structure, $\Om$ the induced effective dynamics of accessible regularities, and $\Del$ the recursive integration rule enforcing closure. The philosophical content is explicit and non-subjective: reality is identified with persistent structure maintained by a self-consistent cycle of transformation, not with an externally imposed observer layer or an additional ontic realm.
+
+\end{document}
