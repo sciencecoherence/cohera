@@ -13,7 +13,23 @@
   <main class="container">
     <section class="hero"><h1>Regenesis Thread</h1><p class="small">Biology, nutrition, recovery and protocol design with strict safety and evidence framing.</p></section>
     <section class="card"><h3>Status</h3><p>Thread initialized. First digest in preparation from your current PDF/TeX corpus and primary literature.</p></section>
+    <section class="card"><h3>Latest digests</h3><div id="digest-list" class="small">Loading...</div></section>
   </main>
   <footer><div class="container">Regenesis · educational content, no diagnosis promises.</div></footer>
+
+  <script>
+    async function loadDigests() {
+      const el = document.getElementById('digest-list');
+      try {
+        const r = await fetch('/cohera/regenesis/digests/index.json', {cache: 'no-store'});
+        const items = await r.json();
+        if (!Array.isArray(items) || !items.length) { el.textContent = 'No digests yet.'; return; }
+        el.innerHTML = '<ul class="clean">' + items.map(d =>
+          `<li><a href="/cohera/regenesis/digests/${d.slug}.html">${d.title}</a> <span class="small">(${d.date})</span></li>`
+        ).join('') + '</ul>';
+      } catch { el.textContent = 'Failed to load digest list.'; }
+    }
+    loadDigests();
+  </script>
 </body>
 </html>
