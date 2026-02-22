@@ -4,6 +4,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import requests
 from journal import append_trade
 
 BASE = Path(__file__).resolve().parent
@@ -12,48 +13,93 @@ OPEN = STATE / 'open_position.json'
 HISTORY = STATE / 'closed_trades.jsonl'
 CFG = BASE / 'config.json'
 
+
+def usage():
+    raise SystemExit(
+        'USAGE:\n'
+        '  close_trade.py tp [percent]\n'
+        '  close_trade.py sl [percent]\n'
+        '  close_trade.py now [percent]\n'
+        '  close_trade.py close <price> [percent]\n'
+        '  close_trade.py manual <price> [percent]'
+    )
+
+
+def parse_percent(arg: str | None) -> float:
+    if arg is None:
+        return 100.0
+    p = float(arg)
+    if p <= 0 or p > 100:
+        raise SystemExit('percent must be >0 and <=100')
+    return p
+
+
+def fetch_current_price(symbol: str) -> float:
+    url = f'https://api.binance.com/api/v3/ticker/price?symbol={symbol}'
+    r = requests.get(url, timeout=10)
+    r.raise_for_status()
+    return float(r.json()['price'])
+
+
 if not OPEN.exists():
     raise SystemExit('NO_OPEN_POSITION')
 
-reason = (sys.argv[1] if len(sys.argv) > 1 else 'tp').lower()
-if reason not in {'tp', 'sl', 'manual'}:
-    raise SystemExit('USAGE: close_trade.py tp|sl|manual [exit_price]')
+args = sys.argv[1:]
+if not args:
+    usage()
 
+cmd = args[0].lower()
 pos = json.loads(OPEN.read_text(encoding='utf-8'))
+symbol = pos['symbol']
 
-if reason == 'tp':
+if cmd == 'tp':
     exit_price = float(pos['tp1'])
-elif reason == 'sl':
+    percent = parse_percent(args[1] if len(args) > 1 else None)
+    reason = 'tp'
+elif cmd == 'sl':
     exit_price = float(pos['stop'])
+    percent = parse_percent(args[1] if len(args) > 1 else None)
+    reason = 'sl'
+elif cmd == 'now':
+    exit_price = fetch_current_price(symbol)
+    percent = parse_percent(args[1] if len(args) > 1 else None)
+    reason = 'now'
+elif cmd in {'close', 'manual'}:
+    if len(args) < 2:
+        usage()
+    exit_price = float(args[1])
+    percent = parse_percent(args[2] if len(args) > 2 else None)
+    reason = 'manual'
 else:
-    if len(sys.argv) < 3:
-        raise SystemExit('USAGE: close_trade.py manual <exit_price>')
-    exit_price = float(sys.argv[2])
+    usage()
 
 entry = float(pos['entry_fill'])
 stop = float(pos['stop'])
 side = pos['side']
+size_usd = float(pos['size_usd'])
+close_size_usd = round(size_usd * (percent / 100.0), 2)
+remaining_size_usd = round(size_usd - close_size_usd, 2)
 
 risk_per_unit = abs(entry - stop)
 if risk_per_unit <= 0:
     r_mult = 0.0
 else:
-    if side == 'LONG':
-        pnl_per_unit = exit_price - entry
-    else:
-        pnl_per_unit = entry - exit_price
+    pnl_per_unit = (exit_price - entry) if side == 'LONG' else (entry - exit_price)
     r_mult = pnl_per_unit / risk_per_unit
 
 closed = {
     'closed_at': datetime.now(timezone.utc).isoformat(),
     'reason': reason,
-    'symbol': pos['symbol'],
+    'symbol': symbol,
     'side': side,
     'entry_fill': entry,
     'exit_price': round(exit_price, 2),
     'stop': stop,
     'tp1': float(pos['tp1']),
-    'size_usd': float(pos['size_usd']),
+    'size_usd_closed': close_size_usd,
+    'size_usd_before': size_usd,
+    'size_usd_after': remaining_size_usd,
+    'percent_closed': percent,
     'setup': pos.get('setup', ''),
     'result_r': round(r_mult, 2),
 }
@@ -79,13 +125,22 @@ append_trade({
     'tp1': closed['tp1'],
     'tp2': '',
     'risk_pct': risk_pct,
-    'size': closed['size_usd'],
+    'size': close_size_usd,
     'result_r': closed['result_r'],
     'confidence': 'n/a',
     'rule_break': '',
-    'lesson': f"closed via {reason}",
+    'lesson': f"closed {percent}% via {reason}",
 })
 
-OPEN.unlink(missing_ok=True)
-print('TRADE_CLOSED')
+if remaining_size_usd <= 0.0:
+    OPEN.unlink(missing_ok=True)
+    status = 'POSITION_FULLY_CLOSED'
+else:
+    pos['size_usd'] = remaining_size_usd
+    pos['last_partial_close_at'] = closed['closed_at']
+    pos['last_partial_percent'] = percent
+    OPEN.write_text(json.dumps(pos, indent=2), encoding='utf-8')
+    status = 'POSITION_PARTIALLY_CLOSED'
+
+print(status)
 print(json.dumps(closed, indent=2))
