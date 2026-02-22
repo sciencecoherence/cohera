@@ -7,5 +7,8 @@
   "account_equity_usd": 1000,
   "mode": "semi_auto",
   "paper_slippage_bps": 3,
-  "leverage": 10
+  "leverage": 10,
+  "min_confluence_score": 4,
+  "rr_target": 2.5,
+  "min_rr": 2.5
 }

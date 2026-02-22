@@ -41,10 +41,15 @@ def main():
 
     url = f"https://api.binance.com/api/v3/klines?symbol={cfg['symbol']}&interval={cfg['timeframe']}&limit=250"
     klines = requests.get(url, timeout=10).json()
-    sig = generate_signal(klines)
+    min_score = int(cfg.get('min_confluence_score', 4))
+    rr_target = float(cfg.get('rr_target', 2.5))
+    min_rr = float(cfg.get('min_rr', 2.5))
 
-    if sig['status'] != 'SETUP' or sig.get('rr', 0) < 2:
-        print('NO_TRADE:', sig.get('reason', 'RR below 2 or no setup'))
+    sig = generate_signal(klines, min_score=min_score, rr_target=rr_target)
+
+    if sig['status'] != 'SETUP' or sig.get('rr', 0) < min_rr:
+        print('NO_TRADE:', sig.get('reason', f'RR below {min_rr} or no setup'))
+        print(json.dumps({'debug': sig}, indent=2))
         return
 
     size_usd = position_size_usd(cfg['account_equity_usd'], cfg['risk_per_trade'], sig['entry'], sig['stop'])
