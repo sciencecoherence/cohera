@@ -12,7 +12,10 @@
       <strong>Cohera Lab</strong>
       <nav class="nav-links">
         <a href="/cohera/index.html">Home</a>
-        <a href="/cohera/research/index.html">Research</a>
+        <a href="/cohera/cosmos/index.html">Cosmos</a>
+        <a href="/cohera/regenesis/index.html">Regenesis</a>
+        <a href="/cohera/ethos/index.html">Ethos</a>
+        <a href="/cohera/publications/index.html">Publications</a>
         <a href="/cohera/glossary/index.html">Glossary</a>
         <a href="/cohera/about/index.html">About</a>
       </nav>
@@ -22,40 +25,30 @@
   <main class="container">
     <section class="hero">
       <h1>Research Hub</h1>
-      <p class="small">Latest digests are listed below from <code class="inline">/research/digests/index.json</code>.</p>
+      <p class="small">Unified entry point for all active research threads.</p>
     </section>
 
-    <section id="digests" class="card">
-      <h3>Latest Digests</h3>
-      <div id="digest-list" class="small">Loading digests…</div>
+    <section class="grid">
+      <article class="card">
+        <h3>Cosmos</h3>
+        <p class="small">Physics/model formalization and emergence.</p>
+        <a href="/cohera/cosmos/index.html">Open Cosmos →</a>
+      </article>
+      <article class="card">
+        <h3>Regenesis</h3>
+        <p class="small">Biology, recovery, and evidence-linked protocols.</p>
+        <a href="/cohera/regenesis/index.html">Open Regenesis →</a>
+      </article>
+      <article class="card">
+        <h3>Ethos</h3>
+        <p class="small">Learning systems, epistemic hygiene, and practice.</p>
+        <a href="/cohera/ethos/index.html">Open Ethos →</a>
+      </article>
     </section>
   </main>
 
   <footer>
-    <div class="container">Research in progress · cite-first policy enabled.</div>
+    <div class="container">Research hub maps to the three-thread model.</div>
   </footer>
-
-  <script>
-    async function loadDigests() {
-      const list = document.getElementById('digest-list');
-      try {
-        const res = await fetch('/cohera/research/digests/index.json', { cache: 'no-store' });
-        const items = await res.json();
-        if (!Array.isArray(items) || items.length === 0) {
-          list.innerHTML = 'No digests yet.';
-          return;
-        }
-        list.innerHTML = '<ul class="clean">' + items.map(item => {
-          const safeTitle = item.title || item.slug;
-          const safeDate = item.date || '';
-          const href = '/cohera/research/digests/' + item.slug + '.html';
-          return `<li><a href="${href}">${safeTitle}</a> <span class="small">(${safeDate})</span></li>`;
-        }).join('') + '</ul>';
-      } catch (e) {
-        list.textContent = 'Could not load digest index.';
-      }
-    }
-    loadDigests();
-  </script>
 </body>
 </html>
