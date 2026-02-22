@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 import requests
 import os
+import re
+import html
 from pathlib import Path
-from bs4 import BeautifulSoup
 import difflib
 
 # Configuration
@@ -12,35 +13,28 @@ SNAPSHOT_DIR = REPO_DIR / "vault" / "main_site_tracking"
 SNAPSHOT_FILE = SNAPSHOT_DIR / "latest_snapshot.md"
 DIFF_LOG = SNAPSHOT_DIR / "diff_log.md"
 
-def fetch_site_content(url):
-    try:
-        response = requests.get(url, timeout=30)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        # Remove scripts and styles
-        for script in soup(["script", "style"]):
-            script.decompose()
-            
-        text = soup.get_text()
-        
-        # Clean up whitespace
-        lines = (line.strip() for line in text.splitlines())
-        chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
-        text = '\n'.join(chunk for chunk in chunks if chunk)
-        
-        return text
-    except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return None
+def clean_html(raw_html):
+    # Remove script and style tags
+    clean = re.sub(r'<(script|style).*?>.*?</\1>', '', raw_html, flags=re.DOTALL)
+    # Remove HTML tags
+    clean = re.sub(r'<[^>]+>', ' ', clean)
+    # Decode entities
+    clean = html.unescape(clean)
+    # Normalize whitespace
+    lines = (line.strip() for line in clean.splitlines())
+    chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+    return '\n'.join(chunk for chunk in chunks if chunk)
 
 def main():
     SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
     
     print(f"Fetching {MAIN_SITE_URL}...")
-    current_content = fetch_site_content(MAIN_SITE_URL)
-    
-    if not current_content:
+    try:
+        response = requests.get(MAIN_SITE_URL, timeout=30)
+        response.raise_for_status()
+        current_content = clean_html(response.text)
+    except Exception as e:
+        print(f"Error fetching site: {e}")
         return
 
     previous_content = ""
