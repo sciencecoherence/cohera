@@ -1,0 +1,495 @@
+{
+  "generated_at": "2026-02-22T02:11:56Z",
+  "total_sources": 45,
+  "changes": [
+    {
+      "path": "chatgpt/pdf/Hierarchical_Self_Engineering_Chain (1).pdf",
+      "change": "new",
+      "mtime": 1771720974,
+      "size": 57098,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/pdf/COHERENCER_BASED_COSMOLOGY.pdf",
+      "change": "new",
+      "mtime": 1771720974,
+      "size": 88561,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/pdf/_TCQS__Hypothesis_Genesis.pdf",
+      "change": "new",
+      "mtime": 1771720974,
+      "size": 199401,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/pdf/COHERENCER_BASED_COSMOLOGY (1).pdf",
+      "change": "new",
+      "mtime": 1771720974,
+      "size": 87620,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/pdf/_TCQS__Biology.pdf",
+      "change": "new",
+      "mtime": 1771720974,
+      "size": 130960,
+      "thread": "regenesis"
+    },
+    {
+      "path": "chatgpt/pdf/Time_Crystalline_Holographic_Substrate.pdf",
+      "change": "new",
+      "mtime": 1771719395,
+      "size": 206723,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cosmosv2.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 19145,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/gravity.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 17649,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/condensate.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 3291,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/infographicfigure.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 2745,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cosmos.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 26425,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cosmosv4.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 15906,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/Equations_handbook.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 24446,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/equilibrium.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 2431,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/introduction.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 8338,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/black_holes.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 4698,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/schrodinger.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 45449,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/molecular interface.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 3580,
+      "thread": "regenesis"
+    },
+    {
+      "path": "chatgpt/latex/entropy.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 11428,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/FEP.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 18336,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cross-communication.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 9478,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/informationportal.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 3759,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/spacetime.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 2713,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cosmosv3.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 10261,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/authorsnote.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 3001,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/equilibrium++.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 7572,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/Infodynamics.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 4725,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/architecture.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 13348,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/resonance_field.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 5385,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/equilibrium+.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 13796,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/paradox-resolution.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 6719,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cross-coherence_interface.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 9851,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/qudits.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 2231,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/singularity.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 3194,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/time.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 31022,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/Observer.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 10052,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/genesis.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 137980,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/informationparadox.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 7634,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/FEP-short.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 7583,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_4.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 19737,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_2.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 22930,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_1.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 7123,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_6_draft.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 10160,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/main.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 4411,
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_3.tex",
+      "change": "new",
+      "mtime": 1771721940,
+      "size": 29056,
+      "thread": "cosmos"
+    }
+  ],
+  "top_priority": [
+    {
+      "path": "chatgpt/pdf/Hierarchical_Self_Engineering_Chain (1).pdf",
+      "ext": "pdf",
+      "mtime": 1771720974,
+      "size": 57098,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/COHERENCER_BASED_COSMOLOGY.pdf",
+      "ext": "pdf",
+      "mtime": 1771720974,
+      "size": 88561,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/_TCQS__Hypothesis_Genesis.pdf",
+      "ext": "pdf",
+      "mtime": 1771720974,
+      "size": 199401,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/COHERENCER_BASED_COSMOLOGY (1).pdf",
+      "ext": "pdf",
+      "mtime": 1771720974,
+      "size": 87620,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/_TCQS__Biology.pdf",
+      "ext": "pdf",
+      "mtime": 1771720974,
+      "size": 130960,
+      "thread": "regenesis",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/Time_Crystalline_Holographic_Substrate.pdf",
+      "ext": "pdf",
+      "mtime": 1771719395,
+      "size": 206723,
+      "thread": "cosmos",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/latex/cosmosv2.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 19145,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/gravity.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 17649,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/condensate.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 3291,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/infographicfigure.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 2745,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/cosmos.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 26425,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/cosmosv4.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 15906,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/Equations_handbook.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 24446,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/equilibrium.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 2431,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/introduction.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 8338,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/black_holes.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 4698,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/schrodinger.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 45449,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/molecular interface.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 3580,
+      "thread": "regenesis",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/entropy.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 11428,
+      "thread": "cosmos",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/latex/FEP.tex",
+      "ext": "tex",
+      "mtime": 1771721940,
+      "size": 18336,
+      "thread": "cosmos",
+      "score": 2
+    }
+  ],
+  "autodrafts_created": [
+    {
+      "thread": "cosmos",
+      "slug": "auto-2026-02-21-hierarchical-self-engineering-chain-1",
+      "source": "chatgpt/pdf/Hierarchical_Self_Engineering_Chain (1).pdf"
+    },
+    {
+      "thread": "regenesis",
+      "slug": "auto-2026-02-21-tcqs-biology",
+      "source": "chatgpt/pdf/_TCQS__Biology.pdf"
+    }
+  ]
+}
