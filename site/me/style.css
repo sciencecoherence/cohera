@@ -1,0 +1,146 @@
+:root {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --accent-color: #3b82f6;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --hover-bg: #334155;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.identity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.emoji {
+    font-size: 3rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 700;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: var(--hover-bg);
+}
+
+.icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+p {
+    margin: 0;
+    color: #cbd5e1;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    margin-top: 4rem;
+    font-size: 0.875rem;
+}
+
+footer a {
+    color: #64748b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
