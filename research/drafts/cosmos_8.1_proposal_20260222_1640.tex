@@ -1,0 +1,32 @@
+% =====================================================================================
+\subsection*{8.1.1 Minimal Coherence Functional and Selection Rule}
+% =====================================================================================
+
+\begin{FormalBox}{Choose one coherence functional}
+Define the projected state at stroboscopic step $n$ as $\rho_n^{\mathrm{loc}} = \Proj\rho_n\Proj^{\dagger}$.
+Use a single coherence functional in a fixed reference basis $\{\ket{i}\}$:
+\[
+\mathcal{C}(\rho_n^{\mathrm{loc}}) \equiv \sum_{i \neq j} \left|\rho^{\mathrm{loc}}_{ij}(n)\right|.
+\]
+This is the $\ell_1$ coherence measure (minimal, basis-explicit, and computable).
+\end{FormalBox}
+
+\begin{FormalBox}{Selection functional (free-energy style)}
+Define a stability-selection functional over one recurrence window:
+\[
+\mathcal{F}_n = E_n - \kappa\,\mathcal{C}(\rho_n^{\mathrm{loc}}), \qquad \kappa>0,
+\]
+where $E_n = \Tr\!\left[H_{\mathrm{eff}}\rho_n^{\mathrm{loc}}\right]$ is effective projected energy.
+A sector is preferred if it minimizes time-averaged selection cost:
+\[
+\overline{\mathcal{F}}_{N} = \frac{1}{N}\sum_{n=1}^{N} \mathcal{F}_n.
+\]
+\end{FormalBox}
+
+\begin{MeaningBox}{Interpretation}
+The model now has one explicit knob: coherence-weight $\kappa$. Larger $\kappa$ rewards sectors that maintain off-diagonal structure under recurrence; smaller $\kappa$ reduces to energy-dominant selection.
+\end{MeaningBox}
+
+\begin{TestBox}{Operational use}
+Scan candidate sectors and estimate $(E_n,\mathcal{C}_n)$ from projected trajectories. Stable classical-looking sectors should occupy low-variance bands of $\overline{\mathcal{F}}_N$ over long windows.
+\end{TestBox}
