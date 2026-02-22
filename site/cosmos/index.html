@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cosmos · Cohera Lab</title>
+  <link rel="stylesheet" href="/cohera/assets/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <strong>Cohera Lab</strong>
+      <nav class="nav-links">
+        <a href="/cohera/index.html">Home</a>
+        <a href="/cohera/cosmos/index.html">Cosmos</a>
+        <a href="/cohera/regenesis/index.html">Regenesis</a>
+        <a href="/cohera/ethos/index.html">Ethos</a>
+        <a href="/cohera/about/index.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Cosmos Thread</h1>
+      <p class="small">Physics/model formalization: substrate, coherence, emergence, and testable bridges to known results.</p>
+    </section>
+
+    <section class="card">
+      <h3>Scope</h3>
+      <ul class="clean">
+        <li>Informational substrate modeling</li>
+        <li>Time-crystalline/Floquet constraints</li>
+        <li>Holography + quantum-information bridges</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>Latest digests</h3>
+      <div id="digest-list" class="small">Loading...</div>
+    </section>
+  </main>
+
+  <footer><div class="container">Cosmos · citation-first and hypothesis-labeled.</div></footer>
+
+  <script>
+    async function loadDigests() {
+      const el = document.getElementById('digest-list');
+      try {
+        const r = await fetch('/cohera/cosmos/digests/index.json', {cache: 'no-store'});
+        const items = await r.json();
+        if (!Array.isArray(items) || !items.length) { el.textContent = 'No digests yet.'; return; }
+        el.innerHTML = '<ul class="clean">' + items.map(d =>
+          `<li><a href="/cohera/cosmos/digests/${d.slug}.html">${d.title}</a> <span class="small">(${d.date})</span></li>`
+        ).join('') + '</ul>';
+      } catch { el.textContent = 'Failed to load digest list.'; }
+    }
+    loadDigests();
+  </script>
+</body>
+</html>
