@@ -3,6 +3,9 @@ name: Deploy Cohera Site to Hostinger (SCP)
 on:
   push:
     branches: ["main"]
+    paths:
+      - "site/**"
+      - ".github/workflows/deploy.yml"
 
 jobs:
   deploy:
