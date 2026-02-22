@@ -29,4 +29,17 @@ def execute_paper(order: dict, slippage_bps: float = 3):
     path = STATE / 'executions.log.jsonl'
     with path.open('a', encoding='utf-8') as f:
         f.write(json.dumps(rec) + '\n')
+
+    # Keep a single current open paper position for manual close commands.
+    open_pos = {
+        "opened_at": rec["executed_at"],
+        "symbol": rec["symbol"],
+        "side": rec["side"],
+        "entry_fill": rec["entry_fill"],
+        "stop": rec["stop"],
+        "tp1": rec["tp1"],
+        "size_usd": rec["size_usd"],
+        "setup": rec["setup"],
+    }
+    (STATE / 'open_position.json').write_text(json.dumps(open_pos, indent=2), encoding='utf-8')
     return rec

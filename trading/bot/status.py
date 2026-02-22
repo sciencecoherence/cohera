@@ -19,6 +19,8 @@ print(f"mode={c.get('mode')}")
 print(f"symbol={c.get('symbol')}")
 print(f"kill_switch={'ON' if kill.exists() else 'OFF'}")
 print(f"pending_order={'YES' if pending.exists() else 'NO'}")
+open_pos = base / 'state' / 'open_position.json'
+print(f"open_position={'YES' if open_pos.exists() else 'NO'}")
 if perf.exists():
     p = json.loads(perf.read_text(encoding='utf-8'))
     print(f"day_pnl_pct={p.get('day_pnl_pct',0)} week_pnl_pct={p.get('week_pnl_pct',0)}")
