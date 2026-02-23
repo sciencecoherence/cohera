@@ -29,7 +29,10 @@ if allow_path.exists():
 for slug in allow:
     slug = (slug or '').lower()
     for p in sorted(tex_dir.glob('*.tex')):
-        if slug in p.stem.lower() and 'auto-' not in p.name and p not in seen:
+        stem = p.stem.lower()
+        if 'chat-corpus' in stem:
+            continue
+        if slug in stem and 'auto-' not in p.name and p not in seen:
             selected.append(str(p)); seen.add(p)
 
 if ready_path.exists():
@@ -39,11 +42,14 @@ if ready_path.exists():
         if tex:
             p = repo / tex
             if p.exists() and p.suffix == '.tex' and p not in seen:
+                if 'chat-corpus' in p.stem.lower():
+                    continue
                 selected.append(str(p)); seen.add(p)
 
 if not selected:
     for p in sorted(tex_dir.glob('*.tex')):
-        if 'auto-' in p.name:
+        stem = p.stem.lower()
+        if 'auto-' in p.name or 'chat-corpus' in stem:
             continue
         selected.append(str(p))
 
@@ -52,6 +58,7 @@ for p in selected:
 PY
 )
 
+FAILED_BUILDS=()
 for tex in "${BUILD_TEX[@]:-}"; do
   [ -f "$tex" ] || continue
   base="$(basename "$tex" .tex)"
@@ -89,8 +96,13 @@ for tex in "${BUILD_TEX[@]:-}"; do
 \end{document}
 EOF
 
-  latexmk -xelatex -interaction=nonstopmode -halt-on-error -output-directory="$BUILD_DIR" "$wrapper"
-  mv "$BUILD_DIR/${base}_wrapper.pdf" "$PDF_DIR/${base}.pdf"
+  if latexmk -xelatex -interaction=nonstopmode -halt-on-error -output-directory="$BUILD_DIR" "$wrapper"; then
+    mv "$BUILD_DIR/${base}_wrapper.pdf" "$PDF_DIR/${base}.pdf"
+  else
+    echo "WARN: build failed for $base" >&2
+    FAILED_BUILDS+=("$base")
+    continue
+  fi
 done
 
 python3 - <<'PY'
@@ -147,4 +159,8 @@ lines += ['  </main>','</body>','</html>']
 print(f'pdf_index_cards={len(cards)}')
 PY
 
-echo "PDF build complete."
+if [ ${#FAILED_BUILDS[@]} -gt 0 ]; then
+  echo "PDF build completed with skips. Failed targets: ${FAILED_BUILDS[*]}"
+else
+  echo "PDF build complete."
+fi
