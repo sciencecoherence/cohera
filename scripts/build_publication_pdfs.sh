@@ -118,9 +118,20 @@ cat > "$PDF_DIR/index.html" <<'EOF'
     <section class="card"><ul class="clean">
 EOF
 
+# De-duplicate: if both base and _publication-v1 exist, keep only _publication-v1 in index.
+for pdf in "$PDF_DIR"/*_publication-v1.pdf; do
+  [ -f "$pdf" ] || continue
+  name="$(basename "$pdf")"
+  echo "      <li><a href=\"/cohera/publications/pdf/$name\">$name</a></li>" >> "$PDF_DIR/index.html"
+done
 for pdf in "$PDF_DIR"/*.pdf; do
   [ -f "$pdf" ] || continue
   name="$(basename "$pdf")"
+  [[ "$name" == *_publication-v1.pdf ]] && continue
+  base="${name%.pdf}"
+  if [ -f "$PDF_DIR/${base}_publication-v1.pdf" ]; then
+    continue
+  fi
   echo "      <li><a href=\"/cohera/publications/pdf/$name\">$name</a></li>" >> "$PDF_DIR/index.html"
 done
 
