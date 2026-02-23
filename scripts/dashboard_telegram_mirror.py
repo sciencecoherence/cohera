@@ -13,7 +13,14 @@ MAX_LEN = 900
 
 def load_state():
     if STATE_PATH.exists():
-        return json.loads(STATE_PATH.read_text(encoding='utf-8'))
+        try:
+            data = json.loads(STATE_PATH.read_text(encoding='utf-8'))
+            if isinstance(data, dict):
+                data.setdefault('last_ts', None)
+                data.setdefault('seen', [])
+                return data
+        except Exception:
+            pass
     return {'last_ts': None, 'seen': []}
 
 
