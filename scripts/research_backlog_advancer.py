@@ -95,7 +95,7 @@ def main():
     created = []
     for p in picks:
         tex = create_publication_tex(p)
-        created.append({'thread': p['thread'], 'from': p['digest_slug'], 'tex': str(tex.relative_to(REPO))})
+        created.append({'thread': p['thread'], 'from': p['digest_slug'], 'pub_slug': p['pub_slug'], 'tex': str(tex.relative_to(REPO))})
 
     if created:
         # Promote newly generated publication slugs into allowlist for ready gating.
