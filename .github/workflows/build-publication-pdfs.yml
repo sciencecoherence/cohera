@@ -1,16 +1,6 @@
-name: Publications • Build Ready PDFs
+name: Publications • Build Ready PDFs (Manual)
 
 on:
-  push:
-    branches: [ "main" ]
-    paths:
-      - "site/publications/tex/**"
-      - "scripts/build_publication_pdfs.sh"
-      - "scripts/publication_pipeline.py"
-      - "scripts/ci_guard_paths.sh"
-      - "chatgpt/publication_allowlist.json"
-      - "chatgpt/publication_ready.json"
-      - ".github/workflows/build-publication-pdfs.yml"
   workflow_dispatch:
 
 permissions:
@@ -18,7 +8,7 @@ permissions:
 
 jobs:
   build-ready-publications:
-    name: Build ready publication PDFs
+    name: Build ready publication PDFs (manual fallback)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
