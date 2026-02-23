@@ -1,35 +1,30 @@
 {
-  "generated_at": "2026-02-23T21:11:01Z",
+  "generated_at": "2026-02-23T22:41:11Z",
   "files": {
-    "chatgpt/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf": {
-      "mtime": 1771856827,
-      "size": 345070,
-      "thread": "ethos"
-    },
     "chatgpt/pdf/Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis.pdf": {
       "mtime": 1771856827,
       "size": 810373,
       "thread": "regenesis"
+    },
+    "chatgpt/pdf/_TCQS__Biology.pdf": {
+      "mtime": 1771720974,
+      "size": 130960,
+      "thread": "regenesis"
+    },
+    "chatgpt/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf": {
+      "mtime": 1771856827,
+      "size": 345070,
+      "thread": "ethos"
     },
     "chatgpt/pdf/The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf": {
       "mtime": 1771856827,
       "size": 715402,
       "thread": "cosmos"
     },
-    "chatgpt/pdf/On_the_Concept_of_Violence_A_Comparative_Study_of_Human_and_AI_Judgments.pdf": {
-      "mtime": 1771856827,
-      "size": 684822,
-      "thread": "ethos"
-    },
-    "chatgpt/pdf/Service_Orchestration_in_the_Computing_Continuum_Structural_Challenges_and_Vision.pdf": {
-      "mtime": 1771856827,
-      "size": 2902613,
-      "thread": "cosmos"
-    },
     "chatgpt/pdf/Dissipation_as_a_Resource_Synchronization_Coherence_Recovery_and_Chaos_Control.pdf": {
       "mtime": 1771856827,
       "size": 6566551,
-      "thread": "cosmos"
+      "thread": "regenesis"
     },
     "chatgpt/pdf/How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs.pdf": {
       "mtime": 1771856827,
@@ -40,6 +35,31 @@
       "mtime": 1771856827,
       "size": 674327,
       "thread": "ethos"
+    },
+    "chatgpt/pdf/Time_Crystalline_Holographic_Substrate.pdf": {
+      "mtime": 1771719395,
+      "size": 206723,
+      "thread": "cosmos"
+    },
+    "chatgpt/inbox/2026-02-23-chat-corpus-newreality.md": {
+      "mtime": 1771872228,
+      "size": 775,
+      "thread": "cosmos"
+    },
+    "chatgpt/inbox/2026-02-23-chat-corpus-genesis.md": {
+      "mtime": 1771871685,
+      "size": 4381,
+      "thread": "cosmos"
+    },
+    "chatgpt/pdf/On_the_Concept_of_Violence_A_Comparative_Study_of_Human_and_AI_Judgments.pdf": {
+      "mtime": 1771856827,
+      "size": 684822,
+      "thread": "cosmos"
+    },
+    "chatgpt/pdf/Service_Orchestration_in_the_Computing_Continuum_Structural_Challenges_and_Vision.pdf": {
+      "mtime": 1771856827,
+      "size": 2902613,
+      "thread": "cosmos"
     },
     "chatgpt/pdf/Quantifying_and_Attributing_Submodel_Uncertainty_in_Stochastic_Simulation_Models_and_Digital_Twins.pdf": {
       "mtime": 1771856827,
@@ -54,7 +74,7 @@
     "chatgpt/pdf/Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations.pdf": {
       "mtime": 1771856827,
       "size": 519699,
-      "thread": "ethos"
+      "thread": "cosmos"
     },
     "chatgpt/pdf/Hierarchical_Self_Engineering_Chain (1).pdf": {
       "mtime": 1771720974,
@@ -74,211 +94,6 @@
     "chatgpt/pdf/COHERENCER_BASED_COSMOLOGY (1).pdf": {
       "mtime": 1771720974,
       "size": 87620,
-      "thread": "cosmos"
-    },
-    "chatgpt/pdf/_TCQS__Biology.pdf": {
-      "mtime": 1771720974,
-      "size": 130960,
-      "thread": "regenesis"
-    },
-    "chatgpt/pdf/Time_Crystalline_Holographic_Substrate.pdf": {
-      "mtime": 1771719395,
-      "size": 206723,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/cosmosv2.tex": {
-      "mtime": 1771721940,
-      "size": 19145,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/gravity.tex": {
-      "mtime": 1771721940,
-      "size": 17649,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/condensate.tex": {
-      "mtime": 1771721940,
-      "size": 3291,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/infographicfigure.tex": {
-      "mtime": 1771721940,
-      "size": 2745,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/cosmos.tex": {
-      "mtime": 1771721940,
-      "size": 26425,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/cosmosv4.tex": {
-      "mtime": 1771721940,
-      "size": 15906,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/Equations_handbook.tex": {
-      "mtime": 1771721940,
-      "size": 24446,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/equilibrium.tex": {
-      "mtime": 1771721940,
-      "size": 2431,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/introduction.tex": {
-      "mtime": 1771721940,
-      "size": 8338,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/black_holes.tex": {
-      "mtime": 1771721940,
-      "size": 4698,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/schrodinger.tex": {
-      "mtime": 1771721940,
-      "size": 45449,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/molecular interface.tex": {
-      "mtime": 1771721940,
-      "size": 3580,
-      "thread": "regenesis"
-    },
-    "chatgpt/latex/entropy.tex": {
-      "mtime": 1771721940,
-      "size": 11428,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/FEP.tex": {
-      "mtime": 1771721940,
-      "size": 18336,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/cross-communication.tex": {
-      "mtime": 1771721940,
-      "size": 9478,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/informationportal.tex": {
-      "mtime": 1771721940,
-      "size": 3759,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/spacetime.tex": {
-      "mtime": 1771721940,
-      "size": 2713,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/cosmosv3.tex": {
-      "mtime": 1771721940,
-      "size": 10261,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/authorsnote.tex": {
-      "mtime": 1771721940,
-      "size": 3001,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/equilibrium++.tex": {
-      "mtime": 1771721940,
-      "size": 7572,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/Infodynamics.tex": {
-      "mtime": 1771721940,
-      "size": 4725,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/architecture.tex": {
-      "mtime": 1771721940,
-      "size": 13348,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/resonance_field.tex": {
-      "mtime": 1771721940,
-      "size": 5385,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/equilibrium+.tex": {
-      "mtime": 1771721940,
-      "size": 13796,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/paradox-resolution.tex": {
-      "mtime": 1771721940,
-      "size": 6719,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/cross-coherence_interface.tex": {
-      "mtime": 1771721940,
-      "size": 9851,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/qudits.tex": {
-      "mtime": 1771721940,
-      "size": 2231,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/singularity.tex": {
-      "mtime": 1771721940,
-      "size": 3194,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/time.tex": {
-      "mtime": 1771721940,
-      "size": 31022,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/Observer.tex": {
-      "mtime": 1771721940,
-      "size": 10052,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/genesis.tex": {
-      "mtime": 1771721940,
-      "size": 137980,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/informationparadox.tex": {
-      "mtime": 1771721940,
-      "size": 7634,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/FEP-short.tex": {
-      "mtime": 1771721940,
-      "size": 7583,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/MAIN PAPER/Section_4.tex": {
-      "mtime": 1771721940,
-      "size": 19737,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/MAIN PAPER/Section_2.tex": {
-      "mtime": 1771721940,
-      "size": 22930,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/MAIN PAPER/Section_1.tex": {
-      "mtime": 1771721940,
-      "size": 7123,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/MAIN PAPER/Section_6_draft.tex": {
-      "mtime": 1771721940,
-      "size": 10160,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/MAIN PAPER/main.tex": {
-      "mtime": 1771721940,
-      "size": 4411,
-      "thread": "cosmos"
-    },
-    "chatgpt/latex/MAIN PAPER/Section_3.tex": {
-      "mtime": 1771721940,
-      "size": 29056,
       "thread": "cosmos"
     }
   }

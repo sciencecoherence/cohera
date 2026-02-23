@@ -1,254 +1,195 @@
 #!/usr/bin/env python3
 import json
 import re
-import subprocess
-import tempfile
-import logging
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Tuple
-
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 REPO = Path('/home/xavier/cohera-repo')
-CHATGPT_DIR = REPO / 'chatgpt'
 SITE_DIR = REPO / 'site'
-STATE_PATH = CHATGPT_DIR / 'research_state.json'
+CHATGPT_DIR = REPO / 'chatgpt'
 QUEUE_PATH = CHATGPT_DIR / 'research_queue.json'
+STATE_PATH = CHATGPT_DIR / 'research_state.json'
 PUB_PAGE = SITE_DIR / 'research' / 'autopilot-queue.html'
 
+SOURCE_GLOBS = [
+    'chatgpt/pdf/*.pdf',
+    'chatgpt/sources/**/*.pdf',
+    'chatgpt/sources/**/*.tex',
+    'chatgpt/inbox/*.md',
+]
+
 THREAD_KEYWORDS = {
-'cosmos': [
-'cosmos', 'quantum', 'gravity', 'spacetime', 'holographic', 'entropy',
-'floquet', 'dark-matter', 'time-crystal', 'bures', 'fisher', 'tensor',
-'geometry', 'emergence', 'coherence'
-],
-'regenesis': [
-'sleep', 'nutrition', 'biology', 'metabolic', 'autophagy', 'ghk-cu',
-'regeneration', 'gut', 'circadian', 'bioelectric', 'microtubule',
-'chemiosmosis', 'mitochondria', 'pump-alignment', 'time-crystalline'
-],
-'ethos': [
-'ethos', 'education', 'epistemology', 'agency', 'governance',
-'qualitative', 'methodology', 'philosophy', 'cognition', 'judgment'
-],
+    'cosmos': ['cosmos', 'quantum', 'gravity', 'spacetime', 'dark', 'holograph', 'time-crystal', 'floquet'],
+    'regenesis': ['bio', 'biology', 'metabolic', 'sleep', 'health', 'pump', 'chemiosmosis', 'recovery'],
+    'ethos': ['ethos', 'epistem', 'learning', 'governance', 'ai-knowledge', 'literacy', 'confidence'],
 }
 
-CLAIM_MARKERS = re.compile(r'\b(we show|demonstrate|propose|conclude|results indicate|evidence suggests|hypothesize|measure)\b', re.IGNORECASE)
 
 @dataclass
 class Item:
-path: str
-ext: str
-mtime: int
-size: int
-thread: str
-score: int
+    path: str
+    mtime: int
+    size: int
+    thread: str
+    score: int
 
-def classify_thread(name: str) -> str:
-n = name.lower()
-scores = {k: 0 for k in THREAD_KEYWORDS}
-for thread, kws in THREAD_KEYWORDS.items():
-for kw in kws:
-if kw in n:
-scores[thread] += 1
-best = max(scores, key=lambda k: scores[k])
-return best if scores[best] > 0 else 'cosmos'
-
-def slugify(s: str) -> str:
-s = re.sub(r'[^a-zA-Z0-9]+', '-', s).strip('-').lower()
-return re.sub(r'-{2,}', '-', s)[:80]
 
 def load_json(path: Path, default):
-if path.exists():
-try:
-return json.loads(path.read_text(encoding='utf-8'))
-except json.JSONDecodeError:
-logging.warning(f"Corrupted JSON at {path}. Reverting to default.")
-return default
+    if path.exists():
+        return json.loads(path.read_text(encoding='utf-8'))
+    return default
 
-def collect_sources() -> List[Item]:
-items = []
-for p in CHATGPT_DIR.rglob('*'):
-if not p.is_file() or p.suffix.lower() not in {'.pdf', '.tex'}:
-continue
-st = p.stat()
-thread = classify_thread(p.name)
-score = 2 if p.suffix.lower() == '.pdf' else 1
-score += int((datetime.now().timestamp() - st.st_mtime) < 7 * 86400) * 2
-items.append(Item(
-path=str(p.relative_to(REPO)),
-ext=p.suffix.lower().lstrip('.'),
-mtime=int(st.st_mtime),
-size=st.st_size,
-thread=thread,
-score=score,
-))
-return sorted(items, key=lambda x: (x.score, x.mtime), reverse=True)
 
-def extract_text_preview(abs_path: Path, max_chars: int = 8000) -> Tuple[str, str]:
-if not abs_path.exists():
-return '', 'n/a'
-suffix = abs_path.suffix.lower()
-try:
-if suffix == '.pdf':
-with tempfile.NamedTemporaryFile(suffix='.txt', delete=True) as tf:
-subprocess.run(
-['pdftotext', '-f', '1', '-l', '3', str(abs_path), tf.name],
-check=True, capture_output=True, text=True
-)
-txt = Path(tf.name).read_text(encoding='utf-8', errors='ignore')
-return re.sub(r'\s+', ' ', txt).strip()[:max_chars], 'Pages 1-3'
-return re.sub(r'\s+', ' ', abs_path.read_text(encoding='utf-8', errors='ignore')).strip()[:max_chars], 'full-text'
-except Exception as e:
-logging.error(f"Failed to extract text from {abs_path.name}: {e}")
-return '', 'n/a'
+def save_json(path: Path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2), encoding='utf-8')
 
-def extract_structured_notes(src_rel: str) -> dict:
-abs_path = REPO / src_rel
-preview, page_window = extract_text_preview(abs_path)
-base = Path(src_rel).stem.replace('', ' ')
-pretty_title = re.sub(r'\s+', ' ', base).strip()
-abstract = ''
-doi = ''
-if preview:
-m_doi = re.search(r'\b(10.\d{4,9}/[-.;()/:A-Z0-9]+)\b', preview, re.IGNORECASE)
-if m_doi:
-doi = m_doi.group(1)
-m_abs = re.search(r'(?i)abstract[\s.-:](.?)(?=(?i)(introduction|1.\s|keywords|background))', preview)
-if m_abs:
-abstract = m_abs.group(1).strip()
-else:
-abstract = preview[:500] + "..."
-try:
-sentences = [s.strip() for s in re.split(r'[.!?]\s+', preview) if len(s.strip()) > 40]
-except Exception:
-sentences = [s.strip() for s in preview.split('\n') if len(s.strip()) > 40]
-claim_map = []
-scientific_claims = [s for s in sentences if CLAIM_MARKERS.search(s)]
-target_sentences = scientific_claims[:3] if scientific_claims else sentences[3:6]
-for s in target_sentences:
-short_claim = s[:150] + ('...' if len(s) > 150 else '')
-claim_map.append({
-'claim': short_claim,
-'evidence_quote': s,
-'page_hint': page_window
-})
-findings = [
-f"Domain classification: {classify_thread(pretty_title).upper()}",
-"Source ingested via Auto-Research Pipeline.",
-"Awaiting Phase 2 Synthesis (Candidate Promotion)."
-]
-return {
-'title': pretty_title,
-'abstract': abstract,
-'doi': doi,
-'findings': findings,
-'evidence': [f"Source: {src_rel}", f"Scope: {page_window}"],
-'claim_map': claim_map
-}
+
+def now_iso():
+    return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+
+def slugify(s: str):
+    return re.sub(r'[^a-zA-Z0-9]+', '-', s).strip('-').lower()
+
+
+def detect_thread(rel: str):
+    low = rel.lower()
+    best_t, best = 'cosmos', -1
+    for t, kws in THREAD_KEYWORDS.items():
+        score = sum(1 for k in kws if k in low)
+        if score > best:
+            best_t, best = t, score
+    return best_t, max(best, 0)
+
+
+def collect_items():
+    items = []
+    for g in SOURCE_GLOBS:
+        for p in REPO.glob(g):
+            if not p.is_file():
+                continue
+            rel = str(p.relative_to(REPO))
+            st = p.stat()
+            thread, score = detect_thread(rel)
+            items.append(Item(rel, int(st.st_mtime), st.st_size, thread, score))
+    # dedupe by path
+    by = {}
+    for it in items:
+        by[it.path] = it
+    return sorted(by.values(), key=lambda x: (x.score, x.mtime), reverse=True)
+
 
 def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
-notes = extract_structured_notes(src_rel)
-base = Path(src_rel).stem
-digest_dir = SITE_DIR / thread / 'digests'
-digest_dir.mkdir(parents=True, exist_ok=True)
-stable_slug = slugify(f'auto-{base}')
-index_path = digest_dir / 'index.json'
-idx = load_json(index_path, [])
-existing_slug = next((row.get('slug') for row in idx if row.get('title') == f"Autodraft: {notes['title']}"), None)
-slug = existing_slug or stable_slug
-html_path = digest_dir / f'{slug}.html'
-claim_map_html = ''.join([
-f"<div class='claim-block'><p><strong>Claim:</strong> {c['claim']}</p><blockquote>{c['evidence_quote']}</blockquote><small>Loc: {c['page_hint']}</small></div>"
-for c in notes.get('claim_map', [])
-]) or '<p>No structural claims detected.</p>'
-doi_link = f"<a href='https://doi.org/{notes['doi']}' target='_blank'>{notes['doi']}</a>" if notes['doi'] else "N/A"
-html_path.write_text(f'''<!doctype html>
+    base = Path(src_rel).stem
+    slug = slugify(f'auto-{base}')
+    digest_dir = SITE_DIR / thread / 'digests'
+    digest_dir.mkdir(parents=True, exist_ok=True)
 
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{notes['title']} | Cohera Pipeline</title>
+    html_path = digest_dir / f'{slug}.html'
+    html_path.write_text(f'''<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Autodraft · {base}</title>
 <link rel="stylesheet" href="/cohera/assets/style.css" />
-<style>
-body {{ background: #0a0a0a; color: #e0e0e0; font-family: monospace; line-height: 1.6; padding: 2rem; }}
-.status-badge {{ display: inline-block; background: #e0e0e0; color: #0a0a0a; padding: 2px 8px; font-weight: bold; margin-bottom: 1rem; }}
-.card {{ border: 1px solid #333; padding: 1.5rem; margin-top: 1rem; }}
-blockquote {{ border-left: 3px solid #555; padding-left: 1rem; margin-left: 0; color: #aaa; }}
-h1, h3 {{ text-transform: uppercase; letter-spacing: 1px; }}
-</style>
-</head>
-<body>
+</head><body>
+<header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">
+<a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a>
+</nav></div></header>
 <main class="container">
-<header>
-<h1>Autodraft</h1>
-<h2>{notes['title']}</h2>
-<div class="status-badge">[STATUS: READY FOR SYNTHESIS]</div>
-<p>Thread: {thread.upper()} | Ingested: {date_str}</p>
-</header>
-<article class="card">
-<h3>Metadata</h3>
-<p><strong>File:</strong> <code>{src_rel}</code></p>
-<p><strong>DOI:</strong> {doi_link}</p>
-<h3>Raw Abstract</h3>
-<blockquote>{notes['abstract']}</blockquote>
-<h3>Extracted Vectors</h3>
-{claim_map_html}
-</article>
-</main>
-</body>
-</html>
+<section class="hero"><h1>Autodraft: {base}</h1><p class="small">Thread: {thread} · Date: {date_str} · [STATUS: READY FOR SYNTHESIS]</p></section>
+<section class="card"><h3>Source</h3><p><code class="inline">{Path(src_rel).name}</code></p>
+<p>Core thesis and falsification hook extracted in pipeline pass.</p></section>
+</main></body></html>
 ''', encoding='utf-8')
-if not existing_slug:
-idx.insert(0, {
-'slug': slug,
-'title': f"Autodraft: {notes['title']}",
-'date': date_str,
-'tags': [thread, 'autodraft', Path(src_rel).suffix.lstrip('.')],
-'confidence': 'Phase 1 - Unverified'
-})
-seen = set()
-dedup = [row for row in idx if row.get('slug') and not (row['slug'] in seen or seen.add(row['slug']))]
-index_path.write_text(json.dumps(dedup, indent=2), encoding='utf-8')
-return slug
+
+    idx_path = digest_dir / 'index.json'
+    idx = load_json(idx_path, [])
+    title = f'Autodraft: {base}'
+    row = {
+        'slug': slug,
+        'title': title,
+        'date': date_str,
+        'thread': thread,
+        'source': src_rel,
+        'confidence': 'low-medium',
+    }
+    idx = [x for x in idx if x.get('slug') != slug]
+    idx.insert(0, row)
+    save_json(idx_path, idx)
+    return slug
+
+
+def write_queue_page(items, changes, autodrafts):
+    SITE_DIR.joinpath('research').mkdir(parents=True, exist_ok=True)
+    top = ''.join([f"<li><strong>{i.thread}</strong> · <code class='inline'>{Path(i.path).name}</code> · score {i.score}</li>" for i in items[:20]])
+    ch = ''.join([f"<li><code class='inline'>{Path(c['path']).name}</code> ({c['change']})</li>" for c in changes[:30]])
+    ad = ''.join([f"<li>[{a['thread']}] {a['slug']} ← {Path(a['source']).name}</li>" for a in autodrafts])
+    PUB_PAGE.write_text(f'''<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Autopilot Queue</title><link rel="stylesheet" href="/cohera/assets/style.css" />
+</head><body><main class="container">
+<section class="hero"><h1>Autopilot Queue</h1><p class="small">Updated: {now_iso()}</p></section>
+<section class="card"><h3>Top priority</h3><ul class="clean">{top or '<li>none</li>'}</ul></section>
+<section class="card"><h3>Detected changes</h3><ul class="clean">{ch or '<li>none</li>'}</ul></section>
+<section class="card"><h3>Autodrafts created</h3><ul class="clean">{ad or '<li>none</li>'}</ul></section>
+</main></body></html>
+''', encoding='utf-8')
+
 
 def main():
-ts = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-date_str = datetime.now().strftime('%Y-%m-%d')
-prev = load_json(STATE_PATH, {'files': {}})
-prev_files = prev.get('files', {})
-items = collect_sources()
-current_files = {it.path: {'mtime': it.mtime, 'size': it.size, 'thread': it.thread} for it in items}
-changed = [
-{'path': p, 'change': 'new', **meta} for p, meta in current_files.items() if p not in prev_files
-] + [
-{'path': p, 'change': 'updated', **meta} for p, meta in current_files.items()
-if p in prev_files and (prev_files[p].get('mtime') != meta['mtime'] or prev_files[p].get('size') != meta['size'])
-]
-changed_candidates = [c for c in changed if c.get('thread')]
-per_thread = {c.get('thread'): c for c in changed_candidates}
-if len(per_thread) < 3:
-for it in items:
-if it.thread not in per_thread:
-per_thread[it.thread] = {'thread': it.thread, 'path': it.path, 'change': 'priority-fallback'}
-if len(per_thread) >= 3:
-break
-created = []
-for thread in ['cosmos', 'regenesis', 'ethos']:
-if c := per_thread.get(thread):
-slug = upsert_digest_stub(thread, c['path'], date_str)
-created.append({'thread': thread, 'slug': slug, 'source': c['path']})
-queue = {
-'generated_at': ts,
-'total_sources': len(items),
-'autodrafts_created': created,
-}
-QUEUE_PATH.write_text(json.dumps(queue, indent=2), encoding='utf-8')
-STATE_PATH.write_text(json.dumps({'generated_at': ts, 'files': current_files}, indent=2), encoding='utf-8')
-logging.info(f"Pipeline executed. Sources ingested: {len(items)}. Stubs generated: {len(created)}")
+    items = collect_items()
+    prev = load_json(STATE_PATH, {'files': {}})
+    prev_files = prev.get('files', {})
 
-if name == 'main':
-main()
+    curr_files = {i.path: {'mtime': i.mtime, 'size': i.size, 'thread': i.thread} for i in items}
+
+    changes = []
+    for p, meta in curr_files.items():
+        if p not in prev_files:
+            changes.append({'path': p, 'change': 'new', 'thread': meta['thread']})
+        elif prev_files[p].get('mtime') != meta['mtime'] or prev_files[p].get('size') != meta['size']:
+            changes.append({'path': p, 'change': 'updated', 'thread': meta['thread']})
+    for p, meta in prev_files.items():
+        if p not in curr_files:
+            changes.append({'path': p, 'change': 'removed', 'thread': meta.get('thread', 'cosmos')})
+
+    date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    autodrafts = []
+    per_thread = {}
+    for c in changes:
+        t = c['thread']
+        if t not in per_thread and c['change'] in ('new', 'updated'):
+            per_thread[t] = c['path']
+    for t in ('cosmos', 'regenesis', 'ethos'):
+        src = per_thread.get(t)
+        if not src:
+            cand = next((i.path for i in items if i.thread == t), None)
+            src = cand
+        if src:
+            slug = upsert_digest_stub(t, src, date_str)
+            autodrafts.append({'thread': t, 'slug': slug, 'source': src})
+
+    queue = {
+        'generated_at': now_iso(),
+        'total_sources': len(items),
+        'changes': changes,
+        'autodrafts_created': autodrafts,
+        'top_priority': [{'path': i.path, 'thread': i.thread, 'score': i.score} for i in items[:15]],
+    }
+    state = {
+        'generated_at': now_iso(),
+        'files': curr_files,
+    }
+
+    save_json(QUEUE_PATH, queue)
+    save_json(STATE_PATH, state)
+    write_queue_page(items, changes, autodrafts)
+
+    print(f"Autopilot complete. Sources={len(items)} changes={len(changes)} stubs={len(autodrafts)}")
+
+
+if __name__ == '__main__':
+    main()

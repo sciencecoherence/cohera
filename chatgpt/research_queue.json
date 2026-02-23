@@ -1,187 +1,305 @@
 {
-  "generated_at": "2026-02-23T21:11:01Z",
-  "total_sources": 56,
-  "changes": [],
-  "top_priority": [
+  "generated_at": "2026-02-23T22:41:11Z",
+  "total_sources": 19,
+  "changes": [
     {
-      "path": "chatgpt/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 345070,
-      "thread": "ethos",
-      "score": 3
+      "path": "chatgpt/inbox/2026-02-23-chat-corpus-newreality.md",
+      "change": "new",
+      "thread": "cosmos"
     },
     {
-      "path": "chatgpt/pdf/Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 810373,
-      "thread": "regenesis",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 715402,
-      "thread": "cosmos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/On_the_Concept_of_Violence_A_Comparative_Study_of_Human_and_AI_Judgments.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 684822,
-      "thread": "ethos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/Service_Orchestration_in_the_Computing_Continuum_Structural_Challenges_and_Vision.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 2902613,
-      "thread": "cosmos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/Dissipation_as_a_Resource_Synchronization_Coherence_Recovery_and_Chaos_Control.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 6566551,
-      "thread": "cosmos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 406684,
-      "thread": "ethos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/Epistemology_of_Generative_AI_The_Geometry_of_Knowing.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 674327,
-      "thread": "ethos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/Quantifying_and_Attributing_Submodel_Uncertainty_in_Stochastic_Simulation_Models_and_Digital_Twins.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 617950,
-      "thread": "cosmos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/Topological_Boundary_Time_Crystal_Oscillations.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 16354969,
-      "thread": "cosmos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations.pdf",
-      "ext": "pdf",
-      "mtime": 1771856827,
-      "size": 519699,
-      "thread": "ethos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/Hierarchical_Self_Engineering_Chain (1).pdf",
-      "ext": "pdf",
-      "mtime": 1771720974,
-      "size": 57098,
-      "thread": "cosmos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/COHERENCER_BASED_COSMOLOGY.pdf",
-      "ext": "pdf",
-      "mtime": 1771720974,
-      "size": 88561,
-      "thread": "cosmos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/_TCQS__Hypothesis_Genesis.pdf",
-      "ext": "pdf",
-      "mtime": 1771720974,
-      "size": 199401,
-      "thread": "cosmos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/COHERENCER_BASED_COSMOLOGY (1).pdf",
-      "ext": "pdf",
-      "mtime": 1771720974,
-      "size": 87620,
-      "thread": "cosmos",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/_TCQS__Biology.pdf",
-      "ext": "pdf",
-      "mtime": 1771720974,
-      "size": 130960,
-      "thread": "regenesis",
-      "score": 3
-    },
-    {
-      "path": "chatgpt/pdf/Time_Crystalline_Holographic_Substrate.pdf",
-      "ext": "pdf",
-      "mtime": 1771719395,
-      "size": 206723,
-      "thread": "cosmos",
-      "score": 3
+      "path": "chatgpt/inbox/2026-02-23-chat-corpus-genesis.md",
+      "change": "new",
+      "thread": "cosmos"
     },
     {
       "path": "chatgpt/latex/cosmosv2.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 19145,
-      "thread": "cosmos",
-      "score": 2
+      "change": "removed",
+      "thread": "cosmos"
     },
     {
       "path": "chatgpt/latex/gravity.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 17649,
-      "thread": "cosmos",
-      "score": 2
+      "change": "removed",
+      "thread": "cosmos"
     },
     {
       "path": "chatgpt/latex/condensate.tex",
-      "ext": "tex",
-      "mtime": 1771721940,
-      "size": 3291,
-      "thread": "cosmos",
-      "score": 2
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/infographicfigure.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cosmos.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cosmosv4.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/Equations_handbook.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/equilibrium.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/introduction.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/black_holes.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/schrodinger.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/molecular interface.tex",
+      "change": "removed",
+      "thread": "regenesis"
+    },
+    {
+      "path": "chatgpt/latex/entropy.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/FEP.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cross-communication.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/informationportal.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/spacetime.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cosmosv3.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/authorsnote.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/equilibrium++.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/Infodynamics.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/architecture.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/resonance_field.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/equilibrium+.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/paradox-resolution.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/cross-coherence_interface.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/qudits.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/singularity.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/time.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/Observer.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/genesis.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/informationparadox.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/FEP-short.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_4.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_2.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_1.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_6_draft.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/main.tex",
+      "change": "removed",
+      "thread": "cosmos"
+    },
+    {
+      "path": "chatgpt/latex/MAIN PAPER/Section_3.tex",
+      "change": "removed",
+      "thread": "cosmos"
     }
   ],
   "autodrafts_created": [
     {
       "thread": "cosmos",
-      "slug": "auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi",
-      "source": "chatgpt/pdf/The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf",
-      "selector": "priority-fallback"
+      "slug": "auto-2026-02-23-chat-corpus-newreality",
+      "source": "chatgpt/inbox/2026-02-23-chat-corpus-newreality.md"
     },
     {
       "thread": "regenesis",
-      "slug": "auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin",
-      "source": "chatgpt/pdf/Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis.pdf",
-      "selector": "priority-fallback"
+      "slug": "auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosis",
+      "source": "chatgpt/pdf/Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis.pdf"
     },
     {
       "thread": "ethos",
       "slug": "auto-on-translating-epistemic-operators-in-a-logic-of-awareness",
-      "source": "chatgpt/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf",
-      "selector": "priority-fallback"
+      "source": "chatgpt/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf"
+    }
+  ],
+  "top_priority": [
+    {
+      "path": "chatgpt/pdf/Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis.pdf",
+      "thread": "regenesis",
+      "score": 3
+    },
+    {
+      "path": "chatgpt/pdf/_TCQS__Biology.pdf",
+      "thread": "regenesis",
+      "score": 2
+    },
+    {
+      "path": "chatgpt/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf",
+      "thread": "ethos",
+      "score": 1
+    },
+    {
+      "path": "chatgpt/pdf/The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf",
+      "thread": "cosmos",
+      "score": 1
+    },
+    {
+      "path": "chatgpt/pdf/Dissipation_as_a_Resource_Synchronization_Coherence_Recovery_and_Chaos_Control.pdf",
+      "thread": "regenesis",
+      "score": 1
+    },
+    {
+      "path": "chatgpt/pdf/How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs.pdf",
+      "thread": "ethos",
+      "score": 1
+    },
+    {
+      "path": "chatgpt/pdf/Epistemology_of_Generative_AI_The_Geometry_of_Knowing.pdf",
+      "thread": "ethos",
+      "score": 1
+    },
+    {
+      "path": "chatgpt/pdf/Time_Crystalline_Holographic_Substrate.pdf",
+      "thread": "cosmos",
+      "score": 1
+    },
+    {
+      "path": "chatgpt/inbox/2026-02-23-chat-corpus-newreality.md",
+      "thread": "cosmos",
+      "score": 0
+    },
+    {
+      "path": "chatgpt/inbox/2026-02-23-chat-corpus-genesis.md",
+      "thread": "cosmos",
+      "score": 0
+    },
+    {
+      "path": "chatgpt/pdf/On_the_Concept_of_Violence_A_Comparative_Study_of_Human_and_AI_Judgments.pdf",
+      "thread": "cosmos",
+      "score": 0
+    },
+    {
+      "path": "chatgpt/pdf/Service_Orchestration_in_the_Computing_Continuum_Structural_Challenges_and_Vision.pdf",
+      "thread": "cosmos",
+      "score": 0
+    },
+    {
+      "path": "chatgpt/pdf/Quantifying_and_Attributing_Submodel_Uncertainty_in_Stochastic_Simulation_Models_and_Digital_Twins.pdf",
+      "thread": "cosmos",
+      "score": 0
+    },
+    {
+      "path": "chatgpt/pdf/Topological_Boundary_Time_Crystal_Oscillations.pdf",
+      "thread": "cosmos",
+      "score": 0
+    },
+    {
+      "path": "chatgpt/pdf/Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations.pdf",
+      "thread": "cosmos",
+      "score": 0
     }
   ]
 }
