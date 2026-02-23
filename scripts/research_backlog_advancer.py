@@ -10,6 +10,7 @@ REPO = Path('/home/xavier/cohera-repo')
 SITE = REPO / 'site'
 TEX_DIR = SITE / 'publications' / 'tex'
 STATE = REPO / 'chatgpt' / 'research_backlog_run.json'
+ALLOW = REPO / 'chatgpt' / 'publication_allowlist.json'
 THREADS = ['cosmos', 'regenesis', 'ethos']
 
 

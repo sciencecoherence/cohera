@@ -9,31 +9,45 @@ BUILD_DIR="$REPO_ROOT/.build/texpdf"
 mkdir -p "$PDF_DIR" "$BUILD_DIR"
 rm -f "$PDF_DIR"/*.pdf
 
-# Build only publication-ready manuscripts when available.
-READY_JSON="$REPO_ROOT/chatgpt/publication_ready.json"
+# Build allowlisted + already-ready manuscripts so throughput keeps advancing.
 mapfile -t BUILD_TEX < <(
 python3 - <<'PY'
 import json
 from pathlib import Path
 repo=Path('/home/xavier/cohera-repo')
 tex_dir=repo/'site/publications/tex'
-ready=repo/'chatgpt/publication_ready.json'
+ready_path=repo/'chatgpt/publication_ready.json'
+allow_path=repo/'chatgpt/publication_allowlist.json'
 selected=[]
-if ready.exists():
-    data=json.loads(ready.read_text())
+seen=set()
+
+# 1) explicit allowlist targets (may not be ready yet)
+allow=[]
+if allow_path.exists():
+    allow=json.loads(allow_path.read_text()).get('slugs',[])
+for slug in allow:
+    slug=(slug or '').lower()
+    for p in sorted(tex_dir.glob('*.tex')):
+        if slug in p.stem.lower() and p not in seen and 'auto-' not in p.name:
+            selected.append(str(p)); seen.add(p)
+
+# 2) already-ready items
+if ready_path.exists():
+    data=json.loads(ready_path.read_text())
     for row in data.get('ready', []):
         tex=row.get('tex')
         if tex:
             p=repo/tex
-            if p.exists() and p.suffix=='.tex':
-                selected.append(str(p))
+            if p.exists() and p.suffix=='.tex' and p not in seen:
+                selected.append(str(p)); seen.add(p)
+
+# 3) fallback: non-autodraft tex only
 if not selected:
-    # Fallback: include non-autodraft tex files only
     for p in sorted(tex_dir.glob('*.tex')):
-        n=p.name
-        if 'auto-' in n:
+        if 'auto-' in p.name:
             continue
         selected.append(str(p))
+
 for p in selected:
     print(p)
 PY
