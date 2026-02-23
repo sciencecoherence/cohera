@@ -182,7 +182,8 @@ def is_ready_publication(row: dict, allowlist: set[str]) -> bool:
         return False
     if allowlist and slug not in allowlist:
         return False
-    if len(abstract) < 120:
+    # Keep strict separation, but don't collapse Publications to zero.
+    if len(abstract) < 40:
         return False
     if not tex_path or not tex_quality_ok(tex_path):
         return False
