@@ -1,0 +1,92 @@
+% =====================================================================================
+% COSMOS v5 Integrated Draft (2026-02-22)
+% Build trigger: 2026-02-22
+% Consolidates new formal proposals for sections 8.1, 8.2, 8.3
+% =====================================================================================
+
+\section*{8.1 Coherence Functional (Concrete Choice)}
+\subsection*{8.1.1 Minimal Coherence Functional and Selection Rule}
+
+\begin{FormalBox}{Choose one coherence functional}
+Define the projected state at stroboscopic step $n$ as $\rho_n^{\mathrm{loc}} = \Proj\rho_n\Proj^{\dagger}$.
+Use a single coherence functional in a fixed reference basis $\{\ket{i}\}$:
+\[
+\mathcal{C}(\rho_n^{\mathrm{loc}}) \equiv \sum_{i \neq j} \left|\rho^{\mathrm{loc}}_{ij}(n)\right|.
+\]
+This is the $\ell_1$ coherence measure (minimal, basis-explicit, and computable).
+\end{FormalBox}
+
+\begin{FormalBox}{Selection functional (free-energy style)}
+Define a stability-selection functional over one recurrence window:
+\[
+\mathcal{F}_n = E_n - \kappa\,\mathcal{C}(\rho_n^{\mathrm{loc}}), \qquad \kappa>0,
+\]
+where $E_n = \Tr\!\left[H_{\mathrm{eff}}\rho_n^{\mathrm{loc}}\right]$ is effective projected energy.
+A sector is preferred if it minimizes time-averaged selection cost:
+\[
+\overline{\mathcal{F}}_{N} = \frac{1}{N}\sum_{n=1}^{N} \mathcal{F}_n.
+\]
+\end{FormalBox}
+
+\begin{MeaningBox}{Interpretation}
+The model now has one explicit knob: coherence-weight $\kappa$. Larger $\kappa$ rewards sectors that maintain off-diagonal structure under recurrence; smaller $\kappa$ reduces to energy-dominant selection.
+\end{MeaningBox}
+
+\begin{TestBox}{Operational use}
+Scan candidate sectors and estimate $(E_n,\mathcal{C}_n)$ from projected trajectories. Stable classical-looking sectors should occupy low-variance bands of $\overline{\mathcal{F}}_N$ over long windows.
+\end{TestBox}
+
+\section*{8.2 Compatibility Condition (Precise Threshold)}
+\subsection*{8.2.1 Precise Compatibility \& Stability Thresholds}
+
+\begin{FormalBox}{The Commutativity Constraint}
+Let $\mathcal{B}(\Substrate)$ be the algebra of bounded operators on the substrate. Define the stability error as:
+\[
+\epsilon \coloneqq \left\| \Proj \Floquet - \Floquet_{\mathrm{loc}} \Proj \right\|_{\mathrm{op}}.
+\]
+The emergent sector $\Substrate_{\mathrm{loc}}$ is stably coherent if there exists a local propagator $\Floquet_{\mathrm{loc}}$ such that:
+\[
+\epsilon < \delta_{\mathrm{coh}},
+\]
+where $\delta_{\mathrm{coh}}$ is a coherence margin induced by $\Integr$ (and practically tied to a spectral separation scale of $\Htot$).
+\end{FormalBox}
+
+\begin{MeaningBox}{Dynamical drift criterion}
+If $\epsilon \approx 0$, projected dynamics faithfully track the global update. Once $\epsilon$ exceeds $\delta_{\mathrm{coh}}$, representation drift appears: $\Emerg$ can no longer sustain a stable local narrative, signaling decoherence of the projected sector.
+\end{MeaningBox}
+
+\begin{TestBox}{Empirical hook}
+Tune control parameters in a driven coherent system and monitor recurrence observables. Crossing the inferred threshold ($\epsilon \sim \delta_{\mathrm{coh}}$) should produce a sharp loss of periodic structure (effective time-crystal melting / thermalization onset).
+\end{TestBox}
+
+\section*{8.3 Geometry Extraction (Operational Pipeline)}
+\subsection*{8.3.1 Emergent Geometry from Distinguishability}
+
+\begin{FormalBox}{Metric choice on projected states}
+For neighboring projected states, define infinitesimal distance with quantum Fisher metric:
+\[
+\mathrm{d}s^2 = \frac{1}{4}\,\mathcal{I}_Q\big(\rho_{\theta}^{\mathrm{loc}}\big)\,\mathrm{d}\theta^2,
+\]
+where $\theta$ indexes effective coordinates in the projected sector.
+For discrete samples $(\rho_a^{\mathrm{loc}},\rho_b^{\mathrm{loc}})$ use Bures proxy:
+\[
+d_{ab}^2 = 2\Big(1-\sqrt{F(\rho_a^{\mathrm{loc}},\rho_b^{\mathrm{loc}})}\Big),
+\]
+with fidelity $F(\rho_a,\rho_b)=\left(\Tr\sqrt{\sqrt{\rho_a}\rho_b\sqrt{\rho_a}}\right)^2$.
+\end{FormalBox}
+
+\begin{FormalBox}{Graph-to-geometry protocol}
+Build a weighted graph over sampled projected states with edge weights
+\[
+w_{ab}=\exp\!\left(-d_{ab}^2/\sigma^2\right).
+\]
+Estimate effective local metric tensor $g_{\mu\nu}$ via neighborhood regression (diffusion-map/Laplacian embedding), then extract curvature scalars from $g_{\mu\nu}$ on the learned manifold.
+\end{FormalBox}
+
+\begin{MeaningBox}{Interpretation}
+Geometry is reconstructed from state distinguishability, not assumed a priori. Distances, neighborhoods, and curvature emerge from transform difficulty under coherence constraints.
+\end{MeaningBox}
+
+\begin{TestBox}{Falsifiable signature}
+Persistent coherence bottlenecks should map to positive effective-curvature zones and correlate with stronger recurrence stability under Floquet updates.
+\end{TestBox}
