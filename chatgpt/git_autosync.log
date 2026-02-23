@@ -302,3 +302,19 @@ From github.com-cohera:sciencecoherence/cohera
  delete mode 100644 site/publications/pdf/regenesis_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.pdf
  delete mode 100644 site/publications/pdf/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.pdf
  delete mode 100644 site/publications/pdf/regenesis_self-organized-bioelectricity_20260223.pdf
+From github.com-cohera:sciencecoherence/cohera
+ * branch            main       -> FETCH_HEAD
+warning: fetch updated the current branch head.
+fast-forwarding your working tree from
+commit ac33c141c6d56239a864e8a7ddb9e345dde76f2b.
+error: Your local changes to the following files would be overwritten by merge:
+	chatgpt/git_autosync.log
+	trading/bot/state/monitor_exit.log
+Please commit your changes or stash them before you merge.
+Aborting
+fatal: Cannot fast-forward your working tree.
+After making sure that you saved anything precious from
+$ git diff ac33c141c6d56239a864e8a7ddb9e345dde76f2b
+output, run
+$ git reset --hard
+to recover.

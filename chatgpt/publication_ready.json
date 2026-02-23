@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-23T17:29:39Z",
+  "generated_at": "2026-02-23T17:33:53Z",
   "ready": [
     {
       "thread": "cosmos",
@@ -26,81 +26,6 @@
       "pdf": "site/publications/pdf/cosmos_time-crystals-holography-minimal-ground.pdf",
       "status": {
         "has_digest": true,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": true
-    },
-    {
-      "thread": "regenesis",
-      "slug": "sleep-regeneration-baseline",
-      "title": "Sleep and Regeneration: Baseline Mechanisms and Practical Protocol",
-      "abstract": "This publication provides a structured synthesis for Sleep and Regeneration: Baseline Mechanisms and Practical Protocol, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": "site/regenesis/digests/sleep-regeneration-baseline.html",
-      "tex": "site/publications/tex/regenesis_sleep-regeneration-baseline.tex",
-      "pdf": "site/publications/pdf/regenesis_sleep-regeneration-baseline.pdf",
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": true
-    },
-    {
-      "thread": "ethos",
-      "slug": "research-literacy-confidence-rubric",
-      "title": "Research Literacy Quickstart + Confidence Rubric",
-      "abstract": "This publication provides a structured synthesis for Research Literacy Quickstart + Confidence Rubric, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": "site/ethos/digests/research-literacy-confidence-rubric.html",
-      "tex": "site/publications/tex/ethos_research-literacy-confidence-rubric.tex",
-      "pdf": "site/publications/pdf/ethos_research-literacy-confidence-rubric.pdf",
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": true
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_dark-matter-cores-as1063_publication-v1",
-      "title": "Cosmos Dark Matter Cores As1063 Publication V1",
-      "abstract": "This paper presents a structured synthesis of current cosmos evidence around dark matter core structure in as1063: evidence synthesis. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_dark-matter-cores-as1063_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_dark-matter-cores-as1063_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": true
-    },
-    {
-      "thread": "ethos",
-      "slug": "ethos_epistemic-operators-awareness_publication-v1",
-      "title": "Ethos Epistemic Operators Awareness Publication V1",
-      "abstract": "This paper presents a structured synthesis of current ethos evidence around translating epistemic operators in a logic of awareness. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
-      "digest_html": null,
-      "tex": "site/publications/tex/ethos_epistemic-operators-awareness_publication-v1.tex",
-      "pdf": "site/publications/pdf/ethos_epistemic-operators-awareness_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": true
-    },
-    {
-      "thread": "regenesis",
-      "slug": "regenesis_bioelectricity-pump-alignment_publication-v1",
-      "title": "Regenesis Bioelectricity Pump Alignment Publication V1",
-      "abstract": "This paper presents a structured synthesis of current regenesis evidence around self-organized bioelectricity via collective pump alignment. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
-      "digest_html": null,
-      "tex": "site/publications/tex/regenesis_bioelectricity-pump-alignment_publication-v1.tex",
-      "pdf": "site/publications/pdf/regenesis_bioelectricity-pump-alignment_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
         "has_tex": true,
         "has_pdf": true
       },

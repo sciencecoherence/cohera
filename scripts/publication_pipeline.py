@@ -13,6 +13,7 @@ TEX_DIR = SITE / 'publications' / 'tex'
 PDF_DIR = SITE / 'publications' / 'pdf'
 PIPELINE_PATH = REPO / 'chatgpt' / 'publication_pipeline.json'
 READY_PATH = REPO / 'chatgpt' / 'publication_ready.json'
+ALLOWLIST_PATH = REPO / 'chatgpt' / 'publication_allowlist.json'
 
 THREADS = ['cosmos', 'regenesis', 'ethos']
 
@@ -155,7 +156,7 @@ def ensure_publication_tex_quality(tex_path: Path, title: str, thread: str):
     tex_path.write_text(prefix + text, encoding='utf-8')
 
 
-def is_ready_publication(row: dict) -> bool:
+def is_ready_publication(row: dict, allowlist: set[str]) -> bool:
     slug = (row.get('slug') or '').lower()
     title = (row.get('title') or '').lower()
     abstract = (row.get('abstract') or '').strip()
@@ -167,6 +168,8 @@ def is_ready_publication(row: dict) -> bool:
     if not has_pdf:
         return False
     if len(abstract) < 80:
+        return False
+    if allowlist and slug not in allowlist:
         return False
     return True
 
@@ -259,6 +262,9 @@ def main():
         sync_tex_index()
         subprocess.run(['/home/xavier/cohera-repo/scripts/build_publication_pdfs.sh'], check=False)
 
+    allow_cfg = load_json(ALLOWLIST_PATH, {'slugs': []})
+    allowlist = set((s or '').lower() for s in allow_cfg.get('slugs', []))
+
     # refresh computed fields after potential build
     for r in results:
         if r['tex']:
@@ -268,7 +274,7 @@ def main():
                 r['status']['has_pdf'] = True
             tex_abs = REPO / r['tex']
             r['abstract'] = extract_abstract_from_tex(tex_abs)
-        r['ready'] = is_ready_publication(r)
+        r['ready'] = is_ready_publication(r, allowlist)
 
     if args.sync:
         sync_pdf_index_ready(results)

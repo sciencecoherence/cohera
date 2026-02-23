@@ -38,7 +38,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/publications/pdf
-          git commit -m "build(publications): regenerate PDF artifacts"
-          # avoid non-fast-forward failures if new commits landed during this run
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git commit -m "build(publications): regenerate PDF artifacts" || true
+          # Best-effort push; never fail workflow on race conflicts.
+          git pull --rebase origin main || true
+          git push origin HEAD:main || echo "Push skipped (race/conflict)."

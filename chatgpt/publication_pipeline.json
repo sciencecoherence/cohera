@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-02-23T17:29:39Z",
+  "generated_at": "2026-02-23T17:33:53Z",
   "totals": {
     "items": 18,
     "with_tex": 18,
     "with_pdf": 7,
-    "ready_publications": 7
+    "ready_publications": 2
   },
   "items": [
     {
@@ -170,7 +170,7 @@
         "has_tex": true,
         "has_pdf": true
       },
-      "ready": true
+      "ready": false
     },
     {
       "thread": "ethos",
@@ -230,7 +230,7 @@
         "has_tex": true,
         "has_pdf": true
       },
-      "ready": true
+      "ready": false
     },
     {
       "thread": "cosmos",
@@ -245,7 +245,7 @@
         "has_tex": true,
         "has_pdf": true
       },
-      "ready": true
+      "ready": false
     },
     {
       "thread": "ethos",
@@ -260,7 +260,7 @@
         "has_tex": true,
         "has_pdf": true
       },
-      "ready": true
+      "ready": false
     },
     {
       "thread": "regenesis",
@@ -275,7 +275,7 @@
         "has_tex": true,
         "has_pdf": true
       },
-      "ready": true
+      "ready": false
     }
   ]
 }
