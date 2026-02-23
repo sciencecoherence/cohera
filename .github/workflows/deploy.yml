@@ -1,4 +1,4 @@
-name: Deploy Cohera Site to Hostinger (SCP)
+name: Site • Deploy to Hostinger
 
 on:
   push:
@@ -8,10 +8,12 @@ on:
       - ".github/workflows/deploy.yml"
 
 jobs:
-  deploy:
+  deploy-site:
+    name: Deploy site files to Hostinger
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Upload site via SCP
         uses: appleboy/scp-action@v0.1.7
@@ -23,3 +25,7 @@ jobs:
           source: "site/**"
           target: ${{ secrets.HOSTINGER_TARGET_DIR }}
           strip_components: 1
+
+      - name: Deployment summary
+        run: |
+          echo "Deployed site/** to Hostinger target directory." >> "$GITHUB_STEP_SUMMARY"

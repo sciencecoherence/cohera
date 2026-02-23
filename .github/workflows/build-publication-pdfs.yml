@@ -1,4 +1,4 @@
-name: Build Publication PDFs
+name: Publications • Build Ready PDFs
 
 on:
   workflow_dispatch:
@@ -13,10 +13,11 @@ permissions:
   contents: write
 
 jobs:
-  build-pdfs:
+  build-ready-publications:
+    name: Build ready publication PDFs
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -26,13 +27,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y latexmk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-science
 
-      - name: Build PDFs
+      - name: Build ready-only publication PDFs
         run: bash scripts/build_publication_pdfs.sh
 
-      - name: Commit generated PDFs
+      - name: Commit generated PDFs (best effort)
         run: |
           if git diff --quiet -- site/publications/pdf; then
-            echo "No PDF changes to commit."
+            echo "No PDF changes to commit." | tee -a "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -42,3 +43,4 @@ jobs:
           # Best-effort push; never fail workflow on race conflicts.
           git pull --rebase origin main || true
           git push origin HEAD:main || echo "Push skipped (race/conflict)."
+          echo "Updated publication PDFs were committed/pushed." >> "$GITHUB_STEP_SUMMARY"
