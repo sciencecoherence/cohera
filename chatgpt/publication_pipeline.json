@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-02-23T19:09:32Z",
+  "generated_at": "2026-02-23T19:20:29Z",
   "totals": {
-    "items": 30,
-    "with_tex": 30,
-    "with_pdf": 2,
+    "items": 31,
+    "with_tex": 31,
+    "with_pdf": 3,
     "ready_publications": 2
   },
   "items": [
@@ -274,6 +274,21 @@
         "has_digest": false,
         "has_tex": true,
         "has_pdf": false
+      },
+      "ready": false
+    },
+    {
+      "thread": "cosmos",
+      "slug": "cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1",
+      "title": "Cosmos Cosmos V5 Coherence Operators And Emergent Geometry Publication V1",
+      "abstract": "This publication provides a structured synthesis for Cosmos Cosmos V5 Coherence Operators And Emergent Geometry Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1.tex",
+      "pdf": "site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1.pdf",
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": true
       },
       "ready": false
     },

@@ -1,21 +1,11 @@
 {
-  "generated_at": "2026-02-23T19:09:30Z",
+  "generated_at": "2026-02-23T19:20:27Z",
   "created": [
     {
       "thread": "cosmos",
-      "from": "auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys",
-      "tex": "site/publications/tex/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1.tex"
-    },
-    {
-      "thread": "regenesis",
-      "from": "sleep-regeneration-baseline",
-      "tex": "site/publications/tex/regenesis_sleep-regeneration-baseline_publication-v1.tex"
-    },
-    {
-      "thread": "ethos",
-      "from": "research-literacy-confidence-rubric",
-      "tex": "site/publications/tex/ethos_research-literacy-confidence-rubric_publication-v1.tex"
+      "from": "cosmos-v5-coherence-operators-and-emergent-geometry",
+      "tex": "site/publications/tex/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1.tex"
     }
   ],
-  "count": 3
+  "count": 1
 }
