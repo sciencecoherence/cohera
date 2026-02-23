@@ -12,6 +12,7 @@ SITE = REPO / 'site'
 TEX_DIR = SITE / 'publications' / 'tex'
 PDF_DIR = SITE / 'publications' / 'pdf'
 PIPELINE_PATH = REPO / 'chatgpt' / 'publication_pipeline.json'
+READY_PATH = REPO / 'chatgpt' / 'publication_ready.json'
 
 THREADS = ['cosmos', 'regenesis', 'ethos']
 
@@ -97,6 +98,80 @@ def collect_items():
     return items
 
 
+def extract_abstract_from_tex(tex_path: Path) -> str:
+    if not tex_path.exists():
+        return ''
+    text = tex_path.read_text(encoding='utf-8', errors='ignore')
+    # Preferred publication section names
+    patterns = [
+        r'\\subsection\*\{Abstract(?:[^}]*)\}\s*(.*?)\s*(?=\\subsection\*\{|\Z)',
+        r'\\subsection\*\{Abstract-level synthesis\}\s*(.*?)\s*(?=\\subsection\*\{|\Z)',
+        r'\\subsection\*\{Publication summary\}\s*(.*?)\s*(?=\\subsection\*\{|\Z)',
+        r'\\section\*\{Abstract(?:[^}]*)\}\s*(.*?)\s*(?=\\section\*\{|\Z)',
+    ]
+    for p in patterns:
+        m = re.search(p, text, flags=re.S | re.I)
+        if m:
+            raw = m.group(1)
+            cleaned = re.sub(r'\\\\|\\textbf\{[^}]*\}|\\texttt\{[^}]*\}|\\[a-zA-Z]+\*?(\[[^\]]*\])?(\{[^}]*\})?', ' ', raw)
+            cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+            if cleaned:
+                return cleaned[:500]
+    return ''
+
+
+def is_ready_publication(row: dict) -> bool:
+    slug = (row.get('slug') or '').lower()
+    title = (row.get('title') or '').lower()
+    abstract = (row.get('abstract') or '').strip()
+    has_pdf = row.get('status', {}).get('has_pdf', False)
+    if slug.startswith('auto-'):
+        return False
+    if title.startswith('autodraft:'):
+        return False
+    if not has_pdf:
+        return False
+    if len(abstract) < 80:
+        return False
+    return True
+
+
+def sync_pdf_index_ready(results: list):
+    ready = [r for r in results if r.get('ready')]
+    lines = [
+        '<!doctype html>',
+        '<html lang="en">',
+        '<head>',
+        '  <meta charset="utf-8" />',
+        '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
+        '  <title>PDF Publications · Cohera Lab</title>',
+        '  <link rel="stylesheet" href="/cohera/assets/style.css" />',
+        '</head>',
+        '<body>',
+        '  <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">',
+        '    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/publications/tex/index.html">TeX Sources</a><a href="/cohera/about/index.html">About</a>',
+        '  </nav></div></header>',
+        '  <main class="container">',
+        '    <section class="hero"><h1>PDF Publications</h1><p class="small">Only publication-ready outputs are listed here (formatted + abstract present).</p></section>',
+    ]
+    if ready:
+        for r in ready:
+            pdf_name = Path(r['pdf']).name
+            lines += [
+                '    <section class="card">',
+                f'      <h3>{html.escape(r.get("title") or pdf_name)}</h3>',
+                f'      <p class="small"><strong>Thread:</strong> {html.escape(r.get("thread", ""))}</p>',
+                f'      <p>{html.escape(r.get("abstract", ""))}</p>',
+                f'      <p><a href="/cohera/publications/pdf/{pdf_name}">Open PDF →</a></p>',
+                '    </section>',
+            ]
+    else:
+        lines += ['    <section class="card"><p>No publication-ready PDFs yet.</p></section>']
+
+    lines += ['  </main>', '</body>', '</html>']
+    (PDF_DIR / 'index.html').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--sync', action='store_true', help='Generate missing tex drafts and compile PDFs')
@@ -118,10 +193,13 @@ def main():
         if args.sync and not tex_path.exists():
             tex_path.write_text(make_tex(thread, title, slug, str(digest_html.relative_to(REPO)), digest_text), encoding='utf-8')
 
+        abstract = extract_abstract_from_tex(tex_path) if tex_path.exists() else ''
+
         results.append({
             'thread': thread,
             'slug': slug,
             'title': title,
+            'abstract': abstract,
             'digest_html': str(digest_html.relative_to(REPO)) if digest_html.exists() else None,
             'tex': str(tex_path.relative_to(REPO)) if tex_path.exists() else None,
             'pdf': str(pdf_path.relative_to(REPO)) if pdf_path.exists() else None,
