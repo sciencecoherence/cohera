@@ -7,7 +7,8 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO = Path('/home/xavier/cohera-repo')
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO = SCRIPT_DIR.parent
 SITE = REPO / 'site'
 TEX_DIR = SITE / 'publications' / 'tex'
 PDF_DIR = SITE / 'publications' / 'pdf'
@@ -279,7 +280,7 @@ def main():
 
     if args.sync:
         sync_tex_index()
-        subprocess.run(['/home/xavier/cohera-repo/scripts/build_publication_pdfs.sh'], check=False)
+        subprocess.run([str(REPO / 'scripts' / 'build_publication_pdfs.sh')], check=False)
 
     allow_cfg = load_json(ALLOWLIST_PATH, {'slugs': []})
     allowlist = set((s or '').lower() for s in allow_cfg.get('slugs', []))
