@@ -1,35 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
- <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1" />
- <title>Ethos · Cohera Lab</title>
- <link rel="stylesheet" href="/cohera/assets/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ethos · Cohera Lab</title>
+  <link rel="stylesheet" href="/cohera/assets/style.css" />
 </head>
 <body>
- <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">
- <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/cosmos/index.html">Cosmos</a><a href="/cohera/regenesis/index.html">Regenesis</a><a href="/cohera/ethos/index.html">Ethos</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/contact/index.html">Contact</a> <a href="/cohera/about/index.html">About</a>
- </nav></div></header>
- <main class="container">
- <section class="hero"><h1>Ethos Thread</h1><p class="small">Applied epistemology, learning systems, and publishing ethics under uncertainty.</p></section>
- <section class="card"><h3>Status</h3><p>Thread initialized. First modules will standardize confidence labels and research literacy.</p></section>
- <section class="card"><h3>Latest digests</h3><div id="digest-list" class="small">Loading...</div></section>
- </main>
- <footer><div class="container">Ethos · clarity over hype.</div></footer>
-
- <script>
- async function loadDigests() {
- const el = document.getElementById('digest-list');
- try {
- const r = await fetch('/cohera/ethos/digests/index.json', {cache: 'no-store'});
- const items = await r.json();
- if (!Array.isArray(items) ||!items.length) { el.textContent = 'No digests yet.'; return; }
- el.innerHTML = '<ul class="clean">' + items.map(d =>
- `<li><a href="/cohera/ethos/digests/${d.slug}.html">${d.title}</a> <span class="small">(${d.date})</span></li>`
- ).join('') + '</ul>';
- } catch { el.textContent = 'Failed to load digest list.'; }
- }
- loadDigests();
- </script>
+  <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">
+    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/cosmos/index.html">Cosmos</a><a href="/cohera/regenesis/index.html">Regenesis</a><a href="/cohera/ethos/index.html">Ethos</a>
+  </nav></div></header>
+  <main class="container">
+    <section class="hero"><h1>Ethos</h1><p class="small">Research literacy, governance, and epistemic discipline.</p><p class="small">Updated: 2026-02-23 20:08 UTC</p></section>
+    <section class="card"><h3>Thread pipeline items</h3><ul class="clean">
+      <li><a href="/cohera/ethos/digests/auto-on-translating-epistemic-operators-in-a-logic-of-awareness.html">Autodraft: On Translating Epistemic Operators in a Logic of Awareness</a> <span class="small">· pipeline draft · 2026-02-23</span></li>
+      <li><a href="/cohera/ethos/digests/auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.html">Autodraft: On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness</a> <span class="small">· pipeline draft · 2026-02-23</span></li>
+      <li><a href="/cohera/ethos/digests/auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.html">Autodraft: How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs</a> <span class="small">· pipeline draft · 2026-02-23</span></li>
+      <li><a href="/cohera/ethos/digests/research-literacy-confidence-rubric.html">Research Literacy Quickstart + Confidence Rubric</a> <span class="small">· candidate · 2026-02-21</span></li>
+    </ul></section>
+    <section class="card"><h3>Flow rule</h3><p class="small">Items here are active research. Only finalized, polished papers move to Publications.</p></section>
+  </main>
 </body>
 </html>

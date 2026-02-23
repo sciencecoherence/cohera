@@ -28,5 +28,8 @@ mkdir -p "$(dirname "$LOG")"
   # Refresh visible landing pages so website always shows latest progress at top-level.
   /usr/bin/python3 "$REPO/scripts/update_surface_status.py"
 
+  # Rebuild thread portal pages from current digest pipeline (Phase 2 automation).
+  /usr/bin/python3 "$REPO/scripts/rebuild_thread_pages.py"
+
   echo "[$(date -Is)] recursive-cycle done"
 } >> "$LOG" 2>&1
