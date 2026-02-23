@@ -1,34 +1,39 @@
 #!/usr/bin/env bash
-# run_pipeline.sh - The Master Orchestrator for the Cohera Research Engine
+set -euo pipefail
 
-set -e # Exit immediately if a command exits with a non-zero status
+REPO="/home/xavier/cohera-repo"
+LOG="$REPO/chatgpt/run_pipeline.log"
 
-REPO_DIR="/home/xavier/cohera-repo"
-cd "$REPO_DIR"
+mkdir -p "$(dirname "$LOG")"
 
+{
 echo "====================================================="
-echo "INITIATING TIME-CRYSTALLINE RESEARCH PIPELINE"
+echo "[$(date -Is)] INITIATING TIME-CRYSTALLINE RESEARCH PIPELINE"
 echo "====================================================="
 
-echo "[1/4] Phase 1: Ingesting Sources & Generating Autodrafts..."
-python3 chatgpt/auto-research.py
+echo "[1/4] Phase 1: Ingestion & Diffs..."
+/usr/bin/python3 "$REPO/scripts/research_autopilot.py"
+/usr/bin/python3 "$REPO/scripts/research_delta.py"
+/usr/bin/python3 "$REPO/scripts/research_health.py"
 
-echo "[2/4] Phase 2: Compiling System Wake Delta..."
-python3 chatgpt/research_delta.py
+echo "[2/4] Phase 2: Advancing Backlog & Corpus Sync..."
+/usr/bin/python3 "$REPO/scripts/research_backlog_advancer.py"
+/usr/bin/python3 "$REPO/scripts/research_chat_corpus_ingest.py" || true
 
-echo "[3/4] Phase 3: Generating Daily Findings Framework..."
-python3 chatgpt/daily_findings.py
+echo "[3/4] Phase 3: Indexes & Publication State..."
+/usr/bin/python3 "$REPO/scripts/publication_pipeline.py" --sync
 
-# ---------------------------------------------------------
-# [COHERA SYNTHESIS INJECTION POINT]
-# If you build a CLI script to trigger Cohera via API, 
-# you will uncomment the line below so Cohera writes the 
-# abstract into the HTML *before* the code is committed.
-#
-# python3 chatgpt/trigger_cohera_synthesis.py
-# ---------------------------------------------------------
+ ---------------------------------------------------------
+echo "[COHERA SYNTHESIS INJECTION POINT]"
 
-echo "[4/4] Phase 4: Version Control & Deployment..."
+
+/usr/bin/python3 "$REPO/scripts/trigger_cohera_synthesis.py"
+
+
+echo "[4/4] Phase 4: Synthesis Prep & Surface Rebuilds..."
+/usr/bin/python3 "$REPO/scripts/research_daily_findings.py"
+/usr/bin/python3 "$REPO/scripts/update_surface_status.py"
+/usr/bin/python3 "$REPO/scripts/rebuild_thread_pages.py"
 git add site/ chatgpt/
 
 # Generate timestamp strictly in dd/mm/yyyy format
@@ -42,5 +47,6 @@ git commit -m "Pipeline [Cycle: $COMMIT_DATE] - Ingestion & Synthesis at $COMMIT
 git push origin main
 
 echo "====================================================="
-echo "PIPELINE COMPLETE. REPOSITORY SYNCED."
+echo "[$(date -Is)] PIPELINE SCRIPTS COMPLETE. AWAITING COHERA SYNTHESIS."
 echo "====================================================="
+} >> "$LOG" 2>&1
