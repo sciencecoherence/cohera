@@ -25,5 +25,8 @@ mkdir -p "$(dirname "$LOG")"
   # Refresh daily findings report every cycle.
   /usr/bin/python3 "$REPO/scripts/research_daily_findings.py"
 
+  # Refresh visible landing pages so website always shows latest progress at top-level.
+  /usr/bin/python3 "$REPO/scripts/update_surface_status.py"
+
   echo "[$(date -Is)] recursive-cycle done"
 } >> "$LOG" 2>&1
