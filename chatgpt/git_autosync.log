@@ -159,3 +159,16 @@ From github.com-cohera:sciencecoherence/cohera
 From github.com-cohera:sciencecoherence/cohera
  * branch            main       -> FETCH_HEAD
 [2026-02-23T10:30:01-05:00] autosync start
+[main fc12953] autosync: 2026-02-23 10:30:01 -0500
+ 12 files changed, 41 insertions(+), 300 deletions(-)
+ create mode 100644 .build/texpdf/cosmos_8.1_proposal_20260222_1640_wrapper.tex
+ delete mode 100644 site/publications/pdf/cosmos_8.1_proposal_20260222_1640.pdf
+ delete mode 100644 site/publications/pdf/cosmos_8.2_proposal_20260222_163243.pdf
+ delete mode 100644 site/publications/pdf/cosmos_8.3_proposal_20260222_1640.pdf
+ delete mode 100644 site/publications/pdf/cosmos_dark-matter-cores-as1063_20260223.pdf
+ delete mode 100644 site/publications/pdf/cosmos_v5_integrated_20260222.pdf
+ delete mode 100644 site/publications/pdf/ethos_on-translating-epistemic-operators_20260223.pdf
+ delete mode 100644 site/publications/pdf/regenesis_self-organized-bioelectricity_20260223.pdf
+From github.com-cohera:sciencecoherence/cohera
+ * branch            main       -> FETCH_HEAD
+[2026-02-23T10:35:02-05:00] autosync start
