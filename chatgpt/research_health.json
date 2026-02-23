@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-02-23T14:33:55Z",
+  "generated_at": "2026-02-23T17:08:04Z",
   "status": "ok",
   "sla_hours": 6,
   "queue_age_hours": 0.0,
   "state_age_hours": 0.0,
   "digest_age_hours": 0.0,
-  "queue_changes_count": 11,
+  "queue_changes_count": 0,
   "autodrafts_created_count": 3,
   "issues": []
 }
