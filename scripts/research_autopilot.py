@@ -281,11 +281,13 @@ def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
 def build_publication_page(ts: str, changed: List[Dict], top_items: List[Item]):
     rows = []
     for it in top_items[:15]:
-        rows.append(f"<li><strong>{it.thread}</strong> · <code class=\"inline\">{it.path}</code> · score {it.score}</li>")
+        src = Path(it.path).name
+        rows.append(f"<li><strong>{it.thread}</strong> · <code class=\"inline\">{src}</code> · score {it.score}</li>")
 
     changed_rows = []
     for c in changed[:30]:
-        changed_rows.append(f"<li><code class=\"inline\">{c['path']}</code> ({c['change']})</li>")
+        src = Path(c['path']).name
+        changed_rows.append(f"<li><code class=\"inline\">{src}</code> ({c['change']})</li>")
 
     PUB_PAGE.parent.mkdir(parents=True, exist_ok=True)
     PUB_PAGE.write_text(f'''<!doctype html>

@@ -98,6 +98,16 @@ def main():
         created.append({'thread': p['thread'], 'from': p['digest_slug'], 'tex': str(tex.relative_to(REPO))})
 
     if created:
+        # Promote newly generated publication slugs into allowlist for ready gating.
+        allow = load_json(ALLOW, {'slugs': []})
+        slugs = set((s or '').lower() for s in allow.get('slugs', []))
+        for c in created:
+            slugs.add(c['pub_slug'].lower())
+        allow['slugs'] = sorted(slugs)
+        ALLOW.write_text(json.dumps(allow, indent=2), encoding='utf-8')
+
+        # Humanize/polish manuscript language, then rebuild PDFs and pipeline indexes.
+        subprocess.run(['python3', '/home/xavier/cohera-repo/scripts/publication_polish.py'], check=False)
         subprocess.run(['/home/xavier/cohera-repo/scripts/build_publication_pdfs.sh'], check=False)
         subprocess.run(['python3', '/home/xavier/cohera-repo/scripts/publication_pipeline.py', '--sync'], check=False)
 

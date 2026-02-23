@@ -1430,3 +1430,14 @@ pipeline: items=31 tex=31 pdf=3 ready=2
 findings_updated=site/publications/findings-2026-02-23.html
 surface_status_updated=research/index.html,publications/index.html
 [2026-02-23T14:20:30-05:00] recursive-cycle done
+[2026-02-23T14:34:20-05:00] recursive-cycle start
+Autopilot complete. Sources=56 changes=0 stubs=3
+delta: new=0 updated=0 removed=0 autodrafts=3
+health=ok issues=0
+Traceback (most recent call last):
+  File "/home/xavier/cohera-repo/scripts/research_backlog_advancer.py", line 124, in <module>
+    main()
+  File "/home/xavier/cohera-repo/scripts/research_backlog_advancer.py", line 105, in main
+    slugs.add(c['pub_slug'].lower())
+              ~^^^^^^^^^^^^
+KeyError: 'pub_slug'

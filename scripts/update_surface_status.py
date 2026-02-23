@@ -24,7 +24,7 @@ def main():
     totals = pipe.get('totals', {})
     promoted = backlog.get('created', [])
     promoted_count = len(promoted)
-    updated_at = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+    updated_at = backlog.get('generated_at') or datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
 
     promoted_lines = ''.join([f"<li>{x.get('thread','?')}: <code class=\"inline\">{x.get('from','')}</code></li>" for x in promoted]) or '<li>No promotions in latest run.</li>'
 

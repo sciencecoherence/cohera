@@ -36,7 +36,8 @@ def main():
     backlog_rows = [f"{x.get('thread')}: <code class=\"inline\">{x.get('from')}</code>" for x in backlog.get('created', [])]
     top_rows = []
     for t in delta.get('top_priority', [])[:8]:
-        top_rows.append(f"{t.get('thread','unknown')}: <code class=\"inline\">{t.get('path','')}</code>")
+        src = (t.get('path','') or '').split('/')[-1]
+        top_rows.append(f"{t.get('thread','unknown')}: <code class=\"inline\">{src}</code>")
 
     out = OUT_DIR / f'findings-{day}.html'
     OUT_DIR.mkdir(parents=True, exist_ok=True)
