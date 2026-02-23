@@ -88,7 +88,80 @@ def collect_sources() -> List[Item]:
     return sorted(items, key=lambda x: (x.score, x.mtime), reverse=True)
 
 
+def extract_text_preview(abs_path: Path, max_chars: int = 5000) -> str:
+    if not abs_path.exists():
+        return ''
+    suffix = abs_path.suffix.lower()
+    try:
+        if suffix == '.pdf':
+            with tempfile.NamedTemporaryFile(suffix='.txt', delete=True) as tf:
+                subprocess.run(
+                    ['pdftotext', '-f', '1', '-l', '2', str(abs_path), tf.name],
+                    check=False,
+                    capture_output=True,
+                    text=True,
+                )
+                txt = Path(tf.name).read_text(encoding='utf-8', errors='ignore')
+                return re.sub(r'\s+', ' ', txt).strip()[:max_chars]
+        # lightweight text preview for tex/other text-like files
+        return re.sub(r'\s+', ' ', abs_path.read_text(encoding='utf-8', errors='ignore')).strip()[:max_chars]
+    except Exception:
+        return ''
+
+
+def extract_structured_notes(src_rel: str):
+    abs_path = REPO / src_rel
+    preview = extract_text_preview(abs_path)
+
+    base = Path(src_rel).stem.replace('_', ' ')
+    pretty_title = re.sub(r'\s+', ' ', base).strip()
+
+    abstract = ''
+    doi = ''
+    if preview:
+        m_abs = re.search(r'(abstract\s*[:\-]?\s*)(.{120,1200}?)(?:\b(introduction|keywords|1\.|i\.))', preview, re.IGNORECASE)
+        if m_abs:
+            abstract = m_abs.group(2).strip()
+        m_doi = re.search(r'(10\.\d{4,9}/[-._;()/:A-Z0-9]+)', preview, re.IGNORECASE)
+        if m_doi:
+            doi = m_doi.group(1)
+
+    if not abstract and preview:
+        abstract = preview[:420]
+
+    # Heuristic findings from filename tokens
+    tokens = [t for t in re.split(r'[^a-zA-Z0-9]+', pretty_title.lower()) if len(t) > 3]
+    top_tokens = []
+    for t in tokens:
+        if t not in top_tokens and t not in {'with', 'from', 'that', 'this', 'through', 'into'}:
+            top_tokens.append(t)
+        if len(top_tokens) == 4:
+            break
+
+    findings = [
+        f"Primary topic appears to center on: {', '.join(top_tokens) if top_tokens else 'general research content'}.",
+        'Source was auto-indexed and text-previewed from the first pages for rapid triage.',
+        'Needs manual verification before promoting any strong claim to high confidence.'
+    ]
+
+    evidence = []
+    if doi:
+        evidence.append(f'DOI detected: {doi}')
+    evidence.append(f'Source file: {src_rel}')
+    if abstract:
+        evidence.append('Abstract/preview extracted automatically (first pages).')
+
+    return {
+        'title': pretty_title,
+        'abstract': abstract,
+        'doi': doi,
+        'findings': findings,
+        'evidence': evidence,
+    }
+
+
 def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
+    notes = extract_structured_notes(src_rel)
     base = Path(src_rel).stem
     digest_dir = SITE_DIR / thread / 'digests'
     digest_dir.mkdir(parents=True, exist_ok=True)
@@ -101,7 +174,7 @@ def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
 
     # Reuse existing entry for this source/title when available.
     existing_slug = None
-    target_title = f'Autodraft: {base}'
+    target_title = f"Autodraft: {notes['title']}"
     for row in idx:
         if row.get('title') == target_title:
             existing_slug = row.get('slug')
@@ -110,13 +183,18 @@ def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
     slug = existing_slug or stable_slug
     html_path = digest_dir / f'{slug}.html'
 
-    if not html_path.exists():
-        html_path.write_text(f'''<!doctype html>
+    findings_html = ''.join([f'<li>{x}</li>' for x in notes['findings']])
+    evidence_html = ''.join([f'<li>{x}</li>' for x in notes['evidence']])
+    abstract_html = notes['abstract'] or 'No abstract preview extracted.'
+    doi_html = f"<p><strong>DOI:</strong> <a href=\"https://doi.org/{notes['doi']}\">{notes['doi']}</a></p>" if notes['doi'] else '<p><strong>DOI:</strong> not detected automatically.</p>'
+
+    # Always refresh content so re-runs improve existing drafts.
+    html_path.write_text(f'''<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Autodraft · {base} · Cohera Lab</title>
+  <title>Autodraft · {notes['title']} · Cohera Lab</title>
   <link rel="stylesheet" href="/cohera/assets/style.css" />
 </head>
 <body>
@@ -125,20 +203,25 @@ def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
   </nav></div></header>
   <main class="container">
     <section class="hero">
-      <h1>Autodraft: {base}</h1>
-      <p class="small">Date: {date_str} · Thread: {thread} · Status: hypothesis · Confidence: low</p>
+      <h1>Autodraft: {notes['title']}</h1>
+      <p class="small">Date: {date_str} · Thread: {thread} · Status: extracted-draft · Confidence: low-medium</p>
     </section>
     <article class="card">
       <h3>Source</h3>
       <p><code class="inline">{src_rel}</code></p>
-      <h3>Draft summary</h3>
-      <p>Autogenerated stub from corpus scan. Expand with validated claims and citation links before promotion.</p>
-      <h3>Key findings (draft)</h3>
-      <ul class="clean"><li>Pending manual extraction.</li></ul>
+      {doi_html}
+      <h3>Auto summary (preview-based)</h3>
+      <p>{abstract_html}</p>
+      <h3>Key findings (auto-extracted)</h3>
+      <ul class="clean">{findings_html}</ul>
       <h3>Evidence & citations</h3>
-      <ul class="clean"><li>TODO: add primary references.</li></ul>
-      <h3>Hypotheses</h3>
-      <ul class="clean"><li>TODO: explicitly label speculative claims.</li></ul>
+      <ul class="clean">{evidence_html}</ul>
+      <h3>Falsification / validation checklist</h3>
+      <ul class="clean">
+        <li>Re-read full source and verify the central claim sentence-by-sentence.</li>
+        <li>Cross-check against at least one independent source before promotion.</li>
+        <li>Keep confidence at low-medium until replication or corroboration is explicit.</li>
+      </ul>
       <h3>Next queries</h3>
       <ul class="clean"><li>What is the smallest testable claim from this source?</li></ul>
     </article>
@@ -153,13 +236,14 @@ def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
             'title': target_title,
             'date': date_str,
             'tags': [thread, 'autodraft', Path(src_rel).suffix.lstrip('.')],
-            'confidence': 'low'
+            'confidence': 'low-medium'
         })
     else:
-        # Refresh date in index for existing entries.
+        # Refresh date/confidence in index for existing entries.
         for row in idx:
             if row.get('slug') == slug:
                 row['date'] = date_str
+                row['confidence'] = 'low-medium'
 
     # Deduplicate by slug, keep first occurrence.
     dedup = []
