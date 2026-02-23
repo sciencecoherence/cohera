@@ -14,9 +14,21 @@ QUEUE_PATH = CHATGPT_DIR / 'research_queue.json'
 PUB_PAGE = SITE_DIR / 'publications' / 'autopilot-queue.html'
 
 THREAD_KEYWORDS = {
-    'cosmos': ['cosmos', 'quantum', 'gravity', 'spacetime', 'black', 'schrodinger', 'entropy', 'holograph', 'floquet', 'equilibrium', 'informationportal'],
-    'regenesis': ['sleep', 'nutrition', 'biology', 'molecular', 'metabolic', 'autophagy', 'regeneration', 'gut', 'circadian'],
-    'ethos': ['ethos', 'education', 'learning', 'epistem', 'practice', 'lifestyle', 'agency', 'focus'],
+    'cosmos': [
+        'cosmos', 'quantum', 'gravity', 'spacetime', 'black', 'schrodinger', 'entropy',
+        'holograph', 'floquet', 'equilibrium', 'informationportal', 'dark-matter',
+        'astroph', 'cosmolog', 'time-crystal', 'crystal', 'qft', 'relativity', 'vacuum'
+    ],
+    'regenesis': [
+        'sleep', 'nutrition', 'biology', 'molecular', 'metabolic', 'autophagy',
+        'regeneration', 'gut', 'circadian', 'bioelectric', 'microtubule', 'neuron',
+        'chemiosmosis', 'cell', 'mitochond', 'health', 'longevity', 'pump-alignment'
+    ],
+    'ethos': [
+        'ethos', 'education', 'learning', 'epistem', 'practice', 'lifestyle', 'agency',
+        'focus', 'governance', 'ethic', 'ai-govern', 'knowledge', 'judgment', 'violence',
+        'awareness', 'qualitative', 'methodology', 'philosophy'
+    ],
 }
 
 
@@ -183,19 +195,30 @@ def main():
         if p not in current_files:
             changed.append({'path': p, 'change': 'removed'})
 
-    # Create digest stubs for top changed item per thread
+    # Create digest stubs with per-thread balancing:
+    # 1) Prefer changed files (new/updated)
+    # 2) If a thread has no changed candidate, fallback to top-ranked source in that thread
+    changed_candidates = [c for c in changed if c.get('change') in {'new', 'updated'} and c.get('thread')]
     per_thread = {}
-    for c in changed:
+    for c in changed_candidates:
         t = c.get('thread')
-        if t and t not in per_thread and c['change'] in {'new', 'updated'}:
+        if t and t not in per_thread:
             per_thread[t] = c
+
+    if len(per_thread) < 3:
+        for it in items:
+            t = it.thread
+            if t not in per_thread:
+                per_thread[t] = {'thread': t, 'path': it.path, 'change': 'priority-fallback'}
+            if len(per_thread) == 3:
+                break
 
     created = []
     for thread in ['cosmos', 'regenesis', 'ethos']:
         c = per_thread.get(thread)
         if c:
             slug = upsert_digest_stub(thread, c['path'], date_str)
-            created.append({'thread': thread, 'slug': slug, 'source': c['path']})
+            created.append({'thread': thread, 'slug': slug, 'source': c['path'], 'selector': c.get('change', 'unknown')})
 
     queue = {
         'generated_at': ts,
