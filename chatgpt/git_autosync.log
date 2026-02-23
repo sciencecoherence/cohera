@@ -282,3 +282,23 @@ From github.com-cohera:sciencecoherence/cohera
 From github.com-cohera:sciencecoherence/cohera
  * branch            main       -> FETCH_HEAD
 [2026-02-23T12:30:01-05:00] autosync start
+[main ac33c14] autosync: 2026-02-23 12:30:01 -0500
+ 30 files changed, 69 insertions(+), 28 deletions(-)
+ delete mode 100644 site/publications/pdf/cosmos_8.1_proposal_20260222_1640.pdf
+ delete mode 100644 site/publications/pdf/cosmos_8.2_proposal_20260222_163243.pdf
+ delete mode 100644 site/publications/pdf/cosmos_8.3_proposal_20260222_1640.pdf
+ delete mode 100644 site/publications/pdf/cosmos_auto-2026-02-21-hierarchical-self-engineering-chain-1.pdf
+ delete mode 100644 site/publications/pdf/cosmos_auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.pdf
+ delete mode 100644 site/publications/pdf/cosmos_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.pdf
+ delete mode 100644 site/publications/pdf/cosmos_auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.pdf
+ delete mode 100644 site/publications/pdf/cosmos_auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.pdf
+ delete mode 100644 site/publications/pdf/cosmos_dark-matter-cores-as1063_20260223.pdf
+ delete mode 100644 site/publications/pdf/cosmos_v5_integrated_20260222.pdf
+ delete mode 100644 site/publications/pdf/ethos_auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.pdf
+ delete mode 100644 site/publications/pdf/ethos_auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.pdf
+ delete mode 100644 site/publications/pdf/ethos_auto-on-translating-epistemic-operators-in-a-logic-of-awareness.pdf
+ delete mode 100644 site/publications/pdf/ethos_on-translating-epistemic-operators_20260223.pdf
+ delete mode 100644 site/publications/pdf/regenesis_auto-2026-02-21-tcqs-biology.pdf
+ delete mode 100644 site/publications/pdf/regenesis_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.pdf
+ delete mode 100644 site/publications/pdf/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.pdf
+ delete mode 100644 site/publications/pdf/regenesis_self-organized-bioelectricity_20260223.pdf
