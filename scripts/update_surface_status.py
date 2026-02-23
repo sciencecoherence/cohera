@@ -17,16 +17,33 @@ def load_json(p, d):
 
 
 def main():
-    pipe = load_json(PIPE, {'totals': {}})
+    pipe = load_json(PIPE, {'totals': {}, 'items': []})
     backlog = load_json(BACKLOG, {'created': []})
     health = load_json(HEALTH, {'status': 'unknown', 'issues': []})
 
     totals = pipe.get('totals', {})
+    items = pipe.get('items', [])
     promoted = backlog.get('created', [])
     promoted_count = len(promoted)
     updated_at = backlog.get('generated_at') or datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
 
-    promoted_lines = ''.join([f"<li>{x.get('thread','?')}: <code class=\"inline\">{x.get('from','')}</code></li>" for x in promoted]) or '<li>No promotions in latest run.</li>'
+    ready_items = [x for x in items if x.get('ready') and x.get('pdf')]
+    unfinished_items = [x for x in items if not x.get('ready')]
+
+    promoted_lines = ''.join([
+        f"<li>{x.get('thread','?')}: <code class=\"inline\">{Path(x.get('from','')).name}</code></li>"
+        for x in promoted
+    ]) or '<li>No promotions in latest run.</li>'
+
+    ready_lines = ''.join([
+        f"<li><a href=\"/cohera/publications/pdf/{Path(x.get('pdf','')).name}\">{x.get('title','Untitled')}</a></li>"
+        for x in ready_items[:8]
+    ]) or '<li>No ready publications yet.</li>'
+
+    unfinished_lines = ''.join([
+        f"<li>{x.get('thread','?')}: <code class=\"inline\">{Path((x.get('digest_html') or x.get('tex') or '')).name}</code></li>"
+        for x in unfinished_items[:10]
+    ]) or '<li>No unfinished entries tracked.</li>'
 
     research_index = SITE / 'research' / 'index.html'
     research_index.write_text(f'''<!doctype html>
@@ -50,6 +67,7 @@ def main():
       <li>Ready publications: <strong>{totals.get('ready_publications',0)}</strong> / {totals.get('items',0)}</li>
     </ul></section>
     <section class="card"><h3>Promoted this cycle</h3><ul class="clean">{promoted_lines}</ul></section>
+    <section class="card"><h3>Unfinished queue (next to promote)</h3><ul class="clean">{unfinished_lines}</ul></section>
     <section class="card"><h3>Links</h3><ul class="clean">
       <li><a href="/cohera/research/findings-latest.html">Findings (latest)</a></li>
       <li><a href="/cohera/research/autopilot-queue.html">Autopilot Queue</a></li>
@@ -74,10 +92,12 @@ def main():
 <section class="card"><ul class="clean">
 <li>Ready publications: <strong>{totals.get('ready_publications',0)}</strong></li>
 <li>PDF built: {totals.get('with_pdf',0)} / {totals.get('items',0)}</li>
+<li>In-progress manuscripts: {len(unfinished_items)}</li>
 <li><a href="/cohera/publications/pdf/index.html">PDF Publications</a></li>
-<li><a href="/cohera/publications/tex/index.html">TeX Sources</a></li>
 <li><a href="/cohera/research/findings-latest.html">Findings (latest)</a></li>
 </ul></section>
+<section class="card"><h3>Published now</h3><ul class="clean">{ready_lines}</ul></section>
+<section class="card"><h3>Currently in publication pipeline</h3><ul class="clean">{unfinished_lines}</ul></section>
 </main>
 </body></html>
 ''', encoding='utf-8')
