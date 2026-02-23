@@ -100,46 +100,68 @@ EOF
   mv "$BUILD_DIR/${base}_wrapper.pdf" "$PDF_DIR/${base}.pdf"
 done
 
-cat > "$PDF_DIR/index.html" <<'EOF'
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PDF Publications · Cohera Lab</title>
-  <link rel="stylesheet" href="/cohera/assets/style.css" />
-</head>
-<body>
-  <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">
-    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/publications/tex/index.html">TeX Sources</a>
-  </nav></div></header>
-  <main class="container">
-    <section class="hero"><h1>PDF Publications</h1><p class="small">Publication-ready outputs only (abstract + quality gate).</p></section>
-    <section class="card"><ul class="clean">
-EOF
+python3 - <<'PY'
+import json
+from pathlib import Path
 
-# De-duplicate: if both base and _publication-v1 exist, keep only _publication-v1 in index.
-for pdf in "$PDF_DIR"/*_publication-v1.pdf; do
-  [ -f "$pdf" ] || continue
-  name="$(basename "$pdf")"
-  echo "      <li><a href=\"/cohera/publications/pdf/$name\">$name</a></li>" >> "$PDF_DIR/index.html"
-done
-for pdf in "$PDF_DIR"/*.pdf; do
-  [ -f "$pdf" ] || continue
-  name="$(basename "$pdf")"
-  [[ "$name" == *_publication-v1.pdf ]] && continue
-  base="${name%.pdf}"
-  if [ -f "$PDF_DIR/${base}_publication-v1.pdf" ]; then
-    continue
-  fi
-  echo "      <li><a href=\"/cohera/publications/pdf/$name\">$name</a></li>" >> "$PDF_DIR/index.html"
-done
+repo = Path('/home/xavier/cohera-repo')
+pdf_dir = repo / 'site/publications/pdf'
+ready_path = repo / 'chatgpt/publication_ready.json'
 
-cat >> "$PDF_DIR/index.html" <<'EOF'
-    </ul></section>
-  </main>
-</body>
-</html>
-EOF
+ready = []
+if ready_path.exists():
+    ready = json.loads(ready_path.read_text(encoding='utf-8')).get('ready', [])
+
+cards = []
+for r in ready:
+    pdf_rel = r.get('pdf')
+    if not pdf_rel:
+        continue
+    pdf_name = Path(pdf_rel).name
+    canonical = pdf_name.replace('.pdf', '_publication-v1.pdf')
+    chosen = canonical if (pdf_dir / canonical).exists() else pdf_name
+    if not (pdf_dir / chosen).exists():
+        continue
+    cards.append({
+        'title': r.get('title', chosen),
+        'thread': r.get('thread', 'unknown'),
+        'abstract': (r.get('abstract') or '').strip(),
+        'pdf': chosen,
+    })
+
+lines = [
+    '<!doctype html>',
+    '<html lang="en">',
+    '<head>',
+    '  <meta charset="utf-8" />',
+    '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
+    '  <title>PDF Publications · Cohera Lab</title>',
+    '  <link rel="stylesheet" href="/cohera/assets/style.css" />',
+    '</head>',
+    '<body>',
+    '  <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">',
+    '    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/publications/tex/index.html">TeX Sources</a>',
+    '  </nav></div></header>',
+    '  <main class="container">',
+    '    <section class="hero"><h1>PDF Publications</h1><p class="small">Final reader-ready papers only.</p></section>',
+]
+
+if cards:
+    for c in cards:
+        lines += [
+            '    <section class="card">',
+            f'      <h3>{c["title"]}</h3>',
+            f'      <p class="small"><strong>Thread:</strong> {c["thread"]}</p>',
+            f'      <p>{c["abstract"][:420] if c["abstract"] else "Publication-ready manuscript."}</p>',
+            f'      <p><a href="/cohera/publications/pdf/{c["pdf"]}">Open PDF →</a></p>',
+            '    </section>',
+        ]
+else:
+    lines += ['    <section class="card"><p>No publication-ready PDFs available yet.</p></section>']
+
+lines += ['  </main>', '</body>', '</html>']
+(pdf_dir / 'index.html').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+print(f'pdf_index_cards={len(cards)}')
+PY
 
 echo "PDF build complete."
