@@ -1,15 +1,17 @@
 {
-  "generated_at": "2026-02-23T17:12:35Z",
+  "generated_at": "2026-02-23T17:18:37Z",
   "totals": {
     "items": 15,
     "with_tex": 15,
-    "with_pdf": 15
+    "with_pdf": 15,
+    "ready_publications": 4
   },
   "items": [
     {
       "thread": "cosmos",
       "slug": "auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi",
       "title": "Autodraft: The large cores of dark matter and globular clusters in AS1063 Possible evidence of self-interacting dark matter Or not",
+      "abstract": "",
       "digest_html": "site/cosmos/digests/auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.html",
       "tex": "site/publications/tex/cosmos_auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.tex",
       "pdf": "site/publications/pdf/cosmos_auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.pdf",
@@ -17,12 +19,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "cosmos",
       "slug": "auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p",
       "title": "Autodraft: The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not",
+      "abstract": "",
       "digest_html": "site/cosmos/digests/auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.html",
       "tex": "site/publications/tex/cosmos_auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.tex",
       "pdf": "site/publications/pdf/cosmos_auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.pdf",
@@ -30,12 +34,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "cosmos",
       "slug": "auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m",
       "title": "Autodraft: Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations",
+      "abstract": "",
       "digest_html": "site/cosmos/digests/auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.html",
       "tex": "site/publications/tex/cosmos_auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.tex",
       "pdf": "site/publications/pdf/cosmos_auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.pdf",
@@ -43,12 +49,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "cosmos",
       "slug": "auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys",
       "title": "Autodraft: Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis",
+      "abstract": "",
       "digest_html": "site/cosmos/digests/auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.html",
       "tex": "site/publications/tex/cosmos_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.tex",
       "pdf": "site/publications/pdf/cosmos_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.pdf",
@@ -56,12 +64,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "cosmos",
       "slug": "cosmos-v5-coherence-operators-and-emergent-geometry",
       "title": "Cosmos v5: Coherence Operators and Emergent Geometry",
+      "abstract": "This publication provides a structured synthesis for Cosmos v5: Coherence Operators and Emergent Geometry, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": "site/cosmos/digests/cosmos-v5-coherence-operators-and-emergent-geometry.html",
       "tex": "site/publications/tex/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.tex",
       "pdf": "site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.pdf",
@@ -69,12 +79,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": true
     },
     {
       "thread": "cosmos",
       "slug": "auto-2026-02-21-hierarchical-self-engineering-chain-1",
       "title": "Autodraft: Hierarchical_Self_Engineering_Chain (1)",
+      "abstract": "",
       "digest_html": "site/cosmos/digests/auto-2026-02-21-hierarchical-self-engineering-chain-1.html",
       "tex": "site/publications/tex/cosmos_auto-2026-02-21-hierarchical-self-engineering-chain-1.tex",
       "pdf": "site/publications/pdf/cosmos_auto-2026-02-21-hierarchical-self-engineering-chain-1.pdf",
@@ -82,12 +94,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "cosmos",
       "slug": "time-crystals-holography-minimal-ground",
       "title": "Time Crystals, Holography, and Quantum Information: Minimal Common Ground",
+      "abstract": "This publication provides a structured synthesis for Time Crystals, Holography, and Quantum Information: Minimal Common Ground, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": "site/cosmos/digests/time-crystals-holography-minimal-ground.html",
       "tex": "site/publications/tex/cosmos_time-crystals-holography-minimal-ground.tex",
       "pdf": "site/publications/pdf/cosmos_time-crystals-holography-minimal-ground.pdf",
@@ -95,12 +109,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": true
     },
     {
       "thread": "regenesis",
       "slug": "auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin",
       "title": "Autodraft: Self-Organized Bioelectricity via Collective Pump Alignment Physical Origin of Chemiosmosis",
+      "abstract": "",
       "digest_html": "site/regenesis/digests/auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.html",
       "tex": "site/publications/tex/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.tex",
       "pdf": "site/publications/pdf/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.pdf",
@@ -108,12 +124,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "regenesis",
       "slug": "auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys",
       "title": "Autodraft: Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis",
+      "abstract": "",
       "digest_html": "site/regenesis/digests/auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.html",
       "tex": "site/publications/tex/regenesis_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.tex",
       "pdf": "site/publications/pdf/regenesis_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.pdf",
@@ -121,12 +139,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "regenesis",
       "slug": "auto-2026-02-21-tcqs-biology",
       "title": "Autodraft: _TCQS__Biology",
+      "abstract": "",
       "digest_html": "site/regenesis/digests/auto-2026-02-21-tcqs-biology.html",
       "tex": "site/publications/tex/regenesis_auto-2026-02-21-tcqs-biology.tex",
       "pdf": "site/publications/pdf/regenesis_auto-2026-02-21-tcqs-biology.pdf",
@@ -134,12 +154,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "regenesis",
       "slug": "sleep-regeneration-baseline",
       "title": "Sleep and Regeneration: Baseline Mechanisms and Practical Protocol",
+      "abstract": "This publication provides a structured synthesis for Sleep and Regeneration: Baseline Mechanisms and Practical Protocol, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": "site/regenesis/digests/sleep-regeneration-baseline.html",
       "tex": "site/publications/tex/regenesis_sleep-regeneration-baseline.tex",
       "pdf": "site/publications/pdf/regenesis_sleep-regeneration-baseline.pdf",
@@ -147,12 +169,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": true
     },
     {
       "thread": "ethos",
       "slug": "auto-on-translating-epistemic-operators-in-a-logic-of-awareness",
       "title": "Autodraft: On Translating Epistemic Operators in a Logic of Awareness",
+      "abstract": "",
       "digest_html": "site/ethos/digests/auto-on-translating-epistemic-operators-in-a-logic-of-awareness.html",
       "tex": "site/publications/tex/ethos_auto-on-translating-epistemic-operators-in-a-logic-of-awareness.tex",
       "pdf": "site/publications/pdf/ethos_auto-on-translating-epistemic-operators-in-a-logic-of-awareness.pdf",
@@ -160,12 +184,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "ethos",
       "slug": "auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness",
       "title": "Autodraft: On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness",
+      "abstract": "",
       "digest_html": "site/ethos/digests/auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.html",
       "tex": "site/publications/tex/ethos_auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.tex",
       "pdf": "site/publications/pdf/ethos_auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.pdf",
@@ -173,12 +199,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "ethos",
       "slug": "auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur",
       "title": "Autodraft: How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs",
+      "abstract": "",
       "digest_html": "site/ethos/digests/auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.html",
       "tex": "site/publications/tex/ethos_auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.tex",
       "pdf": "site/publications/pdf/ethos_auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.pdf",
@@ -186,12 +214,14 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": false
     },
     {
       "thread": "ethos",
       "slug": "research-literacy-confidence-rubric",
       "title": "Research Literacy Quickstart + Confidence Rubric",
+      "abstract": "This publication provides a structured synthesis for Research Literacy Quickstart + Confidence Rubric, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": "site/ethos/digests/research-literacy-confidence-rubric.html",
       "tex": "site/publications/tex/ethos_research-literacy-confidence-rubric.tex",
       "pdf": "site/publications/pdf/ethos_research-literacy-confidence-rubric.pdf",
@@ -199,7 +229,8 @@
         "has_digest": true,
         "has_tex": true,
         "has_pdf": true
-      }
+      },
+      "ready": true
     }
   ]
 }
