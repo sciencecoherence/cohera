@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-23T20:47:36Z",
+  "generated_at": "2026-02-23T21:00:43Z",
   "totals": {
     "items": 33,
     "with_tex": 33,
@@ -311,7 +311,7 @@
       "thread": "cosmos",
       "slug": "cosmos_dark-matter-cores-as1063_publication-v1",
       "title": "Cosmos Dark Matter Cores As1063 Publication V1",
-      "abstract": "This paper presents a structured synthesis of current cosmos evidence around dark matter core structure in as1063: evidence synthesis. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
+      "abstract": "This publication provides a structured synthesis for Cosmos Dark Matter Cores As1063 Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": null,
       "tex": "site/publications/tex/cosmos_dark-matter-cores-as1063_publication-v1.tex",
       "pdf": null,
