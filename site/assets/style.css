@@ -29,6 +29,8 @@ body {
 a { color: var(--accent-primary); text-decoration: none; transition: color 0.2s; }
 a:hover { color: #a5b4fc; text-decoration: underline; }
 a:focus-visible, .btn:focus-visible { outline: 2px solid #a5b4fc; outline-offset: 2px; border-radius: 6px; }
+.badge-draft { color: #fbbf24; font-weight: 600; }
+.badge-candidate { color: #4de2c5; font-weight: 600; }
 
 .container { width: min(1080px, 92%); margin: 0 auto; }
 

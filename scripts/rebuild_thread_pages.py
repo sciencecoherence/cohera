@@ -32,6 +32,9 @@ def render_thread(thread: str, subtitle: str):
         status = 'pipeline draft' if str(title).lower().startswith('autodraft:') or str(slug).startswith('auto-') else 'candidate'
         items.append((title, slug, status, r.get('date', '')))
 
+    draft_count = sum(1 for _, _, s, _ in items if s == 'pipeline draft')
+    candidate_count = sum(1 for _, _, s, _ in items if s == 'candidate')
+
     lines = [
         '<!doctype html>',
         '<html lang="en">',
@@ -48,12 +51,13 @@ def render_thread(thread: str, subtitle: str):
         '  </nav></div></header>',
         '  <main class="container">',
         f'    <section class="hero"><h1>{thread.title()}</h1><p class="small">{subtitle}</p><p class="small">Updated: {updated}</p></section>',
-        '    <section class="card"><h3>Thread pipeline items</h3><ul class="clean">',
+        f'    <section class="card"><h3>Thread pipeline snapshot</h3><p class="small">Drafts: <strong>{draft_count}</strong> · Candidates: <strong>{candidate_count}</strong></p><ul class="clean">',
     ]
 
     if items:
         for title, slug, status, date in items:
-            lines.append(f'      <li><a href="/cohera/{thread}/digests/{slug}.html">{title}</a> <span class="small">· {status}{" · " + date if date else ""}</span></li>')
+            badge = 'badge-draft' if status == 'pipeline draft' else 'badge-candidate'
+            lines.append(f'      <li><a href="/cohera/{thread}/digests/{slug}.html">{title}</a> <span class="small">· <span class="{badge}">{status}</span>{" · " + date if date else ""}</span></li>')
     else:
         lines.append('      <li>No items yet.</li>')
 
