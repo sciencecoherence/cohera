@@ -13,7 +13,7 @@ CHATGPT_DIR = REPO / 'chatgpt'
 SITE_DIR = REPO / 'site'
 STATE_PATH = CHATGPT_DIR / 'research_state.json'
 QUEUE_PATH = CHATGPT_DIR / 'research_queue.json'
-PUB_PAGE = SITE_DIR / 'publications' / 'autopilot-queue.html'
+PUB_PAGE = SITE_DIR / 'research' / 'autopilot-queue.html'
 
 THREAD_KEYWORDS = {
     'cosmos': [
@@ -217,7 +217,7 @@ def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
 </head>
 <body>
   <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">
-    <a href="/cohera/index.html">Home</a><a href="/cohera/cosmos/index.html">Cosmos</a><a href="/cohera/regenesis/index.html">Regenesis</a><a href="/cohera/ethos/index.html">Ethos</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/about/index.html">About</a>
+    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/cosmos/index.html">Cosmos</a><a href="/cohera/regenesis/index.html">Regenesis</a><a href="/cohera/ethos/index.html">Ethos</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/about/index.html">About</a>
   </nav></div></header>
   <main class="container">
     <section class="hero">
