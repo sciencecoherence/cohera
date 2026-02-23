@@ -14,7 +14,7 @@ mapfile -t BUILD_TEX < <(
 python3 - <<'PY'
 import json
 from pathlib import Path
-repo=Path('/home/xavier/cohera-repo')
+repo=Path("""$REPO_ROOT""")
 tex_dir=repo/'site/publications/tex'
 ready_path=repo/'chatgpt/publication_ready.json'
 allow_path=repo/'chatgpt/publication_allowlist.json'
