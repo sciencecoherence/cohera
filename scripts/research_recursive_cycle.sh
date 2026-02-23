@@ -22,5 +22,8 @@ mkdir -p "$(dirname "$LOG")"
   # Recompute publication indexes/state
   /usr/bin/python3 "$REPO/scripts/publication_pipeline.py" --sync
 
+  # Refresh daily findings report every cycle.
+  /usr/bin/python3 "$REPO/scripts/research_daily_findings.py"
+
   echo "[$(date -Is)] recursive-cycle done"
 } >> "$LOG" 2>&1
