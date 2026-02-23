@@ -20,6 +20,65 @@
     <section class="card"><h3>Stage 2 · Pipeline Work</h3><p class="small">Create and refine digests with claims, equations, evidence mapping, and validation hooks.</p></section>
     <section class="card"><h3>Stage 3 · Promotion Gate</h3><p class="small">Only manuscripts with coherent abstract, readable math, and polished narrative become publication candidates.</p></section>
     <section class="card"><h3>Stage 4 · Final Publication</h3><p class="small">Reader-ready PDF only. Draft/noisy artifacts remain in Research.</p></section>
+
+    <section class="card" id="pipeline-control" style="border:1px solid #d4af37;background:#0a0d14;">
+      <h3 style="font-family:monospace;letter-spacing:.04em;">PIPELINE CONTROL</h3>
+      <p class="small">Native async trigger for <code class="inline">run_pipeline.sh</code>.</p>
+      <p class="small">Status: <strong id="pc-status">IDLE</strong> · Last run: <span id="pc-last">—</span> · Last delta: <span id="pc-delta">—</span></p>
+      <button class="btn primary" id="pc-run" style="font-family:monospace;">FORCE PIPELINE CYCLE</button>
+      <pre id="pc-log" style="margin-top:12px;max-height:300px;overflow:auto;background:#05070c;padding:12px;border:1px solid #222;color:#b7c0d0;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;">Loading logs…</pre>
+    </section>
   </main>
+
+  <script>
+    const API_BASES = ['/api/pipeline', 'http://127.0.0.1:8099/api/pipeline'];
+    let base = API_BASES[0];
+
+    async function api(path, opts={}) {
+      for (const b of [base, ...API_BASES.filter(x=>x!==base)]) {
+        try {
+          const r = await fetch(b + path, { ...opts, headers: { 'Content-Type': 'application/json' }});
+          if (!r.ok) continue;
+          base = b;
+          return await r.json();
+        } catch (_) {}
+      }
+      throw new Error('API unreachable');
+    }
+
+    async function refreshStatus() {
+      try {
+        const s = await api('/status');
+        document.getElementById('pc-status').textContent = s.status || 'UNKNOWN';
+        document.getElementById('pc-last').textContent = s.lastRun || '—';
+        document.getElementById('pc-delta').textContent = s.lastDelta || '—';
+      } catch (e) {
+        document.getElementById('pc-status').textContent = 'FAILED';
+      }
+    }
+
+    async function refreshLog() {
+      try {
+        const l = await api('/log');
+        document.getElementById('pc-log').textContent = l.log || '(no logs yet)';
+      } catch (e) {
+        document.getElementById('pc-log').textContent = 'Log API unreachable.';
+      }
+    }
+
+    document.getElementById('pc-run').addEventListener('click', async () => {
+      document.getElementById('pc-status').textContent = 'RUNNING';
+      try {
+        await api('/run', { method: 'POST', body: '{}' });
+      } catch (_) {}
+      setTimeout(refreshStatus, 800);
+      setTimeout(refreshLog, 1000);
+    });
+
+    refreshStatus();
+    refreshLog();
+    setInterval(refreshStatus, 5000);
+    setInterval(refreshLog, 6000);
+  </script>
 </body>
 </html>
