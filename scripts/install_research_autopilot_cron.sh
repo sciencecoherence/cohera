@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT="/home/xavier/cohera-repo/scripts/research_autopilot.py"
-CRON_EXPR="11 */6 * * *"
+CRON_EXPR="11 */4 * * *"
 CRON_LINE="$CRON_EXPR /usr/bin/python3 $SCRIPT >> /home/xavier/cohera-repo/chatgpt/research_autopilot.log 2>&1"
 
 chmod +x "$SCRIPT"
