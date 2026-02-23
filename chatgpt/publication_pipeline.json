@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-23T17:51:11Z",
+  "generated_at": "2026-02-23T18:30:16Z",
   "totals": {
-    "items": 18,
-    "with_tex": 18,
+    "items": 21,
+    "with_tex": 21,
     "with_pdf": 2,
     "ready_publications": 2
   },
@@ -248,6 +248,21 @@
       "ready": false
     },
     {
+      "thread": "cosmos",
+      "slug": "cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1",
+      "title": "Cosmos The Large Cores Of Dark Matter And Globular Clusters In As1063 Possible Evi Publication V1",
+      "abstract": "This publication provides a structured synthesis for Cosmos The Large Cores Of Dark Matter And Globular Clusters In As1063 Possible Evi Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
       "thread": "ethos",
       "slug": "ethos_epistemic-operators-awareness_publication-v1",
       "title": "Ethos Epistemic Operators Awareness Publication V1",
@@ -263,12 +278,42 @@
       "ready": false
     },
     {
+      "thread": "ethos",
+      "slug": "ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1",
+      "title": "Ethos On Translating Epistemic Operators In A Logic Of Awareness Publication V1",
+      "abstract": "This publication provides a structured synthesis for Ethos On Translating Epistemic Operators In A Logic Of Awareness Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
       "thread": "regenesis",
       "slug": "regenesis_bioelectricity-pump-alignment_publication-v1",
       "title": "Regenesis Bioelectricity Pump Alignment Publication V1",
       "abstract": "This paper presents a structured synthesis of current regenesis evidence around self-organized bioelectricity via collective pump alignment. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
       "digest_html": null,
       "tex": "site/publications/tex/regenesis_bioelectricity-pump-alignment_publication-v1.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
+      "thread": "regenesis",
+      "slug": "regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1",
+      "title": "Regenesis Self Organized Bioelectricity Via Collective Pump Alignment Physical Origin Publication V1",
+      "abstract": "This publication provides a structured synthesis for Regenesis Self Organized Bioelectricity Via Collective Pump Alignment Physical Origin Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1.tex",
       "pdf": null,
       "status": {
         "has_digest": false,
