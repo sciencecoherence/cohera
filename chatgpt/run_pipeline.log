@@ -366,3 +366,11 @@ Traceback (most recent call last):
   File "/usr/lib/python3.12/re/_parser.py", line 840, in _parse
     raise source.error('global flags not at the start '
 re.error: global flags not at the start of the expression at position 31
+=====================================================
+[2026-02-23T17:35:25-05:00] INITIATING TIME-CRYSTALLINE RESEARCH PIPELINE
+=====================================================
+[1/4] Phase 1: Ingestion & Diffs...
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 42
+    path: str
+    ^
+IndentationError: expected an indented block after class definition on line 41
