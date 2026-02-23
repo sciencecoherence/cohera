@@ -607,3 +607,12 @@ From github.com-cohera:sciencecoherence/cohera
 From github.com-cohera:sciencecoherence/cohera
  * branch            main       -> FETCH_HEAD
 [2026-02-23T16:50:02-05:00] autosync start
+[main 0944c9e] autosync: 2026-02-23 16:50:02 -0500
+ 8 files changed, 38 insertions(+), 10 deletions(-)
+ create mode 100644 site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.pdf
+ create mode 100644 site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1.pdf
+ create mode 100644 site/publications/pdf/cosmos_time-crystals-holography-minimal-ground.pdf
+ create mode 100644 site/publications/pdf/cosmos_time-crystals-holography-minimal-ground_publication-v1.pdf
+From github.com-cohera:sciencecoherence/cohera
+ * branch            main       -> FETCH_HEAD
+[2026-02-23T16:55:01-05:00] autosync start
