@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-02-23T14:07:19Z",
+  "status": "ok",
+  "sla_hours": 6,
+  "queue_age_hours": 2.94,
+  "state_age_hours": 2.94,
+  "digest_age_hours": 2.94,
+  "queue_changes_count": 3,
+  "autodrafts_created_count": 2,
+  "issues": []
+}
