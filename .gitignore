@@ -5,3 +5,6 @@ trading/bot/*.pyc
 trading/bot/config.json
 trading/bot/state/*.json
 trading/bot/state/*.jsonl
+
+# publication build artifacts
+.build/

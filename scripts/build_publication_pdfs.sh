@@ -17,6 +17,12 @@ for tex in "$TEX_DIR"/*.tex; do
   cat > "$wrapper" <<EOF
 \\documentclass[11pt]{article}
 \\usepackage[a4paper,margin=1in]{geometry}
+\\usepackage{fontspec}
+\\setmainfont{TeX Gyre Pagella}
+\\setsansfont{TeX Gyre Heros}
+\\setmonofont{DejaVu Sans Mono}
+\\usepackage{microtype}
+\\usepackage{parskip}
 \\usepackage{amsmath,amssymb,mathtools}
 \\usepackage{physics}
 \\usepackage{hyperref}
@@ -44,7 +50,7 @@ for tex in "$TEX_DIR"/*.tex; do
 \\end{document}
 EOF
 
-  latexmk -pdf -interaction=nonstopmode -halt-on-error \
+  latexmk -xelatex -interaction=nonstopmode -halt-on-error \
     -output-directory="$BUILD_DIR" "$wrapper"
 
   mv "$BUILD_DIR/${base}_wrapper.pdf" "$PDF_DIR/${base}.pdf"
