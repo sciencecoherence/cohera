@@ -356,3 +356,11 @@ mirror: forwarded=0 from=f061bd7b-4cda-498e-98df-ef35c1f579f3.jsonl
 [telegram] dnsResultOrder=ipv4first (default-node22)
 ✅ Sent via Telegram. Message ID: 707
 mirror: forwarded=1 from=f061bd7b-4cda-498e-98df-ef35c1f579f3.jsonl
+mirror: forwarded=0 from=f061bd7b-4cda-498e-98df-ef35c1f579f3.jsonl
+mirror: forwarded=0 from=f061bd7b-4cda-498e-98df-ef35c1f579f3.jsonl
+mirror: forwarded=0 from=f061bd7b-4cda-498e-98df-ef35c1f579f3.jsonl
+[telegram] autoSelectFamily=true (default-node22)
+[telegram] dnsResultOrder=ipv4first (default-node22)
+✅ Sent via Telegram. Message ID: 708
+mirror: forwarded=1 from=f061bd7b-4cda-498e-98df-ef35c1f579f3.jsonl
+mirror: forwarded=0 from=f061bd7b-4cda-498e-98df-ef35c1f579f3.jsonl
