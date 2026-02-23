@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-02-23T17:24:24Z",
+  "generated_at": "2026-02-23T17:29:39Z",
   "totals": {
     "items": 18,
     "with_tex": 18,
-    "with_pdf": 18,
+    "with_pdf": 7,
     "ready_publications": 7
   },
   "items": [
@@ -14,11 +14,11 @@
       "abstract": "",
       "digest_html": "site/cosmos/digests/auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.html",
       "tex": "site/publications/tex/cosmos_auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.tex",
-      "pdf": "site/publications/pdf/cosmos_auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -29,11 +29,11 @@
       "abstract": "",
       "digest_html": "site/cosmos/digests/auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.html",
       "tex": "site/publications/tex/cosmos_auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.tex",
-      "pdf": "site/publications/pdf/cosmos_auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -44,11 +44,11 @@
       "abstract": "",
       "digest_html": "site/cosmos/digests/auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.html",
       "tex": "site/publications/tex/cosmos_auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.tex",
-      "pdf": "site/publications/pdf/cosmos_auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -59,11 +59,11 @@
       "abstract": "",
       "digest_html": "site/cosmos/digests/auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.html",
       "tex": "site/publications/tex/cosmos_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.tex",
-      "pdf": "site/publications/pdf/cosmos_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -89,11 +89,11 @@
       "abstract": "",
       "digest_html": "site/cosmos/digests/auto-2026-02-21-hierarchical-self-engineering-chain-1.html",
       "tex": "site/publications/tex/cosmos_auto-2026-02-21-hierarchical-self-engineering-chain-1.tex",
-      "pdf": "site/publications/pdf/cosmos_auto-2026-02-21-hierarchical-self-engineering-chain-1.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -119,11 +119,11 @@
       "abstract": "",
       "digest_html": "site/regenesis/digests/auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.html",
       "tex": "site/publications/tex/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.tex",
-      "pdf": "site/publications/pdf/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -134,11 +134,11 @@
       "abstract": "",
       "digest_html": "site/regenesis/digests/auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.html",
       "tex": "site/publications/tex/regenesis_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.tex",
-      "pdf": "site/publications/pdf/regenesis_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -149,11 +149,11 @@
       "abstract": "",
       "digest_html": "site/regenesis/digests/auto-2026-02-21-tcqs-biology.html",
       "tex": "site/publications/tex/regenesis_auto-2026-02-21-tcqs-biology.tex",
-      "pdf": "site/publications/pdf/regenesis_auto-2026-02-21-tcqs-biology.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -179,11 +179,11 @@
       "abstract": "",
       "digest_html": "site/ethos/digests/auto-on-translating-epistemic-operators-in-a-logic-of-awareness.html",
       "tex": "site/publications/tex/ethos_auto-on-translating-epistemic-operators-in-a-logic-of-awareness.tex",
-      "pdf": "site/publications/pdf/ethos_auto-on-translating-epistemic-operators-in-a-logic-of-awareness.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -194,11 +194,11 @@
       "abstract": "",
       "digest_html": "site/ethos/digests/auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.html",
       "tex": "site/publications/tex/ethos_auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.tex",
-      "pdf": "site/publications/pdf/ethos_auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -209,11 +209,11 @@
       "abstract": "",
       "digest_html": "site/ethos/digests/auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.html",
       "tex": "site/publications/tex/ethos_auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.tex",
-      "pdf": "site/publications/pdf/ethos_auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
