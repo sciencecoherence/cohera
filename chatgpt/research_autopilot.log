@@ -12177,3 +12177,154 @@ Traceback (most recent call last):
     <li>New Sources Ingested: <span class="highlight">{delta.get('counts',{{}}).get('new',0)}</span></li>
                                                                           ^^^^
 TypeError: unhashable type: 'dict'
+polished=1
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xelatex'...
+Rule 'xelatex':  Reasons for rerun
+Changed files or newly in use/created:
+  cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.aux
+Category 'disappeared_gen_this':
+  .build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.aux
+  .build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.out
+
+------------
+Run number 1 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -interaction=nonstopmode -halt-on-error -recorder -output-directory="cohera-repo/.build/texpdf"  "/home/xavier/cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.tex"'
+------------
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Changed files or newly in use/created:
+  /home/xavier/cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.xdv
+Category 'changed_user':
+  /home/xavier/cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.xdv
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.pdf"  "cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.xdv"'
+------------
+cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.xdv -> cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.pdf
+[1]
+10528 bytes written
+Latexmk: Sometimes, the -f option can be used to get latexmk
+  to try to force complete processing.
+  But normally, you will need to correct the file(s) that caused the
+  error, and then rerun latexmk.
+  In some cases, it is best to clean out generated files before rerunning
+  latexmk after you've corrected the files.
+Latexmk: All targets (cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.xdv cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_wrapper.pdf) are up-to-date
+Collected error summary (may duplicate other messages):
+  xelatex: gave an error in previous invocation of latexmk.
+
+WARN: build failed for cosmos_cosmos-v5-coherence-operators-and-emergent-geometry
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf"  "cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv"'
+------------
+cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv -> cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf
+[1][2][3]
+31488 bytes written
+Latexmk: All targets (cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.pdf"  "cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.xdv"'
+------------
+cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.xdv -> cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.pdf
+[1][2]
+16369 bytes written
+Latexmk: All targets (cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.xdv cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.pdf"  "cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.xdv"'
+------------
+cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.xdv -> cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.pdf
+[1][2]
+16339 bytes written
+Latexmk: All targets (cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.xdv cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.pdf) are up-to-date
+
+Latexmk: Sometimes, the -f option can be used to get latexmk
+  to try to force complete processing.
+  But normally, you will need to correct the file(s) that caused the
+  error, and then rerun latexmk.
+  In some cases, it is best to clean out generated files before rerunning
+  latexmk after you've corrected the files.
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: Nothing to do for '/home/xavier/cohera-repo/.build/texpdf/cosmos_time-crystals-holography-minimal-ground_wrapper.tex'.
+Latexmk: All targets (cohera-repo/.build/texpdf/cosmos_time-crystals-holography-minimal-ground_wrapper.xdv cohera-repo/.build/texpdf/cosmos_time-crystals-holography-minimal-ground_wrapper.pdf) are up-to-date
+Collected error summary (may duplicate other messages):
+  xelatex: gave an error in previous invocation of latexmk.
+
+WARN: build failed for cosmos_time-crystals-holography-minimal-ground
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "cohera-repo/.build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.pdf"  "cohera-repo/.build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.xdv"'
+------------
+cohera-repo/.build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.xdv -> cohera-repo/.build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.pdf
+[1][2][3]
+31516 bytes written
+Latexmk: All targets (cohera-repo/.build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.xdv cohera-repo/.build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.pdf) are up-to-date
+
+pdf_index_cards=0
+PDF build completed with skips. Failed targets: cosmos_cosmos-v5-coherence-operators-and-emergent-geometry cosmos_time-crystals-holography-minimal-ground
+pipeline: items=39 tex=39 pdf=4 ready=0
+Traceback (most recent call last):
+  File "/home/xavier/cohera-repo/scripts/research_daily_findings.py", line 127, in <module>
+    main()
+  File "/home/xavier/cohera-repo/scripts/research_daily_findings.py", line 87, in main
+    <li>New Sources Ingested: <span class="highlight">{delta.get('counts',{{}}).get('new',0)}</span></li>
+                                                                          ^^^^
+TypeError: unhashable type: 'dict'

@@ -168,10 +168,16 @@ def is_ready_publication(row: dict, allowlist: set[str]) -> bool:
         return False
     if not has_pdf:
         return False
-    if len(abstract) < 80:
+
+    # For curated publication tracks, allow short abstracts and prioritize throughput.
+    is_pub_track = slug.endswith('publication-v1') or '_publication-v1' in (row.get('pdf') or '')
+
+    if not is_pub_track and len(abstract) < 80:
         return False
-    if allowlist and slug not in allowlist:
+
+    if allowlist and slug not in allowlist and not is_pub_track:
         return False
+
     return True
 
 

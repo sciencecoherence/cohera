@@ -84,7 +84,7 @@ def main():
         <h3>System Metrics</h3>
         <ul class="clean">
           <li>Autodrafts Generated: <span class="highlight">{health.get('autodrafts_created_count', 0)}</span></li>
-          <li>New Sources Ingested: <span class="highlight">{delta.get('counts',{{}}).get('new',0)}</span></li>
+          <li>New Sources Ingested: <span class="highlight">{delta.get('counts',{}).get('new',0)}</span></li>
           <li>Pipeline Issues: <span class="highlight">{len(health.get('issues', []))}</span></li>
         </ul>
       </section>

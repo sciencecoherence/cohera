@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-23T23:23:52Z",
+  "generated_at": "2026-02-23T23:28:29Z",
   "totals": {
-    "items": 38,
-    "with_tex": 38,
+    "items": 39,
+    "with_tex": 39,
     "with_pdf": 4,
     "ready_publications": 0
   },
@@ -269,6 +269,21 @@
       "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 21 Hierarchical Self Engineering Chain 1 Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": null,
       "tex": "site/publications/tex/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
+      "thread": "cosmos",
+      "slug": "cosmos_2026-02-23-chat-corpus-newreality_publication-v1",
+      "title": "Cosmos 2026 02 23 Chat Corpus Newreality Publication V1",
+      "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 23 Chat Corpus Newreality Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/cosmos_2026-02-23-chat-corpus-newreality_publication-v1.tex",
       "pdf": null,
       "status": {
         "has_digest": false,
