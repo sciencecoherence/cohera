@@ -12,57 +12,50 @@ cosmos, research, publication
 \date{February 2026}
 \maketitle
 
-\begin{center}
-\rule{0.92\linewidth}{0.6pt}\\[0.5em]
-\small Research Thread: Cosmos \quad|\quad Manuscript Type: Conceptual/Technical Synthesis
-\\[0.3em]\rule{0.92\linewidth}{0.6pt}
-\end{center}
-
 \begin{abstract}
-We present a compact synthesis connecting Floquet time-crystal dynamics, holographic coarse-graining, and operator-level coherence constraints. The goal is not to claim a final theory but to formalize a minimal testable scaffold that separates established results from speculative bridges. We introduce an effective coherence functional and derive practical falsification hooks for numerical and experimental workflows.
+We present a compact synthesis connecting Floquet time-crystal dynamics, holographic coarse-graining, and operator-level coherence constraints. Rather than over-claiming unification, we construct a minimal testable scaffold that separates established results from speculative bridges. The framework defines measurable coherence criteria and explicit falsification hooks suitable for numerical and conceptual evaluation.
 \end{abstract}
 
 \paragraph{Keywords} time crystals; Floquet dynamics; holography; quantum information; coherence operators
 
 \section{Introduction}
-Time-crystal discourse often mixes distinct regimes: rigorous no-go statements in equilibrium, non-equilibrium Floquet order, and information-theoretic interpretations. This manuscript imposes a minimal common language so each claim can be attached to assumptions, observables, and failure modes.
+Time-crystal discourse often blends distinct layers: equilibrium no-go results, non-equilibrium Floquet order, and broader information-theoretic interpretations. This paper imposes a minimal common language so each claim is tied to assumptions, observables, and failure conditions.
 
-\section{Minimal Formal Layer}
-Let $\rho_t$ denote a reduced state on a finite operator algebra. We define a periodic coherence witness over one drive period $T$:
+\section{Coherence Functional}
+Let $\rho_t$ denote a reduced state over a bounded operator algebra. We define a periodic coherence witness over one drive period $T$:
 \begin{equation}
-\mathcal{C}_T = \frac{1}{T}\int_0^T \mathrm{Tr}\!\left[\rho_t\,\mathcal{O}_c\right]dt,
+\mathcal{C}_T = \frac{1}{T}\int_0^T \operatorname{Tr}(\rho_t\,\mathcal{O}_c)\,dt,
 \end{equation}
-where $\mathcal{O}_c$ is a bounded coherence-sensitive observable.
+where $\mathcal{O}_c$ is a coherence-sensitive bounded observable.
 
-For a stroboscopic map $\Phi_T$, persistence under perturbation family $\{\epsilon\}$ is tracked by
+For perturbation family $\{\epsilon\}$, coherence drift is
 \begin{equation}
-\Delta_{\epsilon} = \left|\mathcal{C}_T(\epsilon)-\mathcal{C}_T(0)\right|.
-\end{equation}
-A practical robustness criterion is
-\begin{equation}
-\sup_{\epsilon\in[0,\epsilon_0]} \Delta_{\epsilon} < \delta_*.
+\Delta_{\epsilon}=\left|\mathcal{C}_T(\epsilon)-\mathcal{C}_T(0)\right|.
 \end{equation}
 
-\section{Holographic Interpretation Layer}
-We model coarse-grained reconstruction by an effective channel $\mathcal{R}$ acting on low-energy observables. A consistency requirement between boundary witness and reconstructed bulk proxy is
+\section{Stability Threshold}
+With stroboscopic map $\Phi_T$, robust regime membership is declared only when
 \begin{equation}
-\left|\mathcal{C}^{\partial}_T - \mathcal{C}^{\mathrm{bulk}}_T\right| \leq \eta,
+\sup_{\epsilon\in[0,\epsilon_0]}\Delta_{\epsilon} < \delta_*,
 \end{equation}
-with $\eta$ explicitly reported as model error, not absorbed into interpretation.
+for pre-registered tolerance $\delta_*$. Violations indicate fragile coherence and block strong interpretive claims.
 
-\section{Validation and Falsification Hooks}
+\section{Emergent Geometry Protocol}
+We compare boundary and reconstructed proxies using a coarse-graining channel $\mathcal{R}$. Consistency is evaluated by
+\begin{equation}
+\left|\mathcal{C}^{\partial}_T-\mathcal{C}^{\mathrm{bulk}}_T\right| \le \eta,
+\end{equation}
+where $\eta$ is reported as model error (not absorbed narratively). In local parameter chart $\theta$, geometry diagnostics can be approximated through Fisher information:
+\begin{equation}
+g_{ab}(\theta)=\sum_x p(x\mid\theta)\,\partial_a\log p(x\mid\theta)\,\partial_b\log p(x\mid\theta).
+\end{equation}
+
+\section*{Validation and Falsification}
 \begin{itemize}
-\item \textbf{Numerical hook:} sweep drive-noise amplitude and test violation of the robustness bound.
-\item \textbf{Model hook:} replace $\mathcal{O}_c$ by orthogonal witness families; check whether conclusions are basis-dependent.
-\item \textbf{Interpretation hook:} force $\eta\to 0$ in controlled toy models; reject holographic claim if mismatch persists.
+\item Sweep drive-noise amplitude and detect breakdown of the stability threshold.
+\item Replace $\mathcal{O}_c$ with orthogonal witness families to test basis sensitivity.
+\item Reject holographic interpretations if boundary--bulk coherence mismatch remains high in controlled toy models.
 \end{itemize}
 
-\section{Conclusion}
-This paper provides a cleaner publication-ready baseline: assumptions are explicit, equations are readable, and each interpretive step is paired with a concrete failure condition.
-
-\section*{References (working set)}
-\begin{enumerate}
-\item F. Wilczek, ``Quantum Time Crystals,'' \emph{Phys. Rev. Lett.} (2012).
-\item H. Watanabe, M. Oshikawa, ``Absence of Quantum Time Crystals,'' \emph{Phys. Rev. Lett.} 114 (2015).
-\item D. V. Else, B. Bauer, C. Nayak, ``Floquet Time Crystals,'' \emph{Phys. Rev. Lett.} 117 (2016).
-\end{enumerate}
+\section*{Conclusion}
+The manuscript provides a cleaner publication baseline: assumptions are explicit, equations are legible, and interpretive claims are paired with concrete failure criteria.
