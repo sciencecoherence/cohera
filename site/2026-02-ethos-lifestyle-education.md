@@ -1,7 +1,7 @@
 # 2026-02-ethos-lifestyle-education.md
 
 ## Purpose
-Seed document for the **Ethos** thread (lifestyle, education, culture, practice).  
+Seed document for the **Ethos** thread (lifestyle, education, culture, practice). 
 Ethos is where we translate research into *how to live, learn, build, and teach* without turning into ideology.
 
 ## Core framing (working)
@@ -40,25 +40,25 @@ This is not “motivational content.” It is an applied epistemology + educatio
 
 ## Ethos pillars (themes to build around)
 1) **Epistemic hygiene**
-   - how to avoid being fooled
-   - how to update beliefs
-   - how to separate signal from noise
+ - how to avoid being fooled
+ - how to update beliefs
+ - how to separate signal from noise
 2) **Learning as a system**
-   - spaced repetition, retrieval practice, interleaving
-   - building mental models
-   - teaching as compression
+ - spaced repetition, retrieval practice, interleaving
+ - building mental models
+ - teaching as compression
 3) **Attention & environment**
-   - focus practices, deep work routines
-   - digital minimalism (non-dogmatic)
-   - designing spaces for cognition
+ - focus practices, deep work routines
+ - digital minimalism (non-dogmatic)
+ - designing spaces for cognition
 4) **Agency & iteration**
-   - small experiments, feedback loops
-   - journaling as instrumentation
-   - “protocols” for habits with measurable outcomes
+ - small experiments, feedback loops
+ - journaling as instrumentation
+ - “protocols” for habits with measurable outcomes
 5) **Ethics of publishing**
-   - cite sources, mark uncertainty
-   - avoid medical promises
-   - minimize harm and hype
+ - cite sources, mark uncertainty
+ - avoid medical promises
+ - minimize harm and hype
 
 ## Output types (what Ethos should publish)
 ### A) Education modules
@@ -90,12 +90,12 @@ How to use the Cohera pipeline responsibly:
 
 ## First Ethos missions (suggested)
 1) **Research literacy quickstart**
-   - A 1-page guide: how to read papers + common traps
+ - A 1-page guide: how to read papers + common traps
 2) **Uncertainty labeling**
-   - A standard “Confidence + Hypothesis” rubric used across all threads
+ - A standard “Confidence + Hypothesis” rubric used across all threads
 3) **Education pathway**
-   - A simple curriculum map:
-     - Beginner → Intermediate → Advanced for Cosmos/Regenesis concepts
+ - A simple curriculum map:
+ - Beginner → Intermediate → Advanced for Cosmos/Regenesis concepts
 
 ## Notes for Cohera
 Ethos should feel:

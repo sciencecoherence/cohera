@@ -1,35 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Regenesis · Cohera Lab</title>
-  <link rel="stylesheet" href="/cohera/assets/style.css" />
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Regenesis · Cohera Lab</title>
+ <link rel="stylesheet" href="/cohera/assets/style.css" />
 </head>
 <body>
-  <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">
-    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/cosmos/index.html">Cosmos</a><a href="/cohera/regenesis/index.html">Regenesis</a><a href="/cohera/ethos/index.html">Ethos</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/contact/index.html">Contact</a> <a href="/cohera/about/index.html">About</a>
-  </nav></div></header>
-  <main class="container">
-    <section class="hero"><h1>Regenesis Thread</h1><p class="small">Biology, nutrition, recovery and protocol design with strict safety and evidence framing.</p></section>
-    <section class="card"><h3>Status</h3><p>Thread initialized. First digest in preparation from your current PDF/TeX corpus and primary literature.</p></section>
-    <section class="card"><h3>Latest digests</h3><div id="digest-list" class="small">Loading...</div></section>
-  </main>
-  <footer><div class="container">Regenesis · educational content, no diagnosis promises.</div></footer>
+ <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">
+ <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/cosmos/index.html">Cosmos</a><a href="/cohera/regenesis/index.html">Regenesis</a><a href="/cohera/ethos/index.html">Ethos</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/contact/index.html">Contact</a> <a href="/cohera/about/index.html">About</a>
+ </nav></div></header>
+ <main class="container">
+ <section class="hero"><h1>Regenesis Thread</h1><p class="small">Biology, nutrition, recovery and protocol design with strict safety and evidence framing.</p></section>
+ <section class="card"><h3>Status</h3><p>Thread initialized. First digest in preparation from your current PDF/TeX corpus and primary literature.</p></section>
+ <section class="card"><h3>Latest digests</h3><div id="digest-list" class="small">Loading...</div></section>
+ </main>
+ <footer><div class="container">Regenesis · educational content, no diagnosis promises.</div></footer>
 
-  <script>
-    async function loadDigests() {
-      const el = document.getElementById('digest-list');
-      try {
-        const r = await fetch('/cohera/regenesis/digests/index.json', {cache: 'no-store'});
-        const items = await r.json();
-        if (!Array.isArray(items) || !items.length) { el.textContent = 'No digests yet.'; return; }
-        el.innerHTML = '<ul class="clean">' + items.map(d =>
-          `<li><a href="/cohera/regenesis/digests/${d.slug}.html">${d.title}</a> <span class="small">(${d.date})</span></li>`
-        ).join('') + '</ul>';
-      } catch { el.textContent = 'Failed to load digest list.'; }
-    }
-    loadDigests();
-  </script>
+ <script>
+ async function loadDigests() {
+ const el = document.getElementById('digest-list');
+ try {
+ const r = await fetch('/cohera/regenesis/digests/index.json', {cache: 'no-store'});
+ const items = await r.json();
+ if (!Array.isArray(items) ||!items.length) { el.textContent = 'No digests yet.'; return; }
+ el.innerHTML = '<ul class="clean">' + items.map(d =>
+ `<li><a href="/cohera/regenesis/digests/${d.slug}.html">${d.title}</a> <span class="small">(${d.date})</span></li>`
+ ).join('') + '</ul>';
+ } catch { el.textContent = 'Failed to load digest list.'; }
+ }
+ loadDigests();
+ </script>
 </body>
 </html>

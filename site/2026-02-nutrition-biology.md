@@ -17,11 +17,11 @@ Goal: improve regeneration by optimizing inputs, cycles, and constraints (sleep,
 
 ## Primary Regenesis priorities
 1) **Sleep quality & regeneration**
-   - mechanisms: circadian rhythm, growth hormone pulses, glymphatic clearance, synaptic homeostasis, immune modulation
+ - mechanisms: circadian rhythm, growth hormone pulses, glymphatic clearance, synaptic homeostasis, immune modulation
 2) **Tissue repair & longevity pathways**
-   - protein turnover, autophagy, mitochondrial biogenesis, inflammation resolution
+ - protein turnover, autophagy, mitochondrial biogenesis, inflammation resolution
 3) **Nutrition as signal environment**
-   - macronutrient timing, micronutrient sufficiency, gut barrier integrity, metabolic flexibility
+ - macronutrient timing, micronutrient sufficiency, gut barrier integrity, metabolic flexibility
 
 ## Claims: facts vs hypotheses
 ### Facts (must cite in public digests)
@@ -31,8 +31,8 @@ Goal: improve regeneration by optimizing inputs, cycles, and constraints (sleep,
 
 ### Hypotheses / personal claims (must remain labeled until validated)
 - Specific diet assertions (e.g., “raw meat only is optimal”) require extremely careful treatment:
-  - strong claims need strong evidence
-  - safety considerations (pathogens, nutrient balance) must be addressed
+ - strong claims need strong evidence
+ - safety considerations (pathogens, nutrient balance) must be addressed
 - Any supplement protocol claims must be evidence-linked and cautious.
 
 ## Protocol philosophy (how we publish)

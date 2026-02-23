@@ -10,13 +10,13 @@
 </main>
 <script>
 async function loadSignals(){
-  const el=document.getElementById('signals');
-  try{
-    const r=await fetch('/cohera/trading/signals/index.json',{cache:'no-store'});
-    const items=await r.json();
-    if(!Array.isArray(items)||!items.length){el.textContent='No signals yet.';return;}
-    el.innerHTML='<ul>'+items.map(s=>`<li><strong>${s.date}</strong> · ${s.side} · ${s.setup} · ${s.status} · <a href="${s.link}">details</a></li>`).join('')+'</ul>';
-  }catch(e){el.textContent='Signal index not available.';}
+ const el=document.getElementById('signals');
+ try{
+ const r=await fetch('/cohera/trading/signals/index.json',{cache:'no-store'});
+ const items=await r.json();
+ if(!Array.isArray(items)||!items.length){el.textContent='No signals yet.';return;}
+ el.innerHTML='<ul>'+items.map(s=>`<li><strong>${s.date}</strong> · ${s.side} · ${s.setup} · ${s.status} · <a href="${s.link}">details</a></li>`).join('')+'</ul>';
+ }catch(e){el.textContent='Signal index not available.';}
 }
 loadSignals();
 </script>

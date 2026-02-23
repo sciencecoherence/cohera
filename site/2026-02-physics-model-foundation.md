@@ -20,10 +20,10 @@ We model reality as an informational substrate whose dynamics generate emergent 
 ## Key goals
 1. Define a **minimal mathematical architecture** that is coherent, testable, and not overloaded.
 2. Derive **known effective physics** as limiting behavior:
-   - thermodynamic / hydrodynamic limits
-   - effective metric dynamics (GR-like behavior)
-   - weak-field Newtonian limit
-   - boundedness / absence of singularities via finite coherence bounds
+ - thermodynamic / hydrodynamic limits
+ - effective metric dynamics (GR-like behavior)
+ - weak-field Newtonian limit
+ - boundedness / absence of singularities via finite coherence bounds
 3. Articulate the “holographic/time-crystalline” aspects as **derivable properties**, not vibes.
 
 ## Definitions to stabilize (must become explicit)
@@ -55,23 +55,23 @@ We model reality as an informational substrate whose dynamics generate emergent 
 
 ### B. “Time-crystalline” angle (verification-first)
 - Collect primary sources on:
-  - discrete time crystals (Floquet time crystals)
-  - no-go theorems (equilibrium time crystals)
-  - experimental realizations
+ - discrete time crystals (Floquet time crystals)
+ - no-go theorems (equilibrium time crystals)
+ - experimental realizations
 - Extract what’s required: driving, locality, many-body interactions, disorder, prethermal regimes.
 
 ### C. “Holographic” angle (verification-first)
 - Collect primary sources on:
-  - holographic entropy bounds
-  - AdS/CFT basics (only as needed)
-  - entanglement ↔ geometry (Ryu–Takayanagi and descendants)
+ - holographic entropy bounds
+ - AdS/CFT basics (only as needed)
+ - entanglement ↔ geometry (Ryu–Takayanagi and descendants)
 - Identify what is essential vs what is optional for our framework.
 
 ### D. Quantum information angle
 - Use quantum info language where it clarifies:
-  - error correction / redundancy
-  - entanglement structure
-  - coarse-graining / emergent classicality
+ - error correction / redundancy
+ - entanglement structure
+ - coarse-graining / emergent classicality
 - Avoid importing jargon without function.
 
 ## Publishing standard (for Cohera)
