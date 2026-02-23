@@ -1,35 +1,4 @@
 {
-  "generated_at": "2026-02-23T21:25:18Z",
-  "ready": [
-    {
-      "thread": "cosmos",
-      "slug": "cosmos-v5-coherence-operators-and-emergent-geometry",
-      "title": "Cosmos v5: Coherence Operators and Emergent Geometry",
-      "abstract": "This publication provides a structured synthesis for Cosmos v5: Coherence Operators and Emergent Geometry, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": "site/cosmos/digests/cosmos-v5-coherence-operators-and-emergent-geometry.html",
-      "tex": "site/publications/tex/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.tex",
-      "pdf": "site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.pdf",
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": true
-    },
-    {
-      "thread": "cosmos",
-      "slug": "time-crystals-holography-minimal-ground",
-      "title": "Time Crystals, Holography, and Quantum Information: Minimal Common Ground",
-      "abstract": "This publication provides a structured synthesis for Time Crystals, Holography, and Quantum Information: Minimal Common Ground, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": "site/cosmos/digests/time-crystals-holography-minimal-ground.html",
-      "tex": "site/publications/tex/cosmos_time-crystals-holography-minimal-ground.tex",
-      "pdf": "site/publications/pdf/cosmos_time-crystals-holography-minimal-ground.pdf",
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": true
-    }
-  ]
+  "generated_at": "2026-02-23T22:42:36Z",
+  "ready": []
 }

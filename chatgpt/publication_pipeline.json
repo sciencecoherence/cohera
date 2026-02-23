@@ -1,12 +1,42 @@
 {
-  "generated_at": "2026-02-23T21:25:18Z",
+  "generated_at": "2026-02-23T22:42:36Z",
   "totals": {
-    "items": 34,
-    "with_tex": 34,
-    "with_pdf": 4,
-    "ready_publications": 2
+    "items": 39,
+    "with_tex": 39,
+    "with_pdf": 1,
+    "ready_publications": 0
   },
   "items": [
+    {
+      "thread": "cosmos",
+      "slug": "auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-interacting-dark-matter-or-not",
+      "title": "Autodraft: The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not",
+      "abstract": "This publication-ready draft synthesizes current cosmos findings for 'Autodraft: The \\_large \\_cores \\_of \\_dark \\_matter \\_and \\_globular \\_clusters \\_in \\_AS1063 \\_Possible \\_evidence \\_of \\_self-interacting \\_dark \\_matter \\_Or \\_not' with traceable claims, evidence hooks, and validation steps.",
+      "digest_html": "site/cosmos/digests/auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-interacting-dark-matter-or-not.html",
+      "tex": "site/publications/tex/cosmos_auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-interacting-dark-matter-or-not.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": true,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
+      "thread": "cosmos",
+      "slug": "auto-2026-02-23-chat-corpus-newreality",
+      "title": "Autodraft: 2026-02-23-chat-corpus-newreality",
+      "abstract": "This publication-ready draft synthesizes current cosmos findings for 'Autodraft: 2026-02-23-chat-corpus-newreality' with traceable claims, evidence hooks, and validation steps.",
+      "digest_html": "site/cosmos/digests/auto-2026-02-23-chat-corpus-newreality.html",
+      "tex": "site/publications/tex/cosmos_auto-2026-02-23-chat-corpus-newreality.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": true,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
     {
       "thread": "cosmos",
       "slug": "auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi",
@@ -74,13 +104,13 @@
       "abstract": "This publication provides a structured synthesis for Cosmos v5: Coherence Operators and Emergent Geometry, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": "site/cosmos/digests/cosmos-v5-coherence-operators-and-emergent-geometry.html",
       "tex": "site/publications/tex/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.tex",
-      "pdf": "site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
-      "ready": true
+      "ready": false
     },
     {
       "thread": "cosmos",
@@ -98,19 +128,19 @@
       "ready": false
     },
     {
-      "thread": "cosmos",
-      "slug": "time-crystals-holography-minimal-ground",
-      "title": "Time Crystals, Holography, and Quantum Information: Minimal Common Ground",
-      "abstract": "This publication provides a structured synthesis for Time Crystals, Holography, and Quantum Information: Minimal Common Ground, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": "site/cosmos/digests/time-crystals-holography-minimal-ground.html",
-      "tex": "site/publications/tex/cosmos_time-crystals-holography-minimal-ground.tex",
-      "pdf": "site/publications/pdf/cosmos_time-crystals-holography-minimal-ground.pdf",
+      "thread": "regenesis",
+      "slug": "auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosis",
+      "title": "Autodraft: Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis",
+      "abstract": "This publication-ready draft synthesizes current regenesis findings for 'Autodraft: Self-Organized \\_Bioelectricity \\_via \\_Collective \\_Pump \\_Alignment \\_Physical \\_Origin \\_of \\_Chemiosmosis' with traceable claims, evidence hooks, and validation steps.",
+      "digest_html": "site/regenesis/digests/auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosis.html",
+      "tex": "site/publications/tex/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosis.tex",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
-      "ready": true
+      "ready": false
     },
     {
       "thread": "regenesis",
@@ -175,7 +205,7 @@
     {
       "thread": "ethos",
       "slug": "auto-on-translating-epistemic-operators-in-a-logic-of-awareness",
-      "title": "Autodraft: On Translating Epistemic Operators in a Logic of Awareness",
+      "title": "Autodraft: On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness",
       "abstract": "",
       "digest_html": "site/ethos/digests/auto-on-translating-epistemic-operators-in-a-logic-of-awareness.html",
       "tex": "site/publications/tex/ethos_auto-on-translating-epistemic-operators-in-a-logic-of-awareness.tex",
@@ -249,6 +279,21 @@
     },
     {
       "thread": "cosmos",
+      "slug": "cosmos_2026-02-23-chat-corpus-newreality_publication-v1",
+      "title": "Cosmos 2026 02 23 Chat Corpus Newreality Publication V1",
+      "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 23 Chat Corpus Newreality Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/cosmos_2026-02-23-chat-corpus-newreality_publication-v1.tex",
+      "pdf": "site/publications/pdf/cosmos_2026-02-23-chat-corpus-newreality_publication-v1.pdf",
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": true
+      },
+      "ready": false
+    },
+    {
+      "thread": "cosmos",
       "slug": "cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1",
       "title": "Cosmos 2026 02 23 Qualitative Coding Analysis Through Open Source Large Language M Publication V1",
       "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 23 Qualitative Coding Analysis Through Open Source Large Language M Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
@@ -299,11 +344,11 @@
       "abstract": "This publication provides a structured synthesis for Cosmos Cosmos V5 Coherence Operators And Emergent Geometry Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": null,
       "tex": "site/publications/tex/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1.pdf",
+      "pdf": null,
       "status": {
         "has_digest": false,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -354,16 +399,31 @@
     },
     {
       "thread": "cosmos",
+      "slug": "cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1",
+      "title": "Cosmos The Large Cores Of Dark Matter And Globular Clusters In As1063 Possible Evidence Of Self I Publication V1",
+      "abstract": "This publication provides a structured synthesis for Cosmos The Large Cores Of Dark Matter And Globular Clusters In As1063 Possible Evidence Of Self I Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
+      "thread": "cosmos",
       "slug": "cosmos_time-crystals-holography-minimal-ground_publication-v1",
       "title": "Cosmos Time Crystals Holography Minimal Ground Publication V1",
       "abstract": "This publication provides a structured synthesis for Cosmos Time Crystals Holography Minimal Ground Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": null,
       "tex": "site/publications/tex/cosmos_time-crystals-holography-minimal-ground_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_time-crystals-holography-minimal-ground_publication-v1.pdf",
+      "pdf": null,
       "status": {
         "has_digest": false,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -479,6 +539,21 @@
       "abstract": "This paper presents a structured synthesis of current regenesis evidence around self-organized bioelectricity via collective pump alignment. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
       "digest_html": null,
       "tex": "site/publications/tex/regenesis_bioelectricity-pump-alignment_publication-v1.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
+      "thread": "regenesis",
+      "slug": "regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1",
+      "title": "Regenesis Self Organized Bioelectricity Via Collective Pump Alignment Physical Origin Of Chemiosmosi Publication V1",
+      "abstract": "This publication provides a structured synthesis for Regenesis Self Organized Bioelectricity Via Collective Pump Alignment Physical Origin Of Chemiosmosi Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1.tex",
       "pdf": null,
       "status": {
         "has_digest": false,
