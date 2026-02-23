@@ -27,6 +27,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y latexmk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-science
 
+      - name: Guard path portability
+        run: bash scripts/ci_guard_paths.sh
+
       - name: Build ready-only publication PDFs
         run: bash scripts/build_publication_pdfs.sh
 
