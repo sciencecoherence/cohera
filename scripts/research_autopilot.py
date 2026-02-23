@@ -111,33 +111,73 @@ def extract_text_preview(abs_path: Path, max_chars: int = 8000) -> Tuple[str, st
         return '', 'n/a'
 
 def extract_structured_notes(src_rel: str) -> dict:
-    abs_path = REPO / src_rel
-    preview, page_window = extract_text_preview(abs_path)
-    base = Path(src_rel).stem.replace('_', ' ')
-    pretty_title = re.sub(r'\s+', ' ', base).strip()
+abs_path = REPO / src_rel
+preview, page_window = extract_text_preview(abs_path)
+base = Path(src_rel).stem.replace('_', ' ')
+pretty_title = re.sub(r'\s+', ' ', base).strip()
 
-    abstract = ''
-    doi = ''
-    if preview:
-        # Improved Regex for DOIs
-        m_doi = re.search(r'\b(10\.\d{4,9}/[-._;()/:A-Z0-9]+)\b', preview, re.IGNORECASE)
-        if m_doi:
-            doi = m_doi.group(1)
-        
-        # Look for Abstract blocks more intelligently
-        m_abs = re.search(r'(?i)abstract[\s\.\-\:]*(.*?)(?=(?i)(introduction|1\.\s|keywords|background))', preview)
-        if m_abs:
-            abstract = m_abs.group(1).strip()
-        else:
-            abstract = preview[:500] + "..."
+abstract = ''
+doi = ''
+if preview:
+    m_doi = re.search(r'\b(10\.\d{4,9}/[-._;()/:A-Z0-9]+)\b', preview, re.IGNORECASE)
+    if m_doi:
+        doi = m_doi.group(1)
+    
+    m_abs = re.search(r'(?i)abstract[\s\.\-\:]*(.*?)(?=(?i)(introduction|1\.\s|keywords|background))', preview)
+    if m_abs:
+        abstract = m_abs.group(1).strip()
+    else:
+        abstract = preview[:500] + "..."
 
-    # Smart Claim Extraction
-    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', preview) if len(s.strip()) > 40]
+# Robust Claim Extraction
+try:
+    sentences = [s.strip() for s in re.split(r'[.!?]\s+', preview) if len(s.strip()) > 40]
+except Exception:
+    sentences = [s.strip() for s in preview.split('\n') if len(s.strip()) > 40]
+
+claim_map = []
+scientific_claims = [s for s in sentences if CLAIM_MARKERS.search(s)]
+target_sentences = scientific_claims[:3] if scientific_claims else sentences[3:6]
+
+for s in target_sentences:
+    short_claim = s[:150] + ('...' if len(s) > 150 else '')
+    claim_map.append({
+        'claim': short_claim,
+        'evidence_quote': s,
+        'page_hint': page_window
+    })
+
+findings = [
+    f"Domain classification: {classify_thread(pretty_title).upper()}",
+    "Source ingested via Auto-Research Pipeline.",
+    "Awaiting Phase 2 Synthesis (Candidate Promotion)."
+]
+
+return {
+    'title': pretty_title,
+    'abstract': abstract,
+    'doi': doi,
+    'findings': findings,
+    'evidence': [f"Source: {src_rel}", f"Scope: {page_window}"],
+    'claim_map': claim_map
+}
+
+# Smart Claim Extraction with Safe Fall-through
+    try:
+        # We use a non-capturing group for the split to prevent regex errors on malformed text
+        sentences = [s.strip() for s in re.split(r'(?:[.!?])\s+', preview) if len(s.strip()) > 40]
+    except re.error:
+        # Fallback to simple newline split if the complex regex fails
+        sentences = [s.strip() for s in preview.split('\n') if len(s.strip()) > 40]
+
     claim_map = []
     
     # Prioritize sentences with actual scientific claim markers
     scientific_claims = [s for s in sentences if CLAIM_MARKERS.search(s)]
-    target_sentences = scientific_claims[:3] if scientific_claims else sentences[2:5] # Skip title/author block
+    
+    # Use scientific claims first; fallback to sentences in the middle of the preview 
+    # (avoiding potential title/author junk at the start)
+    target_sentences = scientific_claims[:3] if scientific_claims else sentences[3:6]
 
     for s in target_sentences:
         short_claim = s[:150] + ('…' if len(s) > 150 else '')
@@ -145,7 +185,7 @@ def extract_structured_notes(src_rel: str) -> dict:
             'claim': short_claim,
             'evidence_quote': s,
             'page_hint': page_window,
-        })
+        }))
 
     findings = [
         f"Domain classification: {classify_thread(pretty_title).upper()}",
