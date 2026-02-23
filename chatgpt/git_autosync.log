@@ -100,3 +100,30 @@ From github.com-cohera:sciencecoherence/cohera
 From github.com-cohera:sciencecoherence/cohera
  * branch            main       -> FETCH_HEAD
 [2026-02-23T09:59:47-05:00] autosync start
+[main 5cee05a] autosync: 2026-02-23 09:59:47 -0500
+ 25 files changed, 665 insertions(+), 16 deletions(-)
+ create mode 100644 .build/texpdf/cosmos_8.1_proposal_20260222_1640_wrapper.tex
+ create mode 100644 chatgpt/publication_pipeline.json
+ create mode 100755 scripts/publication_pipeline.py
+ delete mode 100644 site/publications/pdf/cosmos_8.1_proposal_20260222_1640.pdf
+ delete mode 100644 site/publications/pdf/cosmos_8.2_proposal_20260222_163243.pdf
+ delete mode 100644 site/publications/pdf/cosmos_8.3_proposal_20260222_1640.pdf
+ delete mode 100644 site/publications/pdf/cosmos_v5_integrated_20260222.pdf
+ create mode 100644 site/publications/tex/cosmos_auto-2026-02-21-hierarchical-self-engineering-chain-1.tex
+ create mode 100644 site/publications/tex/cosmos_auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.tex
+ create mode 100644 site/publications/tex/cosmos_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.tex
+ create mode 100644 site/publications/tex/cosmos_auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.tex
+ create mode 100644 site/publications/tex/cosmos_auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.tex
+ create mode 100644 site/publications/tex/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.tex
+ create mode 100644 site/publications/tex/cosmos_time-crystals-holography-minimal-ground.tex
+ create mode 100644 site/publications/tex/ethos_auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.tex
+ create mode 100644 site/publications/tex/ethos_auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.tex
+ create mode 100644 site/publications/tex/ethos_auto-on-translating-epistemic-operators-in-a-logic-of-awareness.tex
+ create mode 100644 site/publications/tex/ethos_research-literacy-confidence-rubric.tex
+ create mode 100644 site/publications/tex/regenesis_auto-2026-02-21-tcqs-biology.tex
+ create mode 100644 site/publications/tex/regenesis_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.tex
+ create mode 100644 site/publications/tex/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.tex
+ create mode 100644 site/publications/tex/regenesis_sleep-regeneration-baseline.tex
+From github.com-cohera:sciencecoherence/cohera
+ * branch            main       -> FETCH_HEAD
+   d436642..b77a175  main       -> origin/main
