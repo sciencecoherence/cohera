@@ -176,6 +176,26 @@ def is_ready_publication(row: dict, allowlist: set[str]) -> bool:
 
 def sync_pdf_index_ready(results: list):
     ready = [r for r in results if r.get('ready')]
+
+    # Canonicalize and dedupe: prefer *_publication-v1.pdf when both exist.
+    cards = []
+    seen = set()
+    for r in ready:
+        pdf_raw = Path(r.get('pdf') or '').name
+        if not pdf_raw:
+            continue
+        canonical = pdf_raw.replace('.pdf', '_publication-v1.pdf')
+        chosen = canonical if (PDF_DIR / canonical).exists() else pdf_raw
+        if chosen in seen:
+            continue
+        seen.add(chosen)
+        cards.append({
+            'title': r.get('title') or chosen,
+            'thread': r.get('thread', ''),
+            'abstract': (r.get('abstract') or '').strip(),
+            'pdf': chosen,
+        })
+
     lines = [
         '<!doctype html>',
         '<html lang="en">',
@@ -190,17 +210,16 @@ def sync_pdf_index_ready(results: list):
         '    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/publications/tex/index.html">TeX Sources</a><a href="/cohera/about/index.html">About</a>',
         '  </nav></div></header>',
         '  <main class="container">',
-        '    <section class="hero"><h1>PDF Publications</h1><p class="small">Only publication-ready outputs are listed here (formatted + abstract present).</p></section>',
+        '    <section class="hero"><h1>PDF Publications</h1><p class="small">Final reader-ready papers only.</p></section>',
     ]
-    if ready:
-        for r in ready:
-            pdf_name = Path(r['pdf']).name
+    if cards:
+        for c in cards:
             lines += [
                 '    <section class="card">',
-                f'      <h3>{html.escape(r.get("title") or pdf_name)}</h3>',
-                f'      <p class="small"><strong>Thread:</strong> {html.escape(r.get("thread", ""))}</p>',
-                f'      <p>{html.escape(r.get("abstract", ""))}</p>',
-                f'      <p><a href="/cohera/publications/pdf/{pdf_name}">Open PDF →</a></p>',
+                f'      <h3>{html.escape(c["title"])}</h3>',
+                f'      <p class="small"><strong>Thread:</strong> {html.escape(c["thread"])}</p>',
+                f'      <p>{html.escape(c["abstract"][:420]) if c["abstract"] else "Publication-ready manuscript."}</p>',
+                f'      <p><a href="/cohera/publications/pdf/{c["pdf"]}">Open PDF →</a></p>',
                 '    </section>',
             ]
     else:
