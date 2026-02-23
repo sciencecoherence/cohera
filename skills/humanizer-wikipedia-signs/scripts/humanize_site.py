@@ -4,6 +4,10 @@ import re
 from pathlib import Path
 
 REPLACEMENTS = [
+    (r"\bThis paper presents a (?:structured|publication-ready) synthesis\b", "This paper develops a clear synthesis"),
+    (r"\bThis publication provides a structured synthesis for\b", "This paper synthesizes"),
+    (r"\bwith claim-to-evidence framing and a validation path for readers\b", "with explicit evidence links and validation steps"),
+    (r"\bUpdated each research cycle\.\b", "Refreshed each research cycle."),
     (r"\bIn conclusion,?\b", ""),
     (r"\bIt is important to note that\b", ""),
     (r"\bIt should be noted that\b", ""),
