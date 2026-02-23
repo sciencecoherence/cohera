@@ -41,9 +41,16 @@ def parse_text(msg_obj):
     try:
         content = msg_obj.get('message', {}).get('content', [])
         texts = []
-        for c in content:
-            if c.get('type') == 'text' and c.get('text'):
-                texts.append(c['text'])
+        if isinstance(content, list):
+            for c in content:
+                if isinstance(c, dict) and c.get('type') == 'text' and c.get('text'):
+                    texts.append(str(c['text']))
+                elif isinstance(c, str):
+                    texts.append(c)
+        elif isinstance(content, dict):
+            t = content.get('text')
+            if isinstance(t, str) and t.strip():
+                texts.append(t)
         txt = '\n'.join(texts).strip()
         return txt
     except Exception:
