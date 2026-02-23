@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-02-23T19:25:19Z",
+  "generated_at": "2026-02-23T19:59:02Z",
   "totals": {
-    "items": 32,
-    "with_tex": 32,
-    "with_pdf": 3,
+    "items": 33,
+    "with_tex": 33,
+    "with_pdf": 4,
     "ready_publications": 2
   },
   "items": [
@@ -334,6 +334,21 @@
         "has_digest": false,
         "has_tex": true,
         "has_pdf": false
+      },
+      "ready": false
+    },
+    {
+      "thread": "cosmos",
+      "slug": "cosmos_time-crystals-holography-minimal-ground_publication-v1",
+      "title": "Cosmos Time Crystals Holography Minimal Ground Publication V1",
+      "abstract": "This publication provides a structured synthesis for Cosmos Time Crystals Holography Minimal Ground Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/cosmos_time-crystals-holography-minimal-ground_publication-v1.tex",
+      "pdf": "site/publications/pdf/cosmos_time-crystals-holography-minimal-ground_publication-v1.pdf",
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": true
       },
       "ready": false
     },
