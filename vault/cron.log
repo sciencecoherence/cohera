@@ -61,3 +61,89 @@
 To github.com-cohera:sciencecoherence/cohera.git
    f43390f..cec2bc9  main -> main
 Snapshot complete: /home/xavier/cohera-repo/vault/snapshot-2026-02-22_031701
+[main 72615b8] vault: snapshot 2026-02-23_031701 (auto, keep last 10)
+ 78 files changed, 4360 insertions(+)
+ create mode 100644 vault/snapshot-2026-02-23_031701/README.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/checksums.txt
+ create mode 100644 vault/snapshot-2026-02-23_031701/integrations/hostinger-mail/.env.example
+ create mode 100644 vault/snapshot-2026-02-23_031701/integrations/hostinger-mail/README.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/integrations/hostinger-mail/poller.py
+ create mode 100644 vault/snapshot-2026-02-23_031701/integrations/hostinger-mail/reply_drafts.py
+ create mode 100644 vault/snapshot-2026-02-23_031701/integrations/hostinger-mail/rules.json
+ create mode 100755 vault/snapshot-2026-02-23_031701/integrations/hostinger-mail/send_mail.py
+ create mode 100644 vault/snapshot-2026-02-23_031701/manifest.json
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/COHERA_RULES.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/SITE_SPEC.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/2026-02-ethos-lifestyle-education.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/2026-02-nutrition-biology.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/2026-02-physics-model-foundation.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/2026-02-research-pipeline.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/about/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/assets/style.css
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/contact/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/cosmos/digests/auto-2026-02-21-hierarchical-self-engineering-chain-1.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/cosmos/digests/auto-2026-02-22-self-organized-bioelectricity-via-collective-pump-alignment-phys.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/cosmos/digests/auto-2026-02-22-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/cosmos/digests/auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/cosmos/digests/cosmos-v5-coherence-operators-and-emergent-geometry.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/cosmos/digests/index.json
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/cosmos/digests/time-crystals-holography-minimal-ground.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/cosmos/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/ethos/digests/auto-2026-02-22-how-should-ai-knowledge-be-governed-epistemic-authority-structur.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/ethos/digests/auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/ethos/digests/index.json
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/ethos/digests/research-literacy-confidence-rubric.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/ethos/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/glossary/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/me/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/me/style.css
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/autopilot-queue.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/design-audit-latest.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/findings-2026-02-21.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/findings-2026-02-22-time-crystal-audit.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/findings-2026-02-22-time-crystal-claim-matrix.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/findings-2026-02-22.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/pdf/cosmos_8.1_proposal_20260222_1640.pdf
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/pdf/cosmos_8.2_proposal_20260222_163243.pdf
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/pdf/cosmos_8.3_proposal_20260222_1640.pdf
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/pdf/cosmos_v5_integrated_20260222.pdf
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/pdf/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/tex/cosmos_8.1_proposal_20260222_1640.tex
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/tex/cosmos_8.2_proposal_20260222_163243.tex
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/tex/cosmos_8.3_proposal_20260222_1640.tex
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/tex/cosmos_v5_integrated_20260222.tex
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/tex/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/publications/webdesign-cron.log
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/regenesis/digests/auto-2026-02-21-tcqs-biology.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/regenesis/digests/index.json
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/regenesis/digests/sleep-regeneration-baseline.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/regenesis/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/research/digests/index.json
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/research/digests/welcome-digest.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/research/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/test.txt
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/trading/assets/style.css
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/trading/btc-playbook-v1.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/trading/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/trading/journal.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/trading/journal/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/trading/journal/metrics.json
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/trading/journal/trades.csv
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/trading/signals/index.html
+ create mode 100644 vault/snapshot-2026-02-23_031701/repo/site/trading/signals/index.json
+ create mode 100644 vault/snapshot-2026-02-23_031701/workspace/AGENTS.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/workspace/BOOTSTRAP.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/workspace/HEARTBEAT.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/workspace/IDENTITY.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/workspace/SOUL.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/workspace/TOOLS.md
+ create mode 100644 vault/snapshot-2026-02-23_031701/workspace/USER.md
+To github.com-cohera:sciencecoherence/cohera.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'github.com-cohera:sciencecoherence/cohera.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.

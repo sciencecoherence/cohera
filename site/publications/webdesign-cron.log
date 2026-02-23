@@ -1,0 +1,15 @@
+Audit generated: /home/xavier/cohera-repo/site/publications/design-audit-latest.html
+[main 4578032] webdesign: daily audit refresh
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+To github.com-cohera:sciencecoherence/cohera.git
+   cec2bc9..4578032  main -> main
+Audit generated: /home/xavier/cohera-repo/site/publications/design-audit-latest.html
+[main 1597ee2] webdesign: daily audit refresh
+ 1 file changed, 35 insertions(+), 4 deletions(-)
+To github.com-cohera:sciencecoherence/cohera.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'github.com-cohera:sciencecoherence/cohera.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.

@@ -1,59 +1,23 @@
 {
-  "generated_at": "2026-02-23T14:07:19Z",
-  "queue_generated_at": "2026-02-23T11:11:02Z",
-  "state_generated_at": "2026-02-23T11:11:02Z",
+  "generated_at": "2026-02-23T14:20:04Z",
+  "queue_generated_at": "2026-02-23T14:20:04Z",
+  "state_generated_at": "2026-02-23T14:20:04Z",
   "since_previous": {
-    "previous_queue_generated_at": null,
-    "previous_state_generated_at": null
+    "previous_queue_generated_at": "2026-02-23T11:11:02Z",
+    "previous_state_generated_at": "2026-02-23T11:11:02Z"
   },
   "counts": {
-    "new": 3,
+    "new": 0,
     "updated": 0,
     "removed": 0,
-    "autodrafts_created": 2,
+    "autodrafts_created": 0,
     "total_sources": 56
   },
-  "thread_activity": {
-    "ethos": 1,
-    "cosmos": 2
-  },
-  "new_files": [
-    {
-      "path": "chatgpt/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf",
-      "change": "new",
-      "mtime": 1771840839,
-      "size": 345070,
-      "thread": "ethos"
-    },
-    {
-      "path": "chatgpt/pdf/Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations.pdf",
-      "change": "new",
-      "mtime": 1771840838,
-      "size": 519699,
-      "thread": "cosmos"
-    },
-    {
-      "path": "chatgpt/pdf/Topological_Boundary_Time_Crystal_Oscillations.pdf",
-      "change": "new",
-      "mtime": 1771840813,
-      "size": 16354969,
-      "thread": "cosmos"
-    }
-  ],
+  "thread_activity": {},
+  "new_files": [],
   "updated_files": [],
   "removed_files": [],
-  "autodrafts_created": [
-    {
-      "thread": "cosmos",
-      "slug": "auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m",
-      "source": "chatgpt/pdf/Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations.pdf"
-    },
-    {
-      "thread": "ethos",
-      "slug": "auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness",
-      "source": "chatgpt/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf"
-    }
-  ],
+  "autodrafts_created": [],
   "top_priority": [
     {
       "path": "chatgpt/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf",

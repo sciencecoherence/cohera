@@ -22,3 +22,119 @@
 [2026-02-22 08:54:59] Downloading The large cores of dark matter and globular clusters in AS1063. Possible evidence of self-interacting dark matter. Or not...
 [2026-02-22 08:54:59] Downloaded: The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf
 [2026-02-22 08:54:59] Scan complete. Downloaded 5 new papers.
+[2026-02-23 05:00:01] Starting Daily ArXiv Scan...
+[2026-02-23 05:00:02] Downloading Topological Boundary Time Crystal Oscillations...
+[2026-02-23 05:00:14] Downloaded: Topological_Boundary_Time_Crystal_Oscillations.pdf
+[2026-02-23 05:00:14] Skipping Dissipation_as_a_Resource_Synchronization_Coherence_Recovery_and_Chaos_Control.pdf (already exists)
+[2026-02-23 05:00:37] Downloading Qualitative Coding Analysis through Open-Source Large Language Models: A User Study and Design Recommendations...
+[2026-02-23 05:00:38] Downloaded: Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations.pdf
+[2026-02-23 05:00:38] Downloading On Translating Epistemic Operators in a Logic of Awareness...
+[2026-02-23 05:00:39] Downloaded: On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf
+[2026-02-23 05:00:39] Skipping On_the_Concept_of_Violence_A_Comparative_Study_of_Human_and_AI_Judgments.pdf (already exists)
+[2026-02-23 05:00:39] Skipping Epistemology_of_Generative_AI_The_Geometry_of_Knowing.pdf (already exists)
+[2026-02-23 05:00:39] Skipping How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs.pdf (already exists)
+[2026-02-23 05:00:51] Scan complete. Downloaded 3 new papers.
+[2026-02-23 05:00:01] Starting Daily ArXiv Scan...
+Searching for: time crystal...
+  Found: Topological Boundary Time Crystal Oscillations (2026-02-19T19:00:17Z)
+[2026-02-23 05:00:02] Downloading Topological Boundary Time Crystal Oscillations...
+[2026-02-23 05:00:14] Downloaded: Topological_Boundary_Time_Crystal_Oscillations.pdf
+  Found: Dissipation as a Resource: Synchronization, Coherence Recovery, and Chaos Control (2026-02-18T19:28:37Z)
+[2026-02-23 05:00:14] Skipping Dissipation_as_a_Resource_Synchronization_Coherence_Recovery_and_Chaos_Control.pdf (already exists)
+  Found: Amplified up-conversion of electromagnetic waves using time-varying metasurfaces (2026-02-09T01:24:24Z)
+    -> Too old, skipping.
+  Found: Dynamical Quantum Phase Transitions in Boundary Time Crystals (2026-02-04T17:42:42Z)
+    -> Too old, skipping.
+  Found: Energy Transport Velocity in Photonic Time Crystals (2026-02-03T12:19:54Z)
+    -> Too old, skipping.
+Searching for: holographic principle...
+  Found: Open modular functors from non-finite tensor categories (2026-02-03T13:36:38Z)
+    -> Too old, skipping.
+  Found: Holographic generative flows with AdS/CFT (2026-01-29T17:39:40Z)
+    -> Too old, skipping.
+  Found: Microscopic Unitarity and the Quantization of Black Hole Evaporation Time (2026-01-08T18:17:21Z)
+    -> Too old, skipping.
+  Found: Limits of applicability of holographic dual descriptions to QCD: virtuality and coherence (2025-12-29T18:19:14Z)
+    -> Too old, skipping.
+  Found: Graph restricted tensors: building blocks for holographic networks (2025-12-28T17:09:47Z)
+    -> Too old, skipping.
+Searching for: active inference...
+  Found: Service Orchestration in the Computing Continuum: Structural Challenges and Vision (2026-02-17T18:34:07Z)
+    -> Too old, skipping.
+  Found: BRAIN: Bayesian Reasoning via Active Inference for Agentic and Embodied Intelligence in Mobile Networks (2026-02-15T07:47:09Z)
+    -> Too old, skipping.
+  Found: Curiosity is Knowledge: Self-Consistent Learning and No-Regret Optimization with Active Inference (2026-02-05T18:58:32Z)
+    -> Too old, skipping.
+  Found: Pragmatic Curiosity: A Hybrid Learning-Optimization Paradigm via Active Inference (2026-02-05T18:42:29Z)
+    -> Too old, skipping.
+  Found: SCALE: Self-uncertainty Conditioned Adaptive Looking and Execution for Vision-Language-Action Models (2026-02-04T04:48:16Z)
+    -> Too old, skipping.
+Searching for: free energy principle...
+  Found: Thermodynamic Optimization of Sensory Adaptation via Game-Theoretic Path Integrals (2026-02-11T06:53:07Z)
+    -> Too old, skipping.
+  Found: Condensed Past, Thick Present: Evolutionary Approach to the Conscious Experience (2026-02-10T10:53:34Z)
+    -> Too old, skipping.
+  Found: Don't Break the Boundary: Continual Unlearning for OOD Detection Based on Free Energy Repulsion (2026-02-06T02:55:47Z)
+    -> Too old, skipping.
+  Found: Latent Object Permanence: Topological Phase Transitions, Free-Energy Principles, and Renormalization Group Flows in Deep Transformer Manifolds (2026-01-16T23:11:02Z)
+    -> Too old, skipping.
+  Found: How Intrinsic Motivation Underlies Embodied Open-Ended Behavior (2026-01-15T10:52:14Z)
+    -> Too old, skipping.
+Searching for: bioelectric...
+  Found: Self-Organized Bioelectricity via Collective Pump Alignment: Physical Origin of Chemiosmosis (2026-02-18T04:13:32Z)
+    -> Too old, skipping.
+  Found: Microscopy of Bioelectric Potentials using Electrochromism (2026-01-30T22:26:15Z)
+    -> Too old, skipping.
+  Found: Prediction of Cellular Malignancy Using Electrical Impedance Signatures and Supervised Machine Learning (2026-01-08T01:30:52Z)
+    -> Too old, skipping.
+  Found: Modeling Plant Action Potentials under Photoperiod Stress via Hodgkin-Huxley Dynamics (2025-12-17T09:35:54Z)
+    -> Too old, skipping.
+  Found: Modeling Bioelectric State Transitions in Glial Cells: An ASAL-Inspired Computational Approach to Glioblastoma Initiation (2025-11-24T04:59:51Z)
+    -> Too old, skipping.
+Searching for: regenerative medicine...
+  Found: Control systems for synthetic biology and a case-study in cell fate reprogramming (2026-01-27T23:53:33Z)
+    -> Too old, skipping.
+  Found: Non-Contact and Non-Destructive Detection of Structural Defects in Bioprinted Constructs Using Video-Based Vibration Analysis (2025-12-31T19:04:51Z)
+    -> Too old, skipping.
+  Found: Designing cultured tissue moulds using evolutionary strategies (2025-08-01T16:44:51Z)
+    -> Too old, skipping.
+  Found: Semantic Segmentation of iPS Cells: Case Study on Model Complexity in Biomedical Imaging (2025-07-29T09:05:01Z)
+    -> Too old, skipping.
+  Found: The influence of cell phenotype on collective cell invasion into the extracellular matrix (2025-06-07T14:18:47Z)
+    -> Too old, skipping.
+Searching for: epistemic...
+  Found: Qualitative Coding Analysis through Open-Source Large Language Models: A User Study and Design Recommendations (2026-02-20T17:04:02Z)
+[2026-02-23 05:00:37] Downloading Qualitative Coding Analysis through Open-Source Large Language Models: A User Study and Design Recommendations...
+[2026-02-23 05:00:38] Downloaded: Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations.pdf
+  Found: On Translating Epistemic Operators in a Logic of Awareness (2026-02-20T07:43:18Z)
+[2026-02-23 05:00:38] Downloading On Translating Epistemic Operators in a Logic of Awareness...
+[2026-02-23 05:00:39] Downloaded: On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf
+  Found: On the Concept of Violence: A Comparative Study of Human and AI Judgments (2026-02-19T10:58:30Z)
+[2026-02-23 05:00:39] Skipping On_the_Concept_of_Violence_A_Comparative_Study_of_Human_and_AI_Judgments.pdf (already exists)
+  Found: Epistemology of Generative AI: The Geometry of Knowing (2026-02-19T06:34:34Z)
+[2026-02-23 05:00:39] Skipping Epistemology_of_Generative_AI_The_Geometry_of_Knowing.pdf (already exists)
+  Found: How should AI knowledge be governed? Epistemic authority, structural transparency, and the case for open cognitive graphs (2026-02-18T23:27:01Z)
+[2026-02-23 05:00:39] Skipping How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs.pdf (already exists)
+Searching for: information geometry...
+  Found: Bayes Risk for Goodness of Fit Tests (2026-02-17T01:44:16Z)
+    -> Too old, skipping.
+  Found: The Information Geometry of Softmax: Probing and Steering (2026-02-17T01:33:28Z)
+    -> Too old, skipping.
+  Found: Geometry-Aware Physics-Informed PointNets for Modeling Flows Across Porous Structures (2026-02-15T11:52:23Z)
+    -> Too old, skipping.
+  Found: Torsion-Induced Quantum Fluctuations in Metric-Affine Gravity using the Stochastic Variational Method (2026-02-14T23:51:03Z)
+    -> Too old, skipping.
+  Found: Learning Mixture Density via Natural Gradient Expectation Maximization (2026-02-11T07:46:47Z)
+    -> Too old, skipping.
+Searching for: scale-free network...
+  Found: Post-Disaster Resource Redistribution and Cooperation Evolution Based on Two-Layer Network Evolutionary Games (2026-01-29T17:29:34Z)
+    -> Too old, skipping.
+  Found: Research on Adaptive Inertial Control in Synchronization Systems: Based on Variational Optimization Methods and Their Applications in the Stability of Complex Networks (2026-01-20T09:07:58Z)
+    -> Too old, skipping.
+  Found: Fixed-Size Dynamic Scale-Free Networks: Modeling, Stationarity, and Resilience (2026-01-05T08:17:29Z)
+    -> Too old, skipping.
+  Found: A Mathematical Framework for Misinformation Propagation in Complex Networks: Topology-Dependent Distortion and Control (2025-12-22T15:15:37Z)
+    -> Too old, skipping.
+  Found: Explosive synchronization in networks of Type-I neurons with electrical synapses (2025-12-03T09:31:57Z)
+    -> Too old, skipping.
+[2026-02-23 05:00:51] Scan complete. Downloaded 3 new papers.
