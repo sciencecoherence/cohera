@@ -1,0 +1,108 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 3124 >>
+stream
+BT
+/F1 10 Tf
+50 780 Td
+(Self-Organized Bioelectricity via Collective Pump Alignment) Tj
+0 -12 Td
+(Publication-ready output \(workflow example\)) Tj
+0 -12 Td
+(Date: 2026-02-23) Tj
+0 -12 Td
+(Thread: Regenesis) Tj
+0 -12 Td
+() Tj
+0 -12 Td
+(Core claims:) Tj
+0 -12 Td
+(- Fluctuation-driven collective pump alignment) Tj
+0 -12 Td
+(- Emergent membrane-scale electrochemical potential) Tj
+0 -12 Td
+(- Micro-to-macro ordering mechanism hypothesis) Tj
+0 -12 Td
+() Tj
+0 -12 Td
+(Validation status: low-medium confidence \(pending replication\)) Tj
+0 -12 Td
+() Tj
+0 -12 Td
+(Source preview excerpt:) Tj
+0 -12 Td
+(Self-Organized Bioelectricity via Collective Pump Alignment: Physical Origin of Chemiosmosis) Tj
+0 -12 Td
+(Ryosuke Nishide  and Kunihiko Kaneko arXiv:2602.16171v1 [physics.bio-ph] 18 Feb 2026 Niels) Tj
+0 -12 Td
+(Bohr Institute, University of Copenhagen, Jagtvej 155 A, Copenhagen N, 2200, Denmark) Tj
+0 -12 Td
+(Chemiosmosis maintains life in nonequilibrium through ion transport across membranes, yet the) Tj
+0 -12 Td
+(origin of this order remains unclear. We develop a minimal model in which ion pump orientation) Tj
+0 -12 Td
+(and the intracellular electrochemical potential mutually reinforce each other. This model shows) Tj
+0 -12 Td
+(that fluctuations can induce collective pump alignment and the formation of a membrane) Tj
+0 -12 Td
+(potential. The alignment undergoes a phase transition from disordered to ordered, analogous to) Tj
+0 -12 Td
+(the Ising model. Our results provide a self-organizing mechanism for the emergence of) Tj
+0 -12 Td
+(bioelectricity, with implications for the origin of life. Fig.1 Coupling between directional) Tj
+0 -12 Td
+(ion transport across a membrane and the generation of an electrochemical potential difference) Tj
+0 -12 Td
+(is essential for living cells[1]. Mitchells chemiosmotic theory established that electric) Tj
+0 -12 Td
+(currents operate at the source of life: nonequilibrium ion currents across membranes drive) Tj
+0 -12 Td
+(cellular energy transduction, including ATP synthesis[24]. Through this coupling, living) Tj
+0 -12 Td
+(systems are maintained far from equilibrium by sustained directional ion fluxes across) Tj
+0 -12 Td
+(membranes. At the origin of life, the emergence of sustained nonequilibrium ion flows across) Tj
+0 -12 Td
+(membranes is thought to have been a critical step. Phylogenetic evidence indicates that early) Tj
+0 -12 Td
+(life already synthesized ATP through membrane-potentialdriven processes[5, 6], and chemical) Tj
+0 -12 Td
+(and geological studies suggest that early cells may have emerged by exploiting natural proton) Tj
+0 -12 Td
+(gradients associated with alkaline hydrothermal vents[7, 8]. However, cells can autonomously) Tj
+0 -12 Td
+(generate membrane potential through ion transport, even in the absence of preexisting ion) Tj
+0 -12 Td
+(gradients, leaving the origin of such mechanisms unresolved. Therefore, to elucidate the origin) Tj
+0 -12 Td
+(of life or protocells, it is necessary to understand how ion pumps could collectively generate) Tj
+0 -12 Td
+(and sustain membrane potential. Although studies on the origin of life have examine) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3486
+%%EOF
