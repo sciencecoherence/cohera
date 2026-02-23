@@ -5,9 +5,10 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - "site/publications/tex/**"
-      - "scripts/build_publication_pdfs.sh"
-      - ".github/workflows/build-publication-pdfs.yml"
+      # Trigger on manual tex changes OR automated pipeline updates
+      - "site/publications/**"
+      - "chatgpt/research_queue.json"
+      - "scripts/**"
 
 permissions:
   contents: write
@@ -22,16 +23,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install LaTeX toolchain
+      - name: Install System & LaTeX toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y latexmk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-science
+          # Added poppler-utils for pdftotext support
+          sudo apt-get install -y poppler-utils latexmk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-science
 
       - name: Guard path portability
         run: bash scripts/ci_guard_paths.sh
 
       - name: Build ready-only publication PDFs
-        run: bash scripts/build_publication_pdfs.sh
+        run: |
+          # Ensure directories exist before the script runs
+          mkdir -p site/publications/pdf
+          bash scripts/build_publication_pdfs.sh
 
       - name: Commit generated PDFs (best effort)
         run: |
@@ -42,8 +47,46 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/publications/pdf
-          git commit -m "build(publications): regenerate PDF artifacts" || true
-          # Best-effort push; never fail workflow on race conflicts.
+          git commit -m "build(publications): auto-regenerate PDF artifacts [$(date +'%d/%m/%Y')]" || true
           git pull --rebase origin main || true
           git push origin HEAD:main || echo "Push skipped (race/conflict)."
           echo "Updated publication PDFs were committed/pushed." >> "$GITHUB_STEP_SUMMARY"
+
+          name: Publications • Build Ready PDFs
+
+on:
+push:
+branches: [ main ]
+paths:
+- 'site/publications/**'
+
+jobs:
+build-pdf:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout Repository
+uses: actions/checkout@v4
+
+  - name: Set up Python
+    uses: actions/setup-python@v5
+    with:
+      python-version: '3.12'
+
+  - name: Install System Dependencies
+    run: |
+      sudo apt-get update
+      # Essential for reading source PDFs and building the new ones
+      sudo apt-get install -y poppler-utils texlive-latex-extra texlive-fonts-recommended
+
+  - name: Sync Publication Pipeline
+    run: |
+      # We run the Phase 3 script to turn HTML/JSON into final PDFs
+      python3 scripts/publication_pipeline.py --sync
+
+  - name: Commit and Push Built PDFs
+    run: |
+      git config --global user.name "Cohera Bot"
+      git config --global user.email "bot@sciencecoherence.com"
+      git add site/publications/pdf/
+      git commit -m "CI: Auto-render research manuscripts [$(date +'%d/%m/%Y')]" || echo "No new PDFs to ship."
+      git push origin main
