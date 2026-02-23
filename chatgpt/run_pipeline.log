@@ -240,3 +240,129 @@ Traceback (most recent call last):
   File "/usr/lib/python3.12/re/_parser.py", line 840, in _parse
     raise source.error('global flags not at the start '
 re.error: global flags not at the start of the expression at position 31
+=====================================================
+[2026-02-23T17:11:04-05:00] INITIATING TIME-CRYSTALLINE RESEARCH PIPELINE
+=====================================================
+[1/4] Phase 1: Ingestion & Diffs...
+Traceback (most recent call last):
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 289, in <module>
+    main()
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 275, in main
+    slug = upsert_digest_stub(thread, c['path'], date_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 166, in upsert_digest_stub
+    notes = extract_structured_notes(src_rel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 128, in extract_structured_notes
+    m_abs = re.search(r'(?i)abstract[\s\.\-\:]*(.*?)(?=(?i)(introduction|1\.\s|keywords|background))', preview)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/__init__.py", line 177, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/__init__.py", line 307, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 979, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 775, in _parse
+    p = _parse_sub(source, state, verbose, nested + 1)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 840, in _parse
+    raise source.error('global flags not at the start '
+re.error: global flags not at the start of the expression at position 31
+=====================================================
+[2026-02-23T17:11:10-05:00] INITIATING TIME-CRYSTALLINE RESEARCH PIPELINE
+=====================================================
+[1/4] Phase 1: Ingestion & Diffs...
+Traceback (most recent call last):
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 289, in <module>
+    main()
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 275, in main
+    slug = upsert_digest_stub(thread, c['path'], date_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 166, in upsert_digest_stub
+    notes = extract_structured_notes(src_rel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 128, in extract_structured_notes
+    m_abs = re.search(r'(?i)abstract[\s\.\-\:]*(.*?)(?=(?i)(introduction|1\.\s|keywords|background))', preview)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/__init__.py", line 177, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/__init__.py", line 307, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 979, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 775, in _parse
+    p = _parse_sub(source, state, verbose, nested + 1)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 840, in _parse
+    raise source.error('global flags not at the start '
+re.error: global flags not at the start of the expression at position 31
++ echo =====================================================
+=====================================================
+++ date -Is
++ echo '[2026-02-23T17:11:14-05:00] INITIATING TIME-CRYSTALLINE RESEARCH PIPELINE'
+[2026-02-23T17:11:14-05:00] INITIATING TIME-CRYSTALLINE RESEARCH PIPELINE
++ echo =====================================================
+=====================================================
++ echo '[1/4] Phase 1: Ingestion & Diffs...'
+[1/4] Phase 1: Ingestion & Diffs...
++ /usr/bin/python3 /home/xavier/cohera-repo/scripts/research_autopilot.py
+Traceback (most recent call last):
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 289, in <module>
+    main()
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 275, in main
+    slug = upsert_digest_stub(thread, c['path'], date_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 166, in upsert_digest_stub
+    notes = extract_structured_notes(src_rel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xavier/cohera-repo/scripts/research_autopilot.py", line 128, in extract_structured_notes
+    m_abs = re.search(r'(?i)abstract[\s\.\-\:]*(.*?)(?=(?i)(introduction|1\.\s|keywords|background))', preview)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/__init__.py", line 177, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/__init__.py", line 307, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 979, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 775, in _parse
+    p = _parse_sub(source, state, verbose, nested + 1)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/re/_parser.py", line 840, in _parse
+    raise source.error('global flags not at the start '
+re.error: global flags not at the start of the expression at position 31
