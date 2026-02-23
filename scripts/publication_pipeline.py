@@ -17,6 +17,13 @@ READY_PATH = REPO / 'chatgpt' / 'publication_ready.json'
 ALLOWLIST_PATH = REPO / 'chatgpt' / 'publication_allowlist.json'
 
 THREADS = ['cosmos', 'regenesis', 'ethos']
+BAD_MARKERS = [
+    'home research cosmos',
+    'conversation info (untrusted metadata)',
+    'what was completed in this cycle',
+    'autodraft:',
+    '[status: ready for synthesis]'
+]
 
 
 def load_json(path: Path, default):
@@ -41,37 +48,52 @@ def html_to_text(source_html: str) -> str:
 
 def tex_escape(s: str) -> str:
     rep = {
-        '\\': r'\textbackslash{}',
-        '&': r'\&', '%': r'\%', '$': r'\$', '#': r'\#', '_': r'\_',
+        '\\': r'\textbackslash{}', '&': r'\&', '%': r'\%', '$': r'\$', '#': r'\#', '_': r'\_',
         '{': r'\{', '}': r'\}', '~': r'\textasciitilde{}', '^': r'\textasciicircum{}'
     }
-    out = ''.join(rep.get(ch, ch) for ch in s)
-    return out
+    return ''.join(rep.get(ch, ch) for ch in s)
 
 
 def make_tex(thread: str, title: str, slug: str, source_rel: str, digest_text: str) -> str:
-    body = digest_text[:7000] if digest_text else 'No extracted digest text available.'
-    body = tex_escape(body)
-    title = tex_escape(title)
-    source_rel = tex_escape(source_rel)
-    abstract = tex_escape(f"This publication-ready draft synthesizes current {thread} findings for '{title}' with traceable claims, evidence hooks, and validation steps.")
-    slug_esc = tex_escape(slug)
-    return f'''% Auto-generated publication draft\n\\section*{{{title}}}\n\\textbf{{Thread:}} {thread}\\\\\n\\textbf{{Digest slug:}} {slug_esc}\\\\\n\\textbf{{Source:}} \\texttt{{{source_rel}}}\\\\\n\\textbf{{Generated:}} {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\\\\\n\n\\subsection*{{Abstract}}\n{abstract}\n\n\\subsection*{{Keywords}}\n{thread}, synthesis, publication-draft\n\n\\subsection*{{Structured draft body}}\n{body}\n\n\\subsection*{{Validation checklist}}\n\\begin{{itemize}}\n  \\item Verify all nontrivial claims against the original source.\n  \\item Add explicit citations/DOIs where available.\n  \\item Mark confidence for each key claim (low/medium/high).\n\\end{{itemize}}\n'''
+    body = tex_escape((digest_text[:7000] if digest_text else 'No extracted digest text available.'))
+    title_e = tex_escape(title)
+    source_e = tex_escape(source_rel)
+    abstract = tex_escape(
+        f"This publication-ready draft synthesizes current {thread} findings for '{title}' with traceable claims, evidence hooks, and validation steps."
+    )
+    return f'''% Auto-generated publication draft
+\section*{{{title_e}}}
+\textbf{{Thread:}} {thread}\\
+\textbf{{Digest slug:}} {tex_escape(slug)}\\
+\textbf{{Source:}} \texttt{{{source_e}}}\\
+\textbf{{Generated:}} {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\\
+
+\subsection*{{Abstract}}
+{abstract}
+
+\subsection*{{Keywords}}
+{thread}, synthesis, publication-draft
+
+\subsection*{{Structured draft body}}
+{body}
+
+\subsection*{{Validation checklist}}
+\begin{{itemize}}
+  \item Verify all nontrivial claims against the original source.
+  \item Add explicit citations/DOIs where available.
+  \item Mark confidence for each key claim (low/medium/high).
+\end{{itemize}}
+'''
 
 
 def sync_tex_index():
     TEX_DIR.mkdir(parents=True, exist_ok=True)
     files = sorted([p.name for p in TEX_DIR.glob('*.tex')])
     lines = [
-        '<!doctype html>',
-        '<html lang="en">',
-        '<head>',
-        '  <meta charset="utf-8" />',
-        '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
-        '  <title>TeX Publications · Cohera Lab</title>',
-        '  <link rel="stylesheet" href="/cohera/assets/style.css" />',
-        '</head>',
-        '<body>',
+        '<!doctype html>', '<html lang="en">', '<head>',
+        '  <meta charset="utf-8" />', '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
+        '  <title>TeX Publications · Cohera Lab</title>', '  <link rel="stylesheet" href="/cohera/assets/style.css" />',
+        '</head>', '<body>',
         '  <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">',
         '    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/about/index.html">About</a>',
         '  </nav></div></header>',
@@ -88,12 +110,11 @@ def sync_tex_index():
 
 
 def collect_items():
-    items = []
-    seen = set()
+    items, seen = [], set()
     for thread in THREADS:
         idx = SITE / thread / 'digests' / 'index.json'
         rows = load_json(idx, [])
-        for row in rows[:8]:  # top recent items per thread
+        for row in rows[:8]:
             slug = row.get('slug')
             title = row.get('title') or slug
             if not slug:
@@ -104,7 +125,6 @@ def collect_items():
                 items.append((thread, slug, title, digest_html))
                 seen.add(key)
 
-    # Also include curated publication-first manuscripts (not tied to digest slug)
     for tex in sorted(TEX_DIR.glob('*_publication-v*.tex')):
         stem = tex.stem
         thread = stem.split('_', 1)[0] if '_' in stem else 'cosmos'
@@ -114,7 +134,6 @@ def collect_items():
         if key not in seen:
             items.append((thread, slug, title, None))
             seen.add(key)
-
     return items
 
 
@@ -122,11 +141,9 @@ def extract_abstract_from_tex(tex_path: Path) -> str:
     if not tex_path.exists():
         return ''
     text = tex_path.read_text(encoding='utf-8', errors='ignore')
-    # Preferred publication section names
     patterns = [
         r'\\subsection\*\{Abstract(?:[^}]*)\}\s*(.*?)\s*(?=\\subsection\*\{|\Z)',
-        r'\\subsection\*\{Abstract-level synthesis\}\s*(.*?)\s*(?=\\subsection\*\{|\Z)',
-        r'\\subsection\*\{Publication summary\}\s*(.*?)\s*(?=\\subsection\*\{|\Z)',
+        r'\\begin\{abstract\}\s*(.*?)\s*\\end\{abstract\}',
         r'\\section\*\{Abstract(?:[^}]*)\}\s*(.*?)\s*(?=\\section\*\{|\Z)',
     ]
     for p in patterns:
@@ -136,25 +153,19 @@ def extract_abstract_from_tex(tex_path: Path) -> str:
             cleaned = re.sub(r'\\\\|\\textbf\{[^}]*\}|\\texttt\{[^}]*\}|\\[a-zA-Z]+\*?(\[[^\]]*\])?(\{[^}]*\})?', ' ', raw)
             cleaned = re.sub(r'\s+', ' ', cleaned).strip()
             if cleaned:
-                return cleaned[:500]
+                return cleaned[:700]
     return ''
 
 
-def ensure_publication_tex_quality(tex_path: Path, title: str, thread: str):
+def tex_quality_ok(tex_path: Path) -> bool:
     if not tex_path.exists():
-        return
-    text = tex_path.read_text(encoding='utf-8', errors='ignore')
-    if re.search(r'\\subsection\*\{Abstract', text, flags=re.I):
-        return
-    safe_title = tex_escape(title)
-    abstract = tex_escape(f"This publication provides a structured synthesis for {title}, with claim-to-evidence framing and a validation path for downstream readers.")
-    prefix = (
-        f"\\section*{{{safe_title}}}\n"
-        f"\\subsection*{{Abstract}}\n{abstract}\n\n"
-        f"\\subsection*{{Keywords}}\n{thread}, research, publication\n\n"
-        f"\\subsection*{{Main Content}}\n"
-    )
-    tex_path.write_text(prefix + text, encoding='utf-8')
+        return False
+    text = tex_path.read_text(encoding='utf-8', errors='ignore').lower()
+    if any(b in text for b in BAD_MARKERS):
+        return False
+    has_math = ('\\begin{equation}' in text) or ('$' in text)
+    has_structure = ('\\section' in text) or ('\\subsection' in text)
+    return has_math and has_structure
 
 
 def is_ready_publication(row: dict, allowlist: set[str]) -> bool:
@@ -162,31 +173,25 @@ def is_ready_publication(row: dict, allowlist: set[str]) -> bool:
     title = (row.get('title') or '').lower()
     abstract = (row.get('abstract') or '').strip()
     has_pdf = row.get('status', {}).get('has_pdf', False)
-    if slug.startswith('auto-'):
-        return False
-    if title.startswith('autodraft:'):
+    tex_rel = row.get('tex')
+    tex_path = (REPO / tex_rel) if tex_rel else None
+
+    if slug.startswith('auto-') or title.startswith('autodraft:'):
         return False
     if not has_pdf:
         return False
-
-    # For curated publication tracks, allow short abstracts and prioritize throughput.
-    is_pub_track = slug.endswith('publication-v1') or '_publication-v1' in (row.get('pdf') or '')
-
-    if not is_pub_track and len(abstract) < 80:
+    if allowlist and slug not in allowlist:
         return False
-
-    if allowlist and slug not in allowlist and not is_pub_track:
+    if len(abstract) < 120:
         return False
-
+    if not tex_path or not tex_quality_ok(tex_path):
+        return False
     return True
 
 
 def sync_pdf_index_ready(results: list):
     ready = [r for r in results if r.get('ready')]
-
-    # Canonicalize and dedupe: prefer *_publication-v1.pdf when both exist.
-    cards = []
-    seen = set()
+    cards, seen = [], set()
     for r in ready:
         pdf_raw = Path(r.get('pdf') or '').name
         if not pdf_raw:
@@ -204,17 +209,12 @@ def sync_pdf_index_ready(results: list):
         })
 
     lines = [
-        '<!doctype html>',
-        '<html lang="en">',
-        '<head>',
-        '  <meta charset="utf-8" />',
-        '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
-        '  <title>PDF Publications · Cohera Lab</title>',
-        '  <link rel="stylesheet" href="/cohera/assets/style.css" />',
-        '</head>',
-        '<body>',
+        '<!doctype html>', '<html lang="en">', '<head>',
+        '  <meta charset="utf-8" />', '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
+        '  <title>PDF Publications · Cohera Lab</title>', '  <link rel="stylesheet" href="/cohera/assets/style.css" />',
+        '</head>', '<body>',
         '  <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">',
-        '    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/publications/tex/index.html">TeX Sources</a><a href="/cohera/about/index.html">About</a>',
+        '    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/status/index.html">Status</a><a href="/cohera/publications/tex/index.html">TeX Sources</a><a href="/cohera/about/index.html">About</a>',
         '  </nav></div></header>',
         '  <main class="container">',
         '    <section class="hero"><h1>PDF Publications</h1><p class="small">Final reader-ready papers only.</p></section>',
@@ -246,7 +246,6 @@ def main():
 
     results = []
     for thread, slug, title, digest_html in collect_items():
-        # For curated publication-first slugs, use direct stem.tex
         if slug.endswith('publication-v1') and (TEX_DIR / f'{slug}.tex').exists():
             tex_name = f'{slug}.tex'
         else:
@@ -263,12 +262,7 @@ def main():
         if args.sync and not tex_path.exists():
             tex_path.write_text(make_tex(thread, title, slug, source_rel or f'curated:{slug}', digest_text), encoding='utf-8')
 
-        # Enforce publication baseline structure on non-autodraft tracks
-        if args.sync and tex_path.exists() and not slug.startswith('auto-'):
-            ensure_publication_tex_quality(tex_path, title, thread)
-
         abstract = extract_abstract_from_tex(tex_path) if tex_path.exists() else ''
-
         results.append({
             'thread': thread,
             'slug': slug,
@@ -291,7 +285,6 @@ def main():
     allow_cfg = load_json(ALLOWLIST_PATH, {'slugs': []})
     allowlist = set((s or '').lower() for s in allow_cfg.get('slugs', []))
 
-    # refresh computed fields after potential build
     for r in results:
         if r['tex']:
             p = PDF_DIR / Path(r['tex']).name.replace('.tex', '.pdf')
