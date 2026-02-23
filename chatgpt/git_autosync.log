@@ -415,3 +415,12 @@ From github.com-cohera:sciencecoherence/cohera
    21defef..4698894  main       -> origin/main
 [2026-02-23T13:55:01-05:00] autosync start
 [2026-02-23T14:10:01-05:00] autosync start
+[main 8439503] autosync: 2026-02-23 14:10:01 -0500
+ 23 files changed, 343 insertions(+), 44 deletions(-)
+ create mode 100644 site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.pdf
+ create mode 100644 site/publications/pdf/cosmos_time-crystals-holography-minimal-ground.pdf
+ create mode 100644 site/publications/tex/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1.tex
+ create mode 100644 site/publications/tex/ethos_research-literacy-confidence-rubric_publication-v1.tex
+ create mode 100644 site/publications/tex/regenesis_sleep-regeneration-baseline_publication-v1.tex
+From github.com-cohera:sciencecoherence/cohera
+ * branch            main       -> FETCH_HEAD
