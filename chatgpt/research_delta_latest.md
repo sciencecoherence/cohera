@@ -1,20 +1,18 @@
 # Research Delta Summary
 
-- Generated: 2026-02-23T14:33:55Z UTC
-- Queue snapshot: 2026-02-23T14:33:54Z
-- State snapshot: 2026-02-23T14:33:54Z
+- Generated: 2026-02-23T14:37:39Z UTC
+- Queue snapshot: 2026-02-23T14:37:39Z
+- State snapshot: 2026-02-23T14:37:39Z
 
 ## Counts
 - new: 0
-- updated: 11
+- updated: 0
 - removed: 0
 - autodrafts_created: 3
 - total_sources: 56
 
 ## Thread activity
-- ethos: 5
-- cosmos: 5
-- regenesis: 1
+- none
 
 ## Autodrafts created
 - [cosmos] auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p ← chatgpt/pdf/The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf

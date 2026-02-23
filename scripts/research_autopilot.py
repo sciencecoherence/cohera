@@ -88,9 +88,24 @@ def collect_sources() -> List[Item]:
 
 def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
     base = Path(src_rel).stem
-    slug = slugify(f'auto-{date_str}-{base}')
     digest_dir = SITE_DIR / thread / 'digests'
     digest_dir.mkdir(parents=True, exist_ok=True)
+
+    # Stable slug per source to avoid day-by-day duplicates.
+    stable_slug = slugify(f'auto-{base}')
+
+    index_path = digest_dir / 'index.json'
+    idx = load_json(index_path, [])
+
+    # Reuse existing entry for this source/title when available.
+    existing_slug = None
+    target_title = f'Autodraft: {base}'
+    for row in idx:
+        if row.get('title') == target_title:
+            existing_slug = row.get('slug')
+            break
+
+    slug = existing_slug or stable_slug
     html_path = digest_dir / f'{slug}.html'
 
     if not html_path.exists():
@@ -130,17 +145,29 @@ def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
 </html>
 ''', encoding='utf-8')
 
-    index_path = digest_dir / 'index.json'
-    idx = load_json(index_path, [])
     if not any(x.get('slug') == slug for x in idx):
         idx.insert(0, {
             'slug': slug,
-            'title': f'Autodraft: {base}',
+            'title': target_title,
             'date': date_str,
             'tags': [thread, 'autodraft', Path(src_rel).suffix.lstrip('.')],
             'confidence': 'low'
         })
-        index_path.write_text(json.dumps(idx, indent=2), encoding='utf-8')
+    else:
+        # Refresh date in index for existing entries.
+        for row in idx:
+            if row.get('slug') == slug:
+                row['date'] = date_str
+
+    # Deduplicate by slug, keep first occurrence.
+    dedup = []
+    seen = set()
+    for row in idx:
+        s = row.get('slug')
+        if s and s not in seen:
+            dedup.append(row)
+            seen.add(s)
+    index_path.write_text(json.dumps(dedup, indent=2), encoding='utf-8')
 
     return slug
 
