@@ -43,9 +43,12 @@ def parse_text(msg_obj):
         return ''
 
 
+OPENCLAW_BIN = '/home/xavier/.npm-global/bin/openclaw'
+
+
 def send_telegram(text):
     subprocess.run([
-        'openclaw', 'message', 'send',
+        OPENCLAW_BIN, 'message', 'send',
         '--channel', CHANNEL,
         '--target', TARGET,
         '--message', text,
