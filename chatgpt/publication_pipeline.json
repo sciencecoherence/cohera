@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-02-23T17:33:53Z",
+  "generated_at": "2026-02-23T17:46:07Z",
   "totals": {
     "items": 18,
     "with_tex": 18,
-    "with_pdf": 7,
+    "with_pdf": 2,
     "ready_publications": 2
   },
   "items": [
@@ -164,11 +164,11 @@
       "abstract": "This publication provides a structured synthesis for Sleep and Regeneration: Baseline Mechanisms and Practical Protocol, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": "site/regenesis/digests/sleep-regeneration-baseline.html",
       "tex": "site/publications/tex/regenesis_sleep-regeneration-baseline.tex",
-      "pdf": "site/publications/pdf/regenesis_sleep-regeneration-baseline.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -224,11 +224,11 @@
       "abstract": "This publication provides a structured synthesis for Research Literacy Quickstart + Confidence Rubric, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": "site/ethos/digests/research-literacy-confidence-rubric.html",
       "tex": "site/publications/tex/ethos_research-literacy-confidence-rubric.tex",
-      "pdf": "site/publications/pdf/ethos_research-literacy-confidence-rubric.pdf",
+      "pdf": null,
       "status": {
         "has_digest": true,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -239,11 +239,11 @@
       "abstract": "This paper presents a structured synthesis of current cosmos evidence around dark matter core structure in as1063: evidence synthesis. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
       "digest_html": null,
       "tex": "site/publications/tex/cosmos_dark-matter-cores-as1063_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_dark-matter-cores-as1063_publication-v1.pdf",
+      "pdf": null,
       "status": {
         "has_digest": false,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -254,11 +254,11 @@
       "abstract": "This paper presents a structured synthesis of current ethos evidence around translating epistemic operators in a logic of awareness. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
       "digest_html": null,
       "tex": "site/publications/tex/ethos_epistemic-operators-awareness_publication-v1.tex",
-      "pdf": "site/publications/pdf/ethos_epistemic-operators-awareness_publication-v1.pdf",
+      "pdf": null,
       "status": {
         "has_digest": false,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     },
@@ -269,11 +269,11 @@
       "abstract": "This paper presents a structured synthesis of current regenesis evidence around self-organized bioelectricity via collective pump alignment. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
       "digest_html": null,
       "tex": "site/publications/tex/regenesis_bioelectricity-pump-alignment_publication-v1.tex",
-      "pdf": "site/publications/pdf/regenesis_bioelectricity-pump-alignment_publication-v1.pdf",
+      "pdf": null,
       "status": {
         "has_digest": false,
         "has_tex": true,
-        "has_pdf": true
+        "has_pdf": false
       },
       "ready": false
     }
