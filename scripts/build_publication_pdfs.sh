@@ -106,6 +106,7 @@ from pathlib import Path
 
 repo = Path('/home/xavier/cohera-repo')
 pdf_dir = repo / 'site/publications/pdf'
+pdf_dir.mkdir(parents=True, exist_ok=True)
 ready_path = repo / 'chatgpt/publication_ready.json'
 
 ready = []
