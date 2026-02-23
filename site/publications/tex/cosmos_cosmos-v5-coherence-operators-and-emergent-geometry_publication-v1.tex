@@ -6,32 +6,68 @@ This publication provides a structured synthesis for Cosmos Cosmos V5 Coherence 
 cosmos, research, publication
 
 \subsection*{Main Content}
-% Auto-promoted publication draft
+% Journal-style manuscript
 \title{Cosmos v5: Coherence Operators and Emergent Geometry}
 \author{Cohera Lab}
-\date{2026-02-23}
+\date{February 2026}
 \maketitle
 
-\begin{center}\small Thread: Cosmos\end{center}
-
 \begin{abstract}
-This manuscript promotes an in-progress cosmos research stream into a publication-ready synthesis. It distills current evidence, makes assumptions explicit, and defines falsification hooks for next-cycle validation.
+This paper consolidates the Cosmos v5 formal layer into a publishable baseline. We define a computable coherence functional, introduce an operator-norm compatibility criterion for projected stability, and outline a geometry reconstruction protocol from state distinguishability. The focus is methodological clarity: each equation maps to an observable quantity and each interpretive claim carries an explicit falsification path.
 \end{abstract}
 
-\paragraph{Keywords} cosmos, synthesis, publication
+\paragraph{Keywords} coherence operators; projection stability; emergent geometry; Bures distance; Fisher information metric
 
 \section{Introduction}
-Cosmos v5 · Coherence Operators and Emergent Geometry Cohera Lab Home Research Cosmos Regenesis Ethos Publications About Cosmos v5: Coherence Operators and Emergent Geometry Date: 2026-02-22 · Thread: cosmos · Confidence: medium (formal proposal level) What was completed in this cycle Converted Section 8.1 from placeholder to a computable coherence-functional proposal. Converted Section 8.2 compatibility relation into a concrete norm-threshold criterion. Defined Section 8.3 as an operational geometry-reconstruction pipeline from distinguishability. 1) Coherence functional (8.1) Projected coherence is quantified with an explicit \textbackslash{}(\textbackslash{}ell\_1\textbackslash{})-style off-diagonal measure: C(ρ loc ) = Σ i≠j |ρ ij | Selection is controlled with: F n = E n − κ C n , minimized over recurrence windows. 2) Stability threshold (8.2) Compatibility is now explicit: ε = ||ΠF − F loc Π|| op Stable coherent sector condition: ε < δ coh Interpretation: crossing \textbackslash{}(δ\_\{coh\}\textbackslash{}) triggers representation drift and projected-sector decoherence. 3) Emergent geometry protocol (8.3) Distance from projected-state distinguishability (Bures/Fisher). Graph construction from pairwise distances. Metric tensor + curvature estimation on learned manifold. Research artifacts research/drafts/cosmos\_v5\_integrated\_20260222.tex research/draf
+Cosmos v5 studies how coherent operator structure can be tracked across projected sectors without collapsing interpretability into heuristic narrative. Earlier drafts mixed useful equations with pipeline metadata and implementation notes. This version removes non-academic artifacts and presents the formal core in a clean sequence: coherence functional, stability threshold, and geometry protocol.
 
-\section{Evidence and Claims}
-ts/cosmos\_8.1\_proposal\_20260222\_1640.tex research/drafts/cosmos\_8.2\_proposal\_20260222\_163243.tex research/drafts/cosmos\_8.3\_proposal\_20260222\_1640.tex Next step Integrate these operators into chatgpt/latex/cosmos.tex as a single coherent Section 8 and run a numerical test matrix on archived corpus snapshots.
+\section{Coherence Functional}
+Let $\rho_{\mathrm{loc}}$ be the localized density operator in a fixed basis. We define off-diagonal coherence by
+\begin{equation}
+\mathcal{C}(\rho_{\mathrm{loc}})=\sum_{i\neq j}\left|\rho_{ij}\right|.
+\end{equation}
+Selection dynamics are controlled by an energy--coherence tradeoff
+\begin{equation}
+\mathcal{F}_n = E_n - \kappa\,\mathcal{C}_n,
+\end{equation}
+where $\kappa>0$ weights coherence preservation against energetic cost over recurrence windows.
 
-\section{Discussion}
-Discussion to be expanded in subsequent research cycles.
+\section{Stability Threshold}
+Let $\Pi$ denote the projection operator onto the selected coherent sector and $\mathcal{F}_{\mathrm{loc}}$ the local flow operator. Compatibility mismatch is
+\begin{equation}
+\varepsilon = \left\|\Pi\mathcal{F} - \mathcal{F}_{\mathrm{loc}}\Pi\right\|_{\mathrm{op}}.
+\end{equation}
+A stable coherent sector is declared only when
+\begin{equation}
+\varepsilon < \delta_{\mathrm{coh}},
+\end{equation}
+with $\delta_{\mathrm{coh}}$ fixed before evaluation. Exceeding this threshold signals representation drift and loss of projected-sector coherence.
 
-\section{Validation Hooks}
+\section{Emergent Geometry Protocol}
+Geometry is reconstructed from distinguishability between projected states $\{\rho_i\}$.
+
+First, define pairwise Bures distance:
+\begin{equation}
+D_B(\rho_i,\rho_j)=\sqrt{2\Big(1-\sqrt{F(\rho_i,\rho_j)}\Big)},
+\end{equation}
+where fidelity is
+\begin{equation}
+F(\rho_i,\rho_j)=\left[\operatorname{Tr}\!\left(\sqrt{\sqrt{\rho_i}\,\rho_j\,\sqrt{\rho_i}}\right)\right]^2.
+\end{equation}
+
+Second, in a local chart $\theta$, estimate an information metric by Fisher form
+\begin{equation}
+g_{ab}(\theta)=\sum_x p(x\mid\theta)\,\partial_a\log p(x\mid\theta)\,\partial_b\log p(x\mid\theta).
+\end{equation}
+
+Third, construct a weighted graph from $D_B$ (or local Fisher approximation), embed it, and estimate curvature from the induced metric tensor. Geometry is interpreted as an emergent descriptor of coherence organization, not a primitive axiom.
+
+\section*{Validation and Falsification}
 \begin{itemize}
-\item Verify central claims against primary paper and DOI source.
-\item Separate measured evidence from interpretation in final revision.
-\item Keep confidence conservative until corroboration is explicit.
+\item Sweep $\kappa$ and report phase boundaries for $\delta_{\mathrm{coh}}$.
+\item Replace coherence witnesses and test qualitative invariance.
+\item Reject geometric conclusions if curvature signatures are unstable under mild perturbations.
 \end{itemize}
+
+\section*{Conclusion}
+The sanitized Cosmos v5 manuscript now provides a coherent formal spine suitable for publication review: no pipeline noise, legible mathematics, and explicit failure criteria.
