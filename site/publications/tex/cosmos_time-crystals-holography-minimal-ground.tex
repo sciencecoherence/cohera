@@ -1,12 +1,4 @@
-\section*{Time Crystals, Holography, and Quantum Information: Minimal Common Ground}
-\subsection*{Abstract}
-This publication provides a structured synthesis for Time Crystals, Holography, and Quantum Information: Minimal Common Ground, with claim-to-evidence framing and a validation path for downstream readers.
-
-\subsection*{Keywords}
-cosmos, research, publication
-
-\subsection*{Main Content}
-% Publication polished style (journal-like)
+% Journal-style manuscript
 \title{Time Crystals, Holography, and Quantum Information:\\A Minimal Coherence Framework}
 \author{Cohera Lab}
 \date{February 2026}
@@ -28,13 +20,13 @@ We present a compact synthesis connecting Floquet time-crystal dynamics, hologra
 Time-crystal discourse often mixes distinct regimes: rigorous no-go statements in equilibrium, non-equilibrium Floquet order, and information-theoretic interpretations. This manuscript imposes a minimal common language so each claim can be attached to assumptions, observables, and failure modes.
 
 \section{Minimal Formal Layer}
-Let \(\rho_t\) denote a reduced state on a finite operator algebra. We define a periodic coherence witness over one drive period \(T\):
+Let $\rho_t$ denote a reduced state on a finite operator algebra. We define a periodic coherence witness over one drive period $T$:
 \begin{equation}
 \mathcal{C}_T = \frac{1}{T}\int_0^T \mathrm{Tr}\!\left[\rho_t\,\mathcal{O}_c\right]dt,
 \end{equation}
-where \(\mathcal{O}_c\) is a bounded coherence-sensitive observable.
+where $\mathcal{O}_c$ is a bounded coherence-sensitive observable.
 
-For a stroboscopic map \(\Phi_T\), persistence under perturbation family \(\{\epsilon\}\) is tracked by
+For a stroboscopic map $\Phi_T$, persistence under perturbation family $\{\epsilon\}$ is tracked by
 \begin{equation}
 \Delta_{\epsilon} = \left|\mathcal{C}_T(\epsilon)-\mathcal{C}_T(0)\right|.
 \end{equation}
@@ -44,17 +36,17 @@ A practical robustness criterion is
 \end{equation}
 
 \section{Holographic Interpretation Layer}
-We model coarse-grained reconstruction by an effective channel \(\mathcal{R}\) acting on low-energy observables. A consistency requirement between boundary witness and reconstructed bulk proxy is
+We model coarse-grained reconstruction by an effective channel $\mathcal{R}$ acting on low-energy observables. A consistency requirement between boundary witness and reconstructed bulk proxy is
 \begin{equation}
 \left|\mathcal{C}^{\partial}_T - \mathcal{C}^{\mathrm{bulk}}_T\right| \leq \eta,
 \end{equation}
-with \(\eta\) explicitly reported as model error, not absorbed into interpretation.
+with $\eta$ explicitly reported as model error, not absorbed into interpretation.
 
 \section{Validation and Falsification Hooks}
 \begin{itemize}
 \item \textbf{Numerical hook:} sweep drive-noise amplitude and test violation of the robustness bound.
-\item \textbf{Model hook:} replace \(\mathcal{O}_c\) by orthogonal witness families; check whether conclusions are basis-dependent.
-\item \textbf{Interpretation hook:} force \(\eta\to 0\) in controlled toy models; reject holographic claim if mismatch persists.
+\item \textbf{Model hook:} replace $\mathcal{O}_c$ by orthogonal witness families; check whether conclusions are basis-dependent.
+\item \textbf{Interpretation hook:} force $\eta\to 0$ in controlled toy models; reject holographic claim if mismatch persists.
 \end{itemize}
 
 \section{Conclusion}
