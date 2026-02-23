@@ -88,12 +88,13 @@ def collect_sources() -> List[Item]:
     return sorted(items, key=lambda x: (x.score, x.mtime), reverse=True)
 
 
-def extract_text_preview(abs_path: Path, max_chars: int = 5000) -> str:
+def extract_text_preview(abs_path: Path, max_chars: int = 5000):
     if not abs_path.exists():
-        return ''
+        return '', 'n/a'
     suffix = abs_path.suffix.lower()
     try:
         if suffix == '.pdf':
+            page_window = '1-2'
             with tempfile.NamedTemporaryFile(suffix='.txt', delete=True) as tf:
                 subprocess.run(
                     ['pdftotext', '-f', '1', '-l', '2', str(abs_path), tf.name],
@@ -102,16 +103,16 @@ def extract_text_preview(abs_path: Path, max_chars: int = 5000) -> str:
                     text=True,
                 )
                 txt = Path(tf.name).read_text(encoding='utf-8', errors='ignore')
-                return re.sub(r'\s+', ' ', txt).strip()[:max_chars]
+                return re.sub(r'\s+', ' ', txt).strip()[:max_chars], page_window
         # lightweight text preview for tex/other text-like files
-        return re.sub(r'\s+', ' ', abs_path.read_text(encoding='utf-8', errors='ignore')).strip()[:max_chars]
+        return re.sub(r'\s+', ' ', abs_path.read_text(encoding='utf-8', errors='ignore')).strip()[:max_chars], 'full-text'
     except Exception:
-        return ''
+        return '', 'n/a'
 
 
 def extract_structured_notes(src_rel: str):
     abs_path = REPO / src_rel
-    preview = extract_text_preview(abs_path)
+    preview, page_window = extract_text_preview(abs_path)
 
     base = Path(src_rel).stem.replace('_', ' ')
     pretty_title = re.sub(r'\s+', ' ', base).strip()
@@ -140,16 +141,28 @@ def extract_structured_notes(src_rel: str):
 
     findings = [
         f"Primary topic appears to center on: {', '.join(top_tokens) if top_tokens else 'general research content'}.",
-        'Source was auto-indexed and text-previewed from the first pages for rapid triage.',
+        'Source was auto-indexed and text-previewed for rapid triage.',
         'Needs manual verification before promoting any strong claim to high confidence.'
     ]
+
+    # Claim → evidence sentence mapping (heuristic)
+    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', preview) if len(s.strip()) > 60]
+    claim_map = []
+    for s in sentences[:3]:
+        short_claim = s[:180] + ('…' if len(s) > 180 else '')
+        claim_map.append({
+            'claim': short_claim,
+            'evidence_quote': s,
+            'page_hint': page_window,
+        })
 
     evidence = []
     if doi:
         evidence.append(f'DOI detected: {doi}')
     evidence.append(f'Source file: {src_rel}')
+    evidence.append(f'Extraction scope: {page_window}')
     if abstract:
-        evidence.append('Abstract/preview extracted automatically (first pages).')
+        evidence.append('Abstract/preview extracted automatically.')
 
     return {
         'title': pretty_title,
@@ -157,6 +170,7 @@ def extract_structured_notes(src_rel: str):
         'doi': doi,
         'findings': findings,
         'evidence': evidence,
+        'claim_map': claim_map,
     }
 
 
@@ -185,6 +199,10 @@ def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
 
     findings_html = ''.join([f'<li>{x}</li>' for x in notes['findings']])
     evidence_html = ''.join([f'<li>{x}</li>' for x in notes['evidence']])
+    claim_map_html = ''.join([
+        f"<li><strong>Claim:</strong> {c['claim']}<br/><strong>Evidence quote:</strong> “{c['evidence_quote']}”<br/><strong>Page hint:</strong> {c['page_hint']}</li>"
+        for c in notes.get('claim_map', [])
+    ]) or '<li>No claim/evidence sentences extracted automatically.</li>'
     abstract_html = notes['abstract'] or 'No abstract preview extracted.'
     doi_html = f"<p><strong>DOI:</strong> <a href=\"https://doi.org/{notes['doi']}\">{notes['doi']}</a></p>" if notes['doi'] else '<p><strong>DOI:</strong> not detected automatically.</p>'
 
@@ -216,6 +234,8 @@ def upsert_digest_stub(thread: str, src_rel: str, date_str: str) -> str:
       <ul class="clean">{findings_html}</ul>
       <h3>Evidence & citations</h3>
       <ul class="clean">{evidence_html}</ul>
+      <h3>Claim → evidence mapping (auto)</h3>
+      <ul class="clean">{claim_map_html}</ul>
       <h3>Falsification / validation checklist</h3>
       <ul class="clean">
         <li>Re-read full source and verify the central claim sentence-by-sentence.</li>
