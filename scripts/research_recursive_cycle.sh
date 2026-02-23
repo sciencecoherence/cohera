@@ -21,6 +21,7 @@ mkdir -p "$(dirname "$LOG")"
 
   # Recompute publication indexes/state
   /usr/bin/python3 "$REPO/scripts/publication_pipeline.py" --sync
+  /usr/bin/python3 "$REPO/scripts/publication_sanity_guard.py"
 
   # Refresh daily findings report every cycle.
   /usr/bin/python3 "$REPO/scripts/research_daily_findings.py"
