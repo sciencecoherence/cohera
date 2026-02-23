@@ -53,7 +53,8 @@ def make_tex(thread: str, title: str, slug: str, source_rel: str, digest_text: s
     title = tex_escape(title)
     source_rel = tex_escape(source_rel)
     abstract = tex_escape(f"This publication-ready draft synthesizes current {thread} findings for '{title}' with traceable claims, evidence hooks, and validation steps.")
-    return f'''% Auto-generated publication draft\n\\section*{{{title}}}\n\\textbf{{Thread:}} {thread}\\\\\n\\textbf{{Digest slug:}} {slug}\\\\\n\\textbf{{Source:}} \\texttt{{{source_rel}}}\\\\\n\\textbf{{Generated:}} {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\\\\\n\n\\subsection*{{Abstract}}\n{abstract}\n\n\\subsection*{{Keywords}}\n{thread}, synthesis, publication-draft\n\n\\subsection*{{Structured draft body}}\n{body}\n\n\\subsection*{{Validation checklist}}\n\\begin{{itemize}}\n  \\item Verify all nontrivial claims against the original source.\n  \\item Add explicit citations/DOIs where available.\n  \\item Mark confidence for each key claim (low/medium/high).\n\\end{{itemize}}\n'''
+    slug_esc = tex_escape(slug)
+    return f'''% Auto-generated publication draft\n\\section*{{{title}}}\n\\textbf{{Thread:}} {thread}\\\\\n\\textbf{{Digest slug:}} {slug_esc}\\\\\n\\textbf{{Source:}} \\texttt{{{source_rel}}}\\\\\n\\textbf{{Generated:}} {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\\\\\n\n\\subsection*{{Abstract}}\n{abstract}\n\n\\subsection*{{Keywords}}\n{thread}, synthesis, publication-draft\n\n\\subsection*{{Structured draft body}}\n{body}\n\n\\subsection*{{Validation checklist}}\n\\begin{{itemize}}\n  \\item Verify all nontrivial claims against the original source.\n  \\item Add explicit citations/DOIs where available.\n  \\item Mark confidence for each key claim (low/medium/high).\n\\end{{itemize}}\n'''
 
 
 def sync_tex_index():
@@ -86,6 +87,7 @@ def sync_tex_index():
 
 def collect_items():
     items = []
+    seen = set()
     for thread in THREADS:
         idx = SITE / thread / 'digests' / 'index.json'
         rows = load_json(idx, [])
@@ -95,7 +97,22 @@ def collect_items():
             if not slug:
                 continue
             digest_html = SITE / thread / 'digests' / f'{slug}.html'
-            items.append((thread, slug, title, digest_html))
+            key = (thread, slug)
+            if key not in seen:
+                items.append((thread, slug, title, digest_html))
+                seen.add(key)
+
+    # Also include curated publication-first manuscripts (not tied to digest slug)
+    for tex in sorted(TEX_DIR.glob('*_publication-v*.tex')):
+        stem = tex.stem
+        thread = stem.split('_', 1)[0] if '_' in stem else 'cosmos'
+        slug = stem
+        title = stem.replace('_', ' ').replace('-', ' ').title()
+        key = (thread, slug)
+        if key not in seen:
+            items.append((thread, slug, title, None))
+            seen.add(key)
+
     return items
 
 
@@ -200,16 +217,22 @@ def main():
 
     results = []
     for thread, slug, title, digest_html in collect_items():
-        tex_name = slug_to_tex_name(thread, slug)
+        # For curated publication-first slugs, use direct stem.tex
+        if slug.endswith('publication-v1') and (TEX_DIR / f'{slug}.tex').exists():
+            tex_name = f'{slug}.tex'
+        else:
+            tex_name = slug_to_tex_name(thread, slug)
         tex_path = TEX_DIR / tex_name
         pdf_path = PDF_DIR / tex_name.replace('.tex', '.pdf')
 
         digest_text = ''
-        if digest_html.exists():
+        source_rel = ''
+        if digest_html and digest_html.exists():
             digest_text = html_to_text(digest_html.read_text(encoding='utf-8', errors='ignore'))
+            source_rel = str(digest_html.relative_to(REPO))
 
         if args.sync and not tex_path.exists():
-            tex_path.write_text(make_tex(thread, title, slug, str(digest_html.relative_to(REPO)), digest_text), encoding='utf-8')
+            tex_path.write_text(make_tex(thread, title, slug, source_rel or f'curated:{slug}', digest_text), encoding='utf-8')
 
         # Enforce publication baseline structure on non-autodraft tracks
         if args.sync and tex_path.exists() and not slug.startswith('auto-'):
@@ -222,11 +245,11 @@ def main():
             'slug': slug,
             'title': title,
             'abstract': abstract,
-            'digest_html': str(digest_html.relative_to(REPO)) if digest_html.exists() else None,
+            'digest_html': str(digest_html.relative_to(REPO)) if (digest_html and digest_html.exists()) else None,
             'tex': str(tex_path.relative_to(REPO)) if tex_path.exists() else None,
             'pdf': str(pdf_path.relative_to(REPO)) if pdf_path.exists() else None,
             'status': {
-                'has_digest': digest_html.exists(),
+                'has_digest': bool(digest_html and digest_html.exists()),
                 'has_tex': tex_path.exists(),
                 'has_pdf': pdf_path.exists(),
             }

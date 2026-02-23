@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-02-23T17:18:37Z",
+  "generated_at": "2026-02-23T17:24:24Z",
   "totals": {
-    "items": 15,
-    "with_tex": 15,
-    "with_pdf": 15,
-    "ready_publications": 4
+    "items": 18,
+    "with_tex": 18,
+    "with_pdf": 18,
+    "ready_publications": 7
   },
   "items": [
     {
@@ -227,6 +227,51 @@
       "pdf": "site/publications/pdf/ethos_research-literacy-confidence-rubric.pdf",
       "status": {
         "has_digest": true,
+        "has_tex": true,
+        "has_pdf": true
+      },
+      "ready": true
+    },
+    {
+      "thread": "cosmos",
+      "slug": "cosmos_dark-matter-cores-as1063_publication-v1",
+      "title": "Cosmos Dark Matter Cores As1063 Publication V1",
+      "abstract": "This paper presents a structured synthesis of current cosmos evidence around dark matter core structure in as1063: evidence synthesis. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
+      "digest_html": null,
+      "tex": "site/publications/tex/cosmos_dark-matter-cores-as1063_publication-v1.tex",
+      "pdf": "site/publications/pdf/cosmos_dark-matter-cores-as1063_publication-v1.pdf",
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": true
+      },
+      "ready": true
+    },
+    {
+      "thread": "ethos",
+      "slug": "ethos_epistemic-operators-awareness_publication-v1",
+      "title": "Ethos Epistemic Operators Awareness Publication V1",
+      "abstract": "This paper presents a structured synthesis of current ethos evidence around translating epistemic operators in a logic of awareness. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
+      "digest_html": null,
+      "tex": "site/publications/tex/ethos_epistemic-operators-awareness_publication-v1.tex",
+      "pdf": "site/publications/pdf/ethos_epistemic-operators-awareness_publication-v1.pdf",
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": true
+      },
+      "ready": true
+    },
+    {
+      "thread": "regenesis",
+      "slug": "regenesis_bioelectricity-pump-alignment_publication-v1",
+      "title": "Regenesis Bioelectricity Pump Alignment Publication V1",
+      "abstract": "This paper presents a structured synthesis of current regenesis evidence around self-organized bioelectricity via collective pump alignment. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
+      "digest_html": null,
+      "tex": "site/publications/tex/regenesis_bioelectricity-pump-alignment_publication-v1.tex",
+      "pdf": "site/publications/pdf/regenesis_bioelectricity-pump-alignment_publication-v1.pdf",
+      "status": {
+        "has_digest": false,
         "has_tex": true,
         "has_pdf": true
       },
