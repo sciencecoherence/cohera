@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-02-23T18:50:42Z",
+  "generated_at": "2026-02-23T19:09:30Z",
   "created": [
     {
       "thread": "cosmos",
-      "from": "auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m",
-      "tex": "site/publications/tex/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1.tex"
+      "from": "auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys",
+      "tex": "site/publications/tex/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1.tex"
     },
     {
       "thread": "regenesis",
-      "from": "auto-2026-02-21-tcqs-biology",
-      "tex": "site/publications/tex/regenesis_2026-02-21-tcqs-biology_publication-v1.tex"
+      "from": "sleep-regeneration-baseline",
+      "tex": "site/publications/tex/regenesis_sleep-regeneration-baseline_publication-v1.tex"
     },
     {
       "thread": "ethos",
-      "from": "auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur",
-      "tex": "site/publications/tex/ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1.tex"
+      "from": "research-literacy-confidence-rubric",
+      "tex": "site/publications/tex/ethos_research-literacy-confidence-rubric_publication-v1.tex"
     }
   ],
   "count": 3

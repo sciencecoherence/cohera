@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-23T18:50:44Z",
+  "generated_at": "2026-02-23T19:09:32Z",
   "totals": {
-    "items": 27,
-    "with_tex": 27,
+    "items": 30,
+    "with_tex": 30,
     "with_pdf": 2,
     "ready_publications": 2
   },
@@ -249,6 +249,21 @@
     },
     {
       "thread": "cosmos",
+      "slug": "cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1",
+      "title": "Cosmos 2026 02 23 Self Organized Bioelectricity Via Collective Pump Alignment Phys Publication V1",
+      "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 23 Self Organized Bioelectricity Via Collective Pump Alignment Phys Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
+      "thread": "cosmos",
       "slug": "cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1",
       "title": "Cosmos 2026 02 23 The Large Cores Of Dark Matter And Globular Clusters In As1063 P Publication V1",
       "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 23 The Large Cores Of Dark Matter And Globular Clusters In As1063 P Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
@@ -353,6 +368,21 @@
       "ready": false
     },
     {
+      "thread": "ethos",
+      "slug": "ethos_research-literacy-confidence-rubric_publication-v1",
+      "title": "Ethos Research Literacy Confidence Rubric Publication V1",
+      "abstract": "This publication provides a structured synthesis for Ethos Research Literacy Confidence Rubric Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/ethos_research-literacy-confidence-rubric_publication-v1.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
       "thread": "regenesis",
       "slug": "regenesis_2026-02-21-tcqs-biology_publication-v1",
       "title": "Regenesis 2026 02 21 Tcqs Biology Publication V1",
@@ -404,6 +434,21 @@
       "abstract": "This publication provides a structured synthesis for Regenesis Self Organized Bioelectricity Via Collective Pump Alignment Physical Origin Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
       "digest_html": null,
       "tex": "site/publications/tex/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1.tex",
+      "pdf": null,
+      "status": {
+        "has_digest": false,
+        "has_tex": true,
+        "has_pdf": false
+      },
+      "ready": false
+    },
+    {
+      "thread": "regenesis",
+      "slug": "regenesis_sleep-regeneration-baseline_publication-v1",
+      "title": "Regenesis Sleep Regeneration Baseline Publication V1",
+      "abstract": "This publication provides a structured synthesis for Regenesis Sleep Regeneration Baseline Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "digest_html": null,
+      "tex": "site/publications/tex/regenesis_sleep-regeneration-baseline_publication-v1.tex",
       "pdf": null,
       "status": {
         "has_digest": false,
