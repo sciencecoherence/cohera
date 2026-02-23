@@ -398,3 +398,13 @@ From github.com-cohera:sciencecoherence/cohera
 From github.com-cohera:sciencecoherence/cohera
  * branch            main       -> FETCH_HEAD
 [2026-02-23T13:45:01-05:00] autosync start
+[main 21defef] autosync: 2026-02-23 13:45:01 -0500
+ 21 files changed, 343 insertions(+), 30 deletions(-)
+ create mode 100644 chatgpt/inbox/2026-02-23-chat-corpus-newreality.md
+ create mode 100644 chatgpt/research_recursive_cycle.log
+ create mode 100644 site/publications/tex/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1.tex
+ create mode 100644 site/publications/tex/ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1.tex
+ create mode 100644 site/publications/tex/regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1.tex
+From github.com-cohera:sciencecoherence/cohera
+ * branch            main       -> FETCH_HEAD
+[2026-02-23T13:50:01-05:00] autosync start
