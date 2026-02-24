@@ -42,18 +42,13 @@ Research is not an open-ended loop. It is a strict progression through discrete 
 
 **Action:**
 - Compile to clean PDF.
-- Move item from Active Pipeline to Publications outputs.
+- Move item from Research Pipeline to Publications outputs.
 
 **Exit Criteria:**
 - PDF generated.
 - Mathematics legible and consistent.
 - No formatting errors.
 - Loop complete.
-
-## Anti-Stuck Protocol
-
-### 3-Pass Limit
-Do not revise the same section more than 3 times.
 
 ### Forced Advancement
 If a math proof or structural issue is unresolved after 3 attempts:
