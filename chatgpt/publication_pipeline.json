@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-02-24T00:13:45Z",
+  "generated_at": "2026-02-24T01:11:40Z",
   "totals": {
-    "items": 39,
-    "with_tex": 39,
-    "with_pdf": 21,
+    "items": 6,
+    "with_tex": 6,
+    "with_pdf": 3,
     "ready_publications": 0
   },
   "items": [
@@ -11,114 +11,9 @@
       "thread": "cosmos",
       "slug": "auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-interacting-dark-matter-or-not",
       "title": "Autodraft: The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not",
-      "abstract": "This publication-ready draft synthesizes current cosmos findings for 'Autodraft: The \\_large \\_cores \\_of \\_dark \\_matter \\_and \\_globular \\_clusters \\_in \\_AS1063 \\_Possible \\_evidence \\_of \\_self-interacting \\_dark \\_matter \\_Or \\_not' with traceable claims, evidence hooks, and validation steps.",
+      "abstract": "This publication-ready draft synthesizes current cosmos findings for 'Autodraft: The\\_large\\_cores\\_of\\_dark\\_matter\\_and\\_globular\\_clusters\\_in\\_AS1063\\_Possible\\_evidence\\_of\\_self-interacting\\_dark\\_matter\\_Or\\_not' with traceable claims, evidence hooks, and validation steps.",
       "digest_html": "site/cosmos/digests/auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-interacting-dark-matter-or-not.html",
       "tex": "site/publications/tex/cosmos_auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-interacting-dark-matter-or-not.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "auto-2026-02-23-chat-corpus-newreality",
-      "title": "Autodraft: 2026-02-23-chat-corpus-newreality",
-      "abstract": "This publication-ready draft synthesizes current cosmos findings for 'Autodraft: 2026-02-23-chat-corpus-newreality' with traceable claims, evidence hooks, and validation steps.",
-      "digest_html": "site/cosmos/digests/auto-2026-02-23-chat-corpus-newreality.html",
-      "tex": "site/publications/tex/cosmos_auto-2026-02-23-chat-corpus-newreality.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi",
-      "title": "Autodraft: The large cores of dark matter and globular clusters in AS1063 Possible evidence of self-interacting dark matter Or not",
-      "abstract": "",
-      "digest_html": "site/cosmos/digests/auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.html",
-      "tex": "site/publications/tex/cosmos_auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p",
-      "title": "Autodraft: The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not",
-      "abstract": "",
-      "digest_html": "site/cosmos/digests/auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.html",
-      "tex": "site/publications/tex/cosmos_auto-2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m",
-      "title": "Autodraft: Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations",
-      "abstract": "",
-      "digest_html": "site/cosmos/digests/auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.html",
-      "tex": "site/publications/tex/cosmos_auto-2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys",
-      "title": "Autodraft: Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis",
-      "abstract": "",
-      "digest_html": "site/cosmos/digests/auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.html",
-      "tex": "site/publications/tex/cosmos_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos-v5-coherence-operators-and-emergent-geometry",
-      "title": "Cosmos v5: Coherence Operators and Emergent Geometry",
-      "abstract": "This publication provides a structured synthesis for Cosmos v5: Coherence Operators and Emergent Geometry, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": "site/cosmos/digests/cosmos-v5-coherence-operators-and-emergent-geometry.html",
-      "tex": "site/publications/tex/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "auto-2026-02-21-hierarchical-self-engineering-chain-1",
-      "title": "Autodraft: Hierarchical_Self_Engineering_Chain (1)",
-      "abstract": "",
-      "digest_html": "site/cosmos/digests/auto-2026-02-21-hierarchical-self-engineering-chain-1.html",
-      "tex": "site/publications/tex/cosmos_auto-2026-02-21-hierarchical-self-engineering-chain-1.tex",
       "pdf": null,
       "status": {
         "has_digest": true,
@@ -131,69 +26,9 @@
       "thread": "regenesis",
       "slug": "auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosis",
       "title": "Autodraft: Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis",
-      "abstract": "This publication-ready draft synthesizes current regenesis findings for 'Autodraft: Self-Organized \\_Bioelectricity \\_via \\_Collective \\_Pump \\_Alignment \\_Physical \\_Origin \\_of \\_Chemiosmosis' with traceable claims, evidence hooks, and validation steps.",
+      "abstract": "This publication-ready draft synthesizes current regenesis findings for 'Autodraft: Self-Organized\\_Bioelectricity\\_via\\_Collective\\_Pump\\_Alignment\\_Physical\\_Origin\\_of\\_Chemiosmosis' with traceable claims, evidence hooks, and validation steps.",
       "digest_html": "site/regenesis/digests/auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosis.html",
       "tex": "site/publications/tex/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosis.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "regenesis",
-      "slug": "auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin",
-      "title": "Autodraft: Self-Organized Bioelectricity via Collective Pump Alignment Physical Origin of Chemiosmosis",
-      "abstract": "",
-      "digest_html": "site/regenesis/digests/auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.html",
-      "tex": "site/publications/tex/regenesis_auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "regenesis",
-      "slug": "auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys",
-      "title": "Autodraft: Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis",
-      "abstract": "",
-      "digest_html": "site/regenesis/digests/auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.html",
-      "tex": "site/publications/tex/regenesis_auto-2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "regenesis",
-      "slug": "auto-2026-02-21-tcqs-biology",
-      "title": "Autodraft: _TCQS__Biology",
-      "abstract": "",
-      "digest_html": "site/regenesis/digests/auto-2026-02-21-tcqs-biology.html",
-      "tex": "site/publications/tex/regenesis_auto-2026-02-21-tcqs-biology.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "regenesis",
-      "slug": "sleep-regeneration-baseline",
-      "title": "Sleep and Regeneration: Baseline Mechanisms and Practical Protocol",
-      "abstract": "This publication provides a structured synthesis for Sleep and Regeneration: Baseline Mechanisms and Practical Protocol, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": "site/regenesis/digests/sleep-regeneration-baseline.html",
-      "tex": "site/publications/tex/regenesis_sleep-regeneration-baseline.tex",
       "pdf": null,
       "status": {
         "has_digest": true,
@@ -206,7 +41,7 @@
       "thread": "ethos",
       "slug": "auto-on-translating-epistemic-operators-in-a-logic-of-awareness",
       "title": "Autodraft: On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness",
-      "abstract": "",
+      "abstract": "This publication-ready draft synthesizes current ethos findings for 'Autodraft: On\\_Translating\\_Epistemic\\_Operators\\_in\\_a\\_Logic\\_of\\_Awareness' with traceable claims, evidence hooks, and validation steps.",
       "digest_html": "site/ethos/digests/auto-on-translating-epistemic-operators-in-a-logic-of-awareness.html",
       "tex": "site/publications/tex/ethos_auto-on-translating-epistemic-operators-in-a-logic-of-awareness.tex",
       "pdf": null,
@@ -218,190 +53,10 @@
       "ready": false
     },
     {
-      "thread": "ethos",
-      "slug": "auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness",
-      "title": "Autodraft: On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness",
-      "abstract": "",
-      "digest_html": "site/ethos/digests/auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.html",
-      "tex": "site/publications/tex/ethos_auto-2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "ethos",
-      "slug": "auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur",
-      "title": "Autodraft: How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs",
-      "abstract": "",
-      "digest_html": "site/ethos/digests/auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.html",
-      "tex": "site/publications/tex/ethos_auto-2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "ethos",
-      "slug": "research-literacy-confidence-rubric",
-      "title": "Research Literacy Quickstart + Confidence Rubric",
-      "abstract": "This publication provides a structured synthesis for Research Literacy Quickstart + Confidence Rubric, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": "site/ethos/digests/research-literacy-confidence-rubric.html",
-      "tex": "site/publications/tex/ethos_research-literacy-confidence-rubric.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": true,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1",
-      "title": "Cosmos 2026 02 21 Hierarchical Self Engineering Chain 1 Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 21 Hierarchical Self Engineering Chain 1 Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_2026-02-23-chat-corpus-newreality_publication-v1",
-      "title": "Cosmos 2026 02 23 Chat Corpus Newreality Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 23 Chat Corpus Newreality Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_2026-02-23-chat-corpus-newreality_publication-v1.tex",
-      "pdf": null,
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": false
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1",
-      "title": "Cosmos 2026 02 23 Qualitative Coding Analysis Through Open Source Large Language M Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 23 Qualitative Coding Analysis Through Open Source Large Language M Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1",
-      "title": "Cosmos 2026 02 23 Self Organized Bioelectricity Via Collective Pump Alignment Phys Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 23 Self Organized Bioelectricity Via Collective Pump Alignment Phys Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1",
-      "title": "Cosmos 2026 02 23 The Large Cores Of Dark Matter And Globular Clusters In As1063 P Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos 2026 02 23 The Large Cores Of Dark Matter And Globular Clusters In As1063 P Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1",
-      "title": "Cosmos Cosmos V5 Coherence Operators And Emergent Geometry Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos Cosmos V5 Coherence Operators And Emergent Geometry Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_dark-matter-cores-as1063_20260223_publication-v1",
-      "title": "Cosmos Dark Matter Cores As1063 20260223 Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos Dark Matter Cores As1063 20260223 Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_dark-matter-cores-as1063_20260223_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_dark-matter-cores-as1063_20260223_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_dark-matter-cores-as1063_publication-v1",
-      "title": "Cosmos Dark Matter Cores As1063 Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos Dark Matter Cores As1063 Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_dark-matter-cores-as1063_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_dark-matter-cores-as1063_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "cosmos",
-      "slug": "cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1",
-      "title": "Cosmos The Large Cores Of Dark Matter And Globular Clusters In As1063 Possible Evi Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos The Large Cores Of Dark Matter And Globular Clusters In As1063 Possible Evi Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
       "thread": "cosmos",
       "slug": "cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1",
       "title": "Cosmos The Large Cores Of Dark Matter And Globular Clusters In As1063 Possible Evidence Of Self I Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos The Large Cores Of Dark Matter And Globular Clusters In As1063 Possible Evidence Of Self I Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "abstract": "This manuscript promotes an in-progress cosmos research stream into a publication-ready synthesis. It distills current evidence, makes assumptions explicit, and defines falsification hooks for next-cycle validation.",
       "digest_html": null,
       "tex": "site/publications/tex/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1.tex",
       "pdf": "site/publications/pdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1.pdf",
@@ -413,70 +68,10 @@
       "ready": false
     },
     {
-      "thread": "cosmos",
-      "slug": "cosmos_time-crystals-holography-minimal-ground_publication-v1",
-      "title": "Cosmos Time Crystals Holography Minimal Ground Publication V1",
-      "abstract": "This publication provides a structured synthesis for Cosmos Time Crystals Holography Minimal Ground Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/cosmos_time-crystals-holography-minimal-ground_publication-v1.tex",
-      "pdf": "site/publications/pdf/cosmos_time-crystals-holography-minimal-ground_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "ethos",
-      "slug": "ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1",
-      "title": "Ethos 2026 02 23 How Should Ai Knowledge Be Governed Epistemic Authority Structur Publication V1",
-      "abstract": "This publication provides a structured synthesis for Ethos 2026 02 23 How Should Ai Knowledge Be Governed Epistemic Authority Structur Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1.tex",
-      "pdf": "site/publications/pdf/ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "ethos",
-      "slug": "ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1",
-      "title": "Ethos 2026 02 23 On Translating Epistemic Operators In A Logic Of Awareness Publication V1",
-      "abstract": "This publication provides a structured synthesis for Ethos 2026 02 23 On Translating Epistemic Operators In A Logic Of Awareness Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1.tex",
-      "pdf": "site/publications/pdf/ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "ethos",
-      "slug": "ethos_epistemic-operators-awareness_publication-v1",
-      "title": "Ethos Epistemic Operators Awareness Publication V1",
-      "abstract": "This paper presents a structured synthesis of current ethos evidence around translating epistemic operators in a logic of awareness. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
-      "digest_html": null,
-      "tex": "site/publications/tex/ethos_epistemic-operators-awareness_publication-v1.tex",
-      "pdf": "site/publications/pdf/ethos_epistemic-operators-awareness_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
       "thread": "ethos",
       "slug": "ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1",
       "title": "Ethos On Translating Epistemic Operators In A Logic Of Awareness Publication V1",
-      "abstract": "This publication provides a structured synthesis for Ethos On Translating Epistemic Operators In A Logic Of Awareness Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "abstract": "This manuscript promotes an in-progress ethos research stream into a publication-ready synthesis. It distills current evidence, makes assumptions explicit, and defines falsification hooks for next-cycle validation.",
       "digest_html": null,
       "tex": "site/publications/tex/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1.tex",
       "pdf": "site/publications/pdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1.pdf",
@@ -488,103 +83,13 @@
       "ready": false
     },
     {
-      "thread": "ethos",
-      "slug": "ethos_research-literacy-confidence-rubric_publication-v1",
-      "title": "Ethos Research Literacy Confidence Rubric Publication V1",
-      "abstract": "This publication provides a structured synthesis for Ethos Research Literacy Confidence Rubric Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/ethos_research-literacy-confidence-rubric_publication-v1.tex",
-      "pdf": "site/publications/pdf/ethos_research-literacy-confidence-rubric_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "regenesis",
-      "slug": "regenesis_2026-02-21-tcqs-biology_publication-v1",
-      "title": "Regenesis 2026 02 21 Tcqs Biology Publication V1",
-      "abstract": "This publication provides a structured synthesis for Regenesis 2026 02 21 Tcqs Biology Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/regenesis_2026-02-21-tcqs-biology_publication-v1.tex",
-      "pdf": "site/publications/pdf/regenesis_2026-02-21-tcqs-biology_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "regenesis",
-      "slug": "regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1",
-      "title": "Regenesis 2026 02 23 Self Organized Bioelectricity Via Collective Pump Alignment Phys Publication V1",
-      "abstract": "This publication provides a structured synthesis for Regenesis 2026 02 23 Self Organized Bioelectricity Via Collective Pump Alignment Phys Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1.tex",
-      "pdf": "site/publications/pdf/regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "regenesis",
-      "slug": "regenesis_bioelectricity-pump-alignment_publication-v1",
-      "title": "Regenesis Bioelectricity Pump Alignment Publication V1",
-      "abstract": "This paper presents a structured synthesis of current regenesis evidence around self-organized bioelectricity via collective pump alignment. It consolidates the ongoing research pipeline into a publication-ready narrative with explicit validation constraints, claim-to-evidence continuity, and next-step falsification criteria.",
-      "digest_html": null,
-      "tex": "site/publications/tex/regenesis_bioelectricity-pump-alignment_publication-v1.tex",
-      "pdf": "site/publications/pdf/regenesis_bioelectricity-pump-alignment_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
       "thread": "regenesis",
       "slug": "regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1",
       "title": "Regenesis Self Organized Bioelectricity Via Collective Pump Alignment Physical Origin Of Chemiosmosi Publication V1",
-      "abstract": "This publication provides a structured synthesis for Regenesis Self Organized Bioelectricity Via Collective Pump Alignment Physical Origin Of Chemiosmosi Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
+      "abstract": "This manuscript promotes an in-progress regenesis research stream into a publication-ready synthesis. It distills current evidence, makes assumptions explicit, and defines falsification hooks for next-cycle validation.",
       "digest_html": null,
       "tex": "site/publications/tex/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1.tex",
       "pdf": "site/publications/pdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "regenesis",
-      "slug": "regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1",
-      "title": "Regenesis Self Organized Bioelectricity Via Collective Pump Alignment Physical Origin Publication V1",
-      "abstract": "This publication provides a structured synthesis for Regenesis Self Organized Bioelectricity Via Collective Pump Alignment Physical Origin Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1.tex",
-      "pdf": "site/publications/pdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1.pdf",
-      "status": {
-        "has_digest": false,
-        "has_tex": true,
-        "has_pdf": true
-      },
-      "ready": false
-    },
-    {
-      "thread": "regenesis",
-      "slug": "regenesis_sleep-regeneration-baseline_publication-v1",
-      "title": "Regenesis Sleep Regeneration Baseline Publication V1",
-      "abstract": "This publication provides a structured synthesis for Regenesis Sleep Regeneration Baseline Publication V1, with claim-to-evidence framing and a validation path for downstream readers.",
-      "digest_html": null,
-      "tex": "site/publications/tex/regenesis_sleep-regeneration-baseline_publication-v1.tex",
-      "pdf": "site/publications/pdf/regenesis_sleep-regeneration-baseline_publication-v1.pdf",
       "status": {
         "has_digest": false,
         "has_tex": true,
