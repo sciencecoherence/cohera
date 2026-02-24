@@ -1,24 +1,5 @@
 {
-  "generated_at": "2026-02-24T01:11:40Z",
-  "created": [
-    {
-      "thread": "cosmos",
-      "from": "auto-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-interacting-dark-matter-or-not",
-      "pub_slug": "the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i",
-      "tex": "site/publications/tex/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1.tex"
-    },
-    {
-      "thread": "regenesis",
-      "from": "auto-self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosis",
-      "pub_slug": "self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi",
-      "tex": "site/publications/tex/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1.tex"
-    },
-    {
-      "thread": "ethos",
-      "from": "auto-on-translating-epistemic-operators-in-a-logic-of-awareness",
-      "pub_slug": "on-translating-epistemic-operators-in-a-logic-of-awareness",
-      "tex": "site/publications/tex/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1.tex"
-    }
-  ],
-  "count": 3
+  "generated_at": "2026-02-24T01:25:02Z",
+  "created": [],
+  "count": 0
 }

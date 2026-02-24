@@ -13824,3 +13824,77 @@ PDF build complete.
 pipeline: items=6 tex=6 pdf=3 ready=0
 backlog_advancer: created=3
 chat_corpus_ingest: nothing pending
+backlog_advancer: created=0
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\i'
+  '''
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.pdf"  "cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.xdv"'
+------------
+cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.xdv -> cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.pdf
+[1]
+13933 bytes written
+Latexmk: All targets (cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.xdv cohera-repo/.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "cohera-repo/.build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.pdf"  "cohera-repo/.build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.xdv"'
+------------
+cohera-repo/.build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.xdv -> cohera-repo/.build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.pdf
+[1]
+13687 bytes written
+Latexmk: All targets (cohera-repo/.build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.xdv cohera-repo/.build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.pdf"  "cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.xdv"'
+------------
+cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.xdv -> cohera-repo/.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.pdf
+[1]
+14033 bytes writtenTraceback (most recent call last):
+  File "/home/xavier/cohera-repo/scripts/research_daily_findings.py", line 127, in <module>
+    main()
+  File "/home/xavier/cohera-repo/scripts/research_daily_findings.py", line 95, in main
+    <li>Active Candidates: <span class="highlight">{pipe.get('totals',{{}}).get('items',0)}</span></li>
+                                                                      ^^^^
+TypeError: unhashable type: 'dict'
