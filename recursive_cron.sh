@@ -5,6 +5,7 @@
 
 set -e
 
+mkdir -p /home/xavier/cohera-repo/chatgpt
 LOG_FILE="/home/xavier/cohera-repo/chatgpt/recursive_cron.log"
 DATE_STR=$(date +"%d/%m/%Y %H:%M:%S")
 
