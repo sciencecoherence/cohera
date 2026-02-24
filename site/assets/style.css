@@ -1,0 +1,20 @@
+:root {
+    --bg: #0a0a0a;
+    --text: #e0e0e0;
+    --accent: #555;
+    --dim: #666;
+}
+body { 
+    background: var(--bg); 
+    color: var(--text); 
+    font-family: 'Courier New', monospace; 
+    line-height: 1.6; 
+    max-width: 900px; 
+    margin: 4rem auto; 
+    padding: 0 2rem; 
+}
+h1 { text-transform: uppercase; letter-spacing: 4px; border-bottom: 1px solid var(--accent); padding-bottom: 1rem; }
+.mission { font-style: italic; color: var(--dim); border-left: 2px solid var(--accent); padding-left: 1.5rem; margin: 2rem 0; }
+a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--dim); }
+a:hover { border-bottom: 1px solid var(--text); }
+.dashboard-item { border: 1px solid var(--accent); padding: 1rem; margin-top: 1rem; background: #111; }
