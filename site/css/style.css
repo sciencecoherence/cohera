@@ -1,0 +1,124 @@
+:root {
+    --bg: #ececec;
+    --fg: #111111;
+    --accent: #ff3300;
+    --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-mono: "Courier New", Courier, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 2vw 4vw;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+header {
+    border-bottom: 3px solid var(--fg);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+h1 {
+    font-size: 5vw;
+    margin: 0;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav a {
+    color: var(--fg);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover, nav a.active {
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.mission-statement {
+    font-size: 3vw;
+    max-width: 80%;
+    margin-bottom: 4rem;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.highlight {
+    background-color: var(--fg);
+    color: var(--bg);
+    padding: 0 0.5rem;
+}
+
+.dashboard {
+    border: 3px solid var(--fg);
+    padding: 2rem;
+    background: #fff;
+}
+
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--fg);
+    padding-bottom: 0.5rem;
+}
+
+.log-entry {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: none;
+}
+
+.section-title {
+    font-size: 3vw;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--fg);
+    padding-bottom: 1rem;
+}
+
+.feed-item {
+    border: 2px solid var(--fg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: #fff;
+}
+
+.feed-date {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.feed-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.feed-body {
+    text-transform: none;
+    font-weight: 400;
+    font-size: 1.1rem;
+}

@@ -777,3 +777,74 @@ From github.com-cohera:sciencecoherence/cohera
    af55e97..21b7134  main       -> origin/main
 [2026-02-23T19:25:01-05:00] autosync start
 [2026-02-23T19:50:01-05:00] autosync start
+[main 3288305] autosync: 2026-02-23 19:50:01 -0500
+ 70 files changed, 419065 insertions(+), 56 deletions(-)
+ create mode 100644 research/chats/.gitkeep
+ create mode 100644 research/chats/genesis.html
+ create mode 100644 research/chats/genesis.json
+ create mode 100644 research/chats/newreality.html
+ create mode 100644 research/chats/newreality.json
+ create mode 100644 research/inbox/2026-02-23-chat-corpus-genesis.md
+ create mode 100644 research/inbox/2026-02-23-chat-corpus-newreality.md
+ create mode 100644 research/latex/.gitkeep
+ create mode 100644 research/latex/Equations_handbook.tex
+ create mode 100644 research/latex/FEP-short.tex
+ create mode 100644 research/latex/FEP.tex
+ create mode 100644 research/latex/Infodynamics.tex
+ create mode 100644 research/latex/MAIN PAPER/Section_1.tex
+ create mode 100644 research/latex/MAIN PAPER/Section_2.tex
+ create mode 100644 research/latex/MAIN PAPER/Section_3.tex
+ create mode 100644 research/latex/MAIN PAPER/Section_4.tex
+ create mode 100644 research/latex/MAIN PAPER/Section_6_draft.tex
+ create mode 100644 research/latex/MAIN PAPER/main.tex
+ create mode 100644 research/latex/Observer.tex
+ create mode 100644 research/latex/architecture.tex
+ create mode 100644 research/latex/authorsnote.tex
+ create mode 100644 research/latex/black_holes.tex
+ create mode 100644 research/latex/condensate.tex
+ create mode 100644 research/latex/cosmos.tex
+ create mode 100644 research/latex/cosmosv2.tex
+ create mode 100644 research/latex/cosmosv3.tex
+ create mode 100644 research/latex/cosmosv4.tex
+ create mode 100644 research/latex/cross-coherence_interface.tex
+ create mode 100644 research/latex/cross-communication.tex
+ create mode 100644 research/latex/entropy.tex
+ create mode 100644 research/latex/equilibrium++.tex
+ create mode 100644 research/latex/equilibrium+.tex
+ create mode 100644 research/latex/equilibrium.tex
+ create mode 100644 research/latex/genesis.tex
+ create mode 100644 research/latex/gravity.tex
+ create mode 100644 research/latex/infographicfigure.tex
+ create mode 100644 research/latex/informationparadox.tex
+ create mode 100644 research/latex/informationportal.tex
+ create mode 100644 research/latex/introduction.tex
+ create mode 100644 research/latex/molecular interface.tex
+ create mode 100644 research/latex/paradox-resolution.tex
+ create mode 100644 research/latex/qudits.tex
+ create mode 100644 research/latex/resonance_field.tex
+ create mode 100644 research/latex/schrodinger.tex
+ create mode 100644 research/latex/singularity.tex
+ create mode 100644 research/latex/spacetime.tex
+ create mode 100644 research/latex/time.tex
+ create mode 100644 research/pdf/COHERENCER_BASED_COSMOLOGY (1).pdf
+ create mode 100644 research/pdf/COHERENCER_BASED_COSMOLOGY.pdf
+ create mode 100644 research/pdf/Dissipation_as_a_Resource_Synchronization_Coherence_Recovery_and_Chaos_Control.pdf
+ create mode 100644 research/pdf/Epistemology_of_Generative_AI_The_Geometry_of_Knowing.pdf
+ create mode 100644 research/pdf/Hierarchical_Self_Engineering_Chain (1).pdf
+ create mode 100644 research/pdf/How_should_AI_knowledge_be_governed_Epistemic_authority_structural_transparency_and_the_case_for_open_cognitive_graphs.pdf
+ create mode 100644 research/pdf/On_Translating_Epistemic_Operators_in_a_Logic_of_Awareness.pdf
+ create mode 100644 research/pdf/On_the_Concept_of_Violence_A_Comparative_Study_of_Human_and_AI_Judgments.pdf
+ create mode 100644 research/pdf/Qualitative_Coding_Analysis_through_Open-Source_Large_Language_Models_A_User_Study_and_Design_Recommendations.pdf
+ create mode 100644 research/pdf/Quantifying_and_Attributing_Submodel_Uncertainty_in_Stochastic_Simulation_Models_and_Digital_Twins.pdf
+ create mode 100644 research/pdf/Self-Organized_Bioelectricity_via_Collective_Pump_Alignment_Physical_Origin_of_Chemiosmosis.pdf
+ create mode 100644 research/pdf/Service_Orchestration_in_the_Computing_Continuum_Structural_Challenges_and_Vision.pdf
+ create mode 100644 research/pdf/The_large_cores_of_dark_matter_and_globular_clusters_in_AS1063_Possible_evidence_of_self-interacting_dark_matter_Or_not.pdf
+ create mode 100644 research/pdf/Time_Crystalline_Holographic_Substrate.pdf
+ create mode 100644 research/pdf/Topological_Boundary_Time_Crystal_Oscillations.pdf
+ create mode 100644 research/pdf/_TCQS__Biology.pdf
+ create mode 100644 research/pdf/_TCQS__Hypothesis_Genesis.pdf
+ create mode 100755 run_pipeline.sh
+ create mode 100755 trigger_cohera_synthesis.py
+From github.com-cohera:sciencecoherence/cohera
+ * branch            main       -> FETCH_HEAD
+[2026-02-23T19:55:01-05:00] autosync start
