@@ -2056,3 +2056,526 @@ Traceback (most recent call last):
   File "/usr/lib/python3.12/re/_parser.py", line 840, in _parse
     raise source.error('global flags not at the start '
 re.error: global flags not at the start of the expression at position 31
+[2026-02-23T19:12:17-05:00] recursive-cycle start
+Autopilot complete. Sources=19 changes=0 stubs=3
+Delta Briefing compiled: 0 new, 3 autodrafts injected to pipeline.
+health=ok issues=0
+backlog_advancer: created=0
+chat_corpus_ingest: nothing pending
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\i'
+  '''
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.pdf
+[1][2][3]
+25305 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.xdv .build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.pdf
+[1][2][3]
+26313 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.xdv .build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.pdf
+[1][2][3]
+26561 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.xdv .build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.pdf
+[1][2][3]
+26468 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.xdv .build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf
+[1][2][3]
+31484 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv .build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_dark-matter-cores-as1063_20260223_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_dark-matter-cores-as1063_20260223_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_dark-matter-cores-as1063_20260223_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_dark-matter-cores-as1063_20260223_publication-v1_wrapper.pdf
+[1][2][3]
+29286 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_dark-matter-cores-as1063_20260223_publication-v1_wrapper.xdv .build/texpdf/cosmos_dark-matter-cores-as1063_20260223_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_dark-matter-cores-as1063_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_dark-matter-cores-as1063_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_dark-matter-cores-as1063_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_dark-matter-cores-as1063_publication-v1_wrapper.pdf
+[1][2][3]
+28951 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_dark-matter-cores-as1063_publication-v1_wrapper.xdv .build/texpdf/cosmos_dark-matter-cores-as1063_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1_wrapper.pdf
+[1][2][3]
+29765 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1_wrapper.xdv .build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evi_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.pdf
+[1][2]
+16341 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.xdv .build/texpdf/cosmos_the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-possible-evidence-of-self-i_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.pdf
+[1][2][3]
+31511 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.xdv .build/texpdf/cosmos_time-crystals-holography-minimal-ground_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1_wrapper.pdf"  ".build/texpdf/ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1_wrapper.xdv -> .build/texpdf/ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1_wrapper.pdf
+[1][2]
+16982 bytes written
+Latexmk: All targets (.build/texpdf/ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1_wrapper.xdv .build/texpdf/ethos_2026-02-23-how-should-ai-knowledge-be-governed-epistemic-authority-structur_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.pdf"  ".build/texpdf/ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.xdv -> .build/texpdf/ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.pdf
+[1][2]
+16525 bytes written
+Latexmk: All targets (.build/texpdf/ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.xdv .build/texpdf/ethos_2026-02-23-on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/ethos_epistemic-operators-awareness_publication-v1_wrapper.pdf"  ".build/texpdf/ethos_epistemic-operators-awareness_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/ethos_epistemic-operators-awareness_publication-v1_wrapper.xdv -> .build/texpdf/ethos_epistemic-operators-awareness_publication-v1_wrapper.pdf
+[1][2]
+29562 bytes written
+Latexmk: All targets (.build/texpdf/ethos_epistemic-operators-awareness_publication-v1_wrapper.xdv .build/texpdf/ethos_epistemic-operators-awareness_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.pdf"  ".build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.xdv -> .build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.pdf
+[1][2][3]
+21187 bytes written
+Latexmk: All targets (.build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.xdv .build/texpdf/ethos_on-translating-epistemic-operators-in-a-logic-of-awareness_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/ethos_research-literacy-confidence-rubric_publication-v1_wrapper.pdf"  ".build/texpdf/ethos_research-literacy-confidence-rubric_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/ethos_research-literacy-confidence-rubric_publication-v1_wrapper.xdv -> .build/texpdf/ethos_research-literacy-confidence-rubric_publication-v1_wrapper.pdf
+[1][2][3]
+18065 bytes written
+Latexmk: All targets (.build/texpdf/ethos_research-literacy-confidence-rubric_publication-v1_wrapper.xdv .build/texpdf/ethos_research-literacy-confidence-rubric_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/regenesis_2026-02-21-tcqs-biology_publication-v1_wrapper.pdf"  ".build/texpdf/regenesis_2026-02-21-tcqs-biology_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/regenesis_2026-02-21-tcqs-biology_publication-v1_wrapper.xdv -> .build/texpdf/regenesis_2026-02-21-tcqs-biology_publication-v1_wrapper.pdf
+[1][2]
+16592 bytes written
+Latexmk: All targets (.build/texpdf/regenesis_2026-02-21-tcqs-biology_publication-v1_wrapper.xdv .build/texpdf/regenesis_2026-02-21-tcqs-biology_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.pdf"  ".build/texpdf/regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.xdv -> .build/texpdf/regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.pdf
+[1][2]
+17225 bytes written
+Latexmk: All targets (.build/texpdf/regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.xdv .build/texpdf/regenesis_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/regenesis_bioelectricity-pump-alignment_publication-v1_wrapper.pdf"  ".build/texpdf/regenesis_bioelectricity-pump-alignment_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/regenesis_bioelectricity-pump-alignment_publication-v1_wrapper.xdv -> .build/texpdf/regenesis_bioelectricity-pump-alignment_publication-v1_wrapper.pdf
+[1][2]
+29065 bytes written
+Latexmk: All targets (.build/texpdf/regenesis_bioelectricity-pump-alignment_publication-v1_wrapper.xdv .build/texpdf/regenesis_bioelectricity-pump-alignment_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.pdf"  ".build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.xdv -> .build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.pdf
+[1][2]
+16369 bytes written
+Latexmk: All targets (.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.xdv .build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1_wrapper.pdf"  ".build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1_wrapper.xdv -> .build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1_wrapper.pdf
+[1][2][3]
+20459 bytes written
+Latexmk: All targets (.build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1_wrapper.xdv .build/texpdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/regenesis_sleep-regeneration-baseline_publication-v1_wrapper.pdf"  ".build/texpdf/regenesis_sleep-regeneration-baseline_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/regenesis_sleep-regeneration-baseline_publication-v1_wrapper.xdv -> .build/texpdf/regenesis_sleep-regeneration-baseline_publication-v1_wrapper.pdf
+[1][2][3]
+18271 bytes written
+Latexmk: All targets (.build/texpdf/regenesis_sleep-regeneration-baseline_publication-v1_wrapper.xdv .build/texpdf/regenesis_sleep-regeneration-baseline_publication-v1_wrapper.pdf) are up-to-date
+
+pdf_index_links=21
+PDF build complete.
+pipeline: items=39 tex=39 pdf=21 ready=0
+publications_links_rendered=21
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\s'
+  '''
+/home/xavier/cohera-repo/scripts/publication_pipeline.py:86: SyntaxWarning: invalid escape sequence '\i'
+  '''
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.pdf
+[1][2][3]
+25307 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.xdv .build/texpdf/cosmos_2026-02-21-hierarchical-self-engineering-chain-1_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.pdf
+[1][2][3]
+26313 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.xdv .build/texpdf/cosmos_2026-02-23-qualitative-coding-analysis-through-open-source-large-language-m_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.pdf
+[1][2][3]
+26561 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.xdv .build/texpdf/cosmos_2026-02-23-self-organized-bioelectricity-via-collective-pump-alignment-phys_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.xdv"'
+------------
+.build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.pdf
+[1][2][3]
+26472 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.xdv .build/texpdf/cosmos_2026-02-23-the-large-cores-of-dark-matter-and-globular-clusters-in-as1063-p_publication-v1_wrapper.pdf) are up-to-date
+
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv"'
+------------
