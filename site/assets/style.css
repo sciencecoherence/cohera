@@ -1,49 +1,106 @@
 :root {
-    --bg: #0d0d0d;
-    --text: #f0f0f0;
-    --accent: #444;
-    --dim: #888;
+  --bg: #050505;
+  --panel: #0f0f0f;
+  --text: #e0e0e0;
+  --dim: #777;
+  --accent: #00ff41; /* Coherent Green */
+  --border: #222;
 }
-body { 
-    background: var(--bg); 
-    color: var(--text); 
-    font-family: 'Inter', sans-serif; /* High-end sans-serif */
-    line-height: 1.8; 
-    max-width: 850px; 
-    margin: 5rem auto; 
-    padding: 0 2rem; 
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
 }
-h1 { 
-    font-family: 'Courier New', monospace;
-    text-transform: uppercase; 
-    letter-spacing: 6px; 
-    border-bottom: 1px solid var(--accent); 
-    padding-bottom: 2rem; 
-    margin-bottom: 3rem;
+
+main {
+  max-width: 800px;
+  width: 100%;
 }
-.mission { 
-    font-size: 1.2rem;
-    font-style: italic; 
-    color: var(--dim); 
-    border-left: 3px solid var(--accent); 
-    padding-left: 2rem; 
-    margin: 3rem 0; 
+
+/* Typography */
+h1 {
+  font-family: "Courier New", monospace;
+  font-size: 2.5rem;
+  font-weight: 200;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
 }
-nav a { 
-    color: var(--text); 
-    text-decoration: none; 
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    margin-right: 1.5rem;
-    border-bottom: 1px solid transparent;
+
+.mission {
+  font-family: "Georgia", serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--dim);
+  margin: 3rem 0;
+  padding-left: 2rem;
+  border-left: 1px solid var(--border);
 }
-nav a:hover { border-bottom: 1px solid var(--text); }
-.dashboard-item { 
-    font-family: monospace;
-    border: 1px solid var(--accent); 
-    padding: 1.5rem; 
-    margin-top: 1.5rem; 
-    background: #151515; 
-    color: #00ff41; /* "Heartbeat" green */
+
+/* Navigation */
+nav {
+  margin-bottom: 4rem;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+nav a:hover { opacity: 1; border-bottom: 1px solid var(--accent); }
+
+/* Dashboard Panel */
+#heartbeat {
+  margin-top: 5rem;
+}
+
+h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  color: #888;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px; height: 100%;
+  background: var(--accent);
+}
+
+footer {
+  margin-top: 6rem;
+  font-size: 0.7rem;
+  color: var(--dim);
+  letter-spacing: 1px;
 }
