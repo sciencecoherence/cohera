@@ -1,0 +1,504 @@
+% =====================================================================================
+% SCIENCE OF COHERENCE — COSMOS SECTION (Website + Paper Base)
+% Single-file LaTeX master you can feed to Gemini to generate website content pages.
+% Style: rigorous + philosophical + child-intuitive explanations, in parallel.
+% =====================================================================================
+
+\documentclass[11pt]{article}
+
+% --------------------------
+% Packages
+% --------------------------
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=cyan!55!black,
+  urlcolor=cyan!55!black,
+  citecolor=cyan!55!black
+}
+
+% --------------------------
+% Aesthetic + semantic macros
+% --------------------------
+\newcommand{\SiteTitle}{Science of Coherence — Cosmos}
+\newcommand{\ModelName}{the time-crystalline holographic universe} % introduced once; then refer implicitly
+\newcommand{\Substrate}{S}          % the only state space (your constraint)
+\newcommand{\Proj}{\Lambda}         % coherence / projection operator
+\newcommand{\Emerg}{\Omega}         % emergent effective operator
+\newcommand{\Integr}{\Delta}        % recursive self-modeling / integration operator
+\newcommand{\Htot}{H_{\mathrm{tot}}}% global generator (avoid confusion with Hilbert space H)
+\newcommand{\Floquet}{\mathcal{F}}  % Floquet update / stroboscopic evolution
+
+% --------------------------
+% Box styles (Website-friendly chunks)
+% --------------------------
+
+\tcbset{
+  colback=black!96!white,
+  colframe=cyan!30!black,
+  coltitle=white,
+  coltext=white,        % <-- IMPORTANT: body text color
+  colupper=white,       % <-- also ensures upper text is white
+  fonttitle=\bfseries,
+  boxrule=0.8pt,
+  arc=3mm,
+  left=3mm,right=3mm,top=2mm,bottom=2mm
+}
+
+
+\newtcolorbox{PortalBox}[1]{
+  title={#1},
+  colframe=cyan!35!black
+}
+
+\newtcolorbox{FormalBox}[1]{
+  title={Formal layer — #1},
+  colframe=violet!35!black
+}
+
+\newtcolorbox{MeaningBox}[1]{
+  title={Symbolic \& philosophical layer — #1},
+  colframe=yellow!40!black
+}
+
+\newtcolorbox{ChildBox}[1]{
+  title={Explain it like I’m 10 — #1},
+  colframe=green!35!black
+}
+
+\newtcolorbox{TestBox}[1]{
+  title={What would count as evidence? — #1},
+  colframe=orange!40!black
+}
+
+\newtcolorbox{WebsiteBox}[1]{
+  title={Website copy block — #1},
+  colframe=cyan!25!black
+}
+
+% --------------------------
+% Document
+% --------------------------
+\begin{document}
+\begin{center}
+{\LARGE \textbf{\SiteTitle}}\\[2mm]
+{\large \texttt{COSMOS} — Unified physics model: crystalline time, emergent space, holographic coherence}\\[2mm]
+{\small (Single-source LaTeX for paper-grade text \& website-ready copy blocks)}
+\end{center}
+
+\vspace{4mm}
+
+% =====================================================================================
+\section*{0. Page Identity (Website Hero)}
+% =====================================================================================
+
+\begin{WebsiteBox}{Hero headline + subheadline}
+\textbf{Headline:} COSMOS\\
+\textbf{Subheadline:} A coherent route from a single underlying state space to effective spacetime, fields, and histories.\\
+\textbf{One-line promise:} The universe can be modeled as a globally coherent generator whose periodic self-updates yield stable emergent structure.
+\end{WebsiteBox}
+
+\begin{PortalBox}{What COSMOS covers}
+This section is the \emph{physics door}: a compact, test-oriented framework for how time-periodic global dynamics can produce (i) stable recurrence, (ii) classical-looking sectors, and (iii) an emergent geometry—without assuming spacetime as fundamental.
+\end{PortalBox}
+
+\begin{MeaningBox}{Tone constraint}
+Throughout, the model is named once (above) and then referred to implicitly: \emph{the substrate}, \emph{the present framework}, \emph{this construction}. No acronym treadmill.
+\end{MeaningBox}
+
+% =====================================================================================
+\section*{1. One-Screen Summary (for visitors)}
+% =====================================================================================
+
+\begin{WebsiteBox}{The minimal story}
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item \textbf{Only state space:} the substrate $\Substrate$ is the sole arena of configurations.
+  \item \textbf{Global generator:} $\Htot$ governs coherent evolution on $\Substrate$.
+  \item \textbf{Local appearance:} a projection $\Proj$ yields contextual sectors (what any ``local observer'' can access).
+  \item \textbf{Emergent physics:} an effective operator $\Emerg$ organizes the projected sector into spacetime-like histories and field-like dynamics.
+  \item \textbf{Recurrence:} a Floquet-like update $\Floquet$ captures periodic self-consistency (time-crystalline recurrence).
+\end{itemize}
+\end{WebsiteBox}
+
+\begin{ChildBox}{A picture in words}
+Imagine reality as one gigantic musical instrument. The whole instrument has its own rule for vibrating ($\Htot$). You never hear the whole thing at once—your ears sample a slice ($\Proj$). From those slices you infer a story: space, time, particles, forces ($\Emerg$). If the instrument repeats a stable rhythm, you get a ``cosmic beat'' (recurrence).
+\end{ChildBox}
+
+% =====================================================================================
+\section*{2. Core Objects (clean ontology)}
+% =====================================================================================
+
+\subsection*{2.1 The substrate is the only state space}
+\begin{FormalBox}{State space axiom}
+We posit a single state space $\Substrate$ (the substrate). All physical descriptions—microscopic, macroscopic, and emergent—are descriptions \emph{of} $\Substrate$ or of structured restrictions of $\Substrate$.
+\[
+\textbf{Axiom (Only arena):}\qquad \mathcal{X} \equiv \Substrate.
+\]
+No additional fundamental arena (no independent spacetime manifold, no separate ``observer space'').
+\end{FormalBox}
+
+\begin{MeaningBox}{What this is buying you}
+This is an ontological austerity move: one arena, many faces. You avoid \emph{dual bookkeeping} (``matter on spacetime'' plus ``spacetime'' as separate primitive). Everything is a pattern in the substrate; geometry is a derived organizational principle, not a starting ingredient.
+\end{MeaningBox}
+
+\begin{ChildBox}{Like LEGO}
+There is only one kind of LEGO pile. Space, time, particles, and even clocks are different ways the LEGO pile can be arranged and read.
+\end{ChildBox}
+
+\subsection*{2.2 The global generator $\Htot$}
+\begin{FormalBox}{Global dynamics}
+$\Htot$ is the globally coherent generator acting on the substrate.
+\[
+\Htot:\Substrate \to \Substrate,
+\qquad
+\text{(generator of coherent evolution on the substrate).}
+\]
+When we need a time-evolution operator, we will write a unitary (or generalized) propagator $U(t)$ induced by $\Htot$:
+\[
+U(t)=\exp\!\left(-\frac{i}{\hbar}\Htot t\right)
+\quad \text{(symbolic placeholder; exact form may differ).}
+\]
+\end{FormalBox}
+
+\begin{MeaningBox}{Why call it ``global''}
+Global means: it is not \emph{defined} by local measurements. Local physics is a \emph{shadow} (projection) of the global evolution, not the source of it. This is the same directional arrow as holography: boundary/sector descriptions are derivative encodings of a deeper rule.
+\end{MeaningBox}
+
+\begin{ChildBox}{The universe’s rulebook}
+$\Htot$ is the rule for how the entire LEGO pile can change—before anyone zooms in and says “this part is a particle.”
+\end{ChildBox}
+
+\subsection*{2.3 The projection/coherence operator $\Proj$}
+\begin{FormalBox}{Local accessibility as projection}
+Local accessibility and classical-looking structure arise from a projection operator $\Proj$ that restricts global substrate configurations to partial contextual representations.
+\[
+\Proj:\Substrate \to \Substrate_{\mathrm{loc}}
+\]
+where $\Substrate_{\mathrm{loc}}$ denotes an accessible sector (a derived state space, not fundamental).
+\end{FormalBox}
+
+\begin{MeaningBox}{The philosophical punch}
+$\Proj$ is the principle of \emph{partial view}. Reality is whole; experience and instruments are slices. A slice can be internally coherent and lawful while still being incomplete. This is also where “separation” is manufactured: locality is not a primitive, it is a stable pattern of restricted access.
+\end{MeaningBox}
+
+\begin{ChildBox}{Flashlight in a cave}
+You’re in a huge cave (the substrate). You only see what your flashlight illuminates (projection). The cave is still there outside the beam.
+\end{ChildBox}
+
+\subsection*{2.4 The emergent effective operator $\Emerg$}
+\begin{FormalBox}{Emergent organization of histories}
+The effective operator $\Emerg$ encodes the emergent spacetime, fields, and histories accessible at the projected level:
+\[
+\Emerg \equiv \Emerg(\Htot,\Proj;\text{coherence constraints}).
+\]
+Interpretation: $\Emerg$ is induced by the global generator \emph{as seen through} the projection, under constraints that select stable coherent sectors.
+\end{FormalBox}
+
+\begin{MeaningBox}{Where ``spacetime'' lives}
+Spacetime is a \emph{bookkeeping layer}: a stable way to index correlations inside projected sectors. The framework does not deny spacetime— it demotes spacetime from “God-given stage” to “effective coordinate system that works extremely well.”
+\end{MeaningBox}
+
+\begin{ChildBox}{A map is not the land}
+$\Emerg$ is like the map you draw from your flashlight sightings. The map can be amazingly accurate and still not be the cave itself.
+\end{ChildBox}
+
+\subsection*{2.5 The integration operator $\Integr$ (recursive self-modeling)}
+\begin{FormalBox}{Closure and self-updating}
+$\Integr$ denotes recursive self-modeling / integration: memory-like feedback that stabilizes (or destabilizes) patterns across updates.
+\[
+\Integr:\ (\text{past projected structures}) \longrightarrow (\text{constraints on future structure})
+\]
+\end{FormalBox}
+
+\begin{MeaningBox}{Why this matters}
+A universe that can \emph{remember} constraints becomes a universe that can build persistent structure: laws, constants, quasi-particles, even living systems. $\Integr$ is the abstract handle for “the model updates itself using its own outputs.”
+\end{MeaningBox}
+
+\begin{ChildBox}{Learning}
+If reality can “learn” what works (stable patterns), it can keep those patterns around longer.
+\end{ChildBox}
+
+% =====================================================================================
+\section*{3. Time-Crystalline Recurrence (Floquet-style structure)}
+% =====================================================================================
+
+\subsection*{3.1 Stroboscopic update}
+\begin{FormalBox}{Floquet update (symbolic core)}
+Assume a fundamental recurrence with period $T$ at the global level, captured by a stroboscopic update operator
+\[
+\Floquet \;\equiv\; U(T).
+\]
+Time-crystalline behavior corresponds to persistent periodic structure under repeated application:
+\[
+\text{Recurrence:}\qquad \Floquet^{n}\ket{\Psi_0}\ \text{retains structured invariants for large }n.
+\]
+This is intentionally schematic: the claim is about \emph{stability under repeated drive}, not about committing prematurely to one microscopic Hamiltonian form.
+\end{FormalBox}
+
+\begin{MeaningBox}{The “cosmic heartbeat” metaphor (with teeth)}
+The recurrence is not a poetic add-on: it is a mechanism for why “laws” can look time-invariant even if the substrate is dynamic. Periodic self-consistency is a factory for robust invariants.
+\end{MeaningBox}
+
+\begin{ChildBox}{A spinning top}
+A top wobbles fast, but the wobble repeats. If the repetition is stable, you can predict it and build clocks from it.
+\end{ChildBox}
+
+\subsection*{3.2 Projection + recurrence = classical persistence}
+\begin{FormalBox}{Sector stability}
+A projected sector is stable when repeated global updates remain compatible with the projection:
+\[
+\Proj\,\Floquet \approx \Floquet_{\mathrm{loc}}\,\Proj
+\]
+for an effective local update $\Floquet_{\mathrm{loc}}$ on $\Substrate_{\mathrm{loc}}$. This is a commutation-style compatibility condition indicating that the sector “closes” under recurrence.
+\end{FormalBox}
+
+\begin{MeaningBox}{Why commutation shows up everywhere}
+When two operations commute, order doesn’t matter; that is the algebraic skeleton of “lawfulness.” Here, lawfulness means: update the world then look, or look then update—either way the story matches inside the slice.
+\end{MeaningBox}
+
+\begin{ChildBox}{Two ways to do the same thing}
+Whether you “zoom in first then press play” or “press play then zoom in,” you see the same kind of movie.
+\end{ChildBox}
+
+% =====================================================================================
+\section*{4. Emergent Geometry from Coherence}
+% =====================================================================================
+
+\subsection*{4.1 Relational distance as coherence-contrast}
+\begin{FormalBox}{Distance from distinguishability}
+Define a relational distance between two accessible states using an information-geometric measure of distinguishability (symbolic placeholder):
+\[
+d(\rho_1,\rho_2)\ \sim\ \text{Distinguishability}(\rho_1,\rho_2).
+\]
+In this framework, “far apart” means “hard to transform into each other within the stable sector,” often correlating with low coherence overlap under $\Proj$.
+\end{FormalBox}
+
+\begin{MeaningBox}{Space as a grammar of transformations}
+Space is not a container; it is a \emph{pattern of which transformations are easy vs hard}. Geometry is the language that summarizes the transformation grammar inside stable sectors.
+\end{MeaningBox}
+
+\begin{ChildBox}{Neighborhoods}
+Two houses are “close” if you can walk between them easily. In physics, two states are “close” if the system can move between them easily.
+\end{ChildBox}
+
+\subsection*{4.2 Why gravity might emerge}
+\begin{FormalBox}{Heuristic mechanism}
+If coherence acts like a resource that must remain consistent under recurrence, then gradients in coherence-structure can induce effective attractive dynamics—an emergent “pull” toward configurations that keep the sector stable.
+\[
+\text{(Sketch)}\qquad \text{effective attraction} \;\propto\; \nabla(\text{coherence-structure}).
+\]
+We keep this as a programmatic statement until a concrete functional is fixed.
+\end{FormalBox}
+
+\begin{MeaningBox}{Gravity as bookkeeping for stability pressure}
+Gravity becomes a macroscopic encoding of “stability pressure”: large-scale structure forms where the sector can keep renewing itself with minimal contradiction.
+\end{MeaningBox}
+
+\begin{ChildBox}{Why things clump}
+If certain arrangements keep working and repeating, the universe keeps them—so matter clumps into stars instead of dissolving into noise.
+\end{ChildBox}
+
+% =====================================================================================
+\subsection*{4.3 Holographic entanglement as the organizing principle}
+% =====================================================================================
+
+\begin{FormalBox}{Holographic entanglement (minimal, structural statement)}
+In holographic frameworks, the central lesson is that \emph{entanglement structure organizes geometry}.
+A canonical expression of this idea is that the entanglement entropy of a region $A$ is captured by an
+extremal (often minimal) surface $\gamma_A$ associated to $A$:
+\[
+S(A)\ \propto\ \frac{\mathrm{Area}(\gamma_A)}{4G\hbar},
+\]
+where the proportionality constants depend on the specific holographic realization.
+In the present framework, we do \emph{not} assume a pre-existing spacetime in which such a surface lives.
+Instead, we treat this equation as a \emph{design constraint}:
+
+\medskip
+\noindent
+\textbf{Organizing principle.}
+The effective geometry encoded by $\Emerg$ is the one for which ``cut-like'' measures of correlation
+between accessible subregions behave as extremal functionals (min-cut / max-flow structure),
+and those extremal values set the effective relational distances and areas.
+
+\medskip
+Operationally, let $A$ label an accessible subregion/sector after projection.
+We require that the emergent description admits an extremization principle of the schematic form
+\[
+\mathcal{S}(A)\ =\ \underset{\text{admissible cuts}}{\mathrm{extremum}}\;\;\mathcal{K}(\text{cut};A),
+\]
+where $\mathcal{S}(A)$ is a correlation/entanglement measure on the accessible description and
+$\mathcal{K}$ is a ``cut cost'' induced by coherence constraints and the dynamics.
+This is the substrate-native analogue of holographic entanglement: geometry is an encoding of how
+correlations can be separated at minimal cost.
+\end{FormalBox}
+
+\begin{MeaningBox}{Why this is the right organizing principle}
+Entanglement is not ``a thing sitting in space''—it is the pattern of inseparability that makes
+the very notion of \emph{inside/outside} meaningful. When you promote that inseparability pattern
+to the primary organizer, geometry becomes a \emph{compression scheme} for correlations:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item \textbf{Surfaces are not fundamental objects;} they are bookkeeping devices that summarize where correlations
+  ``bottleneck'' between regions.
+  \item \textbf{Distance is not a primitive;} it is a measure of how distinguishable two sectors are given the allowed
+  transformations and constraints.
+  \item \textbf{Locality is earned, not assumed;} it is what appears when the correlation network has stable sparse cuts
+  (easy separations) that persist under recurrence.
+\end{itemize}
+
+In other words: the emergent world is the most coherent narrative of \emph{who is entangled with whom},
+as stabilized by repeated global updates.
+\end{MeaningBox}
+
+\begin{ChildBox}{Threads and scissors}
+Imagine everything is connected by invisible rubber bands. Some parts have many strong bands between them,
+so they behave like a single object. If you try to separate them, it costs a lot.
+A ``surface'' is like the best place to cut the bands to split one region from another with the smallest effort.
+When the same best cuts keep showing up again and again, you get a stable idea of shape and distance:
+that is how space can emerge from connections.
+\end{ChildBox}
+
+\begin{TestBox}{What would count as evidence?}
+This principle becomes scientific when the framework specifies:
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item a concrete correlation/entanglement functional on the projected description (what exactly is $\mathcal{S}$?),
+  \item a concrete admissibility rule for cuts/flows (what exactly is an ``allowed'' separation in this substrate?),
+  \item a derived emergent metric/geometry from those extremal values (how do distances/areas compute?),
+  \item stability under the stroboscopic update (do the extremal structures persist across recurrence?).
+\end{itemize}
+Then the framework predicts quantitative relationships between correlation structure and effective geometry,
+and those can be compared to known holographic behaviors (and to controlled quantum systems).
+\end{TestBox}
+
+\begin{WebsiteBox}{Module — “Holographic entanglement”}
+The guiding idea is simple: geometry is what correlations look like when they become stable.
+Instead of assuming spacetime, we derive an effective geometry as the structure that best summarizes
+how the accessible world can be separated into parts with minimal loss of correlation.
+When the same “minimal cut” pattern persists under repeated global recurrence, locality and distance become real.
+\end{WebsiteBox}
+
+\begin{WebsiteBox}{Module — “Why this matters”}
+This turns holography into a constructive tool: it tells us what spacetime \emph{is made of}.
+Not matter-in-space, but correlation structure stabilized by coherence constraints.
+\end{WebsiteBox}
+
+% =====================================================================================
+\section*{5. Minimal Mathematical Architecture (the clean skeleton)}
+% =====================================================================================
+
+\begin{FormalBox}{The closure loop (core chain)}
+We use the self-engineering chain:
+\[
+\Htot \;\longrightarrow\; \Substrate \;\longrightarrow\; \Proj \;\longrightarrow\; \Emerg \;\longrightarrow\; \Integr \;\longrightarrow\; \Htot.
+\]
+Interpretation: global dynamics acts on the substrate; projection yields accessible sectors; emergent operator organizes effective physics; integration feeds constraints back into the generator, closing the loop.
+\end{FormalBox}
+
+\begin{MeaningBox}{A universe that bootstraps itself}
+This is the philosophical heart: “laws” are not externally imposed; they are internal fixed points of a self-consistency loop. Reality is an \emph{iterated coherence game} that selects what can keep existing.
+\end{MeaningBox}
+
+\begin{ChildBox}{A self-correcting story}
+The universe tells a story, checks it for contradictions, and adjusts so the story can continue.
+\end{ChildBox}
+
+% =====================================================================================
+\section*{6. Predictions, Constraints, and Referee-Proofing}
+% =====================================================================================
+
+\subsection*{6.1 What this framework must reproduce}
+\begin{FormalBox}{Non-negotiables}
+Any viable instantiation must reproduce:
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item standard quantum behavior in appropriate regimes,
+  \item relativistic causal structure as an emergent effective symmetry,
+  \item thermodynamic irreversibility as an emergent arrow (not assumed),
+  \item effective field dynamics and perturbations around stable sectors,
+  \item robustness under noise (otherwise no stable “classical world”).
+\end{itemize}
+\end{FormalBox}
+
+\subsection*{6.2 What is genuinely new here (and testable)}
+\begin{TestBox}{Test hooks (programmatic)}
+Potentially testable signatures depend on the chosen concrete coherence-functional, but the \emph{structural} predictions are:
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item \textbf{Recurrence signatures:} subtle periodic or quasi-periodic invariants at deep levels of description (where the effective theory still remembers the stroboscopic update).
+  \item \textbf{Sector stability thresholds:} sharp transitions when $\Proj$-compatibility fails (``classicality breaks'' in controlled systems).
+  \item \textbf{Geometry-from-information fingerprints:} distances and effective curvature correlating with distinguishability metrics rather than primitive coordinates.
+\end{itemize}
+\end{TestBox}
+
+\begin{MeaningBox}{How to avoid metaphysics drift}
+The framework becomes science when a concrete functional is fixed and used to compute: recurrence rates, stability boundaries, emergent metric structure, and effective field equations. Until then, the skeleton is a \emph{research program}, not a completed theory.
+\end{MeaningBox}
+
+% =====================================================================================
+\section*{7. Website Page Modules (copy-paste blocks)}
+% =====================================================================================
+
+\begin{WebsiteBox}{Module A — “What is COSMOS?”}
+COSMOS is the physics-facing branch of Science of Coherence. It models the universe as a single underlying substrate governed by a globally coherent generator. Local experience arises from projection—partial accessibility—while spacetime and fields emerge as stable organizational patterns inside projected sectors. A recurring (time-crystalline) update provides a mechanism for robust invariants that can look like “laws of nature.”
+\end{WebsiteBox}
+
+\begin{WebsiteBox}{Module B — “Why time-crystalline recurrence?”}
+A repeating global update is a natural factory for stable structure. If the substrate renews its coherence in cycles, patterns that remain compatible across cycles persist, while incompatible patterns decay. This offers a route to effective classical stability without assuming classicality as fundamental.
+\end{WebsiteBox}
+
+\begin{WebsiteBox}{Module C — “Why holographic?”}
+Holographic here means: the effective world is an encoding of deeper coherent dynamics. Spacetime is treated as a derived layer that summarizes correlations within stable sectors, not as the primitive stage on which reality happens.
+\end{WebsiteBox}
+
+\begin{WebsiteBox}{Module D — “The five symbols”}
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item $\Substrate$: the only arena of configurations.
+  \item $\Htot$: global coherent generator on the substrate.
+  \item $\Proj$: projection/coherence operator producing accessible sectors.
+  \item $\Emerg$: effective operator encoding emergent spacetime/fields/histories.
+  \item $\Integr$: recursive integration (memory-like feedback) closing the loop.
+\end{itemize}
+\end{WebsiteBox}
+
+% =====================================================================================
+\section*{8. Appendix: Placeholders for the next technical steps}
+% =====================================================================================
+
+\subsection*{8.1 Pick one coherence functional (do not overcomplicate)}
+\begin{FormalBox}{To be defined}
+Choose a single coherence-structure functional $\mathcal{C}[\Psi]$ or $\mathcal{C}[\rho]$ (notation choice later), and one informational free-energy style functional $\mathcal{F}$ that selects stable sectors. Keep it minimal.
+\[
+\mathcal{F} \;=\; \mathcal{E} \;-\; \kappa\,\mathcal{C}
+\qquad\text{(placeholder; finalize meanings/units once $\mathcal{C}$ is fixed).}
+\]
+\end{FormalBox}
+
+\subsection*{8.2 Derive the compatibility condition cleanly}
+\begin{FormalBox}{To be derived}
+Turn the schematic
+\[
+\Proj\,\Floquet \approx \Floquet_{\mathrm{loc}}\,\Proj
+\]
+into a precise condition (norm bound, channel distance, commutator constraint, etc.) that yields a sharp stability criterion.
+\end{FormalBox}
+
+\subsection*{8.3 Extract emergent geometry}
+\begin{FormalBox}{To be derived}
+Specify the distinguishability metric (e.g., Fisher-like or Fubini--Study-like in an appropriate representation) and map it to an emergent relational geometry inside stable sectors.
+\end{FormalBox}
+
+\vspace{3mm}
+\begin{center}
+{\small \textit{End of COSMOS base file. This is meant to be iterated section-by-section.}}
+\end{center}
+
+\end{document}
