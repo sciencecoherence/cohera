@@ -1,124 +1,202 @@
 :root {
-    --bg: #ececec;
-    --fg: #111111;
-    --accent: #ff3300;
-    --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-mono: "Courier New", Courier, monospace;
+    --bg: #e5e5e5;
+    --fg: #0a0a0a;
+    --accent: #ff2a00;
+    --font-sans: "Helvetica Neue", "Inter", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    --font-mono: "JetBrains Mono", "Courier New", Courier, monospace;
+    --border: 2px solid var(--fg);
 }
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    margin: 0;
-    padding: 2vw 4vw;
     background-color: var(--bg);
     color: var(--fg);
-    font-family: var(--font);
-    line-height: 1.4;
+    font-family: var(--font-sans);
+    line-height: 1.5;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Layout */
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Header */
 header {
-    border-bottom: 3px solid var(--fg);
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-end;
+    border-bottom: var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 3rem;
 }
 
-h1 {
-    font-size: 5vw;
-    margin: 0;
-    letter-spacing: -0.04em;
-    font-weight: 700;
+.logo {
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--fg);
+}
+
+.logo span {
+    color: var(--accent);
 }
 
 nav {
     display: flex;
-    gap: 2rem;
-    font-size: 1.2rem;
-    font-weight: bold;
+    gap: 3vw;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 nav a {
     color: var(--fg);
     text-decoration: none;
-    border-bottom: 2px solid transparent;
+    position: relative;
+    padding-bottom: 0.2rem;
 }
 
-nav a:hover, nav a.active {
-    border-bottom: 2px solid var(--accent);
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--fg);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after, nav a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+nav a.active {
     color: var(--accent);
 }
+nav a.active::after {
+    background-color: var(--accent);
+}
 
-.mission-statement {
-    font-size: 3vw;
-    max-width: 80%;
+/* Typography */
+.mission {
+    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    max-width: 90%;
     margin-bottom: 4rem;
-    line-height: 1.2;
-    font-weight: 600;
-    letter-spacing: -0.02em;
 }
 
 .highlight {
     background-color: var(--fg);
     color: var(--bg);
-    padding: 0 0.5rem;
-}
-
-.dashboard {
-    border: 3px solid var(--fg);
-    padding: 2rem;
-    background: #fff;
-}
-
-.dashboard-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--fg);
-    padding-bottom: 0.5rem;
-}
-
-.log-entry {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    text-transform: none;
+    padding: 0 0.5vw;
 }
 
 .section-title {
-    font-size: 3vw;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    border-bottom: 3px solid var(--fg);
-    padding-bottom: 1rem;
-}
-
-.feed-item {
-    border: 2px solid var(--fg);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    background: #fff;
-}
-
-.feed-date {
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 400;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Grid & Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    border: var(--border);
+    padding: 1.5rem;
+    background: var(--bg);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    background: var(--fg);
+    color: var(--bg);
+}
+
+.card-meta {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-meta .accent-text {
     color: var(--accent);
-    margin-bottom: 0.5rem;
 }
 
-.feed-title {
+.card:hover .card-meta .accent-text {
+    color: var(--bg);
+}
+
+.card-title {
     font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 0 1rem 0;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
 }
 
-.feed-body {
+.card-body {
     text-transform: none;
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    flex: 1;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    border-top: var(--border);
+    padding-top: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    nav {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
