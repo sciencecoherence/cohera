@@ -12,7 +12,6 @@ BUILD_DIR="$REPO_ROOT/.build/texpdf"
 mkdir -p "$PDF_DIR" "$BUILD_DIR"
 rm -f "$PDF_DIR"/*.pdf
 
-# Build allowlisted + already-ready manuscripts.
 mapfile -t BUILD_TEX < <(
 python3 - <<'PY'
 import json, os
@@ -105,58 +104,33 @@ EOF
   fi
 done
 
+# SIMPLE INDEX: links only (as requested)
 python3 - <<'PY'
-import json, os
+import os
 from pathlib import Path
 repo = Path(os.environ['REPO_ROOT'])
 pdf_dir = repo / 'site/publications/pdf'
 pdf_dir.mkdir(parents=True, exist_ok=True)
-ready_path = repo / 'chatgpt/publication_ready.json'
-ready = []
-if ready_path.exists():
-    ready = json.loads(ready_path.read_text(encoding='utf-8')).get('ready', [])
-
-cards, seen = [], set()
-for r in ready:
-    pdf_raw = Path(r.get('pdf') or '').name
-    if not pdf_raw:
-        continue
-    canonical = pdf_raw.replace('.pdf', '_publication-v1.pdf')
-    chosen = canonical if (pdf_dir / canonical).exists() else pdf_raw
-    if not (pdf_dir / chosen).exists() or chosen in seen:
-        continue
-    seen.add(chosen)
-    cards.append({
-        'title': r.get('title') or chosen,
-        'thread': r.get('thread','unknown'),
-        'abstract': (r.get('abstract') or '').strip(),
-        'pdf': chosen,
-    })
+pdfs = sorted([p.name for p in pdf_dir.glob('*.pdf') if p.is_file()])
 
 lines = [
 '<!doctype html>','<html lang="en">','<head>',
 '  <meta charset="utf-8" />','  <meta name="viewport" content="width=device-width, initial-scale=1" />',
 '  <title>PDF Publications · Cohera Lab</title>','  <link rel="stylesheet" href="/cohera/assets/style.css" />','</head>','<body>',
 '  <header><div class="container nav"><strong>Cohera Lab</strong><nav class="nav-links">',
-'    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/publications/tex/index.html">TeX Sources</a>',
+'    <a href="/cohera/index.html">Home</a><a href="/cohera/research/index.html">Research</a><a href="/cohera/publications/index.html">Publications</a><a href="/cohera/status/index.html">Status</a>',
 '  </nav></div></header>','  <main class="container">',
-'    <section class="hero"><h1>PDF Publications</h1><p class="small">Final reader-ready papers only.</p></section>'
+'    <section class="hero"><h1>PDF Publications</h1></section>',
+'    <section class="card"><ul class="clean">'
 ]
-if cards:
-    for c in cards:
-        lines += [
-            '    <section class="card">',
-            f'      <h3>{c["title"]}</h3>',
-            f'      <p class="small"><strong>Thread:</strong> {c["thread"]}</p>',
-            f'      <p>{c["abstract"][:420] if c["abstract"] else "Publication-ready manuscript."}</p>',
-            f'      <p><a href="/cohera/publications/pdf/{c["pdf"]}">Open PDF →</a></p>',
-            '    </section>',
-        ]
+if pdfs:
+    for n in pdfs:
+        lines.append(f'      <li><a href="/cohera/publications/pdf/{n}">{n}</a></li>')
 else:
-    lines += ['    <section class="card"><p>No publication-ready PDFs yet.</p></section>']
-lines += ['  </main>','</body>','</html>']
-(pdf_dir / 'index.html').write_text('\n'.join(lines)+'\n', encoding='utf-8')
-print(f'pdf_index_cards={len(cards)}')
+    lines.append('      <li>No PDFs published yet.</li>')
+lines += ['    </ul></section>','  </main>','</body>','</html>']
+(pdf_dir/'index.html').write_text('\n'.join(lines)+'\n', encoding='utf-8')
+print(f'pdf_index_links={len(pdfs)}')
 PY
 
 if [ ${#FAILED_BUILDS[@]} -gt 0 ]; then
