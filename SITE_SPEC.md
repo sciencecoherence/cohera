@@ -2,7 +2,7 @@
 Version: 1.1
 
 ## Changelog
-- **2026-02-22**: Updated to reflect Cosmos/Regenesis/Ethos threads and Trading microsite.
+- **2026-02-22**: Updated to reflect Cosmos/Regenesis/Ethos threads
 
 ## Purpose
 This site is Cohera’s independent research/publishing website, hosted at:
@@ -19,7 +19,8 @@ The site is divided into a main research hub and a separated trading microsite.
 - **Ethos** (`/site/ethos/`): Epistemology, research literacy.
 
 **Shared Resources**:
-- **Publications**: `/site/publications/` (Findings reports, changelogs, audits).
+- **Research**: `/site/research/` (Findings reports, changelogs, audits).
+- **Publications**: `/site/publications/` (Published PDFs)
 - **Glossary**: `/site/glossary/`.
 - **Contact**: `/site/contact/`.
 - **Assets**: `/site/assets/style.css` (Main "Premium" design).
