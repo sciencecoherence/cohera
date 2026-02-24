@@ -2579,3 +2579,31 @@ Run number 1 of rule 'xdvipdfmx'
 ------------
 Running 'xdvipdfmx -E -o ".build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf"  ".build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv"'
 ------------
+.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv -> .build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf
+[1][2][3]
+31482 bytes written
+Latexmk: All targets (.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.xdv .build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf) are up-to-date
+
+mv: cannot move '/home/xavier/cohera-repo/.build/texpdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1_wrapper.pdf' to '/home/xavier/cohera-repo/site/publications/pdf/cosmos_cosmos-v5-coherence-operators-and-emergent-geometry_publication-v1.pdf': No such file or directory
+Traceback (most recent call last):
+  File "/home/xavier/cohera-repo/scripts/publication_pipeline.py", line 318, in <module>
+    main()
+  File "/home/xavier/cohera-repo/scripts/publication_pipeline.py", line 300, in main
+    sync_pdf_index_ready(results)
+  File "/home/xavier/cohera-repo/scripts/publication_pipeline.py", line 237, in sync_pdf_index_ready
+    (PDF_DIR / 'index.html').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+  File "/usr/lib/python3.12/pathlib.py", line 1049, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/xavier/cohera-repo/site/publications/pdf/index.html'
+publication_sanity_guard: repaired ready 0 -> 0
+Traceback (most recent call last):
+  File "/home/xavier/cohera-repo/scripts/research_daily_findings.py", line 127, in <module>
+    main()
+  File "/home/xavier/cohera-repo/scripts/research_daily_findings.py", line 95, in main
+    <li>Active Candidates: <span class="highlight">{pipe.get('totals',{{}}).get('items',0)}</span></li>
+                                                                      ^^^^
+TypeError: unhashable type: 'dict'
