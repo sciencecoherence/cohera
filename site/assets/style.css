@@ -135,7 +135,7 @@ nav a.active::after {
 }
 
 .grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .card {
@@ -206,5 +206,8 @@ footer {
     }
     .mission {
         max-width: 100%;
+    }
+    .grid-2 {
+        grid-template-columns: 1fr;
     }
 }
