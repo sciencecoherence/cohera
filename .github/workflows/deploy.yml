@@ -15,6 +15,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Clean target directory before upload
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ secrets.HOSTINGER_PORT }}
+          script: |
+            mkdir -p "${{ secrets.HOSTINGER_TARGET_DIR }}"
+            find "${{ secrets.HOSTINGER_TARGET_DIR }}" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+
       - name: Upload site via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -28,4 +39,4 @@ jobs:
 
       - name: Deployment summary
         run: |
-          echo "Deployed site/** to Hostinger target directory." >> "$GITHUB_STEP_SUMMARY"
+          echo "Deployed site/** to Hostinger target directory after clearing stale files." >> "$GITHUB_STEP_SUMMARY"
