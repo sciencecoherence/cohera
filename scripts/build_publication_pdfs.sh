@@ -14,37 +14,19 @@ rm -f "$PDF_DIR"/*.pdf
 
 mapfile -t BUILD_TEX < <(
 python3 - <<'PY'
-import json, os
+import os
 from pathlib import Path
 repo = Path(os.environ['REPO_ROOT'])
 tex_dir = repo / 'site/publications/tex'
-ready_path = repo / 'chatgpt/publication_ready.json'
-allow_path = repo / 'chatgpt/publication_allowlist.json'
-selected, seen = [], set()
+selected = []
 
-allow = []
-if allow_path.exists():
-    allow = json.loads(allow_path.read_text(encoding='utf-8')).get('slugs', [])
-for slug in allow:
-    slug = (slug or '').lower()
-    for p in sorted(tex_dir.glob('*.tex')):
-        stem = p.stem.lower()
-        if 'chat-corpus' in stem:
-            continue
-        if slug in stem and 'auto-' not in p.name and p not in seen:
-            selected.append(str(p)); seen.add(p)
+# Primary: publication-ready manuscript tracks only.
+for p in sorted(tex_dir.glob('*_publication-v1.tex')):
+    if 'chat-corpus' in p.stem.lower():
+        continue
+    selected.append(str(p))
 
-if ready_path.exists():
-    data = json.loads(ready_path.read_text(encoding='utf-8'))
-    for row in data.get('ready', []):
-        tex = row.get('tex')
-        if tex:
-            p = repo / tex
-            if p.exists() and p.suffix == '.tex' and p not in seen:
-                if 'chat-corpus' in p.stem.lower():
-                    continue
-                selected.append(str(p)); seen.add(p)
-
+# Fallback: any non-autodraft tex.
 if not selected:
     for p in sorted(tex_dir.glob('*.tex')):
         stem = p.stem.lower()
