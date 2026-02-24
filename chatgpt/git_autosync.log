@@ -1115,3 +1115,8 @@ From github.com-cohera:sciencecoherence/cohera
 From github.com-cohera:sciencecoherence/cohera
  * branch            main       -> FETCH_HEAD
 [2026-02-23T20:45:01-05:00] autosync start
+[main 1cc14ec] autosync: 2026-02-23 20:45:01 -0500
+ 20 files changed, 276 insertions(+), 387 deletions(-)
+ create mode 100644 chatgpt/research_delta_latest.md
+ delete mode 100644 site/css/style.css
+ create mode 100644 site/publications/pdf/regenesis_self-organized-bioelectricity-via-collective-pump-alignment-physical-origin-of-chemiosmosi_publication-v1.pdf
