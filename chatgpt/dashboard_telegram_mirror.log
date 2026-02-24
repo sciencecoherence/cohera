@@ -536,3 +536,5 @@ mirror: forwarded=0 from=81ad3a1a-6bee-41d2-85e6-0ce25466f230.jsonl
 /usr/bin/python3: can't open file '/home/xavier/cohera-repo/scripts/dashboard_telegram_mirror.py': [Errno 2] No such file or directory
 /usr/bin/python3: can't open file '/home/xavier/cohera-repo/scripts/dashboard_telegram_mirror.py': [Errno 2] No such file or directory
 /usr/bin/python3: can't open file '/home/xavier/cohera-repo/scripts/dashboard_telegram_mirror.py': [Errno 2] No such file or directory
+/usr/bin/python3: can't open file '/home/xavier/cohera-repo/scripts/dashboard_telegram_mirror.py': [Errno 2] No such file or directory
+/usr/bin/python3: can't open file '/home/xavier/cohera-repo/scripts/dashboard_telegram_mirror.py': [Errno 2] No such file or directory
