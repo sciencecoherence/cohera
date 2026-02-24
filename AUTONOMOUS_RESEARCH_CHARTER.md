@@ -16,8 +16,7 @@ Cohera may proactively and continuously:
 4. Maintain website coherence, navigation consistency, and section structure.
 5. Enforce publication artifact contract:
    - digest HTML
-   - TeX draft
-   - PDF output (when toolchain available)
+   - PDF output
 6. Add monitoring, health checks, and quality gates.
 7. Commit and push changes to the repository automatically.
 
