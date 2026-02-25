@@ -227,18 +227,50 @@ def render_card(date_str: str, tag: str, title: str, body: str, link: str | None
                 </div>"""
 
 
+def find_grid_div_bounds(text: str, grid_class_snippet: str) -> tuple[int, int] | None:
+    """Return [start, end) bounds for the first <div class="...grid..."> block."""
+    open_pat = re.compile(rf'<div\s+class="[^"]*{re.escape(grid_class_snippet)}[^"]*">')
+    m = open_pat.search(text)
+    if not m:
+        return None
+
+    # Find matching </div> using depth counting from the matched opening div.
+    token_pat = re.compile(r'<div\b[^>]*>|</div>', re.IGNORECASE)
+    depth = 0
+    end_pos = None
+    for t in token_pat.finditer(text, m.start()):
+        tok = t.group(0).lower()
+        if tok.startswith("<div"):
+            depth += 1
+        else:
+            depth -= 1
+            if depth == 0:
+                end_pos = t.end()
+                break
+
+    if end_pos is None:
+        return None
+    return (m.start(), end_pos)
+
+
 def insert_blocks_after_grid_open(file_path: pathlib.Path, grid_class_snippet: str, blocks: list[tuple[str, str]]) -> int:
     """
     blocks: list of (unique_marker_id, html_block)
     Inserts right after opening <div class="..."> of matching grid class.
+
+    Boundary contract:
+    - only mutate inside the matched grid <div>...</div>
+    - everything before/after that block must stay byte-identical
     """
     if not file_path.exists() or not blocks:
         return 0
 
     text = file_path.read_text(encoding="utf-8")
-    inserted = 0
 
-    # find opening grid div
+    old_bounds = find_grid_div_bounds(text, grid_class_snippet)
+    if not old_bounds:
+        return 0
+
     open_pat = re.compile(rf'(<div\s+class="[^"]*{re.escape(grid_class_snippet)}[^"]*">)')
     m = open_pat.search(text)
     if not m:
@@ -257,9 +289,22 @@ def insert_blocks_after_grid_open(file_path: pathlib.Path, grid_class_snippet: s
     insertion = "\n" + "\n".join(inject_chunks) + "\n"
     idx = m.end()
     new_text = text[:idx] + insertion + text[idx:]
+
+    # Boundary safety check: no mutations allowed outside target grid block.
+    new_bounds = find_grid_div_bounds(new_text, grid_class_snippet)
+    if not new_bounds:
+        raise RuntimeError(f"Boundary check failed: cannot locate grid in updated file {file_path}")
+
+    old_start, old_end = old_bounds
+    new_start, new_end = new_bounds
+
+    if text[:old_start] != new_text[:new_start] or text[old_end:] != new_text[new_end:]:
+        raise RuntimeError(
+            f"Boundary check failed for {file_path}: detected modifications outside .{grid_class_snippet} block"
+        )
+
     file_path.write_text(new_text, encoding="utf-8")
-    inserted = len(inject_chunks)
-    return inserted
+    return len(inject_chunks)
 
 
 def append_home_and_research(feed_items: list[dict]) -> tuple[int, int]:
