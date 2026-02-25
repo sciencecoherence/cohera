@@ -13,9 +13,9 @@ echo "=============================================="
 
 # I. The Input
 echo "Ingesting /Chat archives..."
-mkdir -p /home/xavier/cohera-repo/research/Cosmos
-mkdir -p /home/xavier/cohera-repo/research/Regenesis
-mkdir -p /home/xavier/cohera-repo/research/Ethos
+mkdir -p /home/xavier/.openclaw/workspace/cohera-repo/research/Cosmos
+mkdir -p /home/xavier/.openclaw/workspace/cohera-repo/research/Regenesis
+mkdir -p /home/xavier/.openclaw/workspace/cohera-repo/research/Ethos
 
 # II. The Search (External Grounding placeholder)
 echo "Cross-referencing Time-Crystalline Biology & Metabolic Regeneration..."

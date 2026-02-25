@@ -5,13 +5,13 @@
 
 set -e
 
-mkdir -p /home/xavier/cohera-repo/chatgpt
-LOG_FILE="/home/xavier/cohera-repo/chatgpt/recursive_cron.log"
+mkdir -p /home/xavier/.openclaw/workspace/cohera-repo/chatgpt
+LOG_FILE="/home/xavier/.openclaw/workspace/cohera-repo/chatgpt/recursive_cron.log"
 DATE_STR=$(date +"%d/%m/%Y %H:%M:%S")
 
 echo "[$DATE_STR] Initiating recursive research pipeline..." >> "$LOG_FILE"
 
-cd /home/xavier/cohera-repo
+cd /home/xavier/.openclaw/workspace/cohera-repo
 bash research_pipeline.sh >> "$LOG_FILE" 2>&1
 
 echo "[$DATE_STR] Pipeline execution finished." >> "$LOG_FILE"
