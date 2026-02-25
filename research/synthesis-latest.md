@@ -1,30 +1,26 @@
-# Cohera Synthesis Brief — 2026-02-25 17:04 (Lima)
+# Cohera Synthesis Brief — 2026-02-25 18:12 (Lima)
 
 This brief consolidates the latest research discoveries into publication candidates.
 
 ## Priority candidates
 
-- **cyclinbayes: Bayesian Causal Discovery with Linear Non-Gaussian Directed Acyclic and Cyclic Graphical Models**
+- **Automata Learning with an Incomplete but Inductive Teacher**
   - Topic: digital twins uncertainty
-  - Claim to test: We introduce cyclinbayes, an open-source R package for discovering linear causal relationships with both acyclic and cyclic structures. The package employs scalable Bayesian…
-  - Citation: Robert Lee, Raymond K. W. Wong, Yang Ni (2026-02-24). cyclinbayes: Bayesian Causal Discovery with Linear Non-Gaussian Directed Acyclic and Cyclic Graphical Models. arXiv. http://arxiv.org/abs/2602.21170v1
-- **Not Just How Much, But Where: Decomposing Epistemic Uncertainty into Per-Class Contributions**
-  - Topic: digital twins uncertainty
-  - Claim to test: In safety-critical classification, the cost of failure is often asymmetric, yet Bayesian deep learning summarises epistemic uncertainty with a single scalar, mutual information…
-  - Citation: Mame Diarra Toure, David A. Stephens (2026-02-24). Not Just How Much, But Where: Decomposing Epistemic Uncertainty into Per-Class Contributions. arXiv. http://arxiv.org/abs/2602.21160v1
-- **SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards**
-  - Topic: digital twins uncertainty
-  - Claim to test: Large language models (LLMs) are increasingly deployed as multi-step decision-making agents, where effective reward design is essential for guiding learning. Although recent work…
-  - Citation: Dengjia Zhang, Xiaoou Liu, Lu Cheng, Yaqing Wang et al. (2026-02-24). SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards. arXiv. http://arxiv.org/abs/2602.21158v1
-- **Geometry- and inertia-limited chaotic growth in classical many-body systems**
+  - Claim to test: Active automata learning (AAL) under a Minimally Adequate Teacher (MAT) has been successfully used to infer a regular language through membership and equivalence queries. This…
+  - Citation: Daniel Stan, Adrien Pommellet, Juliette Jacquot (2026-02-24). Automata Learning with an Incomplete but Inductive Teacher. arXiv. http://arxiv.org/abs/2602.21073v1
+- **Criticality Beyond Nonanalyticity: Intrinsic Microcanonical Signatures of Phase Transitions**
   - Topic: self-organization nonequilibrium thermodynamics
-  - Claim to test: Chaotic instability in many-body systems is commonly quantified by the largest Lyapunov exponent, yet general constraints on its magnitude in classical interacting systems remain…
-  - Citation: Swetamber Das (2026-02-24). Geometry- and inertia-limited chaotic growth in classical many-body systems. arXiv. http://arxiv.org/abs/2602.21149v1
-- **Controlling inertial active Brownian motion via stochastic resetting**
+  - Claim to test: Phase transitions are conventionally defined by nonanalyticities of thermodynamic potentials in the thermodynamic limit. In this Letter, we show that the singularity is not the…
+  - Citation: Loris Di Cairano (2026-02-24). Criticality Beyond Nonanalyticity: Intrinsic Microcanonical Signatures of Phase Transitions. arXiv. http://arxiv.org/abs/2602.21003v1
+- **Observation of sequential quantum oscillations induced by mini-Landau bands in a three-dimensional Dirac semiconductor**
   - Topic: self-organization nonequilibrium thermodynamics
-  - Claim to test: Inertia is intrinsic to many living and synthetic active systems, from animals and robotic agents to colloidal swimmers, and it strongly shapes transport. Many such systems employ…
-  - Citation: Manish Patel, Amir Shee (2026-02-24). Controlling inertial active Brownian motion via stochastic resetting. arXiv. http://arxiv.org/abs/2602.21134v1
-- **SOM-VQ: Topology-Aware Tokenization for Interactive Generative Models**
+  - Claim to test: Quantum oscillations, the oscillatory behavior of electrical and thermodynamic properties, are typically observed in metals and vanish in the quantum limit under strong magnetic…
+  - Citation: Zezhi Wang, Dong Xing, Bingbing Tong, Senyang Pan et al. (2026-02-24). Observation of sequential quantum oscillations induced by mini-Landau bands in a three-dimensional Dirac semiconductor. arXiv. http://arxiv.org/abs/2602.20998v1
+- **A One-Dimensional Reduction Method for Calculating Thermal Expansion in Solids: Application to Orthorhombic Systems**
   - Topic: self-organization nonequilibrium thermodynamics
-  - Claim to test: Vector-quantized representations enable powerful discrete generative models but lack semantic structure in token space, limiting interpretable human control. We introduce SOM-VQ,…
-  - Citation: Alessandro Londei, Denise Lanzieri, Matteo Benati (2026-02-24). SOM-VQ: Topology-Aware Tokenization for Interactive Generative Models. arXiv. http://arxiv.org/abs/2602.21133v1
+  - Claim to test: Anisotropic thermal expansion plays a critical role in the performance and reliability of functional materials, yet its theoretical description remains limited. Here, a…
+  - Citation: Dmitry Vasilyev (2026-02-24). A One-Dimensional Reduction Method for Calculating Thermal Expansion in Solids: Application to Orthorhombic Systems. arXiv. http://arxiv.org/abs/2602.20957v1
+- **Body-Reservoir Governance in Repeated Games: Embodied Decision-Making, Dynamic Sentinel Adaptation, and Complexity-Regularized Optimization**
+  - Topic: self-organization nonequilibrium thermodynamics
+  - Claim to test: Standard game theory explains cooperation in repeated games through conditional strategies such as Tit-for-Tat (TfT), but these require continuous computation that imposes…
+  - Citation: Yuki Nakamura (2026-02-24). Body-Reservoir Governance in Repeated Games: Embodied Decision-Making, Dynamic Sentinel Adaptation, and Complexity-Regularized Optimization. arXiv. http://arxiv.org/abs/2602.20846v1

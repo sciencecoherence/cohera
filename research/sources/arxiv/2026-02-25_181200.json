@@ -1,0 +1,464 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2602.21206v1",
+    "title": "Minimal loop currents in doped Mott insulators",
+    "summary": "For the $t$-$J$ model, variational wave functions can generally be constructed based on an accurate description of antiferromagnetism (AFM) at half-filling and an exact phase-string sign structure under doping. The single-hole-doped and two-hole-doped states, as determined by variational Monte Carlo (VMC) simulations, display sharply contrasting behaviors. The single-hole state constitutes a ``cat state'' that resonates strongly between a quasiparticle component and a local loop-current component, with approximately equal weights. In the ground state, the quasiparticle spectral weight $Z_{\\mathbf{k}}$ peaks at momenta $\\mathbf{k}_0 \\equiv (\\pm\\fracπ{2},\\pm\\fracπ{2})$. The total-energy dispersion versus $\\mathbf{k}$ agrees remarkably well with the Green function Monte Carlo results. However, Landau's one-to-one correspondence hypothesis for quasiparticles breaks down here with the incoherent component exhibiting intrinsic magnetization originating from a minimal $2\\times2$ loop current that forms a $4\\times4$ pattern on the square lattice--a finding in excellent agreement with density matrix renormalization group (DMRG) calculations. In the two-hole ground state, a new pairing mechanism is revealed: the two holes are automatically fused into a tightly bound object consisting of an incoherent $d_{xy}$ pairing along the diagonal direction by compensating the local loop currents. This hole pair is again a ``cat state'' that resonates strongly between the incoherent $d_{xy}$ and a coherent $d_{x^2-y^2}$ Cooper channel to gain substantial hopping energy. Its size extends over an area of about $4\\times 4$ lattice spacings, much smaller than the divergent AFM correlation length, implying that it should survive as a minimal superconducting building block even in the dilute doping regime. Experimental implications and the generalization to the finite-doping case are briefly addressed.",
+    "published": "2026-02-24T18:59:58Z",
+    "updated": "2026-02-24T18:59:58Z",
+    "authors": [
+      "Can Cui",
+      "Jing-Yu Zhao",
+      "Zheng-Yu Weng"
+    ],
+    "pdf": "",
+    "topic": "time crystal biology",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21205v1",
+    "title": "The JWST Resolved Stellar Populations Early Release Science Program. IX. The RR Lyrae Population in WLM with HST and JWST",
+    "summary": "RR Lyrae stars are a common, dependable Population II distance indicator, and provide an independent tracer of early star formation. Here, we utilize archival HST/ACS and JWST/NIRCam observations of the nearby dwarf star-forming galaxy WLM to study RR Lyrae in JWST filters. We independently identify RR Lyrae in HST and JWST imaging in order to evaluate JWST's efficacy at characterizing RR Lyrae in the near-IR. We use an MCMC template-fitting technique to obtain periods, amplitudes, and mean magnitudes from the RR Lyrae time-series data. The spatially overlapping HST and JWST observations allow us to directly compare the same sources observed with the instruments, and calibrate the NIRCam F090W and F150W RR Lyrae period-Wesenheit-metallicity (PWZ) relation to the Gaia-consistent HST PWZ. We additionally assess the epoch-to-epoch consistency of NIRCam photometry, and find evidence of burn-in. We conclude that the zero-point offset is negligible compared to the uncertainties from the template fitting. We conduct an MCMC fit of the PWZ with both HST and JWST data. Our results are three-fold. First, we find that we can reliably identify RR Lyrae in NIRCam data, but light-curve template fitting proves difficult on short-baseline observations. Second, the HST PWZ fit yields a distance modulus to WLM of $μ= 24.85\\pm0.05$ ($0.93\\pm0.02$ Mpc). This is closer than previous measurements, primarily attributed to consistency with the Gaia scale. Lastly, although the JWST PWZ fit has large uncertainties and a poorly-constrained slope, it represents a first-of-its-kind PWZ calibration in NIRCam filters.",
+    "published": "2026-02-24T18:59:50Z",
+    "updated": "2026-02-24T18:59:50Z",
+    "authors": [
+      "Catherine M. Slaughter",
+      "Evan D. Skillman",
+      "Alessandro Savino",
+      "Daniel R. Weisz",
+      "Meredith Durbin",
+      "Jay Anderson",
+      "Martha L. Boyer",
+      "Roger E. Cohen",
+      "Andrew A. Cole",
+      "Matteo Correnti",
+      "Andrew E. Dolphin",
+      "Marla C. Geha",
+      "Mario Gennaro",
+      "Nitya Kallivayalil",
+      "Evan N. Kirby",
+      "Kristen B. W. McQuinn",
+      "Max J. B. Newman",
+      "Jack T. Warfield",
+      "Benjamin F. Williams"
+    ],
+    "pdf": "",
+    "topic": "digital twins uncertainty",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21204v1",
+    "title": "Test-Time Training with KV Binding Is Secretly Linear Attention",
+    "summary": "Test-time training (TTT) with KV binding as sequence modeling layer is commonly interpreted as a form of online meta-learning that memorizes a key-value mapping at test time. However, our analysis reveals multiple phenomena that contradict this memorization-based interpretation. Motivated by these findings, we revisit the formulation of TTT and show that a broad class of TTT architectures can be expressed as a form of learned linear attention operator. Beyond explaining previously puzzling model behaviors, this perspective yields multiple practical benefits: it enables principled architectural simplifications, admits fully parallel formulations that preserve performance while improving efficiency, and provides a systematic reduction of diverse TTT variants to a standard linear attention form. Overall, our results reframe TTT not as test-time memorization, but as learned linear attention with enhanced representational capacity.",
+    "published": "2026-02-24T18:59:30Z",
+    "updated": "2026-02-24T18:59:30Z",
+    "authors": [
+      "Junchen Liu",
+      "Sven Elflein",
+      "Or Litany",
+      "Zan Gojcic",
+      "Ruilong Li"
+    ],
+    "pdf": "",
+    "topic": "time crystal biology",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21203v1",
+    "title": "Squint: Fast Visual Reinforcement Learning for Sim-to-Real Robotics",
+    "summary": "Visual reinforcement learning is appealing for robotics but expensive -- off-policy methods are sample-efficient yet slow; on-policy methods parallelize well but waste samples. Recent work has shown that off-policy methods can train faster than on-policy methods in wall-clock time for state-based control. Extending this to vision remains challenging, where high-dimensional input images complicate training dynamics and introduce substantial storage and encoding overhead. To address these challenges, we introduce Squint, a visual Soft Actor Critic method that achieves faster wall-clock training than prior visual off-policy and on-policy methods. Squint achieves this via parallel simulation, a distributional critic, resolution squinting, layer normalization, a tuned update-to-data ratio, and an optimized implementation. We evaluate on the SO-101 Task Set, a new suite of eight manipulation tasks in ManiSkill3 with heavy domain randomization, and demonstrate sim-to-real transfer to a real SO-101 robot. We train policies for 15 minutes on a single RTX 3090 GPU, with most tasks converging in under 6 minutes.",
+    "published": "2026-02-24T18:58:11Z",
+    "updated": "2026-02-24T18:58:11Z",
+    "authors": [
+      "Abdulaziz Almuzairee",
+      "Henrik I. Christensen"
+    ],
+    "pdf": "",
+    "topic": "chaos control biological systems",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21200v1",
+    "title": "A Time-Varying and Covariate-Dependent Correlation Model for Multivariate Longitudinal Studies",
+    "summary": "In multivariate longitudinal studies, associations between outcomes often exhibit time-varying and individual level heterogeneity, motivating the modeling of correlations as an explicit function of time and covariates. However, most existing methods for correlation analysis fail to simultaneously capture the time-varying and covariate-dependent effects. We propose a Time-Varying and Covariate-Dependent (TiVAC) correlation model that jointly allows covariate effects on correlation to change flexibly and smoothly across time. TiVAC employs a bivariate Gaussian model where the covariate-dependent correlations are modeled semiparametrically using penalized splines. We develop a penalized maximum likelihood-based Newton-Raphson algorithm, and inference on time-varying effects is provided through simultaneous confidence bands. Simulation studies show that TiVAC consistently outperforms existing methods in accurately estimating correlations across a wide range of settings, including binary and continuous covariates, sparse to dense observation schedules, and across diverse correlation trajectory patterns. We apply TiVAC to a psychiatric case study of 291 bipolar I patients, modeling the time-varying correlation between depression and anxiety scores as a function of their clinical variables. Our analyses reveal significant heterogeneity associated with gender and nervous-system medication use, which varies with age, revealing the complex dynamic relationship between depression and anxiety in bipolar disorders.",
+    "published": "2026-02-24T18:55:40Z",
+    "updated": "2026-02-24T18:55:40Z",
+    "authors": [
+      "Qingzhi Liu",
+      "Gen Li",
+      "Anastasia K. Yocum",
+      "Melvin McInnis",
+      "Brian D. Athey",
+      "Veerabhadran Baladandayuthapani"
+    ],
+    "pdf": "",
+    "topic": "chaos control biological systems",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21199v1",
+    "title": "Topological Floquet Green's function zeros",
+    "summary": "Motivated by recent advances in digital quantum emulation using noisy intermediate-scale quantum (NISQ) devices and an increased interest in topological Green's function zeros in condensed matter systems, we here study Green's function zeros in topological Floquet systems. We concentrate on interacting Kitaev-like Floquet chains (or equivalently transverse field Ising circuits) and introduce Floquet Green's-function-based topological invariants for the corresponding symmetry class BDI. In the vicinity of special points in the free fermion phase diagram and using tailor-made interactions which lead to the Floquet version of symmetric mass generation, we analytically calculate both edge and bulk Green's functions. Just as in the case of continuum time evolution, topological bands of Green's function zeros may also contribute to the topological invariant. However, contrary to the case of continuum time evolution, Floquet Green's functions can have zeros even in the absence of interactions. Finally, we also discuss an implementation of this Floquet system in a digital quantum emulator: We present a circuit which encodes the interaction under consideration and pinpoint the observables carrying information about the topological Green's function boundary zeros.",
+    "published": "2026-02-24T18:55:23Z",
+    "updated": "2026-02-24T18:55:23Z",
+    "authors": [
+      "Elio J. König",
+      "Aditi Mitra"
+    ],
+    "pdf": "",
+    "topic": "digital twins uncertainty",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21198v1",
+    "title": "Learning from Trials and Errors: Reflective Test-Time Planning for Embodied LLMs",
+    "summary": "Embodied LLMs endow robots with high-level task reasoning, but they cannot reflect on what went wrong or why, turning deployment into a sequence of independent trials where mistakes repeat rather than accumulate into experience. Drawing upon human reflective practitioners, we introduce Reflective Test-Time Planning, which integrates two modes of reflection: \\textit{reflection-in-action}, where the agent uses test-time scaling to generate and score multiple candidate actions using internal reflections before execution; and \\textit{reflection-on-action}, which uses test-time training to update both its internal reflection model and its action policy based on external reflections after execution. We also include retrospective reflection, allowing the agent to re-evaluate earlier decisions and perform model updates with hindsight for proper long-horizon credit assignment. Experiments on our newly-designed Long-Horizon Household benchmark and MuJoCo Cupboard Fitting benchmark show significant gains over baseline models, with ablative studies validating the complementary roles of reflection-in-action and reflection-on-action. Qualitative analyses, including real-robot trials, highlight behavioral correction through reflection.",
+    "published": "2026-02-24T18:55:18Z",
+    "updated": "2026-02-24T18:55:18Z",
+    "authors": [
+      "Yining Hong",
+      "Huang Huang",
+      "Manling Li",
+      "Li Fei-Fei",
+      "Jiajun Wu",
+      "Yejin Choi"
+    ],
+    "pdf": "",
+    "topic": "time crystal biology",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21196v1",
+    "title": "Untied Ulysses: Memory-Efficient Context Parallelism via Headwise Chunking",
+    "summary": "Efficiently processing long sequences with Transformer models usually requires splitting the computations across accelerators via context parallelism. The dominant approaches in this family of methods, such as Ring Attention or DeepSpeed Ulysses, enable scaling over the context dimension but do not focus on memory efficiency, which limits the sequence lengths they can support. More advanced techniques, such as Fully Pipelined Distributed Transformer or activation offloading, can further extend the possible context length at the cost of training throughput. In this paper, we present UPipe, a simple yet effective context parallelism technique that performs fine-grained chunking at the attention head level. This technique significantly reduces the activation memory usage of self-attention, breaking the activation memory barrier and unlocking much longer context lengths. Our approach reduces intermediate tensor memory usage in the attention layer by as much as 87.5$\\%$ for 32B Transformers, while matching previous context parallelism techniques in terms of training speed. UPipe can support the context length of 5M tokens when training Llama3-8B on a single 8$\\times$H100 node, improving upon prior methods by over 25$\\%$.",
+    "published": "2026-02-24T18:54:39Z",
+    "updated": "2026-02-24T18:54:39Z",
+    "authors": [
+      "Ravi Ghadia",
+      "Maksim Abraham",
+      "Sergei Vorobyov",
+      "Max Ryabinin"
+    ],
+    "pdf": "",
+    "topic": "time crystal biology",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21195v1",
+    "title": "Region of Interest Segmentation and Morphological Analysis for Membranes in Cryo-Electron Tomography",
+    "summary": "Cryo-electron tomography (cryo-ET) enables high resolution, three-dimensional reconstruction of biological structures, including membranes and membrane proteins. Identification of regions of interest (ROIs) is central to scientific imaging, as it enables isolation and quantitative analysis of specific structural features within complex datasets. In practice, however, ROIs are typically derived indirectly through full structure segmentation followed by post hoc analysis. This limitation is especially apparent for continuous and geometrically complex structures such as membranes, which are segmented as single entities. Here, we developed TomoROIS-SurfORA, a two step framework for direct, shape-agnostic ROI segmentation and morphological surface analysis. TomoROIS performs deep learning-based ROI segmentation and can be trained from scratch using small annotated datasets, enabling practical application across diverse imaging data. SurfORA processes segmented structures as point clouds and surface meshes to extract quantitative morphological features, including inter-membrane distances, curvature, and surface roughness. It supports both closed and open surfaces, with specific considerations for open surfaces, which are common in cryo-ET due to the missing wedge effect. We demonstrate both tools using in vitro reconstituted membrane systems containing deformable vesicles with complex geometries, enabling automatic quantitative analysis of membrane contact sites and remodeling events such as invagination. While demonstrated here on cryo-ET membrane data, the combined approach is applicable to ROI detection and surface analysis in broader scientific imaging contexts.",
+    "published": "2026-02-24T18:53:33Z",
+    "updated": "2026-02-24T18:53:33Z",
+    "authors": [
+      "Xingyi Cheng",
+      "Julien Maufront",
+      "Aurélie Di Cicco",
+      "Daniël M. Pelt",
+      "Manuela Dezi",
+      "Daniel Lévy"
+    ],
+    "pdf": "",
+    "topic": "chaos control biological systems",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21190v1",
+    "title": "Exact quantum transport in non-Markovian open Gaussian systems",
+    "summary": "We build an exact framework to evaluate heat, energy, and particle transport between Gaussian reservoirs mediated by a quadratic quantum system. By combining full counting statistics with newly developed non-Markovian master equation approaches, we introduce an effective master equation whose solution can be used to generate arbitrary moments of the heat statistics for any number of reservoirs. This theory applies equally to fermionic and bosonic systems, holds at arbitrarily strong coupling, and resolves out-of-equilibrium transient dynamics determined by the system's initial state. In the steady-state, weak-coupling limit, we recover results analogous to those of the well-known Landauer-Büttiker formalism. We conclude our discussion by demonstrating an application of the method to a prototypical fermionic system. Our results uncover a regime of transient negative heat conductance contingent upon the initial system preparation, providing a clear signature of non-trivial out-of-equilibrium dynamics.",
+    "published": "2026-02-24T18:43:45Z",
+    "updated": "2026-02-24T18:43:45Z",
+    "authors": [
+      "Guglielmo Pellitteri",
+      "Vittorio Giovannetti",
+      "Vasco Cavina"
+    ],
+    "pdf": "",
+    "topic": "chaos control biological systems",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21188v1",
+    "title": "Human Video Generation from a Single Image with 3D Pose and View Control",
+    "summary": "Recent diffusion methods have made significant progress in generating videos from single images due to their powerful visual generation capabilities. However, challenges persist in image-to-video synthesis, particularly in human video generation, where inferring view-consistent, motion-dependent clothing wrinkles from a single image remains a formidable problem. In this paper, we present Human Video Generation in 4D (HVG), a latent video diffusion model capable of generating high-quality, multi-view, spatiotemporally coherent human videos from a single image with 3D pose and view control. HVG achieves this through three key designs: (i) Articulated Pose Modulation, which captures the anatomical relationships of 3D joints via a novel dual-dimensional bone map and resolves self-occlusions across views by introducing 3D information; (ii) View and Temporal Alignment, which ensures multi-view consistency and alignment between a reference image and pose sequences for frame-to-frame stability; and (iii) Progressive Spatio-Temporal Sampling with temporal alignment to maintain smooth transitions in long multi-view animations. Extensive experiments on image-to-video tasks demonstrate that HVG outperforms existing methods in generating high-quality 4D human videos from diverse human images and pose inputs.",
+    "published": "2026-02-24T18:42:20Z",
+    "updated": "2026-02-24T18:42:20Z",
+    "authors": [
+      "Tiantian Wang",
+      "Chun-Han Yao",
+      "Tao Hu",
+      "Mallikarjun Byrasandra Ramalinga Reddy",
+      "Ming-Hsuan Yang",
+      "Varun Jampani"
+    ],
+    "pdf": "",
+    "topic": "chaos control biological systems",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21183v1",
+    "title": "823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio",
+    "summary": "Bengali, despite being one of the most widely spoken languages globally, remains underrepresented in long form speech technology, particularly in systems addressing transcription and speaker attribution. We present frameworks for long form Bengali speech intelligence that address automatic speech recognition using a Whisper Medium based model and speaker diarization using a finetuned segmentation model. The ASR pipeline incorporates vocal separation, voice activity detection, and a gap aware windowing strategy to construct context preserving segments for stable decoding. For diarization, a pretrained speaker segmentation model is finetuned on the official competition dataset (provided as part of the DL Sprint 4.0 competition organized under BUET CSE Fest), to better capture Bengali conversational patterns. The resulting systems deliver both efficient transcription of long form audio and speaker aware transcription to provide scalable speech technology solutions for low resource languages.",
+    "published": "2026-02-24T18:34:14Z",
+    "updated": "2026-02-24T18:34:14Z",
+    "authors": [
+      "Ratnajit Dhar",
+      "Arpita Mallik"
+    ],
+    "pdf": "",
+    "topic": "chaos control biological systems",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21182v1",
+    "title": "Circumventing the CAP Theorem with Open Atomic Ethernet",
+    "summary": "The CAP theorem is routinely treated as a systems law: under network partition, a replicated service must sacrifice either consistency or availability. The theorem is correct within its standard asynchronous network model, but operational practice depends on where partition-like phenomena become observable and on how lower layers discard or preserve semantic information about message fate. This paper argues that Open Atomic Ethernet (OAE) shifts the engineering regime in which CAP tradeoffs become application-visible by (i) replacing fire-and-forget link semantics with bounded-time bilateral reconciliation of endpoint state -- the property we call bisynchrony -- and (ii) avoiding Clos funnel points via an octavalent mesh in which each node can act as the root of a locally repaired spanning tree. The result is not the elimination of hard graph cuts, but a drastic reduction in the frequency and duration of application-visible \"soft partitions\" by detecting and healing dominant fabric faults within hundreds of nanoseconds. We connect this view to Brewer's original CAP framing, the formalization by Gilbert and Lynch, the CAL theorem of Lee et al., which replaces binary partition tolerance with a quantitative measure of apparent latency, and Abadi's PACELC extension.",
+    "published": "2026-02-24T18:33:14Z",
+    "updated": "2026-02-24T18:33:14Z",
+    "authors": [
+      "Paul Borrill"
+    ],
+    "pdf": "",
+    "topic": "chaos control biological systems",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21180v1",
+    "title": "Memory Undone: Between Knowing and Not Knowing in Data Systems",
+    "summary": "Machine learning and data systems increasingly function as infrastructures of memory: they ingest, store, and operationalize traces of personal, political, and cultural life. Yet contemporary governance demands credible forms of forgetting, from GDPR-backed deletion to harm-mitigation and the removal of manipulative content, while technical infrastructures are optimized to retain, replicate, and reuse. This work argues that \"forgetting\" in computational systems cannot be reduced to a single operation (e.g., record deletion) and should instead be treated as a sociotechnical practice with distinct mechanisms and consequences. We clarify a vocabulary that separates erasure (removing or disabling access to data artifacts), unlearning (interventions that bound or remove a data point influence on learned parameters and outputs), exclusion (upstream non-collection and omission), and forgetting as an umbrella term spanning agency, temporality, reversibility, and scale. Building on examples from machine unlearning, semantic dependencies in data management, participatory data modeling, and manipulation at scale, we show how forgetting can simultaneously protect rights and enable silencing. We propose reframing unlearning as a first-class capability in knowledge infrastructures, evaluated not only by compliance or utility retention, but by its governance properties: transparency, accountability, and epistemic justice.",
+    "published": "2026-02-24T18:29:17Z",
+    "updated": "2026-02-24T18:29:17Z",
+    "authors": [
+      "Viktoriia Makovska",
+      "George Fletcher",
+      "Julia Stoyanovich",
+      "Tetiana Zakharchenko"
+    ],
+    "pdf": "",
+    "topic": "metabolic health systems biology",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21178v1",
+    "title": "XMorph: Explainable Brain Tumor Analysis Via LLM-Assisted Hybrid Deep Intelligence",
+    "summary": "Deep learning has significantly advanced automated brain tumor diagnosis, yet clinical adoption remains limited by interpretability and computational constraints. Conventional models often act as opaque ''black boxes'' and fail to quantify the complex, irregular tumor boundaries that characterize malignant growth. To address these challenges, we present XMorph, an explainable and computationally efficient framework for fine-grained classification of three prominent brain tumor types: glioma, meningioma, and pituitary tumors. We propose an Information-Weighted Boundary Normalization (IWBN) mechanism that emphasizes diagnostically relevant boundary regions alongside nonlinear chaotic and clinically validated features, enabling a richer morphological representation of tumor growth. A dual-channel explainable AI module combines GradCAM++ visual cues with LLM-generated textual rationales, translating model reasoning into clinically interpretable insights. The proposed framework achieves a classification accuracy of 96.0%, demonstrating that explainability and high performance can co-exist in AI-based medical imaging systems. The source code and materials for XMorph are all publicly available at: https://github.com/ALSER-Lab/XMorph.",
+    "published": "2026-02-24T18:28:08Z",
+    "updated": "2026-02-24T18:28:08Z",
+    "authors": [
+      "Sepehr Salem Ghahfarokhi",
+      "M. Moein Esfahani",
+      "Raj Sunderraman",
+      "Vince Calhoun",
+      "Mohammed Alser"
+    ],
+    "pdf": "",
+    "topic": "metabolic health systems biology",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21173v1",
+    "title": "Bayesian Parametric Portfolio Policies",
+    "summary": "Parametric Portfolio Policies (PPP) estimate optimal portfolio weights directly as functions of observable signals by maximizing expected utility, bypassing the need to model asset returns and covariances. However, PPP ignores policy risk. We show that this is consequential, leading to an overstatement of expected utility and an understatement of portfolio risk. We develop Bayesian Parametric Portfolio Policies (BPPP), which place a prior on policy coefficients thereby correcting the decision rule. We derive a general result showing that the utility gap between PPP and BPPP is strictly positive and proportional to posterior parameter uncertainty and signal magnitude. Under a mean--variance approximation, this correction appears as an additional estimation-risk term in portfolio variance, implying that PPP overexposes when signals are strongest and when risk aversion is high. Empirically, in a high-dimensional setting with 242 signals and six factors over 1973--2023, BPPP delivers higher Sharpe ratios, substantially lower turnover, larger investor welfare, and lower tail risk, with advantages that increase monotonically in risk aversion and are strongest during crisis episodes.",
+    "published": "2026-02-24T18:18:26Z",
+    "updated": "2026-02-24T18:18:26Z",
+    "authors": [
+      "Miguel C. Herculano"
+    ],
+    "pdf": "",
+    "topic": "digital twins uncertainty",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21170v1",
+    "title": "cyclinbayes: Bayesian Causal Discovery with Linear Non-Gaussian Directed Acyclic and Cyclic Graphical Models",
+    "summary": "We introduce cyclinbayes, an open-source R package for discovering linear causal relationships with both acyclic and cyclic structures. The package employs scalable Bayesian approaches with spike-and-slab priors to learn directed acyclic graphs (DAGs) and directed cyclic graphs (DCGs) under non-Gaussian noise. A central feature of cyclinbayes is comprehensive uncertainty quantification, including posterior edge inclusion probabilities, posterior probabilities of network motifs, and posterior probabilities over entire graph structures. Our implementation addresses two limitations in existing software: (1) while methods for linear non-Gaussian DAG learning are available in R and Python, they generally lack proper uncertainty quantification, and (2) reliable implementations for linear non-Gaussian DCG remain scarce. The package implements computationally efficient hybrid MCMC algorithms that scale to large datasets. Beyond uncertainty quantification, we propose a new decision-theoretic approach to summarize posterior samples of graphs, yielding principled point estimates based on posterior expected loss such as posterior expected structural Hamming distance and structural intervention distance. The package, a supplementary material, and a tutorial are available on GitHub at https://github.com/roblee01/cyclinbayes.",
+    "published": "2026-02-24T18:15:58Z",
+    "updated": "2026-02-24T18:15:58Z",
+    "authors": [
+      "Robert Lee",
+      "Raymond K. W. Wong",
+      "Yang Ni"
+    ],
+    "pdf": "",
+    "topic": "digital twins uncertainty",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21160v1",
+    "title": "Not Just How Much, But Where: Decomposing Epistemic Uncertainty into Per-Class Contributions",
+    "summary": "In safety-critical classification, the cost of failure is often asymmetric, yet Bayesian deep learning summarises epistemic uncertainty with a single scalar, mutual information (MI), that cannot distinguish whether a model's ignorance involves a benign or safety-critical class. We decompose MI into a per-class vector $C_k(x)=σ_k^{2}/(2μ_k)$, with $μ_k{=}\\mathbb{E}[p_k]$ and $σ_k^2{=}\\mathrm{Var}[p_k]$ across posterior samples. The decomposition follows from a second-order Taylor expansion of the entropy; the $1/μ_k$ weighting corrects boundary suppression and makes $C_k$ comparable across rare and common classes. By construction $\\sum_k C_k \\approx \\mathrm{MI}$, and a companion skewness diagnostic flags inputs where the approximation degrades. After characterising the axiomatic properties of $C_k$, we validate it on three tasks: (i) selective prediction for diabetic retinopathy, where critical-class $C_k$ reduces selective risk by 34.7\\% over MI and 56.2\\% over variance baselines; (ii) out-of-distribution detection on clinical and image benchmarks, where $\\sum_k C_k$ achieves the highest AUROC and the per-class view exposes asymmetric shifts invisible to MI; and (iii) a controlled label-noise study in which $\\sum_k C_k$ shows less sensitivity to injected aleatoric noise than MI under end-to-end Bayesian training, while both metrics degrade under transfer learning. Across all tasks, the quality of the posterior approximation shapes uncertainty at least as strongly as the choice of metric, suggesting that how uncertainty is propagated through the network matters as much as how it is measured.",
+    "published": "2026-02-24T18:05:51Z",
+    "updated": "2026-02-24T18:05:51Z",
+    "authors": [
+      "Mame Diarra Toure",
+      "David A. Stephens"
+    ],
+    "pdf": "",
+    "topic": "digital twins uncertainty",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21158v1",
+    "title": "SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards",
+    "summary": "Large language models (LLMs) are increasingly deployed as multi-step decision-making agents, where effective reward design is essential for guiding learning. Although recent work explores various forms of reward shaping and step-level credit assignment, a key signal remains largely overlooked: the intrinsic uncertainty of LLMs. Uncertainty reflects model confidence, reveals where exploration is needed, and offers valuable learning cues even in failed trajectories. We introduce SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards, a reinforcement learning framework that incorporates uncertainty directly into the reward design. SELAUR integrates entropy-, least-confidence-, and margin-based metrics into a combined token-level uncertainty estimate, providing dense confidence-aligned supervision, and employs a failure-aware reward reshaping mechanism that injects these uncertainty signals into step- and trajectory-level rewards to improve exploration efficiency and learning stability. Experiments on two benchmarks, ALFWorld and WebShop, show that our method consistently improves success rates over strong baselines. Ablation studies further demonstrate how uncertainty signals enhance exploration and robustness.",
+    "published": "2026-02-24T18:04:54Z",
+    "updated": "2026-02-24T18:04:54Z",
+    "authors": [
+      "Dengjia Zhang",
+      "Xiaoou Liu",
+      "Lu Cheng",
+      "Yaqing Wang",
+      "Kenton Murray",
+      "Hua Wei"
+    ],
+    "pdf": "",
+    "topic": "digital twins uncertainty",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21149v1",
+    "title": "Geometry- and inertia-limited chaotic growth in classical many-body systems",
+    "summary": "Chaotic instability in many-body systems is commonly quantified by the largest Lyapunov exponent, yet general constraints on its magnitude in classical interacting systems remain poorly understood. Here we establish explicit, Hamiltonian-specific upper bounds on the largest Lyapunov exponent for classical many-body systems with local interactions. These bounds arise from instantaneous stability constraints on the Hamiltonian flow and are expressed in terms of inertial scales and the curvature of the interaction potential. We show that they naturally separate into two qualitatively distinct classes: non-violable bounds, controlled by worst-case local curvature scales and inertia and insensitive to spatial structure, and ergodic ceilings, which retain spectral information and encode collective modes and finite-size effects under generic dynamical evolution. For a paradigmatic one-dimensional coupled-rotor chain (Josephson junction array), the ergodic ceiling admits a closed analytic form and produces a dynamically inaccessible region for sustained chaotic growth in the Lyapunov exponent-energy plane, which we confirm numerically. In contrast to non-violable estimates, the ergodic ceiling yields a sharper constraint on chaotic growth by capturing collective suppression mechanisms absent at the level of local curvature alone. Remarkably, in the thermodynamic limit the ergodic ceiling asymptotically approaches an inertial ceiling that limits sustained Lyapunov growth, becoming independent of temperature and interaction strength. While classical systems do not admit universal chaos bounds, our results identify a broad class of natural Hamiltonian systems in which chaotic growth is inherently limited by inertia and interaction geometry, thereby setting a minimal microscopic timescale for long-time loss of memory of initial conditions.",
+    "published": "2026-02-24T17:50:29Z",
+    "updated": "2026-02-24T17:50:29Z",
+    "authors": [
+      "Swetamber Das"
+    ],
+    "pdf": "",
+    "topic": "self-organization nonequilibrium thermodynamics",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21134v1",
+    "title": "Controlling inertial active Brownian motion via stochastic resetting",
+    "summary": "Inertia is intrinsic to many living and synthetic active systems, from animals and robotic agents to colloidal swimmers, and it strongly shapes transport. Many such systems employ intermittent restart protocols to regulate exploration. Stochastic resetting provides a theoretical framework for these strategies and a route to control nonequilibrium steady states, yet the role of inertia in reset-controlled active dynamics remains poorly understood. Here we study an inertial active Brownian particle subject to complete stochastic resetting of position, velocity, and orientation in two dimensions. Using a moment-generating framework together with the Final-Value Theorem, we derive closed-form steady-state moments up to fourth order as functions of inertia, activity, and reset rate. We show that inertia fundamentally modifies reset-controlled transport: at large reset rates the steady-state mean-squared displacement is suppressed much more strongly than in the overdamped limit, yielding enhanced localization near the reset point. At the same time, position excess-kurtosis phase diagrams reveal strongly non-Gaussian steady states characterized by a sharp central peak coexisting with heavy tails in the position distribution, indicating rare long excursions enabled by inertial persistence. The tail weight varies non-monotonically with reset rate, reflecting a competition between inertial momentum relaxation and resetting that selects an optimal regime maximizing rare excursions. Our results provide experimentally testable signatures of inertial effects in reset-controlled active systems.",
+    "published": "2026-02-24T17:32:11Z",
+    "updated": "2026-02-24T17:32:11Z",
+    "authors": [
+      "Manish Patel",
+      "Amir Shee"
+    ],
+    "pdf": "",
+    "topic": "self-organization nonequilibrium thermodynamics",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21133v1",
+    "title": "SOM-VQ: Topology-Aware Tokenization for Interactive Generative Models",
+    "summary": "Vector-quantized representations enable powerful discrete generative models but lack semantic structure in token space, limiting interpretable human control. We introduce SOM-VQ, a tokenization method that combines vector quantization with Self-Organizing Maps to learn discrete codebooks with explicit low-dimensional topology. Unlike standard VQ-VAE, SOM-VQ uses topology-aware updates that preserve neighborhood structure: nearby tokens on a learned grid correspond to semantically similar states, enabling direct geometric manipulation of the latent space. We demonstrate that SOM-VQ produces more learnable token sequences in the evaluated domains while providing an explicit navigable geometry in code space. Critically, the topological organization enables intuitive human-in-the-loop control: users can steer generation by manipulating distances in token space, achieving semantic alignment without frame-level constraints. We focus on human motion generation - a domain where kinematic structure, smooth temporal continuity, and interactive use cases (choreography, rehabilitation, HCI) make topology-aware control especially natural - demonstrating controlled divergence and convergence from reference sequences through simple grid-based sampling. SOM-VQ provides a general framework for interpretable discrete representations applicable to music, gesture, and other interactive generative domains.",
+    "published": "2026-02-24T17:29:04Z",
+    "updated": "2026-02-24T17:29:04Z",
+    "authors": [
+      "Alessandro Londei",
+      "Denise Lanzieri",
+      "Matteo Benati"
+    ],
+    "pdf": "",
+    "topic": "self-organization nonequilibrium thermodynamics",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21111v1",
+    "title": "Density Functional Theory Predictions of Derivative Thermodynamic Properties of a Confined Fluid",
+    "summary": "Fluids in nanopores are of importance for many engineering applications, including energy storage in supercapacitors, hydrocarbons recovery from unconventional sources, or water desalination. Thermodynamic properties of fluids confined in nanopores differ from the properties of the same fluids in bulk. Density functional theory (DFT) has been widely used for modeling thermodynamics of confined fluids. However, it is rarely used for calculations of derivative thermodynamic properties. Here we use a rather simple DFT model for argon based on the Percus-Yevick equation, and showed that with standard parametrization it fails to predict derivative properties. However, slight adjustment in parameters leads to quantitative predictions of isothermal compressibility and thermal expansion coefficient at a selected temperature. Using the adjusted parameterization we performed the calculations of compressibility of argon confined in carbon slit pores of various sizes, and demonstrated that the compressibility of argon in confinement is lower than that in bulk and is pore size dependent. We confirmed the DFT predictions using the Monte Carlo molecular simulations. In addition to isothermal compressibility, we calculated the thermal expansion coefficient of confined argon. Our calculations showed that it behaves similar to compressibility -- it is always lower than the bulk value and gradually increases for smaller pore sizes. For several selected pore sizes we verified the DFT calculations by Monte Carlo simulations. Overall, our results suggest that the classical DFT can be utilized for calculations of derivative thermodynamic properties of confined fluids, which are computationally challenging to predict using molecular simulations.",
+    "published": "2026-02-24T17:08:37Z",
+    "updated": "2026-02-24T17:08:37Z",
+    "authors": [
+      "Gennady Y. Gor",
+      "Geordy Jomon",
+      "Andrei L. Kolesnikov"
+    ],
+    "pdf": "",
+    "topic": "self-organization nonequilibrium thermodynamics",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21090v1",
+    "title": "Robustness certificates in data-driven non-convex optimization with additively-uncertain constraints",
+    "summary": "We consider decision-making problems that are formulated as non-convex optimization programs where uncertainty enters the constraints through an additive term, independent of the decision variables, and robustness is imposed using a finite data-set, according to the scenario robust optimization paradigm. By exploiting the structure of the constraints, we show that both a priori and a posteriori distribution-free probabilistic robustness certificates for a possibly sub-optimal solution to the resulting data-driven optimization problem can be obtained with minimal computational effort. Building on these results, we also discuss a one-shot and an incremental procedure to determine the size of the data-set so as to guarantee a user-chosen robustness level. Notably, both the a posteriori robustness assessment and incremental data-set sizing do not require to solve the non-convex scenario program. A comparative analysis performed on the unit commitment problem using real data reveals a limited increase in conservativeness with a significant computational saving with respect to the application of scenario theory results for general, non necessarily structured, non-convex problems.",
+    "published": "2026-02-24T16:49:07Z",
+    "updated": "2026-02-24T16:49:07Z",
+    "authors": [
+      "Alexander J Gallo",
+      "Massimiliano Zoggia",
+      "Alessandro Falsone",
+      "Maria Prandini",
+      "Simone Garatti"
+    ],
+    "pdf": "",
+    "topic": "digital twins uncertainty",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21073v1",
+    "title": "Automata Learning with an Incomplete but Inductive Teacher",
+    "summary": "Active automata learning (AAL) under a Minimally Adequate Teacher (MAT) has been successfully used to infer a regular language through membership and equivalence queries. This language might not be fully characterized: we are then interested in finding any solution in a target class of possibly many regular languages. Some problems such as regular language separation or inductive invariant synthesis in the context of regular model checking (RMC) may indeed admit more than one answer. We therefore introduce IdMAT: a new teacher formalism answering queries with respect to any language in the target class, all at once. Such a teacher tailored towards invariant synthesis might provide incomplete \"don't know\" answers, but also inductive facts of the form \"if w1 is accepted, so is w2\". We pair IdMAT with a novel AAL algorithm LIndA that 1. encodes all uncertainties as a unique SAT instance and does not fork, 2. leverages incremental SAT solving and UNSAT core analysis, and 3. handles counterexamples of the simple or inductive type in a frugal manner inspired by the Rivest-Schapire refinement technique. We finally evaluate a prototype implementation in the context of regular language separation and RMC.",
+    "published": "2026-02-24T16:35:16Z",
+    "updated": "2026-02-24T16:35:16Z",
+    "authors": [
+      "Daniel Stan",
+      "Adrien Pommellet",
+      "Juliette Jacquot"
+    ],
+    "pdf": "",
+    "topic": "digital twins uncertainty",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.21003v1",
+    "title": "Criticality Beyond Nonanalyticity: Intrinsic Microcanonical Signatures of Phase Transitions",
+    "summary": "Phase transitions are conventionally defined by nonanalyticities of thermodynamic potentials in the thermodynamic limit. In this Letter, we show that the singularity is not the definition of criticality but its asymptotic outcome: criticality is already written in the microcanonical entropy derivatives at any finite size as intrinsic morphological structures -- inflection points and extrema. The singularity is then the endpoint of a sharpening process that evolves with increasing system size. Combining microcanonical inflection-point analysis (MIPA) with the Berlin-Kac spherical model -- for which the microcanonical density of states is known in closed form at every finite $N$ -- we systematically identify these structures in the energy profiles of entropy derivatives that encode the transition. An inflection point in the inverse temperature $β_N(ε)=\\partial_εS_N$ and a pronounced peak in its derivative $γ_N(ε)=\\partial^2_εS_N$ define a well-controlled pseudocritical trajectory whose controlled sharpening and drift culminate in the macroscopic cusp at the critical energy $ε_c$ in the thermodynamic limit. This establishes an intrinsic, order-parameter-free notion of criticality that precedes its singular asymptotic representation.",
+    "published": "2026-02-24T15:23:17Z",
+    "updated": "2026-02-24T15:23:17Z",
+    "authors": [
+      "Loris Di Cairano"
+    ],
+    "pdf": "",
+    "topic": "self-organization nonequilibrium thermodynamics",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.20998v1",
+    "title": "Observation of sequential quantum oscillations induced by mini-Landau bands in a three-dimensional Dirac semiconductor",
+    "summary": "Quantum oscillations, the oscillatory behavior of electrical and thermodynamic properties, are typically observed in metals and vanish in the quantum limit under strong magnetic fields1. Phenomena such as the fractional quantum Hall effect2, the Hofstadter butterfly3,4, and recent observations of quantum oscillations in exotic insulators are notable exceptions5-12. The narrow-gap Dirac semiconductor ZrTe5, a less exotic material without strong correlations or artificially engineered superlattices, nevertheless exhibits resistance oscillations in the quantum limit13 but can be interpreted within a simple Zeeman-effect-based picture14,15, which remains conventional quantum oscillations without exotic properties. Here, we report the observation of unexpected mini-oscillations superimposed on Zeeman-effect-induced main oscillations in the quantum limit. The subtracted mini-oscillations are periodic in 1/B with the highest frequency equal to 2.1% of the first Brillouin zone and have extremely heavy effective mass ~ 2me, which is unexpected in ZrTe5 given its ultralow carrier density. Additionally, the mini-oscillations exhibit sequential features that are synchronized with the main oscillations, suggesting an internal structure of the Landau bands. However, they appear incompatible with the Hofstadter butterfly due to the highly anisotropic/three-dimensional crystal structure. These sequential mini-oscillations correlate with the commensurability resonance effect with subunity fractions observed in angular magnetoresistance, relating to the formation of mini-Landau bands. Our results present solid experimental evidence of exotic quantum oscillations in the quantum limit beyond currently available mechanisms, and establish ZrTe5, a prototypical Dirac semiconductor, as a simple platform parallel to correlated insulators for exploring exotic oscillations.",
+    "published": "2026-02-24T15:18:16Z",
+    "updated": "2026-02-24T15:18:16Z",
+    "authors": [
+      "Zezhi Wang",
+      "Dong Xing",
+      "Bingbing Tong",
+      "Senyang Pan",
+      "Guangtong Liu",
+      "Li Lu",
+      "Jinglei Zhang",
+      "Cheng-Long Zhang"
+    ],
+    "pdf": "",
+    "topic": "self-organization nonequilibrium thermodynamics",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.20957v1",
+    "title": "A One-Dimensional Reduction Method for Calculating Thermal Expansion in Solids: Application to Orthorhombic Systems",
+    "summary": "Anisotropic thermal expansion plays a critical role in the performance and reliability of functional materials, yet its theoretical description remains limited. Here, a computational framework that reduces the calculation of thermal expansion in solids to an effective one-dimensional problem is presented and applied to orthorhombic lattice. Using this method, a comprehensive set of thermodynamic and mechanical properties is determined.",
+    "published": "2026-02-24T14:37:18Z",
+    "updated": "2026-02-24T14:37:18Z",
+    "authors": [
+      "Dmitry Vasilyev"
+    ],
+    "pdf": "",
+    "topic": "self-organization nonequilibrium thermodynamics",
+    "source": "arXiv"
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.20846v1",
+    "title": "Body-Reservoir Governance in Repeated Games: Embodied Decision-Making, Dynamic Sentinel Adaptation, and Complexity-Regularized Optimization",
+    "summary": "Standard game theory explains cooperation in repeated games through conditional strategies such as Tit-for-Tat (TfT), but these require continuous computation that imposes physical costs on embodied agents. We propose a three-layer Body-Reservoir Governance (BRG) architecture: (1) a body reservoir (echo state network) whose $d$-dimensional state performs implicit inference over interaction history, serving as both decision-maker and anomaly detector, (2) a cognitive filter providing costly strategic tools activated on demand, and (3) a metacognitive governance layer with receptivity parameter $α\\in [0,1]$. At full body governance ($α=1$), closed-loop dynamics satisfy a self-consistency equation: cooperation is expressed as the reservoir's fixed point, not computed. Strategy complexity cost is defined as the KL divergence between the reservoir's state distribution and its habituated baseline. Body governance reduces this cost, with action variance decreasing up to $1600\\times$ with dimension $d$. A dynamic sentinel generates a composite discomfort signal from the reservoir's own state, driving adaptive $α(t)$: near baseline during cooperation, rapidly dropping upon defection to activate cognitive retaliation. Overriding the body incurs thermodynamic cost proportional to internal state distortion. The sentinel achieves the highest payoff across all conditions, outperforming static body governance, TfT, and EMA baselines. A dimension sweep ($d \\in \\{5,\\ldots,100\\}$) shows implicit inference scales with bodily richness ($23\\times$ to $1600\\times$ variance reduction), attributable to reservoir dynamics. A phase diagram in $(d, τ_{\\mathrm{env}})$ space reveals governance regime transitions near $d \\approx 20$. The framework reinterprets cooperation as the minimum-dissipation response of an adapted dynamical system -- emergent from embodied dynamics rather than computed.",
+    "published": "2026-02-24T12:36:41Z",
+    "updated": "2026-02-24T12:36:41Z",
+    "authors": [
+      "Yuki Nakamura"
+    ],
+    "pdf": "",
+    "topic": "self-organization nonequilibrium thermodynamics",
+    "source": "arXiv"
+  }
+]
