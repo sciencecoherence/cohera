@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 """
-Cohera recursive research + publishing pipeline.
+Append-only Cohera recursive research pipeline.
 
-Flow:
-1) Discover recent arXiv papers for configured topics
-2) Store structured notes + citations
-3) Generate digest artifacts
-4) Render site pages:
-   - Home: important news
-   - Research Hub: research feed
-   - Publications: PDF ledger + synthesis status
+Safety rule:
+- Never rewrite website structure/CSS/layout.
+- Only append new cards/entries into existing Home/Research/Publications grids.
 """
 
 from __future__ import annotations
@@ -30,10 +25,8 @@ RESEARCH = ROOT / "research"
 STATE_DIR = RESEARCH / "pipeline"
 SOURCES_DIR = RESEARCH / "sources" / "arxiv"
 DIGESTS_DIR = RESEARCH / "digests"
-
 STATE_FILE = STATE_DIR / "feed.json"
-
-TZ = dt.timezone(dt.timedelta(hours=-5))  # America/Lima offset
+TZ = dt.timezone(dt.timedelta(hours=-5))
 
 TOPICS = [
     "time crystal biology",
@@ -46,29 +39,27 @@ TOPICS = [
 MAX_FETCH_PER_TOPIC = 8
 MAX_NEW_PER_RUN = 8
 MAX_HOME_NEWS = 5
-MAX_RESEARCH_FEED = 16
+MAX_RESEARCH_FEED = 8
 MAX_PUBLICATIONS = 24
 
-
-# ---------- Utilities ----------
 
 def now_lima() -> dt.datetime:
     return dt.datetime.now(TZ)
 
 
-def fmt_date(d: dt.datetime) -> str:
-    return d.strftime("%d/%m/%Y")
-
-
 def slugify(text: str) -> str:
     text = text.lower().strip()
     text = re.sub(r"[^a-z0-9]+", "-", text)
-    return text.strip("-")[:80] or "item"
+    return text.strip("-")[:90] or "item"
 
 
 def ensure_dirs() -> None:
     for p in [STATE_DIR, SOURCES_DIR, DIGESTS_DIR, SITE / "publications" / "pdf"]:
         p.mkdir(parents=True, exist_ok=True)
+
+
+def strip_html_text(s: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", s)).strip()
 
 
 def load_state() -> dict:
@@ -84,12 +75,6 @@ def save_state(state: dict) -> None:
     STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def strip_html_text(s: str) -> str:
-    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", s)).strip()
-
-
-# ---------- arXiv discovery ----------
-
 def fetch_arxiv_topic(topic: str, max_results: int = MAX_FETCH_PER_TOPIC) -> list[dict]:
     query = urllib.parse.quote(f"all:{topic}")
     url = (
@@ -101,97 +86,63 @@ def fetch_arxiv_topic(topic: str, max_results: int = MAX_FETCH_PER_TOPIC) -> lis
 
     root = ET.fromstring(data)
     ns = {"atom": "http://www.w3.org/2005/Atom"}
-    items: list[dict] = []
+    out: list[dict] = []
 
     for e in root.findall("atom:entry", ns):
         title = strip_html_text(e.findtext("atom:title", default="", namespaces=ns))
         summary = strip_html_text(e.findtext("atom:summary", default="", namespaces=ns))
         paper_id = e.findtext("atom:id", default="", namespaces=ns).strip()
         published = e.findtext("atom:published", default="", namespaces=ns).strip()
-        updated = e.findtext("atom:updated", default="", namespaces=ns).strip()
         links = [ln.get("href", "") for ln in e.findall("atom:link", ns)]
         pdf = next((x for x in links if x.endswith(".pdf")), "")
         authors = [strip_html_text(a.findtext("atom:name", default="", namespaces=ns)) for a in e.findall("atom:author", ns)]
-
         if not paper_id or not title:
             continue
-
-        items.append(
+        out.append(
             {
                 "id": paper_id,
                 "title": title,
                 "summary": summary,
                 "published": published,
-                "updated": updated,
                 "authors": [a for a in authors if a],
                 "pdf": pdf,
                 "topic": topic,
                 "source": "arXiv",
             }
         )
-
-    return items
+    return out
 
 
 def discover_arxiv() -> list[dict]:
-    discovered: list[dict] = []
-    for topic in TOPICS:
+    items: list[dict] = []
+    for t in TOPICS:
         try:
-            discovered.extend(fetch_arxiv_topic(topic))
-        except Exception as ex:
-            discovered.append(
-                {
-                    "id": f"error:{slugify(topic)}",
-                    "title": f"Discovery error for topic: {topic}",
-                    "summary": str(ex),
-                    "published": now_lima().isoformat(),
-                    "updated": now_lima().isoformat(),
-                    "authors": ["pipeline"],
-                    "pdf": "",
-                    "topic": topic,
-                    "source": "arXiv",
-                    "error": True,
-                }
-            )
-
-    by_id: dict[str, dict] = {}
-    for it in discovered:
-        if it["id"].startswith("error:"):
+            items.extend(fetch_arxiv_topic(t))
+        except Exception:
             continue
-        by_id[it["id"]] = it
+    dedup = {x["id"]: x for x in items}
+    return sorted(dedup.values(), key=lambda x: x.get("published", ""), reverse=True)
 
-    def sort_key(x: dict) -> str:
-        return x.get("published", "")
-
-    return sorted(by_id.values(), key=sort_key, reverse=True)
-
-
-# ---------- State update + artifacts ----------
 
 def integrate_new_items(discovered: list[dict], state: dict) -> tuple[list[dict], dict]:
     known = {x.get("id") for x in state.get("items", [])}
+    new: list[dict] = []
     run_ts = now_lima().isoformat()
-    new_items: list[dict] = []
-
     for item in discovered:
         if item["id"] in known:
             continue
-        item = dict(item)
-        item["addedAt"] = run_ts
-        item["kind"] = "paper"
-        item["status"] = "discovered"
-        new_items.append(item)
-        if len(new_items) >= MAX_NEW_PER_RUN:
+        x = dict(item)
+        x["addedAt"] = run_ts
+        x["kind"] = "paper"
+        x["status"] = "discovered"
+        new.append(x)
+        if len(new) >= MAX_NEW_PER_RUN:
             break
-
-    state_items = state.get("items", [])
-    state_items = new_items + state_items
-    state["items"] = state_items[:300]
-
-    return new_items, state
+    state["items"] = (new + state.get("items", []))[:400]
+    return new, state
 
 
-def write_run_sources(discovered: list[dict]) -> pathlib.Path:
+def write_sources_snapshot(discovered: list[dict]) -> pathlib.Path:
     stamp = now_lima().strftime("%Y-%m-%d_%H%M%S")
     out = SOURCES_DIR / f"{stamp}.json"
     out.write_text(json.dumps(discovered, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -202,28 +153,23 @@ def citation_line(item: dict) -> str:
     authors = ", ".join(item.get("authors", [])[:4])
     if len(item.get("authors", [])) > 4:
         authors += " et al."
-    published = item.get("published", "")[:10]
-    link = item.get("id", "")
-    return f"{authors} ({published}). {item.get('title','')}. arXiv. {link}"
+    return f"{authors} ({item.get('published','')[:10]}). {item.get('title','')}. arXiv. {item.get('id','')}"
 
 
 def write_digest(new_items: list[dict], source_file: pathlib.Path) -> pathlib.Path:
-    d = now_lima()
-    out = DIGESTS_DIR / f"{d.strftime('%Y-%m-%d')}-arxiv-digest.md"
-
+    out = DIGESTS_DIR / f"{now_lima().strftime('%Y-%m-%d')}-arxiv-digest.md"
     lines = [
-        f"# Cohera Research Digest — {d.strftime('%Y-%m-%d %H:%M')} (Lima)",
+        f"# Cohera Research Digest — {now_lima().strftime('%Y-%m-%d %H:%M')} (Lima)",
         "",
         f"Source snapshot: `{source_file.relative_to(ROOT)}`",
         "",
         "## New discoveries",
         "",
     ]
-
     if not new_items:
         lines.append("No new unique papers discovered in this run.")
     else:
-        for i, it in enumerate(new_items, start=1):
+        for i, it in enumerate(new_items, 1):
             lines.extend(
                 [
                     f"### {i}. {it['title']}",
@@ -236,221 +182,8 @@ def write_digest(new_items: list[dict], source_file: pathlib.Path) -> pathlib.Pa
                     "",
                 ]
             )
-
     out.write_text("\n".join(lines).strip() + "\n", encoding="utf-8")
     return out
-
-
-# ---------- HTML rendering ----------
-
-def render_card(date_str: str, tag: str, title: str, body: str, link: str | None = None) -> str:
-    safe_title = html.escape(title)
-    safe_body = html.escape(body)
-    safe_tag = html.escape(tag)
-    safe_date = html.escape(date_str)
-    link_html = f'<p><a href="{html.escape(link)}" target="_blank" rel="noopener">Primary source ↗</a></p>' if link else ""
-    return f"""
-                <div class=\"card\">
-                    <div class=\"card-meta\">
-                        <span class=\"accent-text\">{safe_date}</span>
-                        <span>[{safe_tag}]</span>
-                    </div>
-                    <h2 class=\"card-title\">{safe_title}</h2>
-                    <div class=\"card-body\">{safe_body}{link_html}</div>
-                </div>"""
-
-
-def write_home_page(items: list[dict]) -> None:
-    cards = []
-    for it in items[:MAX_HOME_NEWS]:
-        body = textwrap.shorten(it.get("summary", ""), width=320, placeholder="…")
-        cards.append(render_card(it.get("published", "")[:10].replace("-", "/"), "Paper Discovery", it["title"], body, it.get("id")))
-
-    cards_html = "\n".join(cards) if cards else render_card(fmt_date(now_lima()), "Pipeline", "No fresh discoveries", "The scheduler ran, but no new unique entries were found.")
-
-    html_doc = f"""<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>Home - Cohera Lab</title>
-    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&family=JetBrains+Mono:wght@400;700&display=swap\" rel=\"stylesheet\">
-    <link rel=\"stylesheet\" href=\"assets/style.css\">
-</head>
-<body>
-    <div class=\"wrapper\">
-        <header>
-            <a href=\"index.html\" class=\"logo\">COHERA<span>.</span></a>
-            <nav>
-                <a href=\"index.html\" class=\"active\">Home</a>
-                <a href=\"research/index.html\">Research Hub</a>
-                <a href=\"publications/index.html\">Publications</a>
-            </nav>
-        </header>
-
-        <main>
-            <p class=\"mission\">
-                <span class=\"highlight\">Build a coherent model of reality</span> — with evidence, iteration, and clarity. Cohera Lab is the experimentation space behind Science Coherence.
-            </p>
-
-            <div class=\"section-title\">
-                <span>LATEST NEWS & FINDINGS</span>
-                <span>STATUS: OPERATIONAL</span>
-            </div>
-
-            <div class=\"grid grid-1\">
-{cards_html}
-            </div>
-        </main>
-
-        <footer>
-            <span>&copy; 2026 COHERA LAB</span>
-            <span>EVIDENCE / ITERATION / CLARITY</span>
-        </footer>
-    </div>
-</body>
-</html>
-"""
-    (SITE / "index.html").write_text(html_doc, encoding="utf-8")
-
-
-def write_research_page(items: list[dict], digest_file: pathlib.Path) -> None:
-    cards = []
-    for it in items[:MAX_RESEARCH_FEED]:
-        body = textwrap.shorten(it.get("summary", ""), width=600, placeholder="…")
-        tag = f"{it.get('source', 'Source')} · {it.get('topic', 'General')}"
-        cards.append(render_card(it.get("published", "")[:10].replace("-", "/"), tag, it["title"], body, it.get("id")))
-
-    cards_html = "\n".join(cards) if cards else render_card(fmt_date(now_lima()), "Pipeline", "Research feed empty", "No entries yet. Run the pipeline.")
-
-    html_doc = f"""<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>Research Hub - Cohera Lab</title>
-    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&family=JetBrains+Mono:wght@400;700&display=swap\" rel=\"stylesheet\">
-    <link rel=\"stylesheet\" href=\"../assets/style.css\">
-</head>
-<body>
-    <div class=\"wrapper\">
-        <header>
-            <a href=\"../index.html\" class=\"logo\">COHERA<span>.</span></a>
-            <nav>
-                <a href=\"../index.html\">Home</a>
-                <a href=\"index.html\" class=\"active\">Research Hub</a>
-                <a href=\"../publications/index.html\">Publications</a>
-            </nav>
-        </header>
-
-        <main>
-            <p class=\"mission\">
-                Chronological feed of source-grounded research stubs generated by the <span class=\"highlight\">recursive pipeline</span>.
-                Latest digest: <code>{html.escape(str(digest_file.relative_to(ROOT)))}</code>
-            </p>
-
-            <div class=\"section-title\">
-                <span>RESEARCH HUB</span>
-                <span>STATUS: MONITORING</span>
-            </div>
-
-            <div class=\"grid grid-2\">
-{cards_html}
-            </div>
-        </main>
-
-        <footer>
-            <span>&copy; 2026 COHERA LAB</span>
-            <span>EVIDENCE / ITERATION / CLARITY</span>
-        </footer>
-    </div>
-</body>
-</html>
-"""
-    (SITE / "research" / "index.html").write_text(html_doc, encoding="utf-8")
-
-
-def sync_publication_pdfs() -> list[pathlib.Path]:
-    src = RESEARCH / "pdf"
-    dst = SITE / "publications" / "pdf"
-    copied: list[pathlib.Path] = []
-    if not src.exists():
-        return copied
-
-    for f in sorted(src.glob("*.pdf")):
-        target = dst / f.name
-        target.write_bytes(f.read_bytes())
-        copied.append(target)
-    return copied
-
-
-def write_publications_page() -> None:
-    pdf_dir = SITE / "publications" / "pdf"
-    pdfs = sorted(pdf_dir.glob("*.pdf"), key=lambda p: p.stat().st_mtime, reverse=True)
-
-    cards = []
-    for p in pdfs[:MAX_PUBLICATIONS]:
-        mtime = dt.datetime.fromtimestamp(p.stat().st_mtime, tz=TZ)
-        title = p.stem.replace("_", " ")
-        rel = f"pdf/{p.name}"
-        body = f"Final publication artifact from synthesis pipeline. <a href=\"{html.escape(rel)}\" target=\"_blank\" rel=\"noopener\">Download PDF ↗</a>"
-        cards.append(render_card(fmt_date(mtime), "Publication", title, body))
-
-    if not cards:
-        cards.append(render_card(fmt_date(now_lima()), "Archive", "No PDFs published yet", "Run synthesis and PDF build to populate the publication ledger."))
-
-    cards_html = "\n".join(cards)
-
-    html_doc = f"""<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>Publications - Cohera Lab</title>
-    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&family=JetBrains+Mono:wght@400;700&display=swap\" rel=\"stylesheet\">
-    <link rel=\"stylesheet\" href=\"../assets/style.css\">
-</head>
-<body>
-    <div class=\"wrapper\">
-        <header>
-            <a href=\"../index.html\" class=\"logo\">COHERA<span>.</span></a>
-            <nav>
-                <a href=\"../index.html\">Home</a>
-                <a href=\"../research/index.html\">Research Hub</a>
-                <a href=\"index.html\" class=\"active\">Publications</a>
-            </nav>
-        </header>
-
-        <main>
-            <p class=\"mission\">
-                Repository for peer-ready <span class=\"highlight\">PDF manuscripts</span> generated from research synthesis.
-            </p>
-
-            <div class=\"section-title\">
-                <span>MANUSCRIPT LEDGER</span>
-                <span>STATUS: LIVE</span>
-            </div>
-
-            <div class=\"grid\">
-{cards_html}
-            </div>
-        </main>
-
-        <footer>
-            <span>&copy; 2026 COHERA LAB</span>
-            <span>EVIDENCE / ITERATION / CLARITY</span>
-        </footer>
-    </div>
-</body>
-</html>
-"""
-    (SITE / "publications" / "index.html").write_text(html_doc, encoding="utf-8")
 
 
 def write_synthesis_brief(items: list[dict]) -> pathlib.Path:
@@ -458,12 +191,9 @@ def write_synthesis_brief(items: list[dict]) -> pathlib.Path:
     lines = [
         f"# Cohera Synthesis Brief — {now_lima().strftime('%Y-%m-%d %H:%M')} (Lima)",
         "",
-        "This brief consolidates the latest research discoveries into publication candidates.",
-        "",
         "## Priority candidates",
         "",
     ]
-
     if not items:
         lines.append("- No new items this cycle.")
     else:
@@ -476,16 +206,137 @@ def write_synthesis_brief(items: list[dict]) -> pathlib.Path:
                     f"  - Citation: {citation_line(it)}",
                 ]
             )
-
     out.write_text("\n".join(lines).strip() + "\n", encoding="utf-8")
     return out
+
+
+def render_card(date_str: str, tag: str, title: str, body: str, link: str | None = None) -> str:
+    date_str = html.escape(date_str)
+    tag = html.escape(tag)
+    title = html.escape(title)
+    body = html.escape(body)
+    link_html = f'<p><a href="{html.escape(link)}" target="_blank" rel="noopener">Primary source ↗</a></p>' if link else ""
+    return f"""
+                <div class=\"card\">
+                    <div class=\"card-meta\">
+                        <span class=\"accent-text\">{date_str}</span>
+                        <span>[{tag}]</span>
+                    </div>
+                    <h2 class=\"card-title\">{title}</h2>
+                    <div class=\"card-body\">{body}{link_html}</div>
+                </div>"""
+
+
+def insert_blocks_after_grid_open(file_path: pathlib.Path, grid_class_snippet: str, blocks: list[tuple[str, str]]) -> int:
+    """
+    blocks: list of (unique_marker_id, html_block)
+    Inserts right after opening <div class="..."> of matching grid class.
+    """
+    if not file_path.exists() or not blocks:
+        return 0
+
+    text = file_path.read_text(encoding="utf-8")
+    inserted = 0
+
+    # find opening grid div
+    open_pat = re.compile(rf'(<div\s+class="[^"]*{re.escape(grid_class_snippet)}[^"]*">)')
+    m = open_pat.search(text)
+    if not m:
+        return 0
+
+    inject_chunks = []
+    for marker_id, block in blocks:
+        marker = f"<!-- PIPELINE:{marker_id} -->"
+        if marker in text:
+            continue
+        inject_chunks.append(marker + "\n" + block)
+
+    if not inject_chunks:
+        return 0
+
+    insertion = "\n" + "\n".join(inject_chunks) + "\n"
+    idx = m.end()
+    new_text = text[:idx] + insertion + text[idx:]
+    file_path.write_text(new_text, encoding="utf-8")
+    inserted = len(inject_chunks)
+    return inserted
+
+
+def append_home_and_research(feed_items: list[dict]) -> tuple[int, int]:
+    home_file = SITE / "index.html"
+    research_file = SITE / "research" / "index.html"
+
+    home_blocks: list[tuple[str, str]] = []
+    for it in feed_items[:MAX_HOME_NEWS]:
+        pid = slugify(it.get("id", it.get("title", "")))
+        home_blocks.append(
+            (
+                f"home:{pid}",
+                render_card(
+                    it.get("published", "")[:10].replace("-", "/"),
+                    "Paper Discovery",
+                    it.get("title", "Untitled"),
+                    textwrap.shorten(it.get("summary", ""), width=320, placeholder="…"),
+                    it.get("id", ""),
+                ),
+            )
+        )
+
+    research_blocks: list[tuple[str, str]] = []
+    for it in feed_items[:MAX_RESEARCH_FEED]:
+        pid = slugify(it.get("id", it.get("title", "")))
+        research_blocks.append(
+            (
+                f"research:{pid}",
+                render_card(
+                    it.get("published", "")[:10].replace("-", "/"),
+                    f"{it.get('source', 'Source')} · {it.get('topic', 'General')}",
+                    it.get("title", "Untitled"),
+                    textwrap.shorten(it.get("summary", ""), width=600, placeholder="…"),
+                    it.get("id", ""),
+                ),
+            )
+        )
+
+    h = insert_blocks_after_grid_open(home_file, "grid-1", home_blocks)
+    r = insert_blocks_after_grid_open(research_file, "grid-2", research_blocks)
+    return h, r
+
+
+def sync_publication_pdfs() -> list[pathlib.Path]:
+    src = RESEARCH / "pdf"
+    dst = SITE / "publications" / "pdf"
+    copied: list[pathlib.Path] = []
+    if not src.exists():
+        return copied
+    for f in sorted(src.glob("*.pdf")):
+        t = dst / f.name
+        t.write_bytes(f.read_bytes())
+        copied.append(t)
+    return copied
+
+
+def append_publication_cards(pdf_files: list[pathlib.Path]) -> int:
+    pub_file = SITE / "publications" / "index.html"
+    blocks: list[tuple[str, str]] = []
+    # newest first
+    for p in sorted(pdf_files, key=lambda x: x.stat().st_mtime, reverse=True)[:MAX_PUBLICATIONS]:
+        pid = slugify(p.name)
+        mtime = dt.datetime.fromtimestamp(p.stat().st_mtime, tz=TZ).strftime("%d/%m/%Y")
+        title = p.stem.replace("_", " ")
+        rel = f"pdf/{p.name}"
+        body = f"Final publication artifact from synthesis pipeline. Download: {rel}"
+        block = render_card(mtime, "Publication", title, body, link=rel)
+        blocks.append((f"pub:{pid}", block))
+
+    return insert_blocks_after_grid_open(pub_file, "grid", blocks)
 
 
 def main() -> None:
     ensure_dirs()
 
     discovered = discover_arxiv()
-    source_file = write_run_sources(discovered)
+    source_file = write_sources_snapshot(discovered)
 
     state = load_state()
     new_items, state = integrate_new_items(discovered, state)
@@ -495,15 +346,14 @@ def main() -> None:
     write_synthesis_brief(new_items)
 
     feed_items = state.get("items", [])
-    write_home_page(feed_items)
-    write_research_page(feed_items, digest_file)
+    home_added, research_added = append_home_and_research(feed_items)
 
-    sync_publication_pdfs()
-    write_publications_page()
+    synced_pdfs = sync_publication_pdfs()
+    pub_added = append_publication_cards(synced_pdfs)
 
     print(f"Pipeline complete. discovered={len(discovered)} new={len(new_items)}")
     print(f"Digest: {digest_file}")
-    print(f"State: {STATE_FILE}")
+    print(f"Added cards -> home:{home_added} research:{research_added} publications:{pub_added}")
 
 
 if __name__ == "__main__":

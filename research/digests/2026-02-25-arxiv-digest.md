@@ -1,45 +1,7 @@
-# Cohera Research Digest — 2026-02-25 18:12 (Lima)
+# Cohera Research Digest — 2026-02-25 18:30 (Lima)
 
-Source snapshot: `research/sources/arxiv/2026-02-25_181200.json`
+Source snapshot: `research/sources/arxiv/2026-02-25_183024.json`
 
 ## New discoveries
 
-### 1. Automata Learning with an Incomplete but Inductive Teacher
-- Topic: digital twins uncertainty
-- Published: 2026-02-24
-- URL: http://arxiv.org/abs/2602.21073v1
-- PDF: n/a
-- Summary: Active automata learning (AAL) under a Minimally Adequate Teacher (MAT) has been successfully used to infer a regular language through membership and equivalence queries. This language might not be fully characterized: we are then interested in finding any solution in a target class of possibly many regular languages. Some problems such as regular language separation or inductive invariant synthesis in the context of regular model checking (RMC) may indeed admit more than one answer. We therefore introduce IdMAT: a new teacher formalism answering queries with respect to any language in the target class, all at once. Such a teacher tailored towards invariant synthesis might provide incomplete "don't know" answers, but also inductive facts of the form "if w1 is accepted, so is w2". We pair IdMAT with a novel AAL algorithm LIndA that 1. encodes all uncertainties as a unique SAT instance and does not fork, 2. leverages incremental SAT solving and UNSAT core analysis, and 3. handles counterexamples of the simple or inductive type in a frugal manner inspired by the Rivest-Schapire refinement technique. We finally evaluate a prototype implementation in the context of regular language separation and RMC.
-- Citation: Daniel Stan, Adrien Pommellet, Juliette Jacquot (2026-02-24). Automata Learning with an Incomplete but Inductive Teacher. arXiv. http://arxiv.org/abs/2602.21073v1
-
-### 2. Criticality Beyond Nonanalyticity: Intrinsic Microcanonical Signatures of Phase Transitions
-- Topic: self-organization nonequilibrium thermodynamics
-- Published: 2026-02-24
-- URL: http://arxiv.org/abs/2602.21003v1
-- PDF: n/a
-- Summary: Phase transitions are conventionally defined by nonanalyticities of thermodynamic potentials in the thermodynamic limit. In this Letter, we show that the singularity is not the definition of criticality but its asymptotic outcome: criticality is already written in the microcanonical entropy derivatives at any finite size as intrinsic morphological structures -- inflection points and extrema. The singularity is then the endpoint of a sharpening process that evolves with increasing system size. Combining microcanonical inflection-point analysis (MIPA) with the Berlin-Kac spherical model -- for which the microcanonical density of states is known in closed form at every finite $N$ -- we systematically identify these structures in the energy profiles of entropy derivatives that encode the transition. An inflection point in the inverse temperature $β_N(ε)=\partial_εS_N$ and a pronounced peak in its derivative $γ_N(ε)=\partial^2_εS_N$ define a well-controlled pseudocritical trajectory whose controlled sharpening and drift culminate in the macroscopic cusp at the critical energy $ε_c$ in the thermodynamic limit. This establishes an intrinsic, order-parameter-free notion of criticality that precedes its singular asymptotic representation.
-- Citation: Loris Di Cairano (2026-02-24). Criticality Beyond Nonanalyticity: Intrinsic Microcanonical Signatures of Phase Transitions. arXiv. http://arxiv.org/abs/2602.21003v1
-
-### 3. Observation of sequential quantum oscillations induced by mini-Landau bands in a three-dimensional Dirac semiconductor
-- Topic: self-organization nonequilibrium thermodynamics
-- Published: 2026-02-24
-- URL: http://arxiv.org/abs/2602.20998v1
-- PDF: n/a
-- Summary: Quantum oscillations, the oscillatory behavior of electrical and thermodynamic properties, are typically observed in metals and vanish in the quantum limit under strong magnetic fields1. Phenomena such as the fractional quantum Hall effect2, the Hofstadter butterfly3,4, and recent observations of quantum oscillations in exotic insulators are notable exceptions5-12. The narrow-gap Dirac semiconductor ZrTe5, a less exotic material without strong correlations or artificially engineered superlattices, nevertheless exhibits resistance oscillations in the quantum limit13 but can be interpreted within a simple Zeeman-effect-based picture14,15, which remains conventional quantum oscillations without exotic properties. Here, we report the observation of unexpected mini-oscillations superimposed on Zeeman-effect-induced main oscillations in the quantum limit. The subtracted mini-oscillations are periodic in 1/B with the highest frequency equal to 2.1% of the first Brillouin zone and have extremely heavy effective mass ~ 2me, which is unexpected in ZrTe5 given its ultralow carrier density. Additionally, the mini-oscillations exhibit sequential features that are synchronized with the main oscillations, suggesting an internal structure of the Landau bands. However, they appear incompatible with the Hofstadter butterfly due to the highly anisotropic/three-dimensional crystal structure. These sequential mini-oscillations correlate with the commensurability resonance effect with subunity fractions observed in angular magnetoresistance, relating to the formation of mini-Landau bands. Our results present solid experimental evidence of exotic quantum oscillations in the quantum limit beyond currently available mechanisms, and establish ZrTe5, a prototypical Dirac semiconductor, as a simple platform parallel to correlated insulators for exploring exotic oscillations.
-- Citation: Zezhi Wang, Dong Xing, Bingbing Tong, Senyang Pan et al. (2026-02-24). Observation of sequential quantum oscillations induced by mini-Landau bands in a three-dimensional Dirac semiconductor. arXiv. http://arxiv.org/abs/2602.20998v1
-
-### 4. A One-Dimensional Reduction Method for Calculating Thermal Expansion in Solids: Application to Orthorhombic Systems
-- Topic: self-organization nonequilibrium thermodynamics
-- Published: 2026-02-24
-- URL: http://arxiv.org/abs/2602.20957v1
-- PDF: n/a
-- Summary: Anisotropic thermal expansion plays a critical role in the performance and reliability of functional materials, yet its theoretical description remains limited. Here, a computational framework that reduces the calculation of thermal expansion in solids to an effective one-dimensional problem is presented and applied to orthorhombic lattice. Using this method, a comprehensive set of thermodynamic and mechanical properties is determined.
-- Citation: Dmitry Vasilyev (2026-02-24). A One-Dimensional Reduction Method for Calculating Thermal Expansion in Solids: Application to Orthorhombic Systems. arXiv. http://arxiv.org/abs/2602.20957v1
-
-### 5. Body-Reservoir Governance in Repeated Games: Embodied Decision-Making, Dynamic Sentinel Adaptation, and Complexity-Regularized Optimization
-- Topic: self-organization nonequilibrium thermodynamics
-- Published: 2026-02-24
-- URL: http://arxiv.org/abs/2602.20846v1
-- PDF: n/a
-- Summary: Standard game theory explains cooperation in repeated games through conditional strategies such as Tit-for-Tat (TfT), but these require continuous computation that imposes physical costs on embodied agents. We propose a three-layer Body-Reservoir Governance (BRG) architecture: (1) a body reservoir (echo state network) whose $d$-dimensional state performs implicit inference over interaction history, serving as both decision-maker and anomaly detector, (2) a cognitive filter providing costly strategic tools activated on demand, and (3) a metacognitive governance layer with receptivity parameter $α\in [0,1]$. At full body governance ($α=1$), closed-loop dynamics satisfy a self-consistency equation: cooperation is expressed as the reservoir's fixed point, not computed. Strategy complexity cost is defined as the KL divergence between the reservoir's state distribution and its habituated baseline. Body governance reduces this cost, with action variance decreasing up to $1600\times$ with dimension $d$. A dynamic sentinel generates a composite discomfort signal from the reservoir's own state, driving adaptive $α(t)$: near baseline during cooperation, rapidly dropping upon defection to activate cognitive retaliation. Overriding the body incurs thermodynamic cost proportional to internal state distortion. The sentinel achieves the highest payoff across all conditions, outperforming static body governance, TfT, and EMA baselines. A dimension sweep ($d \in \{5,\ldots,100\}$) shows implicit inference scales with bodily richness ($23\times$ to $1600\times$ variance reduction), attributable to reservoir dynamics. A phase diagram in $(d, τ_{\mathrm{env}})$ space reveals governance regime transitions near $d \approx 20$. The framework reinterprets cooperation as the minimum-dissipation response of an adapted dynamical system -- emergent from embodied dynamics rather than computed.
-- Citation: Yuki Nakamura (2026-02-24). Body-Reservoir Governance in Repeated Games: Embodied Decision-Making, Dynamic Sentinel Adaptation, and Complexity-Regularized Optimization. arXiv. http://arxiv.org/abs/2602.20846v1
+No new unique papers discovered in this run.
