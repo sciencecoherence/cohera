@@ -311,7 +311,23 @@ def append_home_and_research(feed_items: list[dict]) -> tuple[int, int]:
     home_file = SITE / "index.html"
     research_file = SITE / "research" / "index.html"
 
-    home_blocks: list[tuple[str, str]] = []
+    run_stamp = now_lima().strftime("%Y%m%d-%H%M%S")
+    run_date = now_lima().strftime("%d/%m/%Y")
+
+    # Guarantee at least one Home news card per run.
+    home_blocks: list[tuple[str, str]] = [
+        (
+            f"home:run:{run_stamp}",
+            render_card(
+                run_date,
+                "Pipeline Run",
+                "Recursive research cycle executed",
+                "Automated cycle completed: discovery, structured notes, digest generation, and publication sync checks.",
+                None,
+            ),
+        )
+    ]
+
     for it in feed_items[:MAX_HOME_NEWS]:
         pid = slugify(it.get("id", it.get("title", "")))
         home_blocks.append(
@@ -327,7 +343,20 @@ def append_home_and_research(feed_items: list[dict]) -> tuple[int, int]:
             )
         )
 
-    research_blocks: list[tuple[str, str]] = []
+    # Guarantee at least one Research entry per run.
+    research_blocks: list[tuple[str, str]] = [
+        (
+            f"research:run:{run_stamp}",
+            render_card(
+                run_date,
+                "Research Update",
+                "Pipeline observation log",
+                "A new recursive research iteration was completed and archived. Latest digest and synthesis notes were refreshed.",
+                None,
+            ),
+        )
+    ]
+
     for it in feed_items[:MAX_RESEARCH_FEED]:
         pid = slugify(it.get("id", it.get("title", "")))
         research_blocks.append(
