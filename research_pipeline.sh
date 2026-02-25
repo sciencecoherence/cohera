@@ -21,11 +21,48 @@ echo "=============================================="
 bash scripts/build_publication_pdfs.sh
 
 echo "=============================================="
-echo "[$DATE_STR] DEPLOY PHASE: optional auto-commit/push"
+echo "[$DATE_STR] DEPLOY PHASE: guarded auto-commit/push"
 echo "=============================================="
 
-if ! git diff --quiet -- site research/pipeline research/sources research/digests research/synthesis-latest.md; then
-  git add site research/pipeline research/sources research/digests research/synthesis-latest.md
+# Hard guard: pipeline is allowed to mutate only specific files/paths.
+# If anything else changed, abort and require explicit human approval.
+mapfile -t CHANGED_PATHS < <(git status --porcelain | awk '{print $2}')
+
+is_allowed_change() {
+  local p="$1"
+  case "$p" in
+    site/index.html|site/research/index.html|site/publications/index.html)
+      return 0
+      ;;
+    site/publications/pdf/*)
+      return 0
+      ;;
+    research/pipeline/*|research/sources/*|research/digests/*|research/synthesis-latest.md)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+DISALLOWED=()
+for p in "${CHANGED_PATHS[@]}"; do
+  [[ -z "$p" ]] && continue
+  if ! is_allowed_change "$p"; then
+    DISALLOWED+=("$p")
+  fi
+done
+
+if (( ${#DISALLOWED[@]} > 0 )); then
+  echo "GUARD VIOLATION: pipeline produced disallowed file changes:" >&2
+  printf ' - %s\n' "${DISALLOWED[@]}" >&2
+  echo "Aborting commit. No files were staged." >&2
+  exit 1
+fi
+
+if ! git diff --quiet -- site/index.html site/research/index.html site/publications/index.html site/publications/pdf research/pipeline research/sources research/digests research/synthesis-latest.md; then
+  git add site/index.html site/research/index.html site/publications/index.html site/publications/pdf research/pipeline research/sources research/digests research/synthesis-latest.md
   git commit -m "Automated research pipeline refresh"
 
   if [[ "${COHERA_AUTO_PUSH:-0}" == "1" ]]; then
