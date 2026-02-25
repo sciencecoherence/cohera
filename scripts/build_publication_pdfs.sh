@@ -1,11 +1,18 @@
 #!/bin/bash
 # build_publication_pdfs.sh
-# 100% Uptime Naked Script
-# Renders formal LaTeX manuscripts into Brutalist PDFs and archives them
+# Sync publication PDFs into site/publications/pdf
 
-set -e
+set -euo pipefail
 
-# (Placeholder for pdflatex or tectonic compilation)
-# pdflatex /home/xavier/.openclaw/workspace/cohera-repo/research/latex/MAIN_PAPER/main.tex -output-directory=/home/xavier/.openclaw/workspace/cohera-repo/site/publications/pdf/
+REPO_ROOT="/home/xavier/.openclaw/workspace/cohera-repo"
+SRC_DIR="$REPO_ROOT/research/pdf"
+DST_DIR="$REPO_ROOT/site/publications/pdf"
 
-echo "LaTeX PDFs built and moved to /publications/pdf/"
+mkdir -p "$DST_DIR"
+
+if [[ -d "$SRC_DIR" ]]; then
+  rsync -a --delete "$SRC_DIR/" "$DST_DIR/"
+  echo "Synced PDFs: $SRC_DIR -> $DST_DIR"
+else
+  echo "No research/pdf directory found yet. Skipping PDF sync."
+fi
