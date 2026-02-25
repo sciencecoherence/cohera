@@ -1,0 +1,171 @@
+{
+  "items": [
+    {
+      "id": "http://arxiv.org/abs/2602.21206v1",
+      "title": "Minimal loop currents in doped Mott insulators",
+      "summary": "For the $t$-$J$ model, variational wave functions can generally be constructed based on an accurate description of antiferromagnetism (AFM) at half-filling and an exact phase-string sign structure under doping. The single-hole-doped and two-hole-doped states, as determined by variational Monte Carlo (VMC) simulations, display sharply contrasting behaviors. The single-hole state constitutes a ``cat state'' that resonates strongly between a quasiparticle component and a local loop-current component, with approximately equal weights. In the ground state, the quasiparticle spectral weight $Z_{\\mathbf{k}}$ peaks at momenta $\\mathbf{k}_0 \\equiv (\\pm\\fracπ{2},\\pm\\fracπ{2})$. The total-energy dispersion versus $\\mathbf{k}$ agrees remarkably well with the Green function Monte Carlo results. However, Landau's one-to-one correspondence hypothesis for quasiparticles breaks down here with the incoherent component exhibiting intrinsic magnetization originating from a minimal $2\\times2$ loop current that forms a $4\\times4$ pattern on the square lattice--a finding in excellent agreement with density matrix renormalization group (DMRG) calculations. In the two-hole ground state, a new pairing mechanism is revealed: the two holes are automatically fused into a tightly bound object consisting of an incoherent $d_{xy}$ pairing along the diagonal direction by compensating the local loop currents. This hole pair is again a ``cat state'' that resonates strongly between the incoherent $d_{xy}$ and a coherent $d_{x^2-y^2}$ Cooper channel to gain substantial hopping energy. Its size extends over an area of about $4\\times 4$ lattice spacings, much smaller than the divergent AFM correlation length, implying that it should survive as a minimal superconducting building block even in the dilute doping regime. Experimental implications and the generalization to the finite-doping case are briefly addressed.",
+      "published": "2026-02-24T18:59:58Z",
+      "updated": "2026-02-24T18:59:58Z",
+      "authors": [
+        "Can Cui",
+        "Jing-Yu Zhao",
+        "Zheng-Yu Weng"
+      ],
+      "pdf": "",
+      "topic": "time crystal biology",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T15:54:44.815048-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21205v1",
+      "title": "The JWST Resolved Stellar Populations Early Release Science Program. IX. The RR Lyrae Population in WLM with HST and JWST",
+      "summary": "RR Lyrae stars are a common, dependable Population II distance indicator, and provide an independent tracer of early star formation. Here, we utilize archival HST/ACS and JWST/NIRCam observations of the nearby dwarf star-forming galaxy WLM to study RR Lyrae in JWST filters. We independently identify RR Lyrae in HST and JWST imaging in order to evaluate JWST's efficacy at characterizing RR Lyrae in the near-IR. We use an MCMC template-fitting technique to obtain periods, amplitudes, and mean magnitudes from the RR Lyrae time-series data. The spatially overlapping HST and JWST observations allow us to directly compare the same sources observed with the instruments, and calibrate the NIRCam F090W and F150W RR Lyrae period-Wesenheit-metallicity (PWZ) relation to the Gaia-consistent HST PWZ. We additionally assess the epoch-to-epoch consistency of NIRCam photometry, and find evidence of burn-in. We conclude that the zero-point offset is negligible compared to the uncertainties from the template fitting. We conduct an MCMC fit of the PWZ with both HST and JWST data. Our results are three-fold. First, we find that we can reliably identify RR Lyrae in NIRCam data, but light-curve template fitting proves difficult on short-baseline observations. Second, the HST PWZ fit yields a distance modulus to WLM of $μ= 24.85\\pm0.05$ ($0.93\\pm0.02$ Mpc). This is closer than previous measurements, primarily attributed to consistency with the Gaia scale. Lastly, although the JWST PWZ fit has large uncertainties and a poorly-constrained slope, it represents a first-of-its-kind PWZ calibration in NIRCam filters.",
+      "published": "2026-02-24T18:59:50Z",
+      "updated": "2026-02-24T18:59:50Z",
+      "authors": [
+        "Catherine M. Slaughter",
+        "Evan D. Skillman",
+        "Alessandro Savino",
+        "Daniel R. Weisz",
+        "Meredith Durbin",
+        "Jay Anderson",
+        "Martha L. Boyer",
+        "Roger E. Cohen",
+        "Andrew A. Cole",
+        "Matteo Correnti",
+        "Andrew E. Dolphin",
+        "Marla C. Geha",
+        "Mario Gennaro",
+        "Nitya Kallivayalil",
+        "Evan N. Kirby",
+        "Kristen B. W. McQuinn",
+        "Max J. B. Newman",
+        "Jack T. Warfield",
+        "Benjamin F. Williams"
+      ],
+      "pdf": "",
+      "topic": "digital twins uncertainty",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T15:54:44.815048-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21204v1",
+      "title": "Test-Time Training with KV Binding Is Secretly Linear Attention",
+      "summary": "Test-time training (TTT) with KV binding as sequence modeling layer is commonly interpreted as a form of online meta-learning that memorizes a key-value mapping at test time. However, our analysis reveals multiple phenomena that contradict this memorization-based interpretation. Motivated by these findings, we revisit the formulation of TTT and show that a broad class of TTT architectures can be expressed as a form of learned linear attention operator. Beyond explaining previously puzzling model behaviors, this perspective yields multiple practical benefits: it enables principled architectural simplifications, admits fully parallel formulations that preserve performance while improving efficiency, and provides a systematic reduction of diverse TTT variants to a standard linear attention form. Overall, our results reframe TTT not as test-time memorization, but as learned linear attention with enhanced representational capacity.",
+      "published": "2026-02-24T18:59:30Z",
+      "updated": "2026-02-24T18:59:30Z",
+      "authors": [
+        "Junchen Liu",
+        "Sven Elflein",
+        "Or Litany",
+        "Zan Gojcic",
+        "Ruilong Li"
+      ],
+      "pdf": "",
+      "topic": "time crystal biology",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T15:54:44.815048-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21203v1",
+      "title": "Squint: Fast Visual Reinforcement Learning for Sim-to-Real Robotics",
+      "summary": "Visual reinforcement learning is appealing for robotics but expensive -- off-policy methods are sample-efficient yet slow; on-policy methods parallelize well but waste samples. Recent work has shown that off-policy methods can train faster than on-policy methods in wall-clock time for state-based control. Extending this to vision remains challenging, where high-dimensional input images complicate training dynamics and introduce substantial storage and encoding overhead. To address these challenges, we introduce Squint, a visual Soft Actor Critic method that achieves faster wall-clock training than prior visual off-policy and on-policy methods. Squint achieves this via parallel simulation, a distributional critic, resolution squinting, layer normalization, a tuned update-to-data ratio, and an optimized implementation. We evaluate on the SO-101 Task Set, a new suite of eight manipulation tasks in ManiSkill3 with heavy domain randomization, and demonstrate sim-to-real transfer to a real SO-101 robot. We train policies for 15 minutes on a single RTX 3090 GPU, with most tasks converging in under 6 minutes.",
+      "published": "2026-02-24T18:58:11Z",
+      "updated": "2026-02-24T18:58:11Z",
+      "authors": [
+        "Abdulaziz Almuzairee",
+        "Henrik I. Christensen"
+      ],
+      "pdf": "",
+      "topic": "chaos control biological systems",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T15:54:44.815048-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21200v1",
+      "title": "A Time-Varying and Covariate-Dependent Correlation Model for Multivariate Longitudinal Studies",
+      "summary": "In multivariate longitudinal studies, associations between outcomes often exhibit time-varying and individual level heterogeneity, motivating the modeling of correlations as an explicit function of time and covariates. However, most existing methods for correlation analysis fail to simultaneously capture the time-varying and covariate-dependent effects. We propose a Time-Varying and Covariate-Dependent (TiVAC) correlation model that jointly allows covariate effects on correlation to change flexibly and smoothly across time. TiVAC employs a bivariate Gaussian model where the covariate-dependent correlations are modeled semiparametrically using penalized splines. We develop a penalized maximum likelihood-based Newton-Raphson algorithm, and inference on time-varying effects is provided through simultaneous confidence bands. Simulation studies show that TiVAC consistently outperforms existing methods in accurately estimating correlations across a wide range of settings, including binary and continuous covariates, sparse to dense observation schedules, and across diverse correlation trajectory patterns. We apply TiVAC to a psychiatric case study of 291 bipolar I patients, modeling the time-varying correlation between depression and anxiety scores as a function of their clinical variables. Our analyses reveal significant heterogeneity associated with gender and nervous-system medication use, which varies with age, revealing the complex dynamic relationship between depression and anxiety in bipolar disorders.",
+      "published": "2026-02-24T18:55:40Z",
+      "updated": "2026-02-24T18:55:40Z",
+      "authors": [
+        "Qingzhi Liu",
+        "Gen Li",
+        "Anastasia K. Yocum",
+        "Melvin McInnis",
+        "Brian D. Athey",
+        "Veerabhadran Baladandayuthapani"
+      ],
+      "pdf": "",
+      "topic": "chaos control biological systems",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T15:54:44.815048-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21199v1",
+      "title": "Topological Floquet Green's function zeros",
+      "summary": "Motivated by recent advances in digital quantum emulation using noisy intermediate-scale quantum (NISQ) devices and an increased interest in topological Green's function zeros in condensed matter systems, we here study Green's function zeros in topological Floquet systems. We concentrate on interacting Kitaev-like Floquet chains (or equivalently transverse field Ising circuits) and introduce Floquet Green's-function-based topological invariants for the corresponding symmetry class BDI. In the vicinity of special points in the free fermion phase diagram and using tailor-made interactions which lead to the Floquet version of symmetric mass generation, we analytically calculate both edge and bulk Green's functions. Just as in the case of continuum time evolution, topological bands of Green's function zeros may also contribute to the topological invariant. However, contrary to the case of continuum time evolution, Floquet Green's functions can have zeros even in the absence of interactions. Finally, we also discuss an implementation of this Floquet system in a digital quantum emulator: We present a circuit which encodes the interaction under consideration and pinpoint the observables carrying information about the topological Green's function boundary zeros.",
+      "published": "2026-02-24T18:55:23Z",
+      "updated": "2026-02-24T18:55:23Z",
+      "authors": [
+        "Elio J. König",
+        "Aditi Mitra"
+      ],
+      "pdf": "",
+      "topic": "digital twins uncertainty",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T15:54:44.815048-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21198v1",
+      "title": "Learning from Trials and Errors: Reflective Test-Time Planning for Embodied LLMs",
+      "summary": "Embodied LLMs endow robots with high-level task reasoning, but they cannot reflect on what went wrong or why, turning deployment into a sequence of independent trials where mistakes repeat rather than accumulate into experience. Drawing upon human reflective practitioners, we introduce Reflective Test-Time Planning, which integrates two modes of reflection: \\textit{reflection-in-action}, where the agent uses test-time scaling to generate and score multiple candidate actions using internal reflections before execution; and \\textit{reflection-on-action}, which uses test-time training to update both its internal reflection model and its action policy based on external reflections after execution. We also include retrospective reflection, allowing the agent to re-evaluate earlier decisions and perform model updates with hindsight for proper long-horizon credit assignment. Experiments on our newly-designed Long-Horizon Household benchmark and MuJoCo Cupboard Fitting benchmark show significant gains over baseline models, with ablative studies validating the complementary roles of reflection-in-action and reflection-on-action. Qualitative analyses, including real-robot trials, highlight behavioral correction through reflection.",
+      "published": "2026-02-24T18:55:18Z",
+      "updated": "2026-02-24T18:55:18Z",
+      "authors": [
+        "Yining Hong",
+        "Huang Huang",
+        "Manling Li",
+        "Li Fei-Fei",
+        "Jiajun Wu",
+        "Yejin Choi"
+      ],
+      "pdf": "",
+      "topic": "time crystal biology",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T15:54:44.815048-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21196v1",
+      "title": "Untied Ulysses: Memory-Efficient Context Parallelism via Headwise Chunking",
+      "summary": "Efficiently processing long sequences with Transformer models usually requires splitting the computations across accelerators via context parallelism. The dominant approaches in this family of methods, such as Ring Attention or DeepSpeed Ulysses, enable scaling over the context dimension but do not focus on memory efficiency, which limits the sequence lengths they can support. More advanced techniques, such as Fully Pipelined Distributed Transformer or activation offloading, can further extend the possible context length at the cost of training throughput. In this paper, we present UPipe, a simple yet effective context parallelism technique that performs fine-grained chunking at the attention head level. This technique significantly reduces the activation memory usage of self-attention, breaking the activation memory barrier and unlocking much longer context lengths. Our approach reduces intermediate tensor memory usage in the attention layer by as much as 87.5$\\%$ for 32B Transformers, while matching previous context parallelism techniques in terms of training speed. UPipe can support the context length of 5M tokens when training Llama3-8B on a single 8$\\times$H100 node, improving upon prior methods by over 25$\\%$.",
+      "published": "2026-02-24T18:54:39Z",
+      "updated": "2026-02-24T18:54:39Z",
+      "authors": [
+        "Ravi Ghadia",
+        "Maksim Abraham",
+        "Sergei Vorobyov",
+        "Max Ryabinin"
+      ],
+      "pdf": "",
+      "topic": "time crystal biology",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T15:54:44.815048-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    }
+  ]
+}
