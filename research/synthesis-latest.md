@@ -1,30 +1,30 @@
-# Cohera Synthesis Brief — 2026-02-25 16:04 (Lima)
+# Cohera Synthesis Brief — 2026-02-25 17:04 (Lima)
 
 This brief consolidates the latest research discoveries into publication candidates.
 
 ## Priority candidates
 
-- **Region of Interest Segmentation and Morphological Analysis for Membranes in Cryo-Electron Tomography**
-  - Topic: chaos control biological systems
-  - Claim to test: Cryo-electron tomography (cryo-ET) enables high resolution, three-dimensional reconstruction of biological structures, including membranes and membrane proteins. Identification of…
-  - Citation: Xingyi Cheng, Julien Maufront, Aurélie Di Cicco, Daniël M. Pelt et al. (2026-02-24). Region of Interest Segmentation and Morphological Analysis for Membranes in Cryo-Electron Tomography. arXiv. http://arxiv.org/abs/2602.21195v1
-- **Exact quantum transport in non-Markovian open Gaussian systems**
-  - Topic: chaos control biological systems
-  - Claim to test: We build an exact framework to evaluate heat, energy, and particle transport between Gaussian reservoirs mediated by a quadratic quantum system. By combining full counting…
-  - Citation: Guglielmo Pellitteri, Vittorio Giovannetti, Vasco Cavina (2026-02-24). Exact quantum transport in non-Markovian open Gaussian systems. arXiv. http://arxiv.org/abs/2602.21190v1
-- **Human Video Generation from a Single Image with 3D Pose and View Control**
-  - Topic: chaos control biological systems
-  - Claim to test: Recent diffusion methods have made significant progress in generating videos from single images due to their powerful visual generation capabilities. However, challenges persist…
-  - Citation: Tiantian Wang, Chun-Han Yao, Tao Hu, Mallikarjun Byrasandra Ramalinga Reddy et al. (2026-02-24). Human Video Generation from a Single Image with 3D Pose and View Control. arXiv. http://arxiv.org/abs/2602.21188v1
-- **823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio**
-  - Topic: chaos control biological systems
-  - Claim to test: Bengali, despite being one of the most widely spoken languages globally, remains underrepresented in long form speech technology, particularly in systems addressing transcription…
-  - Citation: Ratnajit Dhar, Arpita Mallik (2026-02-24). 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio. arXiv. http://arxiv.org/abs/2602.21183v1
-- **Circumventing the CAP Theorem with Open Atomic Ethernet**
-  - Topic: chaos control biological systems
-  - Claim to test: The CAP theorem is routinely treated as a systems law: under network partition, a replicated service must sacrifice either consistency or availability. The theorem is correct…
-  - Citation: Paul Borrill (2026-02-24). Circumventing the CAP Theorem with Open Atomic Ethernet. arXiv. http://arxiv.org/abs/2602.21182v1
-- **Memory Undone: Between Knowing and Not Knowing in Data Systems**
-  - Topic: metabolic health systems biology
-  - Claim to test: Machine learning and data systems increasingly function as infrastructures of memory: they ingest, store, and operationalize traces of personal, political, and cultural life. Yet…
-  - Citation: Viktoriia Makovska, George Fletcher, Julia Stoyanovich, Tetiana Zakharchenko (2026-02-24). Memory Undone: Between Knowing and Not Knowing in Data Systems. arXiv. http://arxiv.org/abs/2602.21180v1
+- **cyclinbayes: Bayesian Causal Discovery with Linear Non-Gaussian Directed Acyclic and Cyclic Graphical Models**
+  - Topic: digital twins uncertainty
+  - Claim to test: We introduce cyclinbayes, an open-source R package for discovering linear causal relationships with both acyclic and cyclic structures. The package employs scalable Bayesian…
+  - Citation: Robert Lee, Raymond K. W. Wong, Yang Ni (2026-02-24). cyclinbayes: Bayesian Causal Discovery with Linear Non-Gaussian Directed Acyclic and Cyclic Graphical Models. arXiv. http://arxiv.org/abs/2602.21170v1
+- **Not Just How Much, But Where: Decomposing Epistemic Uncertainty into Per-Class Contributions**
+  - Topic: digital twins uncertainty
+  - Claim to test: In safety-critical classification, the cost of failure is often asymmetric, yet Bayesian deep learning summarises epistemic uncertainty with a single scalar, mutual information…
+  - Citation: Mame Diarra Toure, David A. Stephens (2026-02-24). Not Just How Much, But Where: Decomposing Epistemic Uncertainty into Per-Class Contributions. arXiv. http://arxiv.org/abs/2602.21160v1
+- **SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards**
+  - Topic: digital twins uncertainty
+  - Claim to test: Large language models (LLMs) are increasingly deployed as multi-step decision-making agents, where effective reward design is essential for guiding learning. Although recent work…
+  - Citation: Dengjia Zhang, Xiaoou Liu, Lu Cheng, Yaqing Wang et al. (2026-02-24). SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards. arXiv. http://arxiv.org/abs/2602.21158v1
+- **Geometry- and inertia-limited chaotic growth in classical many-body systems**
+  - Topic: self-organization nonequilibrium thermodynamics
+  - Claim to test: Chaotic instability in many-body systems is commonly quantified by the largest Lyapunov exponent, yet general constraints on its magnitude in classical interacting systems remain…
+  - Citation: Swetamber Das (2026-02-24). Geometry- and inertia-limited chaotic growth in classical many-body systems. arXiv. http://arxiv.org/abs/2602.21149v1
+- **Controlling inertial active Brownian motion via stochastic resetting**
+  - Topic: self-organization nonequilibrium thermodynamics
+  - Claim to test: Inertia is intrinsic to many living and synthetic active systems, from animals and robotic agents to colloidal swimmers, and it strongly shapes transport. Many such systems employ…
+  - Citation: Manish Patel, Amir Shee (2026-02-24). Controlling inertial active Brownian motion via stochastic resetting. arXiv. http://arxiv.org/abs/2602.21134v1
+- **SOM-VQ: Topology-Aware Tokenization for Interactive Generative Models**
+  - Topic: self-organization nonequilibrium thermodynamics
+  - Claim to test: Vector-quantized representations enable powerful discrete generative models but lack semantic structure in token space, limiting interpretable human control. We introduce SOM-VQ,…
+  - Citation: Alessandro Londei, Denise Lanzieri, Matteo Benati (2026-02-24). SOM-VQ: Topology-Aware Tokenization for Interactive Generative Models. arXiv. http://arxiv.org/abs/2602.21133v1

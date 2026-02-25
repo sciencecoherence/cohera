@@ -1,6 +1,151 @@
 {
   "items": [
     {
+      "id": "http://arxiv.org/abs/2602.21170v1",
+      "title": "cyclinbayes: Bayesian Causal Discovery with Linear Non-Gaussian Directed Acyclic and Cyclic Graphical Models",
+      "summary": "We introduce cyclinbayes, an open-source R package for discovering linear causal relationships with both acyclic and cyclic structures. The package employs scalable Bayesian approaches with spike-and-slab priors to learn directed acyclic graphs (DAGs) and directed cyclic graphs (DCGs) under non-Gaussian noise. A central feature of cyclinbayes is comprehensive uncertainty quantification, including posterior edge inclusion probabilities, posterior probabilities of network motifs, and posterior probabilities over entire graph structures. Our implementation addresses two limitations in existing software: (1) while methods for linear non-Gaussian DAG learning are available in R and Python, they generally lack proper uncertainty quantification, and (2) reliable implementations for linear non-Gaussian DCG remain scarce. The package implements computationally efficient hybrid MCMC algorithms that scale to large datasets. Beyond uncertainty quantification, we propose a new decision-theoretic approach to summarize posterior samples of graphs, yielding principled point estimates based on posterior expected loss such as posterior expected structural Hamming distance and structural intervention distance. The package, a supplementary material, and a tutorial are available on GitHub at https://github.com/roblee01/cyclinbayes.",
+      "published": "2026-02-24T18:15:58Z",
+      "updated": "2026-02-24T18:15:58Z",
+      "authors": [
+        "Robert Lee",
+        "Raymond K. W. Wong",
+        "Yang Ni"
+      ],
+      "pdf": "",
+      "topic": "digital twins uncertainty",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T17:04:45.602776-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21160v1",
+      "title": "Not Just How Much, But Where: Decomposing Epistemic Uncertainty into Per-Class Contributions",
+      "summary": "In safety-critical classification, the cost of failure is often asymmetric, yet Bayesian deep learning summarises epistemic uncertainty with a single scalar, mutual information (MI), that cannot distinguish whether a model's ignorance involves a benign or safety-critical class. We decompose MI into a per-class vector $C_k(x)=σ_k^{2}/(2μ_k)$, with $μ_k{=}\\mathbb{E}[p_k]$ and $σ_k^2{=}\\mathrm{Var}[p_k]$ across posterior samples. The decomposition follows from a second-order Taylor expansion of the entropy; the $1/μ_k$ weighting corrects boundary suppression and makes $C_k$ comparable across rare and common classes. By construction $\\sum_k C_k \\approx \\mathrm{MI}$, and a companion skewness diagnostic flags inputs where the approximation degrades. After characterising the axiomatic properties of $C_k$, we validate it on three tasks: (i) selective prediction for diabetic retinopathy, where critical-class $C_k$ reduces selective risk by 34.7\\% over MI and 56.2\\% over variance baselines; (ii) out-of-distribution detection on clinical and image benchmarks, where $\\sum_k C_k$ achieves the highest AUROC and the per-class view exposes asymmetric shifts invisible to MI; and (iii) a controlled label-noise study in which $\\sum_k C_k$ shows less sensitivity to injected aleatoric noise than MI under end-to-end Bayesian training, while both metrics degrade under transfer learning. Across all tasks, the quality of the posterior approximation shapes uncertainty at least as strongly as the choice of metric, suggesting that how uncertainty is propagated through the network matters as much as how it is measured.",
+      "published": "2026-02-24T18:05:51Z",
+      "updated": "2026-02-24T18:05:51Z",
+      "authors": [
+        "Mame Diarra Toure",
+        "David A. Stephens"
+      ],
+      "pdf": "",
+      "topic": "digital twins uncertainty",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T17:04:45.602776-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21158v1",
+      "title": "SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards",
+      "summary": "Large language models (LLMs) are increasingly deployed as multi-step decision-making agents, where effective reward design is essential for guiding learning. Although recent work explores various forms of reward shaping and step-level credit assignment, a key signal remains largely overlooked: the intrinsic uncertainty of LLMs. Uncertainty reflects model confidence, reveals where exploration is needed, and offers valuable learning cues even in failed trajectories. We introduce SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards, a reinforcement learning framework that incorporates uncertainty directly into the reward design. SELAUR integrates entropy-, least-confidence-, and margin-based metrics into a combined token-level uncertainty estimate, providing dense confidence-aligned supervision, and employs a failure-aware reward reshaping mechanism that injects these uncertainty signals into step- and trajectory-level rewards to improve exploration efficiency and learning stability. Experiments on two benchmarks, ALFWorld and WebShop, show that our method consistently improves success rates over strong baselines. Ablation studies further demonstrate how uncertainty signals enhance exploration and robustness.",
+      "published": "2026-02-24T18:04:54Z",
+      "updated": "2026-02-24T18:04:54Z",
+      "authors": [
+        "Dengjia Zhang",
+        "Xiaoou Liu",
+        "Lu Cheng",
+        "Yaqing Wang",
+        "Kenton Murray",
+        "Hua Wei"
+      ],
+      "pdf": "",
+      "topic": "digital twins uncertainty",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T17:04:45.602776-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21149v1",
+      "title": "Geometry- and inertia-limited chaotic growth in classical many-body systems",
+      "summary": "Chaotic instability in many-body systems is commonly quantified by the largest Lyapunov exponent, yet general constraints on its magnitude in classical interacting systems remain poorly understood. Here we establish explicit, Hamiltonian-specific upper bounds on the largest Lyapunov exponent for classical many-body systems with local interactions. These bounds arise from instantaneous stability constraints on the Hamiltonian flow and are expressed in terms of inertial scales and the curvature of the interaction potential. We show that they naturally separate into two qualitatively distinct classes: non-violable bounds, controlled by worst-case local curvature scales and inertia and insensitive to spatial structure, and ergodic ceilings, which retain spectral information and encode collective modes and finite-size effects under generic dynamical evolution. For a paradigmatic one-dimensional coupled-rotor chain (Josephson junction array), the ergodic ceiling admits a closed analytic form and produces a dynamically inaccessible region for sustained chaotic growth in the Lyapunov exponent-energy plane, which we confirm numerically. In contrast to non-violable estimates, the ergodic ceiling yields a sharper constraint on chaotic growth by capturing collective suppression mechanisms absent at the level of local curvature alone. Remarkably, in the thermodynamic limit the ergodic ceiling asymptotically approaches an inertial ceiling that limits sustained Lyapunov growth, becoming independent of temperature and interaction strength. While classical systems do not admit universal chaos bounds, our results identify a broad class of natural Hamiltonian systems in which chaotic growth is inherently limited by inertia and interaction geometry, thereby setting a minimal microscopic timescale for long-time loss of memory of initial conditions.",
+      "published": "2026-02-24T17:50:29Z",
+      "updated": "2026-02-24T17:50:29Z",
+      "authors": [
+        "Swetamber Das"
+      ],
+      "pdf": "",
+      "topic": "self-organization nonequilibrium thermodynamics",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T17:04:45.602776-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21134v1",
+      "title": "Controlling inertial active Brownian motion via stochastic resetting",
+      "summary": "Inertia is intrinsic to many living and synthetic active systems, from animals and robotic agents to colloidal swimmers, and it strongly shapes transport. Many such systems employ intermittent restart protocols to regulate exploration. Stochastic resetting provides a theoretical framework for these strategies and a route to control nonequilibrium steady states, yet the role of inertia in reset-controlled active dynamics remains poorly understood. Here we study an inertial active Brownian particle subject to complete stochastic resetting of position, velocity, and orientation in two dimensions. Using a moment-generating framework together with the Final-Value Theorem, we derive closed-form steady-state moments up to fourth order as functions of inertia, activity, and reset rate. We show that inertia fundamentally modifies reset-controlled transport: at large reset rates the steady-state mean-squared displacement is suppressed much more strongly than in the overdamped limit, yielding enhanced localization near the reset point. At the same time, position excess-kurtosis phase diagrams reveal strongly non-Gaussian steady states characterized by a sharp central peak coexisting with heavy tails in the position distribution, indicating rare long excursions enabled by inertial persistence. The tail weight varies non-monotonically with reset rate, reflecting a competition between inertial momentum relaxation and resetting that selects an optimal regime maximizing rare excursions. Our results provide experimentally testable signatures of inertial effects in reset-controlled active systems.",
+      "published": "2026-02-24T17:32:11Z",
+      "updated": "2026-02-24T17:32:11Z",
+      "authors": [
+        "Manish Patel",
+        "Amir Shee"
+      ],
+      "pdf": "",
+      "topic": "self-organization nonequilibrium thermodynamics",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T17:04:45.602776-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21133v1",
+      "title": "SOM-VQ: Topology-Aware Tokenization for Interactive Generative Models",
+      "summary": "Vector-quantized representations enable powerful discrete generative models but lack semantic structure in token space, limiting interpretable human control. We introduce SOM-VQ, a tokenization method that combines vector quantization with Self-Organizing Maps to learn discrete codebooks with explicit low-dimensional topology. Unlike standard VQ-VAE, SOM-VQ uses topology-aware updates that preserve neighborhood structure: nearby tokens on a learned grid correspond to semantically similar states, enabling direct geometric manipulation of the latent space. We demonstrate that SOM-VQ produces more learnable token sequences in the evaluated domains while providing an explicit navigable geometry in code space. Critically, the topological organization enables intuitive human-in-the-loop control: users can steer generation by manipulating distances in token space, achieving semantic alignment without frame-level constraints. We focus on human motion generation - a domain where kinematic structure, smooth temporal continuity, and interactive use cases (choreography, rehabilitation, HCI) make topology-aware control especially natural - demonstrating controlled divergence and convergence from reference sequences through simple grid-based sampling. SOM-VQ provides a general framework for interpretable discrete representations applicable to music, gesture, and other interactive generative domains.",
+      "published": "2026-02-24T17:29:04Z",
+      "updated": "2026-02-24T17:29:04Z",
+      "authors": [
+        "Alessandro Londei",
+        "Denise Lanzieri",
+        "Matteo Benati"
+      ],
+      "pdf": "",
+      "topic": "self-organization nonequilibrium thermodynamics",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T17:04:45.602776-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21111v1",
+      "title": "Density Functional Theory Predictions of Derivative Thermodynamic Properties of a Confined Fluid",
+      "summary": "Fluids in nanopores are of importance for many engineering applications, including energy storage in supercapacitors, hydrocarbons recovery from unconventional sources, or water desalination. Thermodynamic properties of fluids confined in nanopores differ from the properties of the same fluids in bulk. Density functional theory (DFT) has been widely used for modeling thermodynamics of confined fluids. However, it is rarely used for calculations of derivative thermodynamic properties. Here we use a rather simple DFT model for argon based on the Percus-Yevick equation, and showed that with standard parametrization it fails to predict derivative properties. However, slight adjustment in parameters leads to quantitative predictions of isothermal compressibility and thermal expansion coefficient at a selected temperature. Using the adjusted parameterization we performed the calculations of compressibility of argon confined in carbon slit pores of various sizes, and demonstrated that the compressibility of argon in confinement is lower than that in bulk and is pore size dependent. We confirmed the DFT predictions using the Monte Carlo molecular simulations. In addition to isothermal compressibility, we calculated the thermal expansion coefficient of confined argon. Our calculations showed that it behaves similar to compressibility -- it is always lower than the bulk value and gradually increases for smaller pore sizes. For several selected pore sizes we verified the DFT calculations by Monte Carlo simulations. Overall, our results suggest that the classical DFT can be utilized for calculations of derivative thermodynamic properties of confined fluids, which are computationally challenging to predict using molecular simulations.",
+      "published": "2026-02-24T17:08:37Z",
+      "updated": "2026-02-24T17:08:37Z",
+      "authors": [
+        "Gennady Y. Gor",
+        "Geordy Jomon",
+        "Andrei L. Kolesnikov"
+      ],
+      "pdf": "",
+      "topic": "self-organization nonequilibrium thermodynamics",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T17:04:45.602776-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.21090v1",
+      "title": "Robustness certificates in data-driven non-convex optimization with additively-uncertain constraints",
+      "summary": "We consider decision-making problems that are formulated as non-convex optimization programs where uncertainty enters the constraints through an additive term, independent of the decision variables, and robustness is imposed using a finite data-set, according to the scenario robust optimization paradigm. By exploiting the structure of the constraints, we show that both a priori and a posteriori distribution-free probabilistic robustness certificates for a possibly sub-optimal solution to the resulting data-driven optimization problem can be obtained with minimal computational effort. Building on these results, we also discuss a one-shot and an incremental procedure to determine the size of the data-set so as to guarantee a user-chosen robustness level. Notably, both the a posteriori robustness assessment and incremental data-set sizing do not require to solve the non-convex scenario program. A comparative analysis performed on the unit commitment problem using real data reveals a limited increase in conservativeness with a significant computational saving with respect to the application of scenario theory results for general, non necessarily structured, non-convex problems.",
+      "published": "2026-02-24T16:49:07Z",
+      "updated": "2026-02-24T16:49:07Z",
+      "authors": [
+        "Alexander J Gallo",
+        "Massimiliano Zoggia",
+        "Alessandro Falsone",
+        "Maria Prandini",
+        "Simone Garatti"
+      ],
+      "pdf": "",
+      "topic": "digital twins uncertainty",
+      "source": "arXiv",
+      "addedAt": "2026-02-25T17:04:45.602776-05:00",
+      "kind": "paper",
+      "status": "discovered"
+    },
+    {
       "id": "http://arxiv.org/abs/2602.21195v1",
       "title": "Region of Interest Segmentation and Morphological Analysis for Membranes in Cryo-Electron Tomography",
       "summary": "Cryo-electron tomography (cryo-ET) enables high resolution, three-dimensional reconstruction of biological structures, including membranes and membrane proteins. Identification of regions of interest (ROIs) is central to scientific imaging, as it enables isolation and quantitative analysis of specific structural features within complex datasets. In practice, however, ROIs are typically derived indirectly through full structure segmentation followed by post hoc analysis. This limitation is especially apparent for continuous and geometrically complex structures such as membranes, which are segmented as single entities. Here, we developed TomoROIS-SurfORA, a two step framework for direct, shape-agnostic ROI segmentation and morphological surface analysis. TomoROIS performs deep learning-based ROI segmentation and can be trained from scratch using small annotated datasets, enabling practical application across diverse imaging data. SurfORA processes segmented structures as point clouds and surface meshes to extract quantitative morphological features, including inter-membrane distances, curvature, and surface roughness. It supports both closed and open surfaces, with specific considerations for open surfaces, which are common in cryo-ET due to the missing wedge effect. We demonstrate both tools using in vitro reconstituted membrane systems containing deformable vesicles with complex geometries, enabling automatic quantitative analysis of membrane contact sites and remodeling events such as invagination. While demonstrated here on cryo-ET membrane data, the combined approach is applicable to ROI detection and surface analysis in broader scientific imaging contexts.",
