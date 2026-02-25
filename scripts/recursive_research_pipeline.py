@@ -38,8 +38,8 @@ TOPICS = [
 
 MAX_FETCH_PER_TOPIC = 8
 MAX_NEW_PER_RUN = 8
-MAX_HOME_NEWS = 5
-MAX_RESEARCH_FEED = 8
+MAX_HOME_NEWS = 1
+MAX_RESEARCH_FEED = 1
 MAX_PUBLICATIONS = 24
 
 
@@ -307,70 +307,93 @@ def insert_blocks_after_grid_open(file_path: pathlib.Path, grid_class_snippet: s
     return len(inject_chunks)
 
 
-def append_home_and_research(feed_items: list[dict]) -> tuple[int, int]:
+RELEVANCE_KEYWORDS = [
+    "time crystal",
+    "time-crystalline",
+    "coherence",
+    "metabolic",
+    "metabolism",
+    "regeneration",
+    "bioelectric",
+    "chemiosmosis",
+    "holographic",
+]
+
+
+def is_relevant_to_cohera(item: dict) -> bool:
+    text = f"{item.get('title','')} {item.get('summary','')} {item.get('topic','')}".lower()
+    return any(k in text for k in RELEVANCE_KEYWORDS)
+
+
+def pick_relevant_item(candidates: list[dict]) -> dict | None:
+    for it in candidates:
+        if is_relevant_to_cohera(it):
+            return it
+    return None
+
+
+def append_home_and_research(new_items: list[dict], feed_items: list[dict]) -> tuple[int, int]:
     home_file = SITE / "index.html"
     research_file = SITE / "research" / "index.html"
 
     run_stamp = now_lima().strftime("%Y%m%d-%H%M%S")
     run_date = now_lima().strftime("%d/%m/%Y")
 
-    # Guarantee at least one Home news card per run.
-    home_blocks: list[tuple[str, str]] = [
-        (
-            f"home:run:{run_stamp}",
-            render_card(
-                run_date,
-                "Pipeline Run",
-                "Recursive research cycle executed",
-                "Automated cycle completed: discovery, structured notes, digest generation, and publication sync checks.",
-                None,
-            ),
-        )
-    ]
+    # Prefer a relevant newly discovered paper; fallback to relevant feed item.
+    chosen = pick_relevant_item(new_items) or pick_relevant_item(feed_items)
 
-    for it in feed_items[:MAX_HOME_NEWS]:
-        pid = slugify(it.get("id", it.get("title", "")))
-        home_blocks.append(
+    if chosen:
+        pid = slugify(chosen.get("id", chosen.get("title", "")))
+        home_blocks: list[tuple[str, str]] = [
             (
-                f"home:{pid}",
+                f"home:run:{run_stamp}",
                 render_card(
-                    it.get("published", "")[:10].replace("-", "/"),
+                    chosen.get("published", "")[:10].replace("-", "/") or run_date,
                     "Paper Discovery",
-                    it.get("title", "Untitled"),
-                    textwrap.shorten(it.get("summary", ""), width=320, placeholder="…"),
-                    it.get("id", ""),
+                    chosen.get("title", "Untitled"),
+                    textwrap.shorten(chosen.get("summary", ""), width=320, placeholder="…"),
+                    chosen.get("id", ""),
                 ),
             )
-        )
-
-    # Guarantee at least one Research entry per run.
-    research_blocks: list[tuple[str, str]] = [
-        (
-            f"research:run:{run_stamp}",
-            render_card(
-                run_date,
-                "Research Update",
-                "Pipeline observation log",
-                "A new recursive research iteration was completed and archived. Latest digest and synthesis notes were refreshed.",
-                None,
-            ),
-        )
-    ]
-
-    for it in feed_items[:MAX_RESEARCH_FEED]:
-        pid = slugify(it.get("id", it.get("title", "")))
-        research_blocks.append(
+        ]
+        research_blocks: list[tuple[str, str]] = [
             (
-                f"research:{pid}",
+                f"research:run:{run_stamp}:{pid}",
                 render_card(
-                    it.get("published", "")[:10].replace("-", "/"),
-                    f"{it.get('source', 'Source')} · {it.get('topic', 'General')}",
-                    it.get("title", "Untitled"),
-                    textwrap.shorten(it.get("summary", ""), width=600, placeholder="…"),
-                    it.get("id", ""),
+                    chosen.get("published", "")[:10].replace("-", "/") or run_date,
+                    f"{chosen.get('source', 'Source')} · {chosen.get('topic', 'General')}",
+                    chosen.get("title", "Untitled"),
+                    textwrap.shorten(chosen.get("summary", ""), width=600, placeholder="…"),
+                    chosen.get("id", ""),
                 ),
             )
-        )
+        ]
+    else:
+        # Guaranteed one news + one research entry per run (max 2 total), even with no relevant paper.
+        home_blocks = [
+            (
+                f"home:run:{run_stamp}",
+                render_card(
+                    run_date,
+                    "Pipeline Run",
+                    "Recursive research cycle executed",
+                    "No new relevant paper passed Cohera relevance filter this cycle; sources were still scanned and logged.",
+                    None,
+                ),
+            )
+        ]
+        research_blocks = [
+            (
+                f"research:run:{run_stamp}",
+                render_card(
+                    run_date,
+                    "Research Update",
+                    "Filtered run summary",
+                    "Discovery and citation extraction completed. No new high-relevance item published in this cycle.",
+                    None,
+                ),
+            )
+        ]
 
     h = insert_blocks_after_grid_open(home_file, "grid-1", home_blocks)
     r = insert_blocks_after_grid_open(research_file, "grid-2", research_blocks)
@@ -420,7 +443,7 @@ def main() -> None:
     write_synthesis_brief(new_items)
 
     feed_items = state.get("items", [])
-    home_added, research_added = append_home_and_research(feed_items)
+    home_added, research_added = append_home_and_research(new_items, feed_items)
 
     synced_pdfs = sync_publication_pdfs()
     pub_added = append_publication_cards(synced_pdfs)
