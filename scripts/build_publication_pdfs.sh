@@ -5,14 +5,12 @@
 set -euo pipefail
 
 REPO_ROOT="/home/xavier/.openclaw/workspace/cohera-repo"
-SRC_DIR="$REPO_ROOT/research/pdf"
+SRC_DIR="$REPO_ROOT/research/publications/final"
 DST_DIR="$REPO_ROOT/site/publications/pdf"
 
-mkdir -p "$DST_DIR"
+mkdir -p "$SRC_DIR" "$DST_DIR"
 
-if [[ -d "$SRC_DIR" ]]; then
-  rsync -a --delete "$SRC_DIR/" "$DST_DIR/"
-  echo "Synced PDFs: $SRC_DIR -> $DST_DIR"
-else
-  echo "No research/pdf directory found yet. Skipping PDF sync."
-fi
+# Strict policy: publications page must only expose Cohera-authored final papers.
+# Therefore we sync exclusively from research/publications/final and delete anything else.
+rsync -a --delete "$SRC_DIR/" "$DST_DIR/"
+echo "Synced Cohera final PDFs only: $SRC_DIR -> $DST_DIR"

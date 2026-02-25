@@ -332,7 +332,7 @@ def pick_relevant_item(candidates: list[dict]) -> dict | None:
     return None
 
 
-def append_home_and_research(new_items: list[dict], feed_items: list[dict]) -> tuple[int, int]:
+def append_home_and_research(new_items: list[dict], feed_items: list[dict], digest_file: pathlib.Path, source_file: pathlib.Path) -> tuple[int, int]:
     home_file = SITE / "index.html"
     research_file = SITE / "research" / "index.html"
 
@@ -349,27 +349,33 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict]) -> t
                 f"home:run:{run_stamp}",
                 render_card(
                     chosen.get("published", "")[:10].replace("-", "/") or run_date,
-                    "Paper Discovery",
+                    "Research Milestone",
                     chosen.get("title", "Untitled"),
                     textwrap.shorten(chosen.get("summary", ""), width=320, placeholder="…"),
                     chosen.get("id", ""),
                 ),
             )
         ]
+
+        process_body = (
+            "Process step: integrated this source into the active Cohera hypothesis thread, extracted claims, "
+            f"and logged evidence in {digest_file.relative_to(ROOT)}. "
+            f"Source snapshot: {source_file.relative_to(ROOT)}."
+        )
         research_blocks: list[tuple[str, str]] = [
             (
                 f"research:run:{run_stamp}:{pid}",
                 render_card(
                     chosen.get("published", "")[:10].replace("-", "/") or run_date,
-                    f"{chosen.get('source', 'Source')} · {chosen.get('topic', 'General')}",
-                    chosen.get("title", "Untitled"),
-                    textwrap.shorten(chosen.get("summary", ""), width=600, placeholder="…"),
+                    "Research Process",
+                    f"Development step — {chosen.get('title', 'Untitled')}",
+                    process_body,
                     chosen.get("id", ""),
                 ),
             )
         ]
     else:
-        # Guaranteed one news + one research entry per run (max 2 total), even with no relevant paper.
+        # Guaranteed one news + one research process entry per run (max 2 total).
         home_blocks = [
             (
                 f"home:run:{run_stamp}",
@@ -377,19 +383,23 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict]) -> t
                     run_date,
                     "Pipeline Run",
                     "Recursive research cycle executed",
-                    "No new relevant paper passed Cohera relevance filter this cycle; sources were still scanned and logged.",
+                    "No new high-relevance paper found this cycle. Discovery and evidence extraction still executed.",
                     None,
                 ),
             )
         ]
+        process_body = (
+            f"Process step logged with no publishable source candidate. See digest {digest_file.relative_to(ROOT)} "
+            f"and source snapshot {source_file.relative_to(ROOT)} for evidence trail."
+        )
         research_blocks = [
             (
                 f"research:run:{run_stamp}",
                 render_card(
                     run_date,
-                    "Research Update",
+                    "Research Process",
                     "Filtered run summary",
-                    "Discovery and citation extraction completed. No new high-relevance item published in this cycle.",
+                    process_body,
                     None,
                 ),
             )
@@ -401,11 +411,19 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict]) -> t
 
 
 def sync_publication_pdfs() -> list[pathlib.Path]:
-    src = RESEARCH / "pdf"
+    """
+    Only sync Cohera-authored final publications.
+    Source of truth: research/publications/final/*.pdf
+    """
+    src = RESEARCH / "publications" / "final"
     dst = SITE / "publications" / "pdf"
     copied: list[pathlib.Path] = []
+
     if not src.exists():
+        # Ensure destination exists but do not auto-import external resource PDFs.
+        dst.mkdir(parents=True, exist_ok=True)
         return copied
+
     for f in sorted(src.glob("*.pdf")):
         t = dst / f.name
         t.write_bytes(f.read_bytes())
@@ -443,7 +461,7 @@ def main() -> None:
     write_synthesis_brief(new_items)
 
     feed_items = state.get("items", [])
-    home_added, research_added = append_home_and_research(new_items, feed_items)
+    home_added, research_added = append_home_and_research(new_items, feed_items, digest_file, source_file)
 
     synced_pdfs = sync_publication_pdfs()
     pub_added = append_publication_cards(synced_pdfs)
