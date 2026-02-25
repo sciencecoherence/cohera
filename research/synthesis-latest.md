@@ -1,30 +1,30 @@
-# Cohera Synthesis Brief — 2026-02-25 15:54 (Lima)
+# Cohera Synthesis Brief — 2026-02-25 16:04 (Lima)
 
 This brief consolidates the latest research discoveries into publication candidates.
 
 ## Priority candidates
 
-- **Minimal loop currents in doped Mott insulators**
-  - Topic: time crystal biology
-  - Claim to test: For the $t$-$J$ model, variational wave functions can generally be constructed based on an accurate description of antiferromagnetism (AFM) at half-filling and an exact phase-…
-  - Citation: Can Cui, Jing-Yu Zhao, Zheng-Yu Weng (2026-02-24). Minimal loop currents in doped Mott insulators. arXiv. http://arxiv.org/abs/2602.21206v1
-- **The JWST Resolved Stellar Populations Early Release Science Program. IX. The RR Lyrae Population in WLM with HST and JWST**
-  - Topic: digital twins uncertainty
-  - Claim to test: RR Lyrae stars are a common, dependable Population II distance indicator, and provide an independent tracer of early star formation. Here, we utilize archival HST/ACS and…
-  - Citation: Catherine M. Slaughter, Evan D. Skillman, Alessandro Savino, Daniel R. Weisz et al. (2026-02-24). The JWST Resolved Stellar Populations Early Release Science Program. IX. The RR Lyrae Population in WLM with HST and JWST. arXiv. http://arxiv.org/abs/2602.21205v1
-- **Test-Time Training with KV Binding Is Secretly Linear Attention**
-  - Topic: time crystal biology
-  - Claim to test: Test-time training (TTT) with KV binding as sequence modeling layer is commonly interpreted as a form of online meta-learning that memorizes a key-value mapping at test time.…
-  - Citation: Junchen Liu, Sven Elflein, Or Litany, Zan Gojcic et al. (2026-02-24). Test-Time Training with KV Binding Is Secretly Linear Attention. arXiv. http://arxiv.org/abs/2602.21204v1
-- **Squint: Fast Visual Reinforcement Learning for Sim-to-Real Robotics**
+- **Region of Interest Segmentation and Morphological Analysis for Membranes in Cryo-Electron Tomography**
   - Topic: chaos control biological systems
-  - Claim to test: Visual reinforcement learning is appealing for robotics but expensive -- off-policy methods are sample-efficient yet slow; on-policy methods parallelize well but waste samples.…
-  - Citation: Abdulaziz Almuzairee, Henrik I. Christensen (2026-02-24). Squint: Fast Visual Reinforcement Learning for Sim-to-Real Robotics. arXiv. http://arxiv.org/abs/2602.21203v1
-- **A Time-Varying and Covariate-Dependent Correlation Model for Multivariate Longitudinal Studies**
+  - Claim to test: Cryo-electron tomography (cryo-ET) enables high resolution, three-dimensional reconstruction of biological structures, including membranes and membrane proteins. Identification of…
+  - Citation: Xingyi Cheng, Julien Maufront, Aurélie Di Cicco, Daniël M. Pelt et al. (2026-02-24). Region of Interest Segmentation and Morphological Analysis for Membranes in Cryo-Electron Tomography. arXiv. http://arxiv.org/abs/2602.21195v1
+- **Exact quantum transport in non-Markovian open Gaussian systems**
   - Topic: chaos control biological systems
-  - Claim to test: In multivariate longitudinal studies, associations between outcomes often exhibit time-varying and individual level heterogeneity, motivating the modeling of correlations as an…
-  - Citation: Qingzhi Liu, Gen Li, Anastasia K. Yocum, Melvin McInnis et al. (2026-02-24). A Time-Varying and Covariate-Dependent Correlation Model for Multivariate Longitudinal Studies. arXiv. http://arxiv.org/abs/2602.21200v1
-- **Topological Floquet Green's function zeros**
-  - Topic: digital twins uncertainty
-  - Claim to test: Motivated by recent advances in digital quantum emulation using noisy intermediate-scale quantum (NISQ) devices and an increased interest in topological Green's function zeros in…
-  - Citation: Elio J. König, Aditi Mitra (2026-02-24). Topological Floquet Green's function zeros. arXiv. http://arxiv.org/abs/2602.21199v1
+  - Claim to test: We build an exact framework to evaluate heat, energy, and particle transport between Gaussian reservoirs mediated by a quadratic quantum system. By combining full counting…
+  - Citation: Guglielmo Pellitteri, Vittorio Giovannetti, Vasco Cavina (2026-02-24). Exact quantum transport in non-Markovian open Gaussian systems. arXiv. http://arxiv.org/abs/2602.21190v1
+- **Human Video Generation from a Single Image with 3D Pose and View Control**
+  - Topic: chaos control biological systems
+  - Claim to test: Recent diffusion methods have made significant progress in generating videos from single images due to their powerful visual generation capabilities. However, challenges persist…
+  - Citation: Tiantian Wang, Chun-Han Yao, Tao Hu, Mallikarjun Byrasandra Ramalinga Reddy et al. (2026-02-24). Human Video Generation from a Single Image with 3D Pose and View Control. arXiv. http://arxiv.org/abs/2602.21188v1
+- **823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio**
+  - Topic: chaos control biological systems
+  - Claim to test: Bengali, despite being one of the most widely spoken languages globally, remains underrepresented in long form speech technology, particularly in systems addressing transcription…
+  - Citation: Ratnajit Dhar, Arpita Mallik (2026-02-24). 823-OLT @ BUET DL Sprint 4.0: Context-Aware Windowing for ASR and Fine-Tuned Speaker Diarization in Bengali Long Form Audio. arXiv. http://arxiv.org/abs/2602.21183v1
+- **Circumventing the CAP Theorem with Open Atomic Ethernet**
+  - Topic: chaos control biological systems
+  - Claim to test: The CAP theorem is routinely treated as a systems law: under network partition, a replicated service must sacrifice either consistency or availability. The theorem is correct…
+  - Citation: Paul Borrill (2026-02-24). Circumventing the CAP Theorem with Open Atomic Ethernet. arXiv. http://arxiv.org/abs/2602.21182v1
+- **Memory Undone: Between Knowing and Not Knowing in Data Systems**
+  - Topic: metabolic health systems biology
+  - Claim to test: Machine learning and data systems increasingly function as infrastructures of memory: they ingest, store, and operationalize traces of personal, political, and cultural life. Yet…
+  - Citation: Viktoriia Makovska, George Fletcher, Julia Stoyanovich, Tetiana Zakharchenko (2026-02-24). Memory Undone: Between Knowing and Not Knowing in Data Systems. arXiv. http://arxiv.org/abs/2602.21180v1
