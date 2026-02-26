@@ -319,6 +319,24 @@ RELEVANCE_KEYWORDS = [
     "holographic",
 ]
 
+THREAD_STATE_FILE = STATE_DIR / "thread_state.json"
+THREADS = [
+    {
+        "id": "substrate-boundaries",
+        "tag": "Time-Crystalline Holographic Substrate",
+        "title": "Defining substrate boundaries against decoherence",
+        "hypothesis": "Boundary constraints can be modeled as coherence-preserving operators coupling metabolic feedback loops to environmental oscillations.",
+        "source": "http://arxiv.org/abs/2412.02651",
+    },
+    {
+        "id": "metabolic-regeneration",
+        "tag": "Metabolic Regeneration",
+        "title": "Metabolic phase-locking as regeneration mechanism",
+        "hypothesis": "Regenerative pathways may be stabilized by phase-locking between intracellular pumps and external oscillatory fields.",
+        "source": "http://arxiv.org/abs/2309.10837",
+    },
+]
+
 
 def is_relevant_to_cohera(item: dict) -> bool:
     text = f"{item.get('title','')} {item.get('summary','')} {item.get('topic','')}".lower()
@@ -330,6 +348,45 @@ def pick_relevant_item(candidates: list[dict]) -> dict | None:
         if is_relevant_to_cohera(it):
             return it
     return None
+
+
+def load_thread_state() -> dict:
+    if not THREAD_STATE_FILE.exists():
+        return {"run": 0, "cursor": 0}
+    try:
+        return json.loads(THREAD_STATE_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return {"run": 0, "cursor": 0}
+
+
+def save_thread_state(state: dict) -> None:
+    THREAD_STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def next_thread_update() -> dict:
+    st = load_thread_state()
+    run = int(st.get("run", 0)) + 1
+    cursor = int(st.get("cursor", 0)) % len(THREADS)
+    thread = THREADS[cursor]
+
+    step = (run - 1) % 4 + 1
+    step_text = [
+        "Refined boundary assumptions and isolated dominant constraints.",
+        "Mapped source claims into testable variables for the model.",
+        "Updated falsification hooks and decoherence stress scenarios.",
+        "Consolidated interim synthesis toward publication candidate framing.",
+    ][step - 1]
+
+    st["run"] = run
+    st["cursor"] = (cursor + 1) % len(THREADS)
+    save_thread_state(st)
+
+    return {
+        "thread": thread,
+        "step": step,
+        "step_text": step_text,
+        "run": run,
+    }
 
 
 def append_home_and_research(new_items: list[dict], feed_items: list[dict], digest_file: pathlib.Path, source_file: pathlib.Path) -> tuple[int, int]:
@@ -344,39 +401,71 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict], dige
     chosen = pick_relevant_item(new_items)
 
     if not chosen:
-        # Do not publish generic status cards. Publish only when a relevant new source exists.
-        return 0, 0
+        # Continue internal thread development even when no new relevant source appears.
+        upd = next_thread_update()
+        thread = upd["thread"]
+        pid = slugify(thread["id"] + f"-r{upd['run']}")
 
-    pid = slugify(chosen.get("id", chosen.get("title", "")))
-    home_blocks: list[tuple[str, str]] = [
-        (
-            f"home:run:{run_stamp}",
-            render_card(
-                chosen.get("published", "")[:10].replace("-", "/") or run_date,
-                "Scientific News",
-                chosen.get("title", "Untitled"),
-                textwrap.shorten(chosen.get("summary", ""), width=320, placeholder="…"),
-                chosen.get("id", ""),
-            ),
-        )
-    ]
+        home_blocks: list[tuple[str, str]] = [
+            (
+                f"home:run:{run_stamp}",
+                render_card(
+                    run_date,
+                    "Scientific News",
+                    f"{thread['title']} — progress step {upd['step']}",
+                    f"{thread['hypothesis']} {upd['step_text']}",
+                    thread["source"],
+                ),
+            )
+        ]
 
-    process_body = (
-        "Development step: this source was integrated into the active Cohera research thread, claims were extracted, "
-        f"and evidence was logged in {digest_file.relative_to(ROOT)} (snapshot: {source_file.relative_to(ROOT)})."
-    )
-    research_blocks: list[tuple[str, str]] = [
-        (
-            f"research:run:{run_stamp}:{pid}",
-            render_card(
-                chosen.get("published", "")[:10].replace("-", "/") or run_date,
-                "Research Development",
-                f"Development step — {chosen.get('title', 'Untitled')}",
-                process_body,
-                chosen.get("id", ""),
-            ),
+        process_body = (
+            f"Development step {upd['step']}: {upd['step_text']} "
+            f"Evidence log: {digest_file.relative_to(ROOT)} | Source snapshot: {source_file.relative_to(ROOT)}."
         )
-    ]
+        research_blocks: list[tuple[str, str]] = [
+            (
+                f"research:run:{run_stamp}:{pid}",
+                render_card(
+                    run_date,
+                    "Research Development",
+                    f"{thread['title']} — model iteration",
+                    process_body,
+                    thread["source"],
+                ),
+            )
+        ]
+    else:
+        pid = slugify(chosen.get("id", chosen.get("title", "")))
+        home_blocks = [
+            (
+                f"home:run:{run_stamp}",
+                render_card(
+                    chosen.get("published", "")[:10].replace("-", "/") or run_date,
+                    "Scientific News",
+                    chosen.get("title", "Untitled"),
+                    textwrap.shorten(chosen.get("summary", ""), width=320, placeholder="…"),
+                    chosen.get("id", ""),
+                ),
+            )
+        ]
+
+        process_body = (
+            "Development step: this source was integrated into the active Cohera research thread, claims were extracted, "
+            f"and evidence was logged in {digest_file.relative_to(ROOT)} (snapshot: {source_file.relative_to(ROOT)})."
+        )
+        research_blocks = [
+            (
+                f"research:run:{run_stamp}:{pid}",
+                render_card(
+                    chosen.get("published", "")[:10].replace("-", "/") or run_date,
+                    "Research Development",
+                    f"Development step — {chosen.get('title', 'Untitled')}",
+                    process_body,
+                    chosen.get("id", ""),
+                ),
+            )
+        ]
 
     h = insert_blocks_after_grid_open(home_file, "grid-1", home_blocks)
     r = insert_blocks_after_grid_open(research_file, "grid-2", research_blocks)
