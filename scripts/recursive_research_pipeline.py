@@ -376,30 +376,34 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict], dige
             )
         ]
     else:
-        # Guaranteed one news + one research process entry per run (max 2 total).
+        # Guaranteed one scientific news card + one research development card per run (max 2 total).
         home_blocks = [
             (
                 f"home:run:{run_stamp}",
                 render_card(
                     run_date,
-                    "Pipeline Run",
-                    "Recursive research cycle executed",
-                    "No new high-relevance paper found this cycle. Discovery and evidence extraction still executed.",
+                    "Scientific News",
+                    "Research frontier scan completed",
+                    (
+                        "Latest arXiv scan completed for Cohera themes (time-crystalline dynamics, metabolic coherence, "
+                        "bioelectric regulation, and nonequilibrium systems). No brand-new high-relevance paper passed "
+                        "the publication filter in this cycle; evidence was still ingested for synthesis."
+                    ),
                     None,
                 ),
             )
         ]
         process_body = (
-            f"Process step logged with no publishable source candidate. See digest {digest_file.relative_to(ROOT)} "
-            f"and source snapshot {source_file.relative_to(ROOT)} for evidence trail."
+            "Development update: sources were ingested, citations extracted, and synthesis notes refreshed. "
+            f"Digest: {digest_file.relative_to(ROOT)} | Source snapshot: {source_file.relative_to(ROOT)}."
         )
         research_blocks = [
             (
                 f"research:run:{run_stamp}",
                 render_card(
                     run_date,
-                    "Research Process",
-                    "Filtered run summary",
+                    "Research Development",
+                    "Current synthesis progression",
                     process_body,
                     None,
                 ),
