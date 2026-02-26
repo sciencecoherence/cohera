@@ -339,8 +339,9 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict], dige
     run_stamp = now_lima().strftime("%Y%m%d-%H%M%S")
     run_date = now_lima().strftime("%d/%m/%Y")
 
-    # Prefer a relevant newly discovered paper; fallback to relevant feed item.
-    chosen = pick_relevant_item(new_items) or pick_relevant_item(feed_items)
+    # Only promote a paper when it is NEW in this run.
+    # Prevents reposting the same source card across multiple cron cycles.
+    chosen = pick_relevant_item(new_items)
 
     if chosen:
         pid = slugify(chosen.get("id", chosen.get("title", "")))
