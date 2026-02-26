@@ -352,24 +352,72 @@ def pick_relevant_item(candidates: list[dict]) -> dict | None:
 
 def load_thread_state() -> dict:
     if not THREAD_STATE_FILE.exists():
-        return {"run": 0, "cursor": 0}
+        return {"run": 0, "threads": {}}
     try:
-        return json.loads(THREAD_STATE_FILE.read_text(encoding="utf-8"))
+        data = json.loads(THREAD_STATE_FILE.read_text(encoding="utf-8"))
+        if "threads" not in data:
+            data["threads"] = {}
+        if "run" not in data:
+            data["run"] = 0
+        return data
     except Exception:
-        return {"run": 0, "cursor": 0}
+        return {"run": 0, "threads": {}}
 
 
 def save_thread_state(state: dict) -> None:
     THREAD_STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def next_thread_update() -> dict:
+def thread_keyword_hits(thread: dict, items: list[dict]) -> int:
+    text = (thread.get("title", "") + " " + thread.get("hypothesis", "")).lower()
+    keys = [k for k in RELEVANCE_KEYWORDS if k in text]
+    hits = 0
+    for it in items:
+        blob = f"{it.get('title','')} {it.get('summary','')} {it.get('topic','')}".lower()
+        if any(k in blob for k in keys):
+            hits += 1
+    return hits
+
+
+def choose_thread(new_items: list[dict], feed_items: list[dict], st: dict) -> dict:
+    now = now_lima()
+    threads_state = st.setdefault("threads", {})
+    scored: list[tuple[float, dict, dict]] = []
+
+    for t in THREADS:
+        ts = threads_state.get(t["id"], {})
+        iterations = int(ts.get("iterations", 0))
+        last_run = ts.get("lastRun")
+        stale_days = 7.0
+        if last_run:
+            try:
+                dt_last = dt.datetime.fromisoformat(last_run)
+                stale_days = max(0.0, (now - dt_last).total_seconds() / 86400.0)
+            except Exception:
+                stale_days = 7.0
+
+        novelty_hits = thread_keyword_hits(t, new_items)
+        evidence_hits = thread_keyword_hits(t, feed_items[:40])
+        continuity_penalty = iterations * 0.8
+
+        # Higher score = higher priority to continue this thread.
+        score = (novelty_hits * 3.0) + (evidence_hits * 0.4) + min(stale_days, 10.0) - continuity_penalty
+        scored.append((score, t, ts))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+    _, winner, winner_state = scored[0]
+    return {"thread": winner, "thread_state": winner_state}
+
+
+def next_thread_update(new_items: list[dict], feed_items: list[dict]) -> dict:
     st = load_thread_state()
     run = int(st.get("run", 0)) + 1
-    cursor = int(st.get("cursor", 0)) % len(THREADS)
-    thread = THREADS[cursor]
 
-    step = (run - 1) % 4 + 1
+    pick = choose_thread(new_items, feed_items, st)
+    thread = pick["thread"]
+    ts = st.setdefault("threads", {}).setdefault(thread["id"], {})
+
+    step = (int(ts.get("iterations", 0)) % 4) + 1
     step_text = [
         "Refined boundary assumptions and isolated dominant constraints.",
         "Mapped source claims into testable variables for the model.",
@@ -377,8 +425,9 @@ def next_thread_update() -> dict:
         "Consolidated interim synthesis toward publication candidate framing.",
     ][step - 1]
 
+    ts["iterations"] = int(ts.get("iterations", 0)) + 1
+    ts["lastRun"] = now_lima().isoformat()
     st["run"] = run
-    st["cursor"] = (cursor + 1) % len(THREADS)
     save_thread_state(st)
 
     return {
@@ -402,7 +451,7 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict], dige
 
     if not chosen:
         # Continue internal thread development even when no new relevant source appears.
-        upd = next_thread_update()
+        upd = next_thread_update(new_items, feed_items)
         thread = upd["thread"]
         pid = slugify(thread["id"] + f"-r{upd['run']}")
 
