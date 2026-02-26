@@ -1,10 +1,14 @@
 {
-  "run": 2,
+  "run": 3,
   "cursor": 1,
   "threads": {
     "substrate-boundaries": {
       "iterations": 1,
       "lastRun": "2026-02-25T19:36:38.637224-05:00"
+    },
+    "metabolic-regeneration": {
+      "iterations": 1,
+      "lastRun": "2026-02-25T19:43:27.727957-05:00"
     }
   }
 }

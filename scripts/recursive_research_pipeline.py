@@ -320,6 +320,7 @@ RELEVANCE_KEYWORDS = [
 ]
 
 THREAD_STATE_FILE = STATE_DIR / "thread_state.json"
+NEWS_STATE_FILE = STATE_DIR / "news_state.json"
 THREADS = [
     {
         "id": "substrate-boundaries",
@@ -355,8 +356,10 @@ def load_thread_state() -> dict:
         return {"run": 0, "threads": {}}
     try:
         data = json.loads(THREAD_STATE_FILE.read_text(encoding="utf-8"))
+        # migrate legacy format {run, cursor}
         if "threads" not in data:
-            data["threads"] = {}
+            run_legacy = int(data.get("run", 0))
+            data = {"run": run_legacy, "threads": {}}
         if "run" not in data:
             data["run"] = 0
         return data
@@ -366,6 +369,24 @@ def load_thread_state() -> dict:
 
 def save_thread_state(state: dict) -> None:
     THREAD_STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_news_state() -> dict:
+    if not NEWS_STATE_FILE.exists():
+        return {"postedIds": [], "lastTopic": ""}
+    try:
+        d = json.loads(NEWS_STATE_FILE.read_text(encoding="utf-8"))
+        if "postedIds" not in d:
+            d["postedIds"] = []
+        if "lastTopic" not in d:
+            d["lastTopic"] = ""
+        return d
+    except Exception:
+        return {"postedIds": [], "lastTopic": ""}
+
+
+def save_news_state(state: dict) -> None:
+    NEWS_STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def thread_keyword_hits(thread: dict, items: list[dict]) -> int:
@@ -438,36 +459,63 @@ def next_thread_update(new_items: list[dict], feed_items: list[dict]) -> dict:
     }
 
 
-def append_home_and_research(new_items: list[dict], feed_items: list[dict], digest_file: pathlib.Path, source_file: pathlib.Path) -> tuple[int, int]:
+def choose_diverse_news_item(discovered: list[dict]) -> dict | None:
+    ns = load_news_state()
+    posted = set(ns.get("postedIds", []))
+    last_topic = ns.get("lastTopic", "")
+
+    # 1) Prefer unseen item with topic different from last published topic.
+    for it in discovered:
+        if it.get("id") not in posted and it.get("topic") != last_topic:
+            ns["postedIds"] = (ns.get("postedIds", []) + [it.get("id")])[-200:]
+            ns["lastTopic"] = it.get("topic", "")
+            save_news_state(ns)
+            return it
+
+    # 2) Then unseen item regardless of topic.
+    for it in discovered:
+        if it.get("id") not in posted:
+            ns["postedIds"] = (ns.get("postedIds", []) + [it.get("id")])[-200:]
+            ns["lastTopic"] = it.get("topic", "")
+            save_news_state(ns)
+            return it
+
+    # 3) Reset cycle when exhausted, still prefer topic switch.
+    ns["postedIds"] = []
+    for it in discovered:
+        if it.get("topic") != last_topic:
+            ns["postedIds"] = [it.get("id")]
+            ns["lastTopic"] = it.get("topic", "")
+            save_news_state(ns)
+            return it
+
+    if discovered:
+        it = discovered[0]
+        ns["postedIds"] = [it.get("id")]
+        ns["lastTopic"] = it.get("topic", "")
+        save_news_state(ns)
+        return it
+
+    return None
+
+
+def append_home_and_research(new_items: list[dict], feed_items: list[dict], discovered: list[dict], digest_file: pathlib.Path, source_file: pathlib.Path) -> tuple[int, int]:
     home_file = SITE / "index.html"
     research_file = SITE / "research" / "index.html"
 
     run_stamp = now_lima().strftime("%Y%m%d-%H%M%S")
     run_date = now_lima().strftime("%d/%m/%Y")
 
-    # Only promote a paper when it is NEW in this run.
-    # Prevents reposting the same source card across multiple cron cycles.
+    # Home should be real diverse scientific news.
+    news_item = choose_diverse_news_item(discovered)
+
+    # Research should continue the strongest relevant thread.
     chosen = pick_relevant_item(new_items)
 
     if not chosen:
-        # Continue internal thread development even when no new relevant source appears.
         upd = next_thread_update(new_items, feed_items)
         thread = upd["thread"]
         pid = slugify(thread["id"] + f"-r{upd['run']}")
-
-        home_blocks: list[tuple[str, str]] = [
-            (
-                f"home:run:{run_stamp}",
-                render_card(
-                    run_date,
-                    "Scientific News",
-                    f"{thread['title']} — progress step {upd['step']}",
-                    f"{thread['hypothesis']} {upd['step_text']}",
-                    thread["source"],
-                ),
-            )
-        ]
-
         process_body = (
             f"Development step {upd['step']}: {upd['step_text']} "
             f"Evidence log: {digest_file.relative_to(ROOT)} | Source snapshot: {source_file.relative_to(ROOT)}."
@@ -486,19 +534,6 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict], dige
         ]
     else:
         pid = slugify(chosen.get("id", chosen.get("title", "")))
-        home_blocks = [
-            (
-                f"home:run:{run_stamp}",
-                render_card(
-                    chosen.get("published", "")[:10].replace("-", "/") or run_date,
-                    "Scientific News",
-                    chosen.get("title", "Untitled"),
-                    textwrap.shorten(chosen.get("summary", ""), width=320, placeholder="…"),
-                    chosen.get("id", ""),
-                ),
-            )
-        ]
-
         process_body = (
             "Development step: this source was integrated into the active Cohera research thread, claims were extracted, "
             f"and evidence was logged in {digest_file.relative_to(ROOT)} (snapshot: {source_file.relative_to(ROOT)})."
@@ -512,6 +547,22 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict], dige
                     f"Development step — {chosen.get('title', 'Untitled')}",
                     process_body,
                     chosen.get("id", ""),
+                ),
+            )
+        ]
+
+    home_blocks: list[tuple[str, str]] = []
+    if news_item:
+        news_pid = slugify(news_item.get("id", news_item.get("title", "")))
+        home_blocks = [
+            (
+                f"home:run:{run_stamp}:{news_pid}",
+                render_card(
+                    news_item.get("published", "")[:10].replace("-", "/") or run_date,
+                    "Scientific News",
+                    news_item.get("title", "Untitled"),
+                    textwrap.shorten(news_item.get("summary", ""), width=320, placeholder="…"),
+                    news_item.get("id", ""),
                 ),
             )
         ]
@@ -572,7 +623,7 @@ def main() -> None:
     write_synthesis_brief(new_items)
 
     feed_items = state.get("items", [])
-    home_added, research_added = append_home_and_research(new_items, feed_items, digest_file, source_file)
+    home_added, research_added = append_home_and_research(new_items, feed_items, discovered, digest_file, source_file)
 
     synced_pdfs = sync_publication_pdfs()
     pub_added = append_publication_cards(synced_pdfs)
