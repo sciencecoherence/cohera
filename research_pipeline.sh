@@ -38,7 +38,7 @@ is_allowed_change() {
     site/index.html|site/research/index.html|site/publications/index.html)
       return 0
       ;;
-    site/publications/pdf/*)
+    site/publications/pdf|site/publications/pdf/|site/publications/pdf/*)
       return 0
       ;;
     research/pipeline/*|research/sources/*|research/digests/*|research/synthesis-latest.md)
