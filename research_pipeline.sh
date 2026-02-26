@@ -31,6 +31,10 @@ mapfile -t CHANGED_PATHS < <(git status --porcelain | awk '{print $2}')
 is_allowed_change() {
   local p="$1"
   case "$p" in
+    # Runtime logs are allowed to exist and should not block publish pipeline.
+    chatgpt/*)
+      return 0
+      ;;
     site/index.html|site/research/index.html|site/publications/index.html)
       return 0
       ;;
