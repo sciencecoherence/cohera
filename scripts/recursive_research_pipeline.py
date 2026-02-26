@@ -343,72 +343,40 @@ def append_home_and_research(new_items: list[dict], feed_items: list[dict], dige
     # Prevents reposting the same source card across multiple cron cycles.
     chosen = pick_relevant_item(new_items)
 
-    if chosen:
-        pid = slugify(chosen.get("id", chosen.get("title", "")))
-        home_blocks: list[tuple[str, str]] = [
-            (
-                f"home:run:{run_stamp}",
-                render_card(
-                    chosen.get("published", "")[:10].replace("-", "/") or run_date,
-                    "Research Milestone",
-                    chosen.get("title", "Untitled"),
-                    textwrap.shorten(chosen.get("summary", ""), width=320, placeholder="…"),
-                    chosen.get("id", ""),
-                ),
-            )
-        ]
+    if not chosen:
+        # Do not publish generic status cards. Publish only when a relevant new source exists.
+        return 0, 0
 
-        process_body = (
-            "Process step: integrated this source into the active Cohera hypothesis thread, extracted claims, "
-            f"and logged evidence in {digest_file.relative_to(ROOT)}. "
-            f"Source snapshot: {source_file.relative_to(ROOT)}."
+    pid = slugify(chosen.get("id", chosen.get("title", "")))
+    home_blocks: list[tuple[str, str]] = [
+        (
+            f"home:run:{run_stamp}",
+            render_card(
+                chosen.get("published", "")[:10].replace("-", "/") or run_date,
+                "Scientific News",
+                chosen.get("title", "Untitled"),
+                textwrap.shorten(chosen.get("summary", ""), width=320, placeholder="…"),
+                chosen.get("id", ""),
+            ),
         )
-        research_blocks: list[tuple[str, str]] = [
-            (
-                f"research:run:{run_stamp}:{pid}",
-                render_card(
-                    chosen.get("published", "")[:10].replace("-", "/") or run_date,
-                    "Research Process",
-                    f"Development step — {chosen.get('title', 'Untitled')}",
-                    process_body,
-                    chosen.get("id", ""),
-                ),
-            )
-        ]
-    else:
-        # Guaranteed one scientific news card + one research development card per run (max 2 total).
-        home_blocks = [
-            (
-                f"home:run:{run_stamp}",
-                render_card(
-                    run_date,
-                    "Scientific News",
-                    "Research frontier scan completed",
-                    (
-                        "Latest arXiv scan completed for Cohera themes (time-crystalline dynamics, metabolic coherence, "
-                        "bioelectric regulation, and nonequilibrium systems). No brand-new high-relevance paper passed "
-                        "the publication filter in this cycle; evidence was still ingested for synthesis."
-                    ),
-                    None,
-                ),
-            )
-        ]
-        process_body = (
-            "Development update: sources were ingested, citations extracted, and synthesis notes refreshed. "
-            f"Digest: {digest_file.relative_to(ROOT)} | Source snapshot: {source_file.relative_to(ROOT)}."
+    ]
+
+    process_body = (
+        "Development step: this source was integrated into the active Cohera research thread, claims were extracted, "
+        f"and evidence was logged in {digest_file.relative_to(ROOT)} (snapshot: {source_file.relative_to(ROOT)})."
+    )
+    research_blocks: list[tuple[str, str]] = [
+        (
+            f"research:run:{run_stamp}:{pid}",
+            render_card(
+                chosen.get("published", "")[:10].replace("-", "/") or run_date,
+                "Research Development",
+                f"Development step — {chosen.get('title', 'Untitled')}",
+                process_body,
+                chosen.get("id", ""),
+            ),
         )
-        research_blocks = [
-            (
-                f"research:run:{run_stamp}",
-                render_card(
-                    run_date,
-                    "Research Development",
-                    "Current synthesis progression",
-                    process_body,
-                    None,
-                ),
-            )
-        ]
+    ]
 
     h = insert_blocks_after_grid_open(home_file, "grid-1", home_blocks)
     r = insert_blocks_after_grid_open(research_file, "grid-2", research_blocks)
